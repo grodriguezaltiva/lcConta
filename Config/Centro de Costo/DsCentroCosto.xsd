@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="DsCentroCosto" targetNamespace="http://www.tempuri.org/DsCentroCosto.xsd" xmlns:mstns="http://www.tempuri.org/DsCentroCosto.xsd" xmlns="http://www.tempuri.org/DsCentroCosto.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="DsCentroCosto" msdata:IsDataSet="true" msdata:Locale="es-CR">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="CentroCosto">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="Codigo" type="xs:string" />
+              <xs:element name="Nombre" type="xs:string" />
+              <xs:element name="Observaciones" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CentroCosto" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

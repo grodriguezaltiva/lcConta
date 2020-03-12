@@ -1,0 +1,3373 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DevExpress.XtraPrinting</name>
+    </assembly>
+    <members>
+        <member name="T:DevExpress.XtraPrinting.Page.Page">
+            <summary>
+                <para>Represents a report page.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Page.GetEnumerator">
+            <summary>
+                <para>Returns an enumerator that can iterate through all bricks within a page.
+</para>
+            </summary>
+            <returns>An <b>IEnumerator</b> for all bricks within a page.
+</returns>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Page.Index">
+            <summary>
+                <para>Gets the page index within the <see cref="T:DevExpress.XtraPrinting.PageList"/> collection.
+</para>
+            </summary>
+            <value>The page index within the <see cref="T:DevExpress.XtraPrinting.PageList"/> collection.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.LinkCollection.LinkCollection">
+            <summary>
+                <para>Represents a <see cref="T:DevExpress.XtraPrinting.Link"/> class instance collection.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.Add(System.Object)">
+            <summary>
+                <para>Adds a new item to the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection.
+</para>
+            </summary>
+            <param name="val">
+		A <see cref="T:DevExpress.XtraPrinting.Link"/> class instance that will be added to the collection.
+
+            </param>
+            <returns>The index of the added item within the collection.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.AddRange(System.Object[])">
+            <summary>
+                <para>Adds the elements of a <see cref="T:DevExpress.XtraPrinting.Link"/> to the end of the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/>.
+</para>
+            </summary>
+            <param name="items">
+		An array of <see cref="T:DevExpress.XtraPrinting.Link"/> objects to be added to the end of the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/>.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.Clear">
+            <summary>
+                <para>Removes all elements from the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.Contains(System.Object)">
+            <summary>
+                <para>Determines whether the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection contains a specific item.
+</para>
+            </summary>
+            <param name="val">
+		An item to locate within the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection. It can be a <b>null</b> reference (<b>Nothing</b> in Visual Basic).
+
+            </param>
+            <returns><b>true</b> if an item is found in the <b>ArrayList</b>; otherwise, <b>false</b>.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.CopyFrom(System.Collections.ArrayList)">
+            <summary>
+                <para>Copies elements of a <see cref="T:DevExpress.XtraPrinting.Link"/> from a compatible one-dimensional collection.
+</para>
+            </summary>
+            <param name="array">
+		An <see cref="T:System.Collections.ArrayList"/> object from which links to be copied.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+                <para>Copies the entire <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection to a compatible one-dimensional collection, starting at the specified index of the target collection.
+</para>
+            </summary>
+            <param name="array">
+		A one-dimensional <b>Array</b> that is the destination of the elements copied from the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection. The Array must have zero-based indexing.
+
+            </param>
+            <param name="index">
+		The zero-based index in the <i>array</i> at which copying begins.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.LinkCollection.Count">
+            <summary>
+                <para>Gets the number of collection items.
+</para>
+            </summary>
+            <value>The number of collection items.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.GetEnumerator">
+            <summary>
+                <para>Returns an enumerator that can iterate through the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection.
+</para>
+            </summary>
+            <returns>An <b>IEnumerator</b> for the entire <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.IndexOf(System.Object)">
+            <summary>
+                <para>Locates a specific item within a collection.
+</para>
+            </summary>
+            <param name="val">
+		A <see cref="T:DevExpress.XtraPrinting.Link"/> class instance to be located within a collection.
+
+            </param>
+            <returns>The index of the located item or <b>-1</b>, if the item is not located.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.Insert(System.Int32,System.Object)">
+            <summary>
+                <para>Inserts a <see cref="T:DevExpress.XtraPrinting.Link"/> class instance into the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection.
+</para>
+            </summary>
+            <param name="index">
+		The index specifying the position within the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection to insert a <see cref="T:DevExpress.XtraPrinting.Link"/> class instance.
+
+            </param>
+            <param name="val">
+		A <see cref="T:DevExpress.XtraPrinting.Link"/> class instance which is inserted into the collection.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.LinkCollection.IsFixedSize">
+            <summary>
+                <para>Indicates whether the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection has a fixed size.
+</para>
+            </summary>
+            <value><b>true</b> if the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection has a fixed size; otherwise, <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.LinkCollection.IsReadOnly">
+            <summary>
+                <para>Indicates whether the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection is read-only.
+</para>
+            </summary>
+            <value><b>true</b> if the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection is read-only; otherwise, <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.LinkCollection.IsSynchronized">
+            <summary>
+                <para>Indicates whether the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection is synchronized.
+</para>
+            </summary>
+            <value><b>true</b> if the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection is synchronized; otherwise, <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.LinkCollection.Item(System.Int32)">
+            <summary>
+                <para>Gets or sets an item within the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection at the specified index.
+</para>
+            </summary>
+            <param name="index">
+		The zero-based index of the item to get or set.
+
+            </param>
+            <value>An item at the specified index.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.Remove(System.Object)">
+            <summary>
+                <para>Removes a specifc item from the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection.
+</para>
+            </summary>
+            <param name="val">
+		A <see cref="T:DevExpress.XtraPrinting.Link"/> class instance to remove from the collection.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.LinkCollection.RemoveAt(System.Int32)">
+            <summary>
+                <para>Removes an element at the specified index of the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection.
+</para>
+            </summary>
+            <param name="index">
+		The zero-based index of the element to remove. 
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.LinkCollection.SyncRoot">
+            <summary>
+                <para>Gets an object that can be used to synchronize access to the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection.
+</para>
+            </summary>
+            <value>An object that can be used to synchronize access to the <see cref="T:DevExpress.XtraPrinting.LinkCollection"/> collection.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.Link.Link">
+            <summary>
+                <para>Represents a printing link.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Link.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.Link"/> class and sets its container.
+</para>
+            </summary>
+            <param name="container">
+		The owner container of a <see cref="T:DevExpress.XtraPrinting.Link"/> class instance.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Link.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.Link"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Link.#ctor(DevExpress.XtraPrinting.PrintingSystem)">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.Link"/> instance and sets its <see cref="P:DevExpress.XtraPrinting.Link.PrintingSystem"/> property based on a specific parameter.
+</para>
+            </summary>
+            <param name="ps">
+		A <b>PrintingSystem</b> that provides view and print facilities.
+
+            </param>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Link.CreateDetailArea">
+            <summary>
+                <para>Occurs on document creation.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Link.CreateDetailFooterArea">
+            <summary>
+                <para>Occurs on document creation.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Link.CreateDetailHeaderArea">
+            <summary>
+                <para>Occurs on document creation.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Link.CreateDocument">
+            <summary>
+                <para>Creates a report using current <b>PrintingSystem</b> facilities.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Link.CreateDocument(DevExpress.XtraPrinting.PrintingSystem)">
+            <summary>
+                <para>Creates a report using current <b>PrintingSystem</b> facilities.
+</para>
+            </summary>
+            <param name="ps">
+		A <b>PrintingSystem</b> that provides view and print facilities.
+
+            </param>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Link.CreatePageFooterArea">
+            <summary>
+                <para>Occurs on document creation.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Link.CreatePageHeaderArea">
+            <summary>
+                <para>Occurs on document creation.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Link.CreateReportFooterArea">
+            <summary>
+                <para>Occurs on document creation.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Link.CreateReportHeaderArea">
+            <summary>
+                <para>Occurs on document creation.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Link.EnablePageDialog">
+            <summary>
+                <para>Enables the <b>Page Content Editor</b> dialog.
+</para>
+            </summary>
+            <value><b>true</b> if the <b>Page Content Editor</b> dialog is enabled; otherwise <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Link.Images">
+            <summary>
+                <para>Represents a collection of images which can be used in the report.
+</para>
+            </summary>
+            <value>An <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> object which represents a collection of images which can be used in the report.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Link.PageHeaderFooter">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Link.PrintableObjectType">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Link.SetDataObject(System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="data">
+		 [To be supplied] 
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Link.SkipArea">
+            <summary>
+                <para>Gets or sets report areas that should be skipped.
+</para>
+            </summary>
+            <value>Report areas that should be skipped.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.ImageBrick.ImageBrick">
+            <summary>
+                <para>Represents a brick containing an image.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.ImageBrick"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageBrick.#ctor(DevExpress.XtraPrinting.BorderSide,System.Single,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.ImageBrick"/> class instance.
+</para>
+            </summary>
+            <param name="sides">
+		A <b>BorderSide</b> enumeration value which specifies the borders displayed around the <see cref="T:DevExpress.XtraPrinting.ImageBrick"/>.
+
+            </param>
+            <param name="borderWidth">
+		A float value which specifies the border width of the <see cref="T:DevExpress.XtraPrinting.ImageBrick"/>.
+
+            </param>
+            <param name="borderColor">
+		A <b>System.Drawing.Color</b> object which specifies the border color of the <see cref="T:DevExpress.XtraPrinting.ImageBrick"/>.
+
+            </param>
+            <param name="backColor">
+		A <b>System.Drawing.Color</b> object which specifies the background color of the current <see cref="T:DevExpress.XtraPrinting.ImageBrick"/>.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageBrick.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+                <para>Overrides the <see cref="M:DevExpress.XtraPrinting.Brick.Draw"/> method derived from the <see cref="T:DevExpress.XtraPrinting.Brick"/> class.
+</para>
+            </summary>
+            <param name="gr">
+		A <B>System.Drawing.Graphics</B> object containing all information required for drawing in the current brick.
+
+            </param>
+            <param name="rect">
+		A rectangle specifying the drawing area.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.ImageBrick.Image">
+            <summary>
+                <para>Defines the image displayed within the current brick.
+</para>
+            </summary>
+            <value>The image displayed within a brick.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.ImageBrick.SizeMode">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.CheckBoxBrick.CheckBoxBrick">
+            <summary>
+                <para>Represents a brick containing a <B>CheckBox</B> control.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.CheckBoxBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.CheckBoxBrick.#ctor(DevExpress.XtraPrinting.BorderSide,System.Single,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/> class instance.
+
+</para>
+            </summary>
+            <param name="sides">
+		A <b>BorderSide</b> enumeration value which specifies the borders displayed around the <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/>.
+
+            </param>
+            <param name="borderWidth">
+		A float value which specifies the border width of the <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/>.
+
+            </param>
+            <param name="borderColor">
+		A <b>System.Drawing.Color</b> object which specifies the border color of the <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/>.
+
+            </param>
+            <param name="backColor">
+		A <b>System.Drawing.Color</b> object which specifies the background color of the current <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/>.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.CheckBoxBrick.Checked">
+            <summary>
+                <para>Determines the state of a checkbox displayed within a brick.
+</para>
+            </summary>
+            <value><B>true</B>, if a checkbox is in a cheked state, otherwise, <B>false</B>.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.CheckBoxBrick.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+                <para>Overrides the <see cref="M:DevExpress.XtraPrinting.Brick.Draw"/> method derived from the <see cref="T:DevExpress.XtraPrinting.Brick"/> class.
+</para>
+            </summary>
+            <param name="gr">
+		A <B>System.Drawing.Graphics</B> object containing all information required for drawing in the current brick.
+
+            </param>
+            <param name="rect">
+		A rectangle specifying the drawing area.
+
+            </param>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.BrickGraphics.BrickGraphics">
+            <summary>
+                <para>Implements report drawing functions.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.BackColor">
+            <summary>
+                <para>Defines the background color for the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</para>
+            </summary>
+            <value>The background color for the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.BeginCalculateRectangle">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.BeginUnionRect">
+            <summary>
+                <para>Must be called before the creation of a brick group.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.BorderColor">
+            <summary>
+                <para>Specifies the border color for the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</para>
+            </summary>
+            <value>The border color for the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.BorderWidth">
+            <summary>
+                <para>Specifies the border width of the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</para>
+            </summary>
+            <value>The border width of  the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.ClientPageSize">
+            <summary>
+                <para>Returns the dimensions of a report page without margins.
+</para>
+            </summary>
+            <value>Page dimensions without margins.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.DefaultBrickStyle">
+            <summary>
+                <para>Gets or sets the default <see cref="T:DevExpress.XtraPrinting.BrickStyle"/>.
+</para>
+            </summary>
+            <value>The default <see cref="T:DevExpress.XtraPrinting.BrickStyle"/>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.DefaultFont">
+            <summary>
+                <para>Specifies the default font for a report.
+</para>
+            </summary>
+            <value>The default report font.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DocumValueOf(System.Single)">
+            <summary>
+                <para>Converts a value specified via the parameter to <B>GraphicsUnit.Document</B> measurement units.
+</para>
+            </summary>
+            <param name="val">
+		The value to convert.
+
+            </param>
+            <returns>A value in <B>GraphicsUnit.Document</B> measurement units.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawBrick(DevExpress.XtraPrinting.Brick,System.Drawing.RectangleF)">
+            <summary>
+                <para>Adds a brick to a report.
+</para>
+            </summary>
+            <param name="brick">
+		The brick to be added to a report.
+
+            </param>
+            <param name="rect">
+		A <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value.
+
+            </param>
+            <returns>The brick added to a report.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawBrick(DevExpress.XtraPrinting.Brick)">
+            <summary>
+                <para>Adds a brick to a report.
+</para>
+            </summary>
+            <param name="brick">
+		The brick to be added to a report.
+
+            </param>
+            <returns>The brick added to a report.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawCheckBox(System.Drawing.RectangleF,DevExpress.XtraPrinting.BorderSide,System.Drawing.Color,System.Boolean)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/> to a report.
+</para>
+            </summary>
+            <param name="rect">
+		The <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value.
+
+            </param>
+            <param name="sides">
+		Border settings for a specific <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/>.
+
+            </param>
+            <param name="backColor">
+		The color to fill the background of a specific <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/>.
+
+            </param>
+            <param name="check">
+		<B>true</B>, if the checkbox is in a checked state, otherwise, <B>false</B>.
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/> added to a report.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawCheckBox(System.Drawing.RectangleF,System.Boolean)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/> to a report. 
+
+</para>
+            </summary>
+            <param name="rect">
+		The <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value. 
+
+            </param>
+            <param name="check">
+		<B>true</B>, if the checkbox is in a checked state, otherwise, <B>false</B>. 
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.CheckBoxBrick"/> added to a report. 
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawEmptyBrick(System.Drawing.RectangleF)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.EmptyBrick"/> to a report. 
+</para>
+            </summary>
+            <param name="rect">
+		The location and size of the <see cref="T:DevExpress.XtraPrinting.EmptyBrick"/>.
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.EmptyBrick"/> added to a report.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawImage(System.Drawing.Image,System.Drawing.RectangleF,DevExpress.XtraPrinting.BorderSide,System.Drawing.Color)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.ImageBrick"/> brick to a report.
+</para>
+            </summary>
+            <param name="image">
+		The image to draw within a specifc brick.
+
+            </param>
+            <param name="rect">
+		The <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value.
+
+            </param>
+            <param name="sides">
+		Border settings for a specific <see cref="T:DevExpress.XtraPrinting.ImageBrick"/>.
+
+            </param>
+            <param name="backColor">
+		The color to be displayed in the transparent image.
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.ImageBrick"/> added to a report.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawImage(System.Drawing.Image,System.Drawing.RectangleF)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.ImageBrick"/> brick to a report. 
+
+</para>
+            </summary>
+            <param name="image">
+		The image to draw within a specifc brick. 
+
+            </param>
+            <param name="rect">
+		The <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value. 
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.ImageBrick"/> added to a report. 
+
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawLine(System.Drawing.PointF,System.Drawing.PointF,System.Drawing.Color,System.Single)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="pt1">
+		 [To be supplied] 
+            </param>
+            <param name="pt2">
+		 [To be supplied] 
+            </param>
+            <param name="foreColor">
+		 [To be supplied] 
+            </param>
+            <param name="width">
+		 [To be supplied] 
+            </param>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawPageImage(System.Drawing.Image,System.Drawing.RectangleF,DevExpress.XtraPrinting.BorderSide,System.Drawing.Color)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.PageImageBrick"/> to a report.
+</para>
+            </summary>
+            <param name="image">
+		The image to draw in a specific brick.
+
+            </param>
+            <param name="rect">
+		The <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value.
+
+            </param>
+            <param name="sides">
+		Border settings for a specific <see cref="T:DevExpress.XtraPrinting.PageImageBrick"/>.
+
+            </param>
+            <param name="backColor">
+		The color to be displayed in the transparent portions of an image.
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.PageImageBrick"/> added to a report.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawPageInfo(DevExpress.XtraPrinting.PageInfo,System.String,System.Drawing.Color,System.Drawing.RectangleF,DevExpress.XtraPrinting.BorderSide)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/> to a report.
+</para>
+            </summary>
+            <param name="pageInfo">
+		The type of infomation, displayed in the <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+
+            </param>
+            <param name="text">
+		The text to display in the <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+
+            </param>
+            <param name="foreColor">
+		The text color for the added <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>. 
+
+            </param>
+            <param name="rect">
+		The <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value.
+
+            </param>
+            <param name="sides">
+		Border settings for the <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/> added to a report.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawRect(System.Drawing.RectangleF,DevExpress.XtraPrinting.BorderSide,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> to a report.
+</para>
+            </summary>
+            <param name="rect">
+		The <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value.
+
+            </param>
+            <param name="sides">
+		Border settings for the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+
+            </param>
+            <param name="backColor">
+		The background color for a brick.
+
+            </param>
+            <param name="borderColor">
+		The color of the brick's border.
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> added to a report.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawString(System.String,System.Drawing.Color,System.Drawing.RectangleF,DevExpress.XtraPrinting.BorderSide)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.TextBrick"/> to a report.
+</para>
+            </summary>
+            <param name="text">
+		The text displayed in a specific <see cref="T:DevExpress.XtraPrinting.TextBrick"/>.
+
+            </param>
+            <param name="foreColor">
+		The color used to draw text.
+
+            </param>
+            <param name="rect">
+		The <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value.
+
+            </param>
+            <param name="sides">
+		Border settings for a specific <see cref="T:DevExpress.XtraPrinting.TextBrick"/>.
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.TextBrick"/> added to a report.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.DrawString(System.String,System.Drawing.RectangleF)">
+            <summary>
+                <para>Adds a specific <see cref="T:DevExpress.XtraPrinting.TextBrick"/> to a report. 
+
+</para>
+            </summary>
+            <param name="text">
+		The text displayed in a specific <see cref="T:DevExpress.XtraPrinting.TextBrick"/>. 
+
+            </param>
+            <param name="rect">
+		The <B>RectangleF</B> structure that specifies the location and size of the current brick in measurement units, specified via the <see cref="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit"/> property value. 
+
+            </param>
+            <returns>The <see cref="T:DevExpress.XtraPrinting.TextBrick"/> added to a report. 
+
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.EndCalculateRectangle">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.EndUnionRect">
+            <summary>
+                <para>Indicates the completion of break group creation.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.Font">
+            <summary>
+                <para>Specifies the font of the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</para>
+            </summary>
+            <value>The font of the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.ForeColor">
+            <summary>
+                <para>Defines the foreground color of the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</para>
+            </summary>
+            <value>The foreground color of the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.MeasureString(System.String)">
+            <summary>
+                <para>Measures a specific text string.
+</para>
+            </summary>
+            <param name="text">
+		The string to be measured.
+
+            </param>
+            <returns>The <B>SizeF</B> structure representing the width and height of a string. 
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.MeasureString(System.String,System.Int32)">
+            <summary>
+                <para>Measures a specific text string.
+</para>
+            </summary>
+            <param name="text">
+		The string to be measured. 
+
+            </param>
+            <param name="width">
+		The maximum width of the measured string.
+
+            </param>
+            <returns>The <B>SizeF</B> structure representing the width and height of a string. 
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.MeasureString(System.String,System.Int32,System.Drawing.StringFormat)">
+            <summary>
+                <para>Measures a specific text string.
+</para>
+            </summary>
+            <param name="text">
+		The string to be measured.
+
+            </param>
+            <param name="width">
+		The maximum width of the measured string.
+
+            </param>
+            <param name="stringFormat">
+		The formatting settings for the measured string.
+
+            </param>
+            <returns>The <B>SizeF</B> structure representing the width and height of a string. 
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.MeasureString(System.String,System.Drawing.Font,System.Int32,System.Drawing.StringFormat,System.Drawing.GraphicsUnit)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="text">
+		 [To be supplied] 
+            </param>
+            <param name="font">
+		 [To be supplied] 
+            </param>
+            <param name="width">
+		 [To be supplied] 
+            </param>
+            <param name="stringFormat">
+		 [To be supplied] 
+            </param>
+            <param name="graphicsUnit">
+		 [To be supplied] 
+            </param>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.Modifier">
+            <summary>
+                <para>Specifies the page area for displaying a specific brick.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.BrickModifier"/> enumerator value that defines the page area for displaying a specific brick.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.PageBackColor">
+            <summary>
+                <para>Defines the background color for all report pages.
+</para>
+            </summary>
+            <value>The background color of report pages.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.PageUnit">
+            <summary>
+                <para>Defines graphic measurement units.
+</para>
+            </summary>
+            <value>The type of drawing units.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.PrintingSystem">
+            <summary>
+                <para>Gets the owner of the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</para>
+            </summary>
+            <value>The owner of the current <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.BrickGraphics.StringFormat">
+            <summary>
+                <para>Defines text layout information (such as alignment and line spacing), display manipulations (such as ellipsis insertion and national digit substitution).
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.BrickStringFormat"/> object describing text layout.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.BrickGraphics.UnitValueOf(System.Single)">
+            <summary>
+                <para>Converts the value specified via a parameter to the value that uses the current measurement units.
+</para>
+            </summary>
+            <param name="val">
+		The value to convert.
+
+            </param>
+            <returns>The obtained value in current measurement units. 
+</returns>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.Brick.Brick">
+            <summary>
+                <para>This class is the basic class for all brick classes.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Brick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.Brick"/> class instance.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Brick.Dispose">
+            <summary>
+                <para>Releases all resources used by <see cref="T:DevExpress.XtraPrinting.Brick"/>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Brick.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+                <para>When overriden in a derived class, this method implements drawing functions specific to this class.
+</para>
+            </summary>
+            <param name="gr">
+		A <B>System.Drawing.Graphics</B> object containing all information required for drawing in the current brick.
+
+            </param>
+            <param name="rect">
+		A rectangle specifying the drawing area.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Brick.Hint">
+            <summary>
+                <para>Defines the text displayed as the current brick hint.
+</para>
+            </summary>
+            <value>The current brick hint text.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Brick.ID">
+            <summary>
+                <para>Identifies the current brick.
+</para>
+            </summary>
+            <value>A <see cref="T:System.String"/> used to identify a specific brick.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Brick.Modifier">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Brick.Printed">
+            <summary>
+                <para>Indicates whether the current brick will be printed.
+</para>
+            </summary>
+            <value><B>true</B>, if the current brick will be printed, otherwise, <B>false</B>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Brick.Rect">
+            <summary>
+                <para>Defines the current brick's location and size, in <B>GraphicsUnit.Document</B> measurement units.
+</para>
+            </summary>
+            <value>A rectangle representing the current brick location and size.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Brick.Url">
+            <summary>
+                <para>Specifies the link to a resource.
+</para>
+            </summary>
+            <value>The link to a resource.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Brick.Value">
+            <summary>
+                <para>Gets or sets an <B>object</B>, containing additional information on the current brick.
+</para>
+            </summary>
+            <value>Additional information on the current brick.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.BrickModifier.BrickModifier">
+            <summary>
+                <para>Specifies report section modifiers.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.BrickModifier.Detail">
+            <summary>
+                <para>Represents the detail report section.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.BrickModifier.DetailFooter">
+            <summary>
+                <para>Represents the detail footer report section.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.BrickModifier.DetailHeader">
+            <summary>
+                <para>Represents the detail header report section.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.BrickModifier.None">
+            <summary>
+                <para>Cancels page section representation.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.BrickModifier.PageFooter">
+            <summary>
+                <para>Represents a page footer report section.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.BrickModifier.PageHeader">
+            <summary>
+                <para>Represents a page header report section.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.BrickModifier.ReportFooter">
+            <summary>
+                <para>Represents a detail report footer section.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.BrickModifier.ReportHeader">
+            <summary>
+                <para>Represents a report header section.
+</para>
+            </summary>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.ImageCollection.ImageCollection">
+            <summary>
+                <para>Encapsulates the collection of <b>Image</b> objects in the current <see cref="T:DevExpress.XtraPrinting.Link"/>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.#ctor">
+            <summary>
+                <para>Creates a new <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> object.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.Add(System.Object)">
+            <summary>
+                <para>Adds the specified image to the end of the collection.
+</para>
+            </summary>
+            <param name="val">
+		An object representing the image to be added. (Typically, an <B>Image</B> object.)
+
+            </param>
+            <returns>An integer value representing the zero-based index at which the specified image has been added.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.AddRange(System.Object[])">
+            <summary>
+                <para>Adds the specified array of images to the end of the collection.
+</para>
+            </summary>
+            <param name="items">
+		An array of images to be added to the collection. (Typically, an array of <B>Image</B> objects.)
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.Clear">
+            <summary>
+                <para>Removes all images from the collection.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.Contains(System.Object)">
+            <summary>
+                <para>Returns a value indicating whether the collection contains the specified image.
+
+</para>
+            </summary>
+            <param name="val">
+		An object representing the image to locate in the collection. (Typically, an <B>Image</B> object.)
+
+
+            </param>
+            <returns><B>true</B> if the collection contains the specified image; otherwise <B>false</B>.
+
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.CopyTo(System.Array,System.Int32)">
+            <summary>
+                <para>Copies the entire <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> to a compatible one-dimensional array, starting at the specified index of the target array.
+
+</para>
+            </summary>
+            <param name="array">
+		The one-dimensional array that is the destination of the elements copied from <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>. The array must have zero-based indexing.
+
+            </param>
+            <param name="index">
+		The zero-based index in array at which copying begins.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.ImageCollection.Count">
+            <summary>
+                <para>Gets the number of elements actually contained in the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+</para>
+            </summary>
+            <value>The number of elements actually contained in the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.GetEnumerator">
+            <summary>
+                <para>Returns an <b>System.Collections.IEnumerator</b> that contains all images within the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+</para>
+            </summary>
+            <returns>A <b>System.Collections.IEnumerator</b> that contains all images within the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.IndexOf(System.Object)">
+            <summary>
+                <para>Searches for the specified object and returns the zero-based index of the first occurrence within the entire <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+</para>
+            </summary>
+            <param name="val">
+		The object to locate in the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+
+            </param>
+            <returns>The zero-based index of the first occurrence of <i>value</i> within the entire <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>, if found; otherwise, <b>-1</b>.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.Insert(System.Int32,System.Object)">
+            <summary>
+                <para>Inserts an element into the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> at the specified index.
+</para>
+            </summary>
+            <param name="index">
+		The zero-based index at which <i>value</i> should be inserted.
+
+            </param>
+            <param name="val">
+		The object to insert.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.ImageCollection.IsFixedSize">
+            <summary>
+                <para>Gets a value indicating whether the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> has a fixed size.
+</para>
+            </summary>
+            <value><b>true</b> if the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> has a fixed size; otherwise, <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.ImageCollection.IsReadOnly">
+            <summary>
+                <para>Gets a value indicating whether the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> is read-only.
+</para>
+            </summary>
+            <value><b>true</b> if the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> is read-only; otherwise, <b>false</b>. The default is <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.ImageCollection.IsSynchronized">
+            <summary>
+                <para>Gets a value indicating whether access to the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> is synchronized (thread-safe).
+</para>
+            </summary>
+            <value><b>true</b> if access to the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/> is synchronized (thread-safe); otherwise, <b>false</b>. The default is <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.ImageCollection.Item(System.Int32)">
+            <summary>
+                <para>Gets or sets the image at the specified index.
+</para>
+            </summary>
+            <param name="index">
+		The zero-based index of the image to get or set.
+
+            </param>
+            <value>The image at the specified index.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.Remove(System.Object)">
+            <summary>
+                <para>Removes the first occurrence of a specific object from the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+</para>
+            </summary>
+            <param name="val">
+		The object to remove from the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.ImageCollection.RemoveAt(System.Int32)">
+            <summary>
+                <para>Removes the element at the specified index of the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+</para>
+            </summary>
+            <param name="index">
+		The zero-based index of the element to remove.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.ImageCollection.SyncRoot">
+            <summary>
+                <para>Gets an object that can be used to synchronize access to the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+</para>
+            </summary>
+            <value>An object that can be used to synchronize access to the <see cref="T:DevExpress.XtraPrinting.ImageCollection"/>.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.TableRowCollection.TableRowCollection">
+            <summary>
+                <para>Represents a collection of rows owned by the <b>PageTableBrick</b>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.TableRowCollection.#ctor">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.TableRowCollection"/> class that is empty and has the default initial capacity.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.TableRowCollection.Item(System.Int32)">
+            <summary>
+                <para>Gets or sets the <b>TableRow</b> at the specified index.
+</para>
+            </summary>
+            <param name="index">
+		The zero-based index of the <b>TableRow</b> to get or set.
+
+            </param>
+            <value>The <b>TableRow</b> at the specified index.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.TableRow.TableRow">
+            <summary>
+                <para>Represents a row in the <b>PageTableBrick</b>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.TableRow.#ctor">
+            <summary>
+                <para>Initializes a <see cref="T:DevExpress.XtraPrinting.TableRow"/> class instance.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.TableRow.Bricks">
+            <summary>
+                <para>Represents an array of bricks the <b>TableRow</b> holds.
+</para>
+            </summary>
+            <value>A <b>BrickList</b> object which represents an array of bricks the <see cref="T:DevExpress.XtraPrinting.TableRow"/> holds.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PageTableBrick.PageTableBrick">
+            <summary>
+                <para>Represents a brick that is comprised of rows and columns.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageTableBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PageTableBrick"/> class instance.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageTableBrick.AddRow">
+            <summary>
+                <para>Adds a new row to the collection of rows of the <see cref="T:DevExpress.XtraPrinting.PageTableBrick"/>.
+
+</para>
+            </summary>
+            <returns>A <see cref="T:DevExpress.XtraPrinting.TableRow"/> object which represents the row added to the collection of rows of the <see cref="T:DevExpress.XtraPrinting.PageTableBrick"/>.
+
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageTableBrick.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+                <para>Draws the <b>PageTableBrick</b>.
+</para>
+            </summary>
+            <param name="gr">
+		A <b>System.Drawing.Graphics</b> object containing all information required for drawing in the current brick.
+
+            </param>
+            <param name="rect">
+		A rectangle specifying the drawing area.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageTableBrick.Rows">
+            <summary>
+                <para>Represents a collection of all rows the <see cref="T:DevExpress.XtraPrinting.PageTableBrick"/> contains.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.TableRowCollection"/> object which represents a collection of rows the <see cref="T:DevExpress.XtraPrinting.PageTableBrick"/> contains.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageTableBrick.UpdateSize">
+            <summary>
+                <para>Updates size of the entire <see cref="T:DevExpress.XtraPrinting.PageTableBrick"/>.
+</para>
+            </summary>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.Control.BrickEventHandler.BrickEventHandler">
+            <summary>
+                <para>Represents a method that will handle all brick events within the <b>XtraPrinting Library</b>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.BrickEventHandler.Invoke(System.Object,DevExpress.XtraPrinting.Control.BrickEventArgs)">
+            <summary>
+                <para>Represents a method that will handle all brick events within the <b>XtraPrinting Library</b>.
+</para>
+            </summary>
+            <param name="sender">
+		The event source.
+
+            </param>
+            <param name="e">
+		A <see cref="T:DevExpress.XtraPrinting.Control.BrickEventArgs"/> that contains event data.
+
+            </param>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.Document.Document">
+            <summary>
+                <para>Represents the container class for a report.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Document.AddOffset(System.Single,System.Single)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="x">
+		 [To be supplied] 
+            </param>
+            <param name="y">
+		 [To be supplied] 
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Document.BaseOffset">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Document.IsLocked">
+            <summary>
+                <para>Gets a value indicating whether a <see cref="T:DevExpress.XtraPrinting.Document"/> class instance is locked.
+</para>
+            </summary>
+            <value><b>true</b> if a <see cref="T:DevExpress.XtraPrinting.Document"/> class instance is locked; otherwise <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Document.PageCount">
+            <summary>
+                <para>Gets the total number of pages within a report.
+</para>
+            </summary>
+            <value>The number of report pages.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Document.Pages">
+            <summary>
+                <para>Accesses the <see cref="T:DevExpress.XtraPrinting.PageList"/> collection of a report.
+</para>
+            </summary>
+            <value>The <see cref="T:DevExpress.XtraPrinting.PageList"/> collection of a report. 
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PageVisualBrick.PageVisualBrick">
+            <summary>
+                <para>Represents a brick which is displayed in the page header or page footer section and is capable of displaying a rectangle. 
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageVisualBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageVisualBrick.#ctor(DevExpress.XtraPrinting.BorderSide,System.Single,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/> class instance.
+</para>
+            </summary>
+            <param name="sides">
+		A <b>BorderSide</b> enumeration value which specifies the borders displayed around the <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>.
+
+            </param>
+            <param name="borderWidth">
+		A float value which specifies the border width of the <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>.
+
+            </param>
+            <param name="borderColor">
+		A <b>System.Drawing.Color</b> object which specifies the border color of the <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>.
+
+            </param>
+            <param name="backColor">
+		A <b>System.Drawing.Color</b> object which specifies the background color of the current <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageVisualBrick.BackColor">
+            <summary>
+                <para>Defines the background color for the current <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>. 
+</para>
+            </summary>
+            <value>The background color for the current <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>. 
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageVisualBrick.BorderColor">
+            <summary>
+                <para>Defines the border color for the current <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>. 
+</para>
+            </summary>
+            <value>Border color for the current <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>. 
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageVisualBrick.BorderWidth">
+            <summary>
+                <para>Defines border width for the current <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>. 
+</para>
+            </summary>
+            <value>The border width of the current <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>. 
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageVisualBrick.Dispose">
+            <summary>
+                <para>Releases all resources used by <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageVisualBrick.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+                <para>Overrides the <see cref="M:DevExpress.XtraPrinting.Brick.Draw"/> method derived from the <see cref="T:DevExpress.XtraPrinting.Brick"/> class.
+</para>
+            </summary>
+            <param name="gr">
+		A <B>System.Drawing.Graphics</B> object containing all information required for drawing in the current page brick.
+
+            </param>
+            <param name="rect">
+		A rectangle specifying the drawing area.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageVisualBrick.Sides">
+            <summary>
+                <para>Defines border settings for the current <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>. 
+</para>
+            </summary>
+            <value>Border settings for the current <see cref="T:DevExpress.XtraPrinting.PageVisualBrick"/>. 
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageVisualBrick.Style">
+            <summary>
+                <para>Gets or sets a <see cref="T:DevExpress.XtraPrinting.BrickStyle"/> instance used to draw a specific brick.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.BrickStyle"/> instance to draw a brick.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PageCustomBrick.PageCustomBrick">
+            <summary>
+                <para>Represents a brick which can be placed into the page header and page footer sections.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageCustomBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PageCustomBrick"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageCustomBrick.Alignment">
+            <summary>
+                <para>Defines horizontal alignment settings for the current <see cref="T:DevExpress.XtraPrinting.PageCustomBrick"/>. 
+</para>
+            </summary>
+            <value>The horizontal alignment of a <see cref="T:DevExpress.XtraPrinting.PageCustomBrick"/>. 
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageCustomBrick.LineAlignment">
+            <summary>
+                <para>Defines vertical alignment settings for the current <see cref="T:DevExpress.XtraPrinting.PageCustomBrick"/>. 
+</para>
+            </summary>
+            <value>The vertical alignment of the <see cref="T:DevExpress.XtraPrinting.PageCustomBrick"/>. 
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageCustomBrick.Rect">
+            <summary>
+                <para>Defines current brick location and size, in <B>GraphicsUnit.Document</B> measurement units.
+
+</para>
+            </summary>
+            <value>A rectangle representing current brick location and size. 
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.MarginsChangeEventHandler.MarginsChangeEventHandler">
+            <summary>
+                <para>Represents a method that will handle the <see cref="E:DevExpress.XtraPrinting.PrintingSystem.BeforeMarginsChange"/> and <see cref="E:DevExpress.XtraPrinting.PrintingSystem.AfterMarginsChange"/> events of the <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> class.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.MarginsChangeEventHandler.Invoke(System.Object,DevExpress.XtraPrinting.MarginsChangeEventArgs)">
+            <summary>
+                <para>Represents a method that will handle the <see cref="E:DevExpress.XtraPrinting.PrintingSystem.BeforeMarginsChange"/> and <see cref="E:DevExpress.XtraPrinting.PrintingSystem.AfterMarginsChange"/> events of the <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> class.
+</para>
+            </summary>
+            <param name="sender">
+		The event source.
+
+            </param>
+            <param name="e">
+		A <see cref="T:DevExpress.XtraPrinting.MarginsChangeEventArgs"/> that contains event data.
+
+            </param>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.MarginsChangeEventArgs.MarginsChangeEventArgs">
+            <summary>
+                <para>Provides data for the <see cref="E:DevExpress.XtraPrinting.PrintingSystem.BeforeMarginsChange"/> and <see cref="E:DevExpress.XtraPrinting.PrintingSystem.AfterMarginsChange"/> events.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.MarginsChangeEventArgs.Side">
+            <summary>
+                <para>Gets changed page margins.
+</para>
+            </summary>
+            <value>The changed page margin.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.MarginsChangeEventArgs.Value">
+            <summary>
+                <para>Gets or sets the changed margin size in hundredths of an inch.
+</para>
+            </summary>
+            <value>The changed margin size in hundredths of an inch.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.VisualBrick.VisualBrick">
+            <summary>
+                <para>Represents a brick containing a visible rectangle.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.VisualBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.VisualBrick.#ctor(DevExpress.XtraPrinting.BorderSide,System.Single,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.VisualBrick"/> class instance.
+</para>
+            </summary>
+            <param name="sides">
+		A <b>BorderSide</b> enumeration value which specifies the borders displayed around the <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+
+            </param>
+            <param name="borderWidth">
+		A float value which specifies the border width of the <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+
+            </param>
+            <param name="borderColor">
+		A <b>System.Drawing.Color</b> object which specifies the border color of the <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+
+            </param>
+            <param name="backColor">
+		A <b>System.Drawing.Color</b> object which specifies the background color of the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.VisualBrick.BackColor">
+            <summary>
+                <para>Defines the background color for the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+</para>
+            </summary>
+            <value>The background color for the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.VisualBrick.BorderColor">
+            <summary>
+                <para>Defines the border color for the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+</para>
+            </summary>
+            <value>The border color for the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.VisualBrick.BorderWidth">
+            <summary>
+                <para>Defines the border width for the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+</para>
+            </summary>
+            <value>The border width of the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.VisualBrick.Dispose">
+            <summary>
+                <para>Releases all resources used by <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.VisualBrick.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+                <para>Overrides the <see cref="M:DevExpress.XtraPrinting.Brick.Draw"/> method derived from the <see cref="T:DevExpress.XtraPrinting.Brick"/> class.
+</para>
+            </summary>
+            <param name="gr">
+		A <B>System.Drawing.Graphics</B> object containing all information required for drawing in the current brick.
+
+            </param>
+            <param name="rect">
+		A rectangle specifying the drawing area.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.VisualBrick.Sides">
+            <summary>
+                <para>Defines the border settings for the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+</para>
+            </summary>
+            <value>The border settings for the current <see cref="T:DevExpress.XtraPrinting.VisualBrick"/>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.VisualBrick.Style">
+            <summary>
+                <para>Gets or sets a <see cref="T:DevExpress.XtraPrinting.BrickStyle"/> instance used to draw a specific brick.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.BrickStyle"/> instance to draw a brick.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.EmptyBrick.EmptyBrick">
+            <summary>
+                <para>Represents a non-visual brick.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.EmptyBrick.#ctor">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.EmptyBrick"/> class.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.EmptyBrick.UnionRect(DevExpress.XtraPrinting.Brick)">
+            <summary>
+                <para>Includes a brick specified via the parameter in the layout rectangle of the previously created <see cref="T:DevExpress.XtraPrinting.EmptyBrick"/>.
+</para>
+            </summary>
+            <param name="brick">
+		 The brick included in the layout rectangle of the previously created <see cref="T:DevExpress.XtraPrinting.EmptyBrick"/>.
+
+            </param>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.MarginSide.MarginSide">
+            <summary>
+                <para>Specifies page margin(s).
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.MarginSide.All">
+            <summary>
+                <para>Specifies all report page margins.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.MarginSide.Bottom">
+            <summary>
+                <para>Specifies the bottom report page margin.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.MarginSide.Left">
+            <summary>
+                <para>Specifies the left report page margin.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.MarginSide.None">
+            <summary>
+                <para>Specifies no report page margin.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.MarginSide.Right">
+            <summary>
+                <para>Specifies the right report page margin.
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.MarginSide.Top">
+            <summary>
+                <para>Specifies the top report page margin.
+</para>
+            </summary>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.XtraPageSettings.XtraPageSettings">
+            <summary>
+                <para>Represents the class containing properties responsible for report printing.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.XtraPageSettings.Assign(System.Drawing.Printing.Margins,System.Drawing.Printing.PaperKind,System.Boolean)">
+            <summary>
+                <para>Specifies the page settings.
+</para>
+            </summary>
+            <param name="margins">
+		A <b>System.Drawing.Printing.Margins</b> object which specifies the margins of the document. The value assinged to the parameter affects the value of the <see cref="P:DevExpress.XtraPrinting.XtraPageSettings.Margins"/> property.
+
+            </param>
+            <param name="paperKind">
+		A <b>System.Drawing.Printing.PaperKind</b> enumeration value which specifies one of the standard paper sizes. The value assinged to the parameter affects the value of the <see cref="P:DevExpress.XtraPrinting.XtraPageSettings.PaperKind"/> property.
+
+            </param>
+            <param name="landscape">
+		A boolean value indicating whether the page is printed in landscape or portrait orientation. <b>True</b> if the page should be printed in landscape orientation; otherwise, <b>false</b>. The value assinged to the parameter affects the value of the <see cref="P:DevExpress.XtraPrinting.XtraPageSettings.Landscape"/> property.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.XtraPageSettings.Assign(System.Drawing.Printing.PageSettings)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="pageSettings">
+		 [To be supplied] 
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.XtraPageSettings.Assign(System.Drawing.Printing.Margins,System.Drawing.Printing.PaperKind,System.Drawing.Size,System.Boolean)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="margins">
+		 [To be supplied] 
+            </param>
+            <param name="paperKind">
+		 [To be supplied] 
+            </param>
+            <param name="paperSize">
+		 [To be supplied] 
+            </param>
+            <param name="landscape">
+		 [To be supplied] 
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.XtraPageSettings.BottomMargin">
+            <summary>
+                <para>Gets or sets the bottom page margin.
+</para>
+            </summary>
+            <value>The bottom page margin, in hundredths of an inch.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.XtraPageSettings.Bounds">
+            <summary>
+                <para>Gets the bounds of a report page, taking into account page orientation specified by the <see cref="P:DevExpress.XtraPrinting.XtraPageSettings.Landscape"/> property.
+</para>
+            </summary>
+            <value>A <b>Rectangle</b> that represents page length and width (in hundredths of an inch).
+
+
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.XtraPageSettings.Landscape">
+            <summary>
+                <para>Indicates whether page orientation is landscape.
+</para>
+            </summary>
+            <value><b>true</b> if page orientation is landscape; otherwise, <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.XtraPageSettings.LeftMargin">
+            <summary>
+                <para>Gets or sets the left page margin.
+</para>
+            </summary>
+            <value>The left page margin, in hundredths of an inch.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.XtraPageSettings.Margins">
+            <summary>
+                <para>Gets the margins of a report page.
+</para>
+            </summary>
+            <value>The margins (in hundredths of an inch) of a report page.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.XtraPageSettings.PaperKind">
+            <summary>
+                <para>Gets or sets a standard paper type.
+</para>
+            </summary>
+            <value>A standard paper type.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.XtraPageSettings.RightMargin">
+            <summary>
+                <para>Gets or sets the right page margin.
+</para>
+            </summary>
+            <value>The right page margin, in hundredths of an inch.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.XtraPageSettings.TopMargin">
+            <summary>
+                <para>Gets or sets the top page margin.
+</para>
+            </summary>
+            <value>The top page margin, in hundredths of an inch.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.XtraPageSettings.UsefulPageSize">
+            <summary>
+                <para>Gets the width and height (in hundredths of an inch) of the page region that can contain data.
+</para>
+            </summary>
+            <value>The width and height (in hundredths of an inch) of the page region that can contain data.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.CustomBrick.CustomBrick">
+            <summary>
+                <para>This is the base class for all brick classes representing bricks which can be displayed anywhere in a report except for the page header or page footer section.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.CustomBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.CustomBrick"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.CustomBrick.Separable">
+            <summary>
+                <para>Specifies whether the current brick can be divided into multiple parts.
+</para>
+            </summary>
+            <value><B>true</B>, if the current brick is separable, otherwise, <B>false</B>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.CustomBrick.SeparableHorz">
+            <summary>
+                <para>Determines whether the current brick can be divided into several parts horizontally.
+</para>
+            </summary>
+            <value><B>true</B>,if the current brick can be divided horizontally, otherwise, <B>false</B>.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.CustomBrick.ShowFromNewPage">
+            <summary>
+                <para>Forces the current brick and all bricks placed below it to be displayed on the next page.
+</para>
+            </summary>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.Control.BrickEventArgs.BrickEventArgs">
+            <summary>
+                <para>Provides data for all brick events within the <b>XtraPrinting Library</b>.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.BrickEventArgs.Args">
+            <summary>
+                <para>Gets actual event arguments.
+</para>
+            </summary>
+            <value>The actual event arguments.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.BrickEventArgs.Brick">
+            <summary>
+                <para>Gets a report brick.
+</para>
+            </summary>
+            <value>A report brick.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PageEventHandler.PageEventHandler">
+            <summary>
+                <para>Represents a method that will handle all page events within the <b>XtraPrinting Library</b>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageEventHandler.Invoke(System.Object,DevExpress.XtraPrinting.PageEventArgs)">
+            <summary>
+                <para>Represents a method that will handle all page events within the <b>XtraPrinting Library</b>.
+</para>
+            </summary>
+            <param name="sender">
+		The event source.
+
+            </param>
+            <param name="e">
+		A <see cref="T:DevExpress.XtraPrinting.PageEventArgs"/> that contains event data.
+
+            </param>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PageEventArgs.PageEventArgs">
+            <summary>
+                <para>Provides data for all page events within the <b>XtraPrinting Library</b>.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageEventArgs.Page">
+            <summary>
+                <para>Gets a report page.
+</para>
+            </summary>
+            <value>A report page.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.Preview.PrintPreviewStatus.PrintPreviewStatus">
+            <summary>
+                <para>Represents the status bar control that displays report information.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Preview.PrintPreviewStatus.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.Preview.PrintPreviewStatus"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Preview.PrintPreviewStatus.PrintControl">
+            <summary>
+                <para>Gets or sets a <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> class instance to which the <b>Print Preview StatusBar</b> belongs.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> class instance to which the <b>Print Preview StatusBar</b> belongs.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.Preview.PrintPreviewForm.PrintPreviewForm">
+            <summary>
+                <para>Represents a form that contains the <see cref="T:DevExpress.XtraPrinting.Preview.PrintPreviewBar"/>, <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/>l, and <see cref="T:DevExpress.XtraPrinting.Preview.PrintPreviewStatus"/> controls.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Preview.PrintPreviewForm.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.Preview.PrintPreviewForm"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Preview.PrintPreviewForm.PrintControl">
+            <summary>
+                <para>Gets the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> of the <b>Print Preview Form</b>.
+</para>
+            </summary>
+            <value>The <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> of the <b>Print Preview Form</b>l.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Preview.PrintPreviewForm.PrintingSystem">
+            <summary>
+                <para>Gets or sets a <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> class instance used to format a report.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> class instance whose facilities are used to format a report.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Preview.PrintPreviewForm.PrintPreviewBar">
+            <summary>
+                <para>Gets the <see cref="T:DevExpress.XtraPrinting.Preview.PrintPreviewBar"/> of the <b>Print Preview Form</b>.
+</para>
+            </summary>
+            <value>The <see cref="T:DevExpress.XtraPrinting.Preview.PrintPreviewBar"/> of the <b>Print Preview Form</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Preview.PrintPreviewForm.SaveState">
+            <summary>
+                <para>Specifies whether <b>Print Preview Form</b> size, position and zoom are saved to the Windows registry.
+</para>
+            </summary>
+            <value><b>true</b>, if <b>Print Preview Form</b> settings are saved in the Windows registry; otherwise, <b>false</b>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Preview.PrintPreviewForm.SelectedPageIndex">
+            <summary>
+                <para>Gets or sets a value indication the index of the currently selected page.
+</para>
+            </summary>
+            <value>An integer value which identifies the currently selected page.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.Preview.PrintPreviewBar.PrintPreviewBar">
+            <summary>
+                <para>Represents the toolbar used to manage a report.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Preview.PrintPreviewBar.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.Preview.PrintPreviewBar"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnBackgr">
+            <summary>
+                <para> Provides access to the tool bar button responsible for specifying color of the prievew background.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnClosePreview">
+            <summary>
+                <para> Provides access to the tool bar button responsible for closing the preview.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnFirstPage">
+            <summary>
+                <para> Provides access to the tool bar button responsible for moving to the first page of the prievew.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnHeaderFooter">
+            <summary>
+                <para> Provides access to the tool bar button responsible for displaying the <b>Page Content Editor</b> dialog.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnLastPage">
+            <summary>
+                <para> Provides access to the tool bar button responsible for moving to the last page of the prievew.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnMagnifier">
+            <summary>
+                <para> Provides access to the tool bar button responsible for working with magnifier. When the magnifier is on cursor has a form of a magnifier and a click on a prievew page leads to changing the magnification degree of the report. There are two possible values of the magnification. The uppermost value of the magnification degree is always fixed and is equal to 100 %. The lowest magnification degree value is calculated so that the whole prievew page is visible at one and the same time without the need to scroll.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnMultiplePage">
+            <summary>
+                <para><para>
+ Provides access to the tool bar button responsible for displaying the page preview layout designer. The page preview layout designer allows to specify the number of pages to be simultaniously displayed in the preview. The following screen-shot displays the designer.
+</para>
+
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnNextPage">
+            <summary>
+                <para> Provides access to the tool bar button responsible for moving to the next page of the prievew.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnPageSetup">
+            <summary>
+                <para> Provides access to the tool bar button responsible for invoking the printer setup dialog.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnPrevPage">
+            <summary>
+                <para> Provides access to the tool bar button responsible for moving to the previous page of the prievew.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnPrint">
+            <summary>
+                <para> Provides access to the tool bar button responsible for printing the preview. Unlike the <see cref="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnPrintDirect"/> the <b>btnPrint</b> invokes the printer setup dialog.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnPrintDirect">
+            <summary>
+                <para> Provides access to the tool bar button responsible for direct printing of the preview. This is useful when you need not to change your printer settings.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnPropertyBuilder">
+            <summary>
+                <para> Provides access to the tool bar button responsible for invoking the property editor of the component which 's about to be printed. The button is accessible only if the component implements the <b>IPrintable</b> interface.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnZoom">
+            <summary>
+                <para> Provides access to the tool bar button responsible for providing a list of predefined zoom factors. A click on the button exposes a drop-down list of the available zoom factor values. They are as follows: 10%, 25%, 75%, 100%, 150%, 200% and 500%.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnZoomIn">
+            <summary>
+                <para> Provides access to the tool bar button responsible for zooming the preview in. Each time the button is clicked the preview gets zoomed in by about a 10%. You can use the <see cref="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnZoomOut"/> button to zoom the preview out.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnZoomOut">
+            <summary>
+                <para> Provides access to the tool bar button responsible for zooming the preview out. Each time the button is clicked the preview gets zoomed out by about a 10%. You can use the <see cref="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.btnZoomIn"/> button to zoom the preview in.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Preview.PrintPreviewBar.PrintControl">
+            <summary>
+                <para>Gets or sets a <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> class instance to which the <b>Print Preview Bar</b> belongs.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> class instance to which the <b>Print Preview Bar</b> belongs.
+</value>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.separatorOne">
+            <summary>
+                <para>Provides access to the first tool bar separator which forms the group of the printing and settings buttons.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.separatorThree">
+            <summary>
+                <para> Provides access to the second tool bar separator which forms the group of "navigators" and separates it from the "magnifiers" to the left and from the  "miscellaneous" buttons to the right.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="F:DevExpress.XtraPrinting.Preview.PrintPreviewBar.separatorTwo">
+            <summary>
+                <para> Provides access to the second tool bar separator which forms the group of "magnifiers" and separates it from the settings and printing group   to the left and from the "navigation" group to the right.
+</para>
+            </summary>
+            <returns> [To be supplied] </returns>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.TextBrick.TextBrick">
+            <summary>
+                <para>Represents a brick that contains text.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.TextBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.TextBrick"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.TextBrick.#ctor(DevExpress.XtraPrinting.BorderSide,System.Single,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.TextBrick"/> class instance.
+</para>
+            </summary>
+            <param name="sides">
+		A <b>BorderSide</b> enumeration value which specifies the borders displayed around the <see cref="T:DevExpress.XtraPrinting.TextBrick"/>.
+
+            </param>
+            <param name="borderWidth">
+		A float value which specifies the border width of the <see cref="T:DevExpress.XtraPrinting.TextBrick"/>.
+
+            </param>
+            <param name="borderColor">
+		A <b>System.Drawing.Color</b> object which specifies the border color of the <see cref="T:DevExpress.XtraPrinting.TextBrick"/>.
+
+            </param>
+            <param name="backColor">
+		A <b>System.Drawing.Color</b> object which specifies the background color of the current <see cref="T:DevExpress.XtraPrinting.TextBrick"/>.
+
+            </param>
+            <param name="foreColor">
+		A <b>System.Drawing.Color</b> object which specifies the foreground color of the current <see cref="T:DevExpress.XtraPrinting.TextBrick"/>.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.TextBrick.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+                <para>Overrides the <see cref="M:DevExpress.XtraPrinting.Brick.Draw"/> method derived from the <see cref="T:DevExpress.XtraPrinting.Brick"/> class.
+</para>
+            </summary>
+            <param name="gr">
+		A <B>System.Drawing.Graphics</B> object containing all information required for drawing in the current brick.
+
+            </param>
+            <param name="rect">
+		A rectangle specifying the drawing area.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.TextBrick.Font">
+            <summary>
+                <para>Defines the font used to draw text within the current brick.
+</para>
+            </summary>
+            <value>The text font within the current brick.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.TextBrick.ForeColor">
+            <summary>
+                <para>Gets or sets the color of the text displayed in the current brick.
+</para>
+            </summary>
+            <value>The text color in the current brick.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.TextBrick.StringFormat">
+            <summary>
+                <para>Defines text layout information (such as alignment and line spacing), display manipulations (such as ellipsis insertion and national digit substitution).
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.BrickStringFormat"/> object describing text layout.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.TextBrick.Text">
+            <summary>
+                <para>Gets or sets the text to be displayed within the current brick.
+</para>
+            </summary>
+            <value>The text displayed in the current brick.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.Control.PrintControl.PrintControl">
+            <summary>
+                <para>Represents the container used to display report pages.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.PrintControl.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> class instance.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.AutoZoom">
+            <summary>
+                <para>Specifies whether the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> control is in autozoom mode.
+</para>
+            </summary>
+            <value><b>true</b> if the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> control is in autozoom mode; otherwise, <b>false</b>.
+</value>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Control.PrintControl.BrickClick">
+            <summary>
+                <para>Occurs when the region of a brick within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> is clicked.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.BrickContentZoom">
+            <summary>
+                <para>Gets or sets the minimum report zoom factor when brick contents are visible.
+</para>
+            </summary>
+            <value>The report's zoom factor.
+</value>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Control.PrintControl.BrickDown">
+            <summary>
+                <para>Occurs when the mouse pointer is over the region specified by a brick within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> and the mouse button is pressed.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Control.PrintControl.BrickMove">
+            <summary>
+                <para>Occurs when the mouse pointer moves over the region specified by a brick within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/>.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Control.PrintControl.BrickUp">
+            <summary>
+                <para>Occurs when the mouse pointer is over the region specified by a brick within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> and the mouse button is released.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Control.PrintControl.DocumentChanged">
+            <summary>
+                <para>Occurs when a <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> class instance recieves a document change notification.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.PrintControl.FindBrick(System.Drawing.Point)">
+            <summary>
+                <para>Finds a brick based on specific screen coordinates.
+</para>
+            </summary>
+            <param name="pt">
+		A screen coordinate point used to locate a brick.
+
+            </param>
+            <returns>A <see cref="T:DevExpress.XtraPrinting.Brick"/> class instance to which a specific point belongs.
+</returns>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.PrintControl.InvalidateBrick(DevExpress.XtraPrinting.Brick)">
+            <summary>
+                <para>Redraws the region specified by a brick within a <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/>.
+</para>
+            </summary>
+            <param name="brick">
+		A <see cref="T:DevExpress.XtraPrinting.Brick"/> class instance whose visual representation needs to be redrawn.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.MaxPageColumns">
+            <summary>
+                <para>Gets the maximum column number for a multipage reports displayed within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/>.
+</para>
+            </summary>
+            <value>The maximum column number for a multipage report.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.MaxPageRows">
+            <summary>
+                <para>Gets the maximum row number for a multipage report displayed within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/>.
+</para>
+            </summary>
+            <value>The maximum row number for a multipage report.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.MaxZoom">
+            <summary>
+                <para>Gets the maximum zoom factor of a report page within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> control.
+</para>
+            </summary>
+            <value>The maximum zoom factor of a report page within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> control.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.MinZoom">
+            <summary>
+                <para>Gets the minimum zoom factor of a report page within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/>.
+</para>
+            </summary>
+            <value>The minimum zoom factor of a report page within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.PrintingSystem">
+            <summary>
+                <para>Gets or sets a <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> class instance to format a report.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> class instance whose facilities are used to format a report.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.SelectedPage">
+            <summary>
+                <para>Obtains the currently selected report page.
+</para>
+            </summary>
+            <value>The currently selected report page.
+</value>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Control.PrintControl.SelectedPageChanged">
+            <summary>
+                <para>Occurs when the selected page within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> is changed.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.SelectedPageIndex">
+            <summary>
+                <para>Gets or sets the selected page index.
+</para>
+            </summary>
+            <value>The selected page index.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.PrintControl.SelectFirstPage">
+            <summary>
+                <para>Moves selection to the first page within a report.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.PrintControl.SelectLastPage">
+            <summary>
+                <para>Moves selection to the last page within report pages.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.PrintControl.SelectNextPage">
+            <summary>
+                <para>Moves selection to the next page within a multipage report.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.PrintControl.SelectPrevPage">
+            <summary>
+                <para>Moves selection to the previous page within a multipage report.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.PrintControl.SetCursor(System.Windows.Forms.Cursor)">
+            <summary>
+                <para>Sets the cursor to use within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/> control.
+</para>
+            </summary>
+            <param name="cursor">
+		The desired cursor.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.Control.PrintControl.SetPageView(System.Int32,System.Int32)">
+            <summary>
+                <para>Determines the number of columns and rows used to display pages of a multipage report within the <see cref="T:DevExpress.XtraPrinting.Control.PrintControl"/>.
+</para>
+            </summary>
+            <param name="columns">
+		The number of columns. It will not exceed the <see cref="P:DevExpress.XtraPrinting.Control.PrintControl.MaxPageColumns"/> property value.
+
+            </param>
+            <param name="rows">
+		The number of rows. It will not exceed the <see cref="P:DevExpress.XtraPrinting.Control.PrintControl.MaxPageRows"/> property value.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.ShowPageMargins">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.Control.PrintControl.Zoom">
+            <summary>
+                <para>Gets or sets the current zoom factor of a report page.
+</para>
+            </summary>
+            <value>The current zoom factor of a report page.
+</value>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.Control.PrintControl.ZoomChanged">
+            <summary>
+                <para>Occurs after the current view zoom has changed.
+</para>
+            </summary>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.UserVisualBrick.UserVisualBrick">
+            <summary>
+                <para>Represents a <see cref="T:DevExpress.XtraPrinting.IBrick"/> implementation drawn using the <see cref="M:DevExpress.XtraPrinting.IBrickGraphics.DrawBrick"/> method.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.UserVisualBrick.UserBrick">
+            <summary>
+                <para>Gets a user implementation of the <see cref="T:DevExpress.XtraPrinting.IBrick"/> interface drawn via the <see cref="M:DevExpress.XtraPrinting.IBrickGraphics.DrawBrick"/> method.
+</para>
+            </summary>
+            <value>User implementation of the <see cref="T:DevExpress.XtraPrinting.IBrick"/> interface.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.UserPageBrick.UserPageBrick">
+            <summary>
+                <para>Represents a <see cref="T:DevExpress.XtraPrinting.IBrick"/> implementation drawn using the <see cref="M:DevExpress.XtraPrinting.IBrickGraphics.DrawBrick"/> method.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.UserPageBrick.UserBrick">
+            <summary>
+                <para>Gets a user implementation of the <see cref="T:DevExpress.XtraPrinting.IBrick"/> interface drawn via the <see cref="M:DevExpress.XtraPrinting.IBrickGraphics.DrawBrick"/> method.
+</para>
+            </summary>
+            <value>User implementation of the <see cref="T:DevExpress.XtraPrinting.IBrick"/> interface.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PrintableComponentLink.PrintableComponentLink">
+            <summary>
+                <para>Represents a link to the user component implementing the <see cref="T:DevExpress.XtraPrinting.IPrintable"/> interface.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintableComponentLink.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.PrintableComponentLink"/> class.
+</para>
+            </summary>
+            <param name="container">
+		An <B>IContainer</B> that contains <see cref="T:DevExpress.XtraPrinting.PrintableComponentLink"/>.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintableComponentLink.#ctor">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.PrintableComponentLink"/> class.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintableComponentLink.#ctor(DevExpress.XtraPrinting.PrintingSystem)">
+            <summary>
+                <para>Initializes a new instance of the <see cref="T:DevExpress.XtraPrinting.PrintableComponentLink"/> class.
+</para>
+            </summary>
+            <param name="ps">
+		A <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> instance used for drawing the current link.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintableComponentLink.AddSubreport(System.Drawing.PointF)">
+            <summary>
+                <para>Adds a subreport to the current report.
+</para>
+            </summary>
+            <param name="offset">
+		A <b>PointF</b> object which specifies the vertical offset of the subreport withing the current report.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PrintableComponentLink.Component">
+            <summary>
+                <para>Gets or sets a <see cref="T:DevExpress.XtraPrinting.IPrintable"/> user implementation printed via the current link.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.IPrintable"/> user implementation.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintableComponentLink.CreateDocument">
+            <summary>
+                <para>Overrides the <see cref="M:DevExpress.XtraPrinting.Link.CreateDocument"/> method.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PrintableComponentLink.PrintableObjectType">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <value> [To be supplied] </value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintableComponentLink.SetDataObject(System.Object)">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+            <param name="data">
+		 [To be supplied] 
+            </param>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.CreateAreaEventHandler.CreateAreaEventHandler">
+            <summary>
+                <para>Represents a method that will handle all area creation events of the <see cref="T:DevExpress.XtraPrinting.Link"/> class.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.CreateAreaEventHandler.Invoke(System.Object,DevExpress.XtraPrinting.CreateAreaEventArgs)">
+            <summary>
+                <para>Represents a method that will handle all creation events of the <see cref="T:DevExpress.XtraPrinting.Link"/> class.
+</para>
+            </summary>
+            <param name="sender">
+		The event source.
+
+            </param>
+            <param name="e">
+		A <see cref="T:DevExpress.XtraPrinting.CreateAreaEventArgs"/> that contains event data.
+
+            </param>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.CreateAreaEventArgs.CreateAreaEventArgs">
+            <summary>
+                <para>Provides data for all area creation events.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.CreateAreaEventArgs.Graph">
+            <summary>
+                <para>Gets a <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object used to draw in the current report.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PrintingSystem.PrintingSystem">
+            <summary>
+                <para>Implements the basic functionality of the <B>XtraPrinting Library</B>.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.#ctor(System.ComponentModel.IContainer)">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> class instance and adds it to the form's container.
+</para>
+            </summary>
+            <param name="container">
+		An <B>IContainer</B> that contains a <B>XtraPrintingSystem</B> component, if any.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.About">
+            <summary>
+                <para>Activates the <B>About</B> dialog. 
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.PrintingSystem.AfterChange">
+            <summary>
+                <para>Occurs on raising any <b>PrintingSystem</b> event that does not have the "Before" prefix in its name.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.PrintingSystem.AfterMarginsChange">
+            <summary>
+                <para>Occurs when page margins change.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.PrintingSystem.AfterPagePaint">
+            <summary>
+                <para>Occurs after a page has been updated. 
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.PrintingSystem.BeforeChange">
+            <summary>
+                <para>Occurs on raising any <b>PrintingSystem</b> event that has the "Before" prefix in its name.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.PrintingSystem.BeforeMarginsChange">
+            <summary>
+                <para>Occurs when page margins change.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.PrintingSystem.BeforePagePaint">
+            <summary>
+                <para>Occurs before a page is updated. 
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.Begin">
+            <summary>
+                <para>Indicates that report generation has started.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.BeginSubreport(System.Drawing.PointF)">
+            <summary>
+                <para>Must be called before subreport creation.
+</para>
+            </summary>
+            <param name="offset">
+		The distance between the current subreport and the previously created item.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.ClearContent">
+            <summary>
+                <para>Clears the current document.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.CreateBrick(System.String)">
+            <summary>
+                <para>Creates a specific brick type. 
+</para>
+            </summary>
+            <param name="typeName">
+		The type of created brick.
+
+            </param>
+            <returns>The created brick.
+</returns>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PrintingSystem.Document">
+            <summary>
+                <para>Gets the current document.
+</para>
+            </summary>
+            <value>The current document.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.End">
+            <summary>
+                <para>Indicates that report generation has finished.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.EndSubreport">
+            <summary>
+                <para>Signals that subreport creation is completed.
+</para>
+            </summary>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PrintingSystem.Graph">
+            <summary>
+                <para>Gets a <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object used for drawing in the current report.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.BrickGraphics"/> object.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.InsertPageBreak(System.Single)">
+            <summary>
+                <para>Inserts a page break at a specified position.
+</para>
+            </summary>
+            <param name="pos">
+		The position to insert a page break.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PrintingSystem.Links">
+            <summary>
+                <para>Gets the collection of links, defined for the current <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> object.
+</para>
+            </summary>
+            <value>The link collection of the current <see cref="T:DevExpress.XtraPrinting.PrintingSystem"/> object.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PrintingSystem.PageBounds">
+            <summary>
+                <para>Gets the bounds of a report page.
+</para>
+            </summary>
+            <value>A <B>Rectangle</B> that represents page length and width (in hundredths of an inch). 
+
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PrintingSystem.PageMargins">
+            <summary>
+                <para>Gets current page margin settings.
+</para>
+            </summary>
+            <value>The current page margin.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PrintingSystem.PageSettings">
+            <summary>
+                <para>Gets current page settings. 
+</para>
+            </summary>
+            <value>Current page settings.
+</value>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.PrintingSystem.PageSettingsChanged">
+            <summary>
+                <para>Occurs when page settings change.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.PageSetup">
+            <summary>
+                <para>Displays the <B>PageSetup</B> dialog.
+</para>
+            </summary>
+            <returns><B>true</B>, if the "OK" button is clicked in the <B>PageSetup</B> dialog, <B>false</B>, if the "Cancel" button is clicked in the <B>PageSetup</B> dialog.
+</returns>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PrintingSystem.PreviewForm">
+            <summary>
+                <para>Gets the form used to display the document preview.
+</para>
+            </summary>
+            <value>The current preview form.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.Print">
+            <summary>
+                <para>Prints the current document. 
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PrintingSystem.PrintDlg">
+            <summary>
+                <para>Displays the standard <B>Print</B> dialog and prints the current document.
+</para>
+            </summary>
+
+        </member>
+        <member name="E:DevExpress.XtraPrinting.PrintingSystem.StartPrint">
+            <summary>
+                <para> [To be supplied] </para>
+            </summary>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PageList.PageList">
+            <summary>
+                <para>Represents a <see cref="T:DevExpress.XtraPrinting.Page"/> class instance collection.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageList.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PageList"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageList.Add(System.Object)">
+            <summary>
+                <para>Adds a new item to the <see cref="T:DevExpress.XtraPrinting.PageList"/> collection.
+</para>
+            </summary>
+            <param name="val">
+		A <see cref="T:DevExpress.XtraPrinting.Page"/> class instance that will be added to the collection.
+
+            </param>
+            <returns>The index of the added item within the collection.
+</returns>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageList.Item(System.Int32)">
+            <summary>
+                <para>Gets or sets an item within the <see cref="T:DevExpress.XtraPrinting.PageList"/> collection at a specific index.
+</para>
+            </summary>
+            <param name="index">
+		The zero-based index of the item to get or set.
+
+            </param>
+            <value>An item at a specific index.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PageInfoBrick.PageInfoBrick">
+            <summary>
+                <para>Represents a brick which is displayed in the page header or page footer sections and contains information specific for the current page.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageInfoBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageInfoBrick.#ctor(DevExpress.XtraPrinting.BorderSide,System.Single,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/> class instance.
+</para>
+            </summary>
+            <param name="sides">
+		A <b>BorderSide</b> enumeration value which specifies the borders displayed around the <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+
+            </param>
+            <param name="borderWidth">
+		A float value which specifies the border width of the <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+
+            </param>
+            <param name="borderColor">
+		A <b>System.Drawing.Color</b> object which specifies the border color of the <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+
+            </param>
+            <param name="backColor">
+		A <b>System.Drawing.Color</b> object which specifies the background color of the current <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+
+            </param>
+            <param name="foreColor">
+		A <b>System.Drawing.Color</b> object which specifies the foreground color of the current <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageInfoBrick.AutoWidth">
+            <summary>
+                <para>Determines whether the current brick is resized in order to display the entire text of a brick. 
+</para>
+            </summary>
+            <value><B>true</B>, if brick width changes in order to display the entire brick text, otherwise, <B>false</B>.
+</value>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageInfoBrick.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+                <para>Overrides the <see cref="M:DevExpress.XtraPrinting.Brick.Draw"/> method derived from the <see cref="T:DevExpress.XtraPrinting.Brick"/> class.
+</para>
+            </summary>
+            <param name="gr">
+		A <B>System.Drawing.Graphics</B> object containing all information required for drawing in the current page brick.
+
+            </param>
+            <param name="rect">
+		A rectangle specifying the drawing area.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageInfoBrick.Font">
+            <summary>
+                <para>Defines the font used to draw text within the current brick.
+</para>
+            </summary>
+            <value>The text font within the current brick.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageInfoBrick.ForeColor">
+            <summary>
+                <para>Gets or sets the color of text displayed in the current brick.
+</para>
+            </summary>
+            <value>Text color in the current brick.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageInfoBrick.Format">
+            <summary>
+                <para>Specifies the format string used to display information inside the current <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+</para>
+            </summary>
+            <value>The format string for the current <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageInfoBrick.PageInfo">
+            <summary>
+                <para>Determines what kind of information is displayed in the current <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.PageInfo"/> enumerator value that defines the information type displayed in the <see cref="T:DevExpress.XtraPrinting.PageInfoBrick"/>.
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageInfoBrick.Rect">
+            <summary>
+                <para>Defines the current brick's location and size using <B>GraphicsUnit.Document</B> measurement units. 
+</para>
+            </summary>
+            <value>A rectangle representing the current brick's location and size. 
+
+</value>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageInfoBrick.StringFormat">
+            <summary>
+                <para>Defines text layout information (such as alignment and line spacing), display manipulations (such as ellipsis insertion and national digit substitution).
+</para>
+            </summary>
+            <value>A <see cref="T:DevExpress.XtraPrinting.BrickStringFormat"/> object describing the text layout.
+</value>
+
+        </member>
+        <member name="T:DevExpress.XtraPrinting.PageImageBrick.PageImageBrick">
+            <summary>
+                <para>Represents a brick within the page header or page footer section containing an image.
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageImageBrick.#ctor">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PageImageBrick"/> class instance .
+</para>
+            </summary>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageImageBrick.#ctor(DevExpress.XtraPrinting.BorderSide,System.Single,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+                <para>Initializes a new <see cref="T:DevExpress.XtraPrinting.PageImageBrick"/> class instance.
+</para>
+            </summary>
+            <param name="sides">
+		A <b>BorderSide</b> enumeration value which specifies the borders displayed around the <see cref="T:DevExpress.XtraPrinting.PageImageBrick"/>.
+
+            </param>
+            <param name="borderWidth">
+		A float value which specifies the border width of the <see cref="T:DevExpress.XtraPrinting.PageImageBrick"/>.
+
+            </param>
+            <param name="borderColor">
+		A <b>System.Drawing.Color</b> object which specifies the border color of the <see cref="T:DevExpress.XtraPrinting.PageImageBrick"/>.
+
+            </param>
+            <param name="backColor">
+		A <b>System.Drawing.Color</b> object which specifies the background color of the current <see cref="T:DevExpress.XtraPrinting.PageImageBrick"/>.
+
+            </param>
+
+        </member>
+        <member name="M:DevExpress.XtraPrinting.PageImageBrick.Draw(System.Drawing.Graphics,System.Drawing.RectangleF)">
+            <summary>
+                <para>Overrides the <see cref="M:DevExpress.XtraPrinting.Brick.Draw"/> method derived from the <see cref="T:DevExpress.XtraPrinting.Brick"/> class.
+</para>
+            </summary>
+            <param name="gr">
+		A <B>System.Drawing.Graphics</B> object containing all information required for drawing in the current page brick.
+
+            </param>
+            <param name="rect">
+		A rectangle that specifies the drawing area.
+
+            </param>
+
+        </member>
+        <member name="P:DevExpress.XtraPrinting.PageImageBrick.Image">
+            <summary>
+                <para>Defines the image displayed within the current brick.
+</para>
+            </summary>
+            <value>The image displayed within a brick.
+</value>
+
+        </member>
+    </members>
+</doc>

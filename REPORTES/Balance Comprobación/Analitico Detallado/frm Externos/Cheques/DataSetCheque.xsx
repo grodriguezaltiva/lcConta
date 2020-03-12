@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Este archivo lo genera de forma automática el diseñador de esquemas XML. Contiene información de diseño para componentes de la superficie de diseño.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="5677" viewPortTop="0" zoom="100">
+    <cuentascontable_XmlElement left="6243" top="254" width="5292" height="2963" selected="0" zOrder="1" index="0" expanded="1" />
+    <Usuarios_XmlElement left="12169" top="254" width="5292" height="2963" selected="0" zOrder="2" index="1" expanded="1" />
+    <Monedas_XmlElement left="19628" top="1000" width="5292" height="2963" selected="0" zOrder="4" index="2" expanded="1" />
+    <Moneda_XmlElement left="25554" top="1000" width="5292" height="2963" selected="0" zOrder="6" index="3" expanded="1" />
+    <AsientosContables_XmlElement left="37406" top="1000" width="5292" height="2963" selected="0" zOrder="14" index="4" expanded="1" />
+    <CentroCosto_XmlElement left="55184" top="1000" width="5292" height="2963" selected="0" zOrder="24" index="5" expanded="1" />
+    <CentroCosto_Movimientos_XmlElement left="61110" top="1000" width="5292" height="2963" selected="0" zOrder="25" index="6" expanded="1" />
+    <CentroCostoDetalle_XmlElement left="24183" top="6826" width="7196" height="2963" selected="0" zOrder="8" index="7" expanded="1" />
+    <Cheques_XmlElement left="6086" top="5821" width="5344" height="7197" selected="0" zOrder="10" index="8" expanded="1" />
+    <Configuraciones_XmlElement left="49258" top="1000" width="5292" height="2963" selected="0" zOrder="26" index="9" expanded="1" />
+    <Cheques_Detalle_XmlElement left="13150" top="6192" width="6403" height="7197" selected="0" zOrder="12" index="10" expanded="1" />
+    <DetallesAsientosContable_XmlElement left="43332" top="1000" width="5292" height="2963" selected="0" zOrder="15" index="11" expanded="1" />
+    <Cuentas_bancarias_XmlElement left="317" top="265" width="5292" height="5503" selected="0" zOrder="27" index="12" expanded="1" />
+    <AsientosContablesDetallesAsientosContable_XmlKeyref left="42764" top="4745" width="503" height="503" selected="0" zOrder="16" />
+    <ChequesCheques_Detalle_XmlKeyref left="12301" top="7225" width="503" height="503" selected="0" zOrder="20" />
+</XSDDesignerLayout>

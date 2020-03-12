@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Este archivo lo genera de forma automática el diseñador de esquemas XML. Contiene información de diseño para componentes de la superficie de diseño.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="-683" viewPortTop="11515" zoom="100">
+    <AsientosContables_XmlElement left="370" top="-370" width="7091" height="5926" selected="0" zOrder="1" index="0" expanded="1" />
+    <DetallesAsientosContable_XmlElement left="8705" top="-344" width="7302" height="5927" selected="0" zOrder="2" index="1" expanded="1" />
+    <PuntoVenta_XmlElement left="25715" top="2026" width="5292" height="2963" selected="0" zOrder="14" index="2" expanded="1" />
+    <Ventas_XmlElement left="926" top="6615" width="5292" height="10160" selected="0" zOrder="4" index="3" expanded="1" />
+    <Ventas_Detalle_XmlElement left="6271" top="7144" width="5292" height="2963" selected="0" zOrder="6" index="4" expanded="1" />
+    <OpcionesDePago_XmlElement left="7223" top="10609" width="5292" height="2963" selected="0" zOrder="15" index="5" expanded="1" />
+    <Detalle_pago_caja_XmlElement left="12621" top="5477" width="6244" height="7620" selected="0" zOrder="8" index="6" expanded="1" />
+    <CheckOut_XmlElement left="19394" top="11139" width="5292" height="5927" selected="0" zOrder="16" index="7" expanded="1" />
+    <Ventas_CheckOu_XmlElement left="19873" top="7317" width="5292" height="2963" selected="0" zOrder="17" index="8" expanded="1" />
+    <Ventas_HECHO_XmlElement left="6932" top="16324" width="6721" height="4233" selected="0" zOrder="18" index="9" expanded="1" />
+    <DetalleCheckOut_XmlElement left="13576" top="13382" width="5292" height="2963" selected="0" zOrder="19" index="10" expanded="1" />
+    <PorContabilizar_XmlElement left="508" top="17283" width="5292" height="2963" selected="0" zOrder="24" index="11" expanded="1" />
+    <AsientosContablesDetallesAsientosContable_XmlKeyref left="5675" top="3999" width="503" height="503" selected="0" zOrder="10" />
+</XSDDesignerLayout>

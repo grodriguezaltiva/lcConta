@@ -1,0 +1,90 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="DatasetConfiguraCuentas" targetNamespace="http://www.tempuri.org/DatasetConfiguraCuentas.xsd"
+	xmlns:mstns="http://www.tempuri.org/DatasetConfiguraCuentas.xsd" xmlns="http://www.tempuri.org/DatasetConfiguraCuentas.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="DatasetConfiguraCuentas" msdata:IsDataSet="true">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="PuntoVenta">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="IdPuntoVenta" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Nombre" type="xs:string" />
+							<xs:element name="Tipo" type="xs:string" />
+							<xs:element name="Id_Bodega" type="xs:int" minOccurs="0" />
+							<xs:element name="IdventaGrabado" type="xs:int" minOccurs="0" />
+							<xs:element name="idVentaExento" type="xs:int" minOccurs="0" />
+							<xs:element name="IdCostoVenta" type="xs:int" minOccurs="0" />
+							<xs:element name="CobroFront" type="xs:boolean" minOccurs="0" />
+							<xs:element name="BaseDatos" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Familias">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Codigo" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Descripcion" type="xs:string" minOccurs="0" />
+							<xs:element name="Observaciones" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CuentaContable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="Descripcion" type="xs:string" />
+							<xs:element name="Nivel" type="xs:short" />
+							<xs:element name="Tipo" type="xs:string" />
+							<xs:element name="PARENTID" type="xs:int" />
+							<xs:element name="CuentaMadre" type="xs:string" />
+							<xs:element name="DescCuentaMadre" type="xs:string" />
+							<xs:element name="Movimiento" type="xs:boolean" />
+							<xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Departamentos">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Departamento" type="xs:string" />
+							<xs:element name="Observaciones" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FamiliasCuentaContable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="IdFamilia" type="xs:int" />
+							<xs:element name="IdCuenta" type="xs:int" />
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="IdDepartamento" type="xs:int" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="DatasetConfiguraCuentasKey1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:PuntoVenta" />
+			<xs:field xpath="mstns:IdPuntoVenta" />
+		</xs:unique>
+		<xs:unique name="DatasetConfiguraCuentasKey2" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Familias" />
+			<xs:field xpath="mstns:Codigo" />
+		</xs:unique>
+		<xs:unique name="DatasetConfiguraCuentasKey3" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:CuentaContable" />
+			<xs:field xpath="mstns:CuentaContable" />
+		</xs:unique>
+		<xs:unique name="DatasetConfiguraCuentasKey5" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Departamentos" />
+			<xs:field xpath="mstns:id" />
+		</xs:unique>
+		<xs:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:FamiliasCuentaContable" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>

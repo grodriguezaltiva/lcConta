@@ -1,0 +1,78 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="dsCuentas" targetNamespace="http://www.tempuri.org/dsCuentas.xsd" xmlns:mstns="http://www.tempuri.org/dsCuentas.xsd"
+	xmlns="http://www.tempuri.org/dsCuentas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="dsCuentas" msdata:IsDataSet="true" msdata:Locale="es-CR">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Cuentas_bancarias">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Cuenta" type="xs:string" />
+							<xs:element name="Codigo_banco" type="xs:long" />
+							<xs:element name="tipoCuenta" type="xs:string" />
+							<xs:element name="NombreCuenta" type="xs:string" />
+							<xs:element name="Id_CuentaBancaria" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="SaldoInicial" type="xs:double" />
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="ChequeInicial" type="xs:int" />
+							<xs:element name="ChequeFinal" type="xs:int" />
+							<xs:element name="Cod_Moneda" type="xs:int" />
+							<xs:element name="NombreCuentaContable" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Deposito">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NumeroDocumento" type="xs:long" />
+							<xs:element name="Id_CuentaBancaria" type="xs:int" minOccurs="0" />
+							<xs:element name="Id_Deposito" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="Fecha" type="xs:dateTime" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="Concepto" type="xs:string" />
+							<xs:element name="Anulado" type="xs:boolean" />
+							<xs:element name="Conciliado" type="xs:boolean" />
+							<xs:element name="Contabilizado" type="xs:boolean" />
+							<xs:element name="Ced_Usuario" type="xs:string" />
+							<xs:element name="Asiento" type="xs:long" />
+							<xs:element name="Num_Conciliacion" type="xs:long" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Deposito_Detalle">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id_DepositoDet" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="Id_Deposito" type="xs:long" />
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="DescripcionMov" type="xs:string" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="NombreCuenta" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Cuentas_bancarias" />
+			<xs:field xpath="mstns:Id_CuentaBancaria" />
+		</xs:unique>
+		<xs:unique name="Deposito_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Deposito" />
+			<xs:field xpath="mstns:Id_Deposito" />
+		</xs:unique>
+		<xs:unique name="Constraint2">
+			<xs:selector xpath=".//mstns:Deposito" />
+			<xs:field xpath="mstns:Id_CuentaBancaria" />
+		</xs:unique>
+		<xs:unique name="Deposito_Detalle_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Deposito_Detalle" />
+			<xs:field xpath="mstns:Id_DepositoDet" />
+		</xs:unique>
+		<xs:keyref name="DepositoDeposito_Detalle" refer="mstns:Deposito_Constraint1">
+			<xs:selector xpath=".//mstns:Deposito_Detalle" />
+			<xs:field xpath="mstns:Id_Deposito" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

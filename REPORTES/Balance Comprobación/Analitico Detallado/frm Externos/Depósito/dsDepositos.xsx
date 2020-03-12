@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Este archivo lo genera de forma automática el diseñador de esquemas XML. Contiene información de diseño para componentes de la superficie de diseño.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="39003" viewPortTop="870" zoom="100">
+    <cuentascontable_XmlElement left="15972" top="5074" width="5292" height="2963" selected="0" zOrder="17" index="0" expanded="1" />
+    <Deposito_Detalle_XmlElement left="9287" top="5080" width="5291" height="3810" selected="0" zOrder="12" index="1" expanded="1" />
+    <CuentaContable_XmlElement left="21898" top="1000" width="5292" height="2963" selected="0" zOrder="18" index="2" expanded="1" />
+    <Monedas_XmlElement left="27824" top="1000" width="5292" height="2963" selected="0" zOrder="19" index="3" expanded="1" />
+    <Usuarios_XmlElement left="9304" top="9414" width="5292" height="2963" selected="0" zOrder="20" index="4" expanded="1" />
+    <Moneda_XmlElement left="33750" top="1000" width="5292" height="2963" selected="0" zOrder="21" index="5" expanded="1" />
+    <DetallesAsientosContable_XmlElement left="45602" top="1000" width="5292" height="2963" selected="0" zOrder="1" index="6" expanded="1" />
+    <Cuentas_bancarias_XmlElement left="9234" top="1614" width="5291" height="2963" selected="0" zOrder="22" index="7" expanded="1" />
+    <AsientosContables_XmlElement left="39676" top="1000" width="5292" height="2963" selected="0" zOrder="6" index="8" expanded="1" />
+    <CentroCosto_XmlElement left="57454" top="1000" width="5292" height="2963" selected="0" zOrder="2" index="9" expanded="1" />
+    <CentroCosto_Movimientos_XmlElement left="63380" top="1000" width="5292" height="2963" selected="0" zOrder="4" index="10" expanded="1" />
+    <CentroCostoDetalle_XmlElement left="69306" top="1000" width="5292" height="2963" selected="0" zOrder="23" index="11" expanded="1" />
+    <Deposito_XmlElement left="979" top="9282" width="5292" height="2963" selected="0" zOrder="11" index="12" expanded="1" />
+    <DepositoDeposito_Detalle_XmlKeyref left="7400" top="9244" width="503" height="503" selected="0" zOrder="13" />
+    <AsientosContablesDetallesAsientosContable_XmlKeyref left="45034" top="4745" width="503" height="503" selected="0" zOrder="7" />
+</XSDDesignerLayout>

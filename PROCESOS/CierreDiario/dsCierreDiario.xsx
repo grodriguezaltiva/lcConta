@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Este archivo lo genera de forma automática el diseñador de esquemas XML. Contiene información de diseño para componentes de la superficie de diseño.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="-659" viewPortTop="4389" zoom="100">
+    <CierreDiario_DiferenciaCaja_XmlElement left="16405" top="6562" width="10477" height="4233" selected="0" zOrder="1" index="0" expanded="1" />
+    <Moneda_XmlElement left="24021" top="254" width="5292" height="2805" selected="0" zOrder="27" index="1" expanded="1" />
+    <Cuentas_bancarias_XmlElement left="29634" top="265" width="5927" height="6350" selected="0" zOrder="28" index="2" expanded="1" />
+    <CierreDiario_XmlElement left="318" top="265" width="5291" height="5926" selected="0" zOrder="2" index="3" expanded="1" />
+    <CierreDiario_DetalleTarjeta_XmlElement left="7647" top="0" width="11747" height="3810" selected="0" zOrder="18" index="4" expanded="1" />
+    <SettingCuentaContable_XmlElement left="36195" top="1000" width="5292" height="2805" selected="0" zOrder="29" index="5" expanded="1" />
+    <Comision_XmlElement left="10139" top="8843" width="5292" height="2963" selected="0" zOrder="4" index="6" expanded="1" />
+    <ContaDiferencial_XmlElement left="7276" top="12991" width="7673" height="4233" selected="0" zOrder="6" index="7" expanded="1" />
+    <CierreDiario_Depositos_XmlElement left="-1481" top="8705" width="8255" height="7620" selected="0" zOrder="8" index="8" expanded="1" />
+    <Adelantos_XmlElement left="17441" top="11490" width="5292" height="2963" selected="0" zOrder="10" index="9" expanded="1" />
+    <Adelantos_Detalle_XmlElement left="18601" top="14473" width="7144" height="2963" selected="0" zOrder="12" index="10" expanded="1" />
+    <CierreDiarioCierreDiario_DetalleTarjeta_XmlKeyref left="8638" top="3999" width="503" height="503" selected="0" zOrder="19" />
+    <CierreDiarioCierreDiario_Depositos_XmlKeyref left="5675" top="3999" width="503" height="503" selected="0" zOrder="14" />
+    <CierreDiarioCierreDiario_DiferenciaCaja_XmlKeyref left="8823" top="6434" width="503" height="503" selected="0" zOrder="23" />
+</XSDDesignerLayout>

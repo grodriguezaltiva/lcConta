@@ -1,0 +1,87 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="DataSetCuentasContables_P" targetNamespace="http://www.tempuri.org/DataSetCuentasContables_P.xsd" xmlns:mstns="http://www.tempuri.org/DataSetCuentasContables_P.xsd" xmlns="http://www.tempuri.org/DataSetCuentasContables_P.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="DataSetCuentasContables_P" msdata:IsDataSet="true">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="FormatoCuenta">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="Niveles" type="xs:short" />
+              <xs:element name="N1" type="xs:short" />
+              <xs:element name="N2" type="xs:short" />
+              <xs:element name="N3" type="xs:short" />
+              <xs:element name="N4" type="xs:short" />
+              <xs:element name="N5" type="xs:short" />
+              <xs:element name="N6" type="xs:short" />
+              <xs:element name="N7" type="xs:short" />
+              <xs:element name="N8" type="xs:short" />
+              <xs:element name="Separador" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TipoCuenta">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="Nombre" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CuentaContable">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CuentaContable" type="xs:string" />
+              <xs:element name="Descripcion" type="xs:string" />
+              <xs:element name="Nivel" type="xs:short" />
+              <xs:element name="Tipo" type="xs:string" />
+              <xs:element name="PARENTID" type="xs:int" />
+              <xs:element name="CuentaMadre" type="xs:string" />
+              <xs:element name="DescCuentaMadre" type="xs:string" />
+              <xs:element name="Movimiento" type="xs:boolean" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="Evaluacion" type="xs:boolean" />
+              <xs:element name="CodTipoCompra" type="xs:int" />
+              <xs:element name="DescTipoCompra" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Moneda">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodMoneda" type="xs:int" />
+              <xs:element name="MonedaNombre" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TipoCompra">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Codigo" type="xs:int" />
+              <xs:element name="Descripcion" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CuentaContable_Presupuestaria">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CuentaContable" type="xs:string" />
+              <xs:element name="Descripcion" type="xs:string" />
+              <xs:element name="Nivel" type="xs:short" />
+              <xs:element name="PARENTID" type="xs:int" />
+              <xs:element name="CuentaMadre" type="xs:string" />
+              <xs:element name="DescCuentaMadre" type="xs:string" />
+              <xs:element name="Movimiento" type="xs:boolean" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+              <xs:element name="Nombre_Usuario" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CuentaContable_Presupuestaria" />
+      <xs:field xpath="mstns:CuentaContable" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Este archivo lo genera de forma automática el diseñador de esquemas XML. Contiene información de diseño para componentes de la superficie de diseño.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="-683" viewPortTop="-1872" zoom="100">
+    <Deposito_XmlElement left="18466" top="7530" width="5292" height="2963" selected="0" zOrder="1" index="0" expanded="1" />
+    <Cuentas_bancarias_XmlElement left="18466" top="4000" width="5292" height="2963" selected="0" zOrder="2" index="1" expanded="1" />
+    <ArqueoCajas_XmlElement left="18253" top="-2683" width="5292" height="2963" selected="0" zOrder="4" index="2" expanded="1" />
+    <TipoTarjeta_XmlElement left="12563" top="651" width="5292" height="2963" selected="0" zOrder="6" index="3" expanded="1" />
+    <Deposito_Detalle_XmlElement left="25236" top="7266" width="5292" height="2963" selected="0" zOrder="36" index="4" expanded="1" />
+    <ArqueoTarjeta_XmlElement left="24205" top="-2630" width="5292" height="2805" selected="0" zOrder="41" index="5" expanded="1" />
+    <DetalleTarjetasCredito_XmlElement left="31162" top="1000" width="5292" height="2963" selected="0" zOrder="31" index="6" expanded="1" />
+    <Moneda_XmlElement left="317" top="254" width="5292" height="2963" selected="0" zOrder="8" index="7" expanded="1" />
+    <CuentaContable_XmlElement left="37115" top="5128" width="5292" height="2963" selected="0" zOrder="26" index="8" expanded="1" />
+    <DepositoCierreDiario_XmlElement left="30401" top="4260" width="6720" height="2963" selected="0" zOrder="16" index="9" expanded="1" />
+    <CierreDiario_XmlElement left="23808" top="1978" width="5292" height="2963" selected="0" zOrder="21" index="10" expanded="1" />
+    <PuntoVenta_XmlElement left="6243" top="254" width="5292" height="2963" selected="0" zOrder="10" index="11" expanded="1" />
+    <CAJAS_XmlElement left="7805" top="4948" width="5292" height="4657" selected="0" zOrder="12" index="12" expanded="1" />
+    <OpcionesPago_XmlElement left="1826" top="5636" width="5291" height="5503" selected="0" zOrder="14" index="13" expanded="1" />
+    <Detalle_pago_caja_XmlElement left="1032" top="-3148" width="5291" height="3386" selected="0" zOrder="42" index="14" expanded="1" />
+    <CierreDiarioDetalleTarjetasCredito_XmlKeyref left="29880" top="2719" width="503" height="503" selected="0" zOrder="32" />
+    <CierreDiarioDepositoCierreDiario_XmlKeyref left="29854" top="4346" width="503" height="503" selected="0" zOrder="22" />
+    <DepositoDeposito_Detalle_XmlKeyref left="24246" top="8628" width="503" height="503" selected="0" zOrder="37" />
+    <Cuentas_bancariasDepositoCierreDiario_XmlKeyref left="27183" top="5357" width="503" height="503" selected="0" zOrder="17" />
+    <CuentaContableDepositoCierreDiario_XmlKeyref left="36507" top="8873" width="503" height="503" selected="0" zOrder="27" />
+</XSDDesignerLayout>

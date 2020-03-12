@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="dtsAnaliticoDetallado" targetNamespace="http://www.tempuri.org/dtsAnaliticoDetallado.xsd" xmlns:mstns="http://www.tempuri.org/dtsAnaliticoDetallado.xsd" xmlns="http://www.tempuri.org/dtsAnaliticoDetallado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="dtsAnaliticoDetallado" msdata:IsDataSet="true" msdata:Locale="es-ES">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="TemporalAnaliticoDetallado">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Fecha" type="xs:dateTime" />
+              <xs:element name="NumAsiento" type="xs:string" />
+              <xs:element name="Moneda" type="xs:int" />
+              <xs:element name="TipoCambio" type="xs:double" />
+              <xs:element name="Observaciones" type="xs:string" />
+              <xs:element name="TipoDoc" type="xs:int" />
+              <xs:element name="NumDoc" type="xs:string" />
+              <xs:element name="Debitos" type="xs:double" />
+              <xs:element name="Creditos" type="xs:double" />
+              <xs:element name="SaldoAnterior" type="xs:double" />
+              <xs:element name="SaldoActual" type="xs:double" />
+              <xs:element name="CuentaContable" type="xs:string" />
+              <xs:element name="NombreCuenta" type="xs:string" />
+              <xs:element name="Beneficiario" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Moneda">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodMoneda" type="xs:int" />
+              <xs:element name="MonedaNombre" type="xs:string" />
+              <xs:element name="ValorCompra" type="xs:double" />
+              <xs:element name="ValorVenta" type="xs:double" />
+              <xs:element name="Simbolo" type="xs:string" />
+              <xs:element name="CuentaContable" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Moneda" />
+      <xs:field xpath="mstns:CodMoneda" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

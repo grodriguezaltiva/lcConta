@@ -1,0 +1,114 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="DsReporteD" targetNamespace="http://www.tempuri.org/DsReporteD.xsd" xmlns:mstns="http://www.tempuri.org/DsReporteD.xsd"
+	xmlns="http://www.tempuri.org/DsReporteD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="DsReporteD" msdata:IsDataSet="true" msdata:Locale="es-CR">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Cuentas_bancarias">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Cuenta" type="xs:string" />
+							<xs:element name="Codigo_banco" type="xs:long" />
+							<xs:element name="NombreCuenta" type="xs:string" />
+							<xs:element name="Id_CuentaBancaria" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Descripcion" type="xs:string" />
+							<xs:element name="MonedaNombre" type="xs:string" />
+							<xs:element name="Saldo" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+							<xs:element name="tipoCuenta" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Bancos">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Codigo_banco" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="Descripcion" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Cliente">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Nombre" type="xs:string" />
+							<xs:element name="Observaciones" type="xs:string" minOccurs="0" />
+							<xs:element name="Cedula" type="xs:string" />
+							<xs:element name="Agencia" type="xs:boolean" />
+							<xs:element name="Contacto" type="xs:string" minOccurs="0" />
+							<xs:element name="Nacionalidad" type="xs:int" />
+							<xs:element name="Exento" type="xs:boolean" />
+							<xs:element name="ImpustoVentas" type="xs:double" />
+							<xs:element name="Credito" type="xs:string" />
+							<xs:element name="Telefono1" type="xs:string" minOccurs="0" />
+							<xs:element name="Telefono2" type="xs:string" minOccurs="0" />
+							<xs:element name="Fax1" type="xs:string" minOccurs="0" />
+							<xs:element name="Fax2" type="xs:string" minOccurs="0" />
+							<xs:element name="Email" type="xs:string" minOccurs="0" />
+							<xs:element name="Dereccion" type="xs:string" minOccurs="0" />
+							<xs:element name="Limite_Credito" type="xs:double" minOccurs="0" />
+							<xs:element name="Plazo_Credito" type="xs:int" minOccurs="0" />
+							<xs:element name="Tipo_Precio" type="xs:int" />
+							<xs:element name="Usuario" type="xs:string" minOccurs="0" />
+							<xs:element name="Restriccion_Cuenta" type="xs:boolean" />
+							<xs:element name="Comicion" type="xs:double" />
+							<xs:element name="CodMoneda" type="xs:int" />
+							<xs:element name="Cliente_Moroso" type="xs:boolean" />
+							<xs:element name="NombreJuridico" type="xs:string" minOccurs="0" />
+							<xs:element name="CodigoSeguridad" type="xs:string" minOccurs="0" />
+							<xs:element name="NumeroTarjeta" type="xs:string" minOccurs="0" />
+							<xs:element name="Tipo" type="xs:string" minOccurs="0" />
+							<xs:element name="Vence" type="xs:string" minOccurs="0" />
+							<xs:element name="Id_Contrato" type="xs:long" minOccurs="0" />
+							<xs:element name="Contrato" type="xs:boolean" />
+							<xs:element name="Desayunos" type="xs:boolean" minOccurs="0" />
+							<xs:element name="TipoPrecio" type="xs:string" />
+							<xs:element name="Descuento" type="xs:double" />
+							<xs:element name="ComisionServicios" type="xs:double" />
+							<xs:element name="ComisionPaquetes" type="xs:double" />
+							<xs:element name="EsEmpleado" type="xs:boolean" />
+							<xs:element name="Id_Empleado" type="xs:string" />
+							<xs:element name="Empleado" type="xs:string" />
+							<xs:element name="SaldoApartado" type="xs:double" minOccurs="0" />
+							<xs:element name="SaldoCanjeReal" type="xs:double" minOccurs="0" />
+							<xs:element name="IDInternet" type="xs:int" />
+							<xs:element name="PassInternet" type="xs:string" />
+							<xs:element name="TipoFac" type="xs:int" />
+							<xs:element name="DiasFac" type="xs:int" />
+							<xs:element name="Dia1" type="xs:int" />
+							<xs:element name="DiaF1" type="xs:int" />
+							<xs:element name="para1" type="xs:int" />
+							<xs:element name="Dia2" type="xs:int" />
+							<xs:element name="DiaF2" type="xs:int" />
+							<xs:element name="para2" type="xs:int" />
+							<xs:element name="Id_Viejo" type="xs:int" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PagoDep">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NumDeposito" type="xs:string" minOccurs="0" />
+							<xs:element name="CuentaBan" type="xs:string" minOccurs="0" />
+							<xs:element name="FechaDep" type="xs:date" minOccurs="0" />
+							<xs:element name="Factura" type="xs:string" minOccurs="0" />
+							<xs:element name="ID" type="xs:string" minOccurs="0" />
+							<xs:element name="Monto" type="xs:double" minOccurs="0" />
+							<xs:element name="Mayorista" type="xs:string" minOccurs="0" />
+							<xs:element name="MontoFac" type="xs:double" minOccurs="0" />
+							<xs:element name="Concepto" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="DsReporteDKey1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Bancos" />
+			<xs:field xpath="mstns:Codigo_banco" />
+		</xs:unique>
+		<xs:unique name="DsReporteDKey2" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Cliente" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>

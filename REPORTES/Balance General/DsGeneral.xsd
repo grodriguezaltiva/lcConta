@@ -1,0 +1,53 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="DsGeneral" targetNamespace="http://www.tempuri.org/DsGeneral.xsd" xmlns:mstns="http://www.tempuri.org/DsGeneral.xsd"
+	xmlns="http://www.tempuri.org/DsGeneral.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="DsGeneral" msdata:IsDataSet="true" msdata:Locale="es-ES">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Moneda">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CodMoneda" type="xs:int" />
+							<xs:element name="MonedaNombre" type="xs:string" />
+							<xs:element name="ValorVenta" type="xs:double" />
+							<xs:element name="Simbolo" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CuentasMadres">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="Descripcion" type="xs:string" />
+							<xs:element name="TipoCuenta" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CuentaUtilidad">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="Descripcion" type="xs:string" />
+							<xs:element name="Nivel" type="xs:short" />
+							<xs:element name="Tipo" type="xs:string" />
+							<xs:element name="PARENTID" type="xs:int" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Moneda" />
+			<xs:field xpath="mstns:CodMoneda" />
+		</xs:unique>
+		<xs:unique name="CuentasMadres_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:CuentasMadres" />
+			<xs:field xpath="mstns:CuentaContable" />
+		</xs:unique>
+		<xs:unique name="CuentaUtilidad_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:CuentaUtilidad" />
+			<xs:field xpath="mstns:CuentaContable" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>

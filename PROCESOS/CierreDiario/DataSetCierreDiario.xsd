@@ -1,0 +1,291 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="DataSetCierreDiario" targetNamespace="http://www.tempuri.org/DataSetCierreDiario.xsd"
+	xmlns:mstns="http://www.tempuri.org/DataSetCierreDiario.xsd" xmlns="http://www.tempuri.org/DataSetCierreDiario.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="DataSetCierreDiario" msdata:IsDataSet="true" msdata:Locale="es-MX">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Deposito">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id_Deposito" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="NumeroDocumento" type="xs:long" />
+							<xs:element name="Id_CuentaBancaria" type="xs:int" minOccurs="0" />
+							<xs:element name="Fecha" type="xs:dateTime" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="Concepto" type="xs:string" />
+							<xs:element name="Anulado" type="xs:boolean" />
+							<xs:element name="Conciliado" type="xs:boolean" />
+							<xs:element name="Contabilizado" type="xs:boolean" />
+							<xs:element name="Ced_Usuario" type="xs:string" />
+							<xs:element name="Asiento" type="xs:long" />
+							<xs:element name="Num_Conciliacion" type="xs:long" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Cuentas_bancarias">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Cuenta" type="xs:string" />
+							<xs:element name="Codigo_banco" type="xs:long" />
+							<xs:element name="tipoCuenta" type="xs:string" />
+							<xs:element name="NombreCuenta" type="xs:string" />
+							<xs:element name="SaldoInicial" type="xs:double" />
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="ChequeInicial" type="xs:int" />
+							<xs:element name="ChequeFinal" type="xs:int" />
+							<xs:element name="Cod_Moneda" type="xs:int" />
+							<xs:element name="Id_CuentaBancaria" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="NombreCuentaContable" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ArqueoCajas">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="EfectivoColones" type="xs:double" />
+							<xs:element name="EfectivoDolares" type="xs:double" />
+							<xs:element name="TarjetaColones" type="xs:double" />
+							<xs:element name="TarjetaDolares" type="xs:double" />
+							<xs:element name="TravelCheck" type="xs:double" />
+							<xs:element name="Total" type="xs:double" />
+							<xs:element name="IdApertura" type="xs:int" />
+							<xs:element name="Fecha" type="xs:dateTime" />
+							<xs:element name="Cajero" type="xs:string" />
+							<xs:element name="Anulado" type="xs:boolean" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TipoTarjeta">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Nombre" type="xs:string" />
+							<xs:element name="Moneda" type="xs:int" />
+							<xs:element name="Observaciones" type="xs:string" minOccurs="0" />
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="NombreCuenta" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Deposito_Detalle">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id_DepositoDet" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="Id_Deposito" type="xs:long" />
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="DescripcionMov" type="xs:string" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="NombreCuenta" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ArqueoTarjeta">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Id_Arqueo" type="xs:long" />
+							<xs:element name="Id_Tarjeta" type="xs:int" />
+							<xs:element name="Monto" type="xs:double" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DetalleTarjetasCredito">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="Voucher" type="xs:long" minOccurs="0" />
+							<xs:element name="TipoTarjeta" type="xs:string" minOccurs="0" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="IdCierreDiario" type="xs:int" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Moneda">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CodMoneda" type="xs:int" />
+							<xs:element name="MonedaNombre" type="xs:string" />
+							<xs:element name="ValorCompra" type="xs:double" />
+							<xs:element name="ValorVenta" type="xs:double" />
+							<xs:element name="Simbolo" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CuentaContable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="Descripcion" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DepositoCierreDiario">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Fecha" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="Documento" type="xs:double" minOccurs="0" />
+							<xs:element name="CuentaBancaria" type="xs:int" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="Moneda" type="xs:string" />
+							<xs:element name="IdCierreDiario" type="xs:int" />
+							<xs:element name="CuentaContable" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CierreDiario">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Fecha" type="xs:dateTime" minOccurs="0" />
+							<xs:element name="PuntoVenta" type="xs:int" />
+							<xs:element name="Tipo" type="xs:boolean" minOccurs="0" />
+							<xs:element name="TarjetaColones" type="xs:double" minOccurs="0" />
+							<xs:element name="TarjetaDolares" type="xs:double" minOccurs="0" />
+							<xs:element name="Id_Usuario" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PuntoVenta">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="IdPuntoVenta" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Nombre" type="xs:string" />
+							<xs:element name="Tipo" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CAJAS">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NApertura" type="xs:int" minOccurs="0" />
+							<xs:element name="Nombre_x0020_Usuario" type="xs:string" minOccurs="0" />
+							<xs:element name="Estado" type="xs:string" minOccurs="0" />
+							<xs:element name="Fecha" type="xs:date" minOccurs="0" />
+							<xs:element name="BD" type="xs:string" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="OpcionesPago">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id_Opciones" type="xs:int" minOccurs="0" />
+							<xs:element name="Documento" type="xs:int" minOccurs="0" />
+							<xs:element name="Tipo_x0020_Pago" type="xs:string" minOccurs="0" />
+							<xs:element name="Monto" type="xs:float" minOccurs="0" />
+							<xs:element name="Moneda" type="xs:string" minOccurs="0" />
+							<xs:element name="BD" type="xs:string" minOccurs="0" />
+							<xs:element name="TipoDoc" type="xs:string" minOccurs="0" />
+							<xs:element name="MonedaCod" type="xs:int" minOccurs="0" />
+							<xs:element name="TipoCambio" type="xs:double" minOccurs="0" />
+							<xs:element name="Fecha" type="xs:dateTime" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Detalle_pago_caja">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NumeroFactura" type="xs:double" />
+							<xs:element name="TipoFactura" type="xs:string" />
+							<xs:element name="FormaPago" type="xs:string" />
+							<xs:element name="Referencia" type="xs:string" />
+							<xs:element name="Documento" type="xs:string" />
+							<xs:element name="ReferenciaTipo" type="xs:int" />
+							<xs:element name="ReferenciaDoc" type="xs:string" minOccurs="0" />
+							<xs:element name="Moneda" type="xs:int" />
+							<xs:element name="TipoCambio" type="xs:double" />
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="Id_ODP" type="xs:long" />
+							<xs:element name="CuentaBancaria" type="xs:string" minOccurs="0" />
+							<xs:element name="Cancelado" type="xs:double" />
+							<xs:element name="Deposito" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Deposito" />
+			<xs:field xpath="mstns:Id_Deposito" />
+		</xs:unique>
+		<xs:unique name="Cuentas_bancarias_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Cuentas_bancarias" />
+			<xs:field xpath="mstns:Id_CuentaBancaria" />
+		</xs:unique>
+		<xs:unique name="DataSetCierreDiarioKey1">
+			<xs:selector xpath=".//mstns:Cuentas_bancarias" />
+			<xs:field xpath="mstns:Cuenta" />
+		</xs:unique>
+		<xs:unique name="ArqueoCajas_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:ArqueoCajas" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+		<xs:unique name="TipoTarjeta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:TipoTarjeta" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+		<xs:unique name="Deposito_Detalle_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Deposito_Detalle" />
+			<xs:field xpath="mstns:Id_DepositoDet" />
+		</xs:unique>
+		<xs:unique name="ArqueoTarjeta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:ArqueoTarjeta" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+		<xs:unique name="DetalleTarjetasCredito_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:DetalleTarjetasCredito" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+		<xs:unique name="Moneda_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Moneda" />
+			<xs:field xpath="mstns:CodMoneda" />
+		</xs:unique>
+		<xs:unique name="CuentaContable_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:CuentaContable" />
+			<xs:field xpath="mstns:CuentaContable" />
+		</xs:unique>
+		<xs:unique name="DepositoCierreDiario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:DepositoCierreDiario" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+		<xs:unique name="CierreDiario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:CierreDiario" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+		<xs:unique name="PuntoVenta_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:PuntoVenta" />
+			<xs:field xpath="mstns:IdPuntoVenta" />
+		</xs:unique>
+		<xs:keyref name="Cuentas_bancariasDepositoCierreDiario" refer="Cuentas_bancarias_Constraint1">
+			<xs:selector xpath=".//mstns:DepositoCierreDiario" />
+			<xs:field xpath="mstns:CuentaBancaria" />
+		</xs:keyref>
+		<xs:keyref name="CierreDiarioDepositoCierreDiario" refer="CierreDiario_Constraint1">
+			<xs:selector xpath=".//mstns:DepositoCierreDiario" />
+			<xs:field xpath="mstns:IdCierreDiario" />
+		</xs:keyref>
+		<xs:keyref name="CuentaContableDepositoCierreDiario" refer="CuentaContable_Constraint1">
+			<xs:selector xpath=".//mstns:DepositoCierreDiario" />
+			<xs:field xpath="mstns:CuentaContable" />
+		</xs:keyref>
+		<xs:keyref name="CierreDiarioDetalleTarjetasCredito" refer="CierreDiario_Constraint1">
+			<xs:selector xpath=".//mstns:DetalleTarjetasCredito" />
+			<xs:field xpath="mstns:IdCierreDiario" />
+		</xs:keyref>
+		<xs:keyref name="DepositoDeposito_Detalle" refer="Constraint1">
+			<xs:selector xpath=".//mstns:Deposito_Detalle" />
+			<xs:field xpath="mstns:Id_Deposito" />
+		</xs:keyref>
+		<xs:key name="DataSetCierreDiarioKey2">
+			<xs:selector xpath=".//mstns:CAJAS" />
+			<xs:field xpath="mstns:NApertura" />
+		</xs:key>
+		<xs:unique name="DataSetCierreDiarioKey3" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Detalle_pago_caja" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>
