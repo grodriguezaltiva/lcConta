@@ -33,12 +33,12 @@
             fp1 = fp1.AddDays(-1)
 
 
-            fecha = fecha.AddMonths(-1)
+            fecha = fecha.AddYears(-1)
             fp2 = fecha
             fp2 = fp2.AddMonths(1)
             fp2 = fp2.AddDays(-1)
 
-            fecha = fecha.AddMonths(-1)
+            fecha = fecha.AddYears(-1)
             fp3 = fecha
             fp3 = fp3.AddMonths(1)
             fp3 = fp3.AddDays(-1)
