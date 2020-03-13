@@ -72,11 +72,12 @@ Public Class cFunciones
 
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Information, "Comunique el siguiente error a su Empresa Proveedora de Software")
+            Return Nothing
         Finally
             cConexion.DesConectar(sqlConexion)
         End Try
     End Function
-    Public Shared Function Llenar_Tabla_Generico(ByVal comando As SqlCommand, ByRef Tabla As DataTable, Optional ByVal NuevaConexionStr As String = "")
+    Public Shared Sub Llenar_Tabla_Generico(ByVal comando As SqlCommand, ByRef Tabla As DataTable, Optional ByVal NuevaConexionStr As String = "")
         Dim StringConexion As String
 
         StringConexion = IIf(NuevaConexionStr = "", Configuracion.Claves.Conexion("Contabilidad"), NuevaConexionStr)
@@ -94,13 +95,13 @@ Public Class cFunciones
             da.Fill(Tabla)
         Catch ex As System.Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Alerta..") ' Si hay error, devolvemos un valor nulo.
-            Return Nothing
+            Exit Sub
         Finally
             If Not ConexionX Is Nothing Then ' Por si se produce un error comprobamos si en realidad el objeto Connection está iniciado de ser así, lo cerramos.
                 ConexionX.Close()
             End If
         End Try
-    End Function
+    End Sub
 
     Public Function BuscarDatos(ByVal strConsulta As String, ByVal Campo As String, Optional ByVal nombre As String = "Buscar...", Optional ByVal NuevaConexionStr As String = "", Optional ByVal Fecha As Integer = 0, Optional ByVal Adicional As String = "") As String
         Dim frmBuscar As New Buscar
@@ -620,7 +621,7 @@ Public Class cFunciones
         Return Tabla ' Devolvemos el objeto DataTable con los datos de la consulta
     End Function
 
-    Public Shared Function Llenar_Tabla_Generico(ByVal SQLCommand As String, ByRef Tabla As DataTable, Optional ByVal NuevaConexionStr As String = "")
+    Public Shared Sub Llenar_Tabla_Generico(ByVal SQLCommand As String, ByRef Tabla As DataTable, Optional ByVal NuevaConexionStr As String = "")
         Dim StringConexion As String
 
         StringConexion = IIf(NuevaConexionStr = "", Configuracion.Claves.Conexion("Contabilidad"), NuevaConexionStr)
@@ -639,15 +640,15 @@ Public Class cFunciones
             da.Fill(Tabla)
         Catch ex As System.Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Alerta..") ' Si hay error, devolvemos un valor nulo.
-            Return Nothing
+            Exit Sub
         Finally
             If Not ConexionX Is Nothing Then ' Por si se produce un error comprobamos si en realidad el objeto Connection está iniciado de ser así, lo cerramos.
                 ConexionX.Close()
             End If
         End Try
-    End Function
+    End Sub
 
-    Public Shared Function Llenar_Tabla_Generico1(ByVal SQLCommand As String, ByRef Tabla As DataTable, Optional ByVal NuevaConexionStr As String = "")
+    Public Shared Sub Llenar_Tabla_Generico1(ByVal SQLCommand As String, ByRef Tabla As DataTable, Optional ByVal NuevaConexionStr As String = "")
         Dim StringConexion As String
 
         StringConexion = IIf(NuevaConexionStr = "", Configuracion.Claves.Conexion("SeePos"), NuevaConexionStr)
@@ -666,14 +667,14 @@ Public Class cFunciones
             da.Fill(Tabla)
         Catch ex As System.Exception
             'MsgBox(ex.Message, MsgBoxStyle.Critical, "Alerta..") ' Si hay error, devolvemos un valor nulo.
-            Return Nothing
+            Exit Sub
         Finally
             If Not ConexionX Is Nothing Then ' Por si se produce un error comprobamos si en realidad el objeto Connection está iniciado de ser así, lo cerramos.
                 ConexionX.Close()
             End If
         End Try
-    End Function
-    Public Shared Function Llenar_Tabla_SL(ByVal SQLCommand As String, ByRef Tabla As DataTable, Optional ByVal NuevaConexionStr As String = "")
+    End Sub
+    Public Shared Sub Llenar_Tabla_SL(ByVal SQLCommand As String, ByRef Tabla As DataTable, Optional ByVal NuevaConexionStr As String = "")
         Dim StringConexion As String
 
         StringConexion = IIf(NuevaConexionStr = "", Configuracion.Claves.Conexion("SeePos"), NuevaConexionStr)
@@ -691,13 +692,13 @@ Public Class cFunciones
             da.Fill(Tabla)
         Catch ex As System.Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical, "Alerta..") ' Si hay error, devolvemos un valor nulo.
-            Return Nothing
+            Exit Sub
         Finally
             If Not ConexionX Is Nothing Then ' Por si se produce un error comprobamos si en realidad el objeto Connection está iniciado de ser así, lo cerramos.
                 ConexionX.Close()
             End If
         End Try
-    End Function
+    End Sub
     Public Function BuscaNumeroAsiento(ByVal InicioAsiento As String) As String
         Dim cConexion As New Conexion
         Dim sqlConexion As New SqlConnection

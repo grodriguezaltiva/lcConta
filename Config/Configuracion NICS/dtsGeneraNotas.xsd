@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbNotasSecundariaTableAdapter" GeneratorDataComponentClassName="tbNotasSecundariaTableAdapter" Name="tbNotasSecundaria" UserDataComponentName="tbNotasSecundariaTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.tbNotasSecundaria" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.tbNotasSecundaria" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[tbNotasSecundaria] ([ID], [Letra], [Numero], [Descripcion]) VALUES (@ID, @Letra, @Numero, @Descripcion)</CommandText>
@@ -39,7 +39,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbNotasSecundariaDetTableAdapter" GeneratorDataComponentClassName="tbNotasSecundariaDetTableAdapter" Name="tbNotasSecundariaDet" UserDataComponentName="tbNotasSecundariaDetTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.tbNotasSecundariaDet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.tbNotasSecundariaDet" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[tbNotasSecundariaDet] WHERE (([ID] = @Original_ID) AND ([ID_NotaSecundaria] = @Original_ID_NotaSecundaria) AND ([CuentaContable] = @Original_CuentaContable) AND ([Descripcion] = @Original_Descripcion))</CommandText>
@@ -96,7 +96,7 @@ SELECT ID, ID_NotaSecundaria, CuentaContable, Descripcion FROM tbNotasSecundaria
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CuentaContableTableAdapter" GeneratorDataComponentClassName="CuentaContableTableAdapter" Name="CuentaContable" UserDataComponentName="CuentaContableTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.CuentaContable" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.CuentaContable" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[CuentaContable] WHERE (([CuentaContable] = @Original_CuentaContable) AND ([Descripcion] = @Original_Descripcion) AND ([Nivel] = @Original_Nivel) AND ([Tipo] = @Original_Tipo) AND ([PARENTID] = @Original_PARENTID) AND ([CuentaMadre] = @Original_CuentaMadre) AND ([DescCuentaMadre] = @Original_DescCuentaMadre) AND ([Movimiento] = @Original_Movimiento) AND ([id] = @Original_id) AND ([Evaluacion] = @Original_Evaluacion) AND ([CodTipoCompra] = @Original_CodTipoCompra) AND ([DescTipoCompra] = @Original_DescTipoCompra) AND ([CuentaContable_Presupuesto] = @Original_CuentaContable_Presupuesto) AND ([PermisoCheque] = @Original_PermisoCheque) AND ([PermisoBancos] = @Original_PermisoBancos) AND ([PermisoCont] = @Original_PermisoCont) AND ([PermisoCxP] = @Original_PermisoCxP) AND ([PermisoCxC] = @Original_PermisoCxC) AND ([PermisoAcF] = @Original_PermisoAcF) AND ([PermisoInv] = @Original_PermisoInv) AND ([PermisoGAS] = @Original_PermisoGAS) AND ([PermisoPla] = @Original_PermisoPla) AND ([PermisoFac] = @Original_PermisoFac) AND ([PermisoConf] = @Original_PermisoConf) AND ([Moneda] = @Original_Moneda) AND ([TipoConversion] = @Original_TipoConversion) AND ([Inactivo] = @Original_Inactivo) AND ([Notas] = @Original_Notas))</CommandText>
@@ -272,7 +272,7 @@ SELECT CuentaContable, Descripcion, Nivel, Tipo, PARENTID, CuentaMadre, DescCuen
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbNotasRaizTableAdapter" GeneratorDataComponentClassName="tbNotasRaizTableAdapter" Name="tbNotasRaiz" UserDataComponentName="tbNotasRaizTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.tbNotasRaiz" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.tbNotasRaiz" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[tbNotasRaiz] WHERE (([Id] = @Original_Id) AND ([Numero] = @Original_Numero) AND ([Titulo] = @Original_Titulo) AND ([Descripcion] = @Original_Descripcion))</CommandText>
@@ -329,7 +329,7 @@ SELECT Id, Numero, Titulo, Descripcion FROM tbNotasRaiz WHERE (Id = @Id)</Comman
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbConfiguracionFlujoEfectivoTableAdapter" GeneratorDataComponentClassName="tbConfiguracionFlujoEfectivoTableAdapter" Name="tbConfiguracionFlujoEfectivo" UserDataComponentName="tbConfiguracionFlujoEfectivoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.tbConfiguracionFlujoEfectivo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="ContabilidadConnectionString (MySettings)" DbObjectName="Contabilidad.dbo.tbConfiguracionFlujoEfectivo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [tbConfiguracionFlujoEfectivo] WHERE (([ID] = @Original_ID) AND ([CuentaContable] = @Original_CuentaContable) AND ([Grupo] = @Original_Grupo) AND ([Descripción] = @Original_Descripción))</CommandText>
@@ -390,22 +390,22 @@ SELECT ID, CuentaContable, Grupo, Descripción FROM tbConfiguracionFlujoEfectivo
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="dtsGeneraNotas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dtsGeneraNotas" msprop:Generator_DataSetName="dtsGeneraNotas" msprop:EnableTableAdapterManager="true">
+  <xs:element name="dtsGeneraNotas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsGeneraNotas" msprop:Generator_UserDSName="dtsGeneraNotas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tbNotasSecundaria" msprop:Generator_UserTableName="tbNotasSecundaria" msprop:Generator_RowDeletedName="tbNotasSecundariaRowDeleted" msprop:Generator_RowChangedName="tbNotasSecundariaRowChanged" msprop:Generator_RowClassName="tbNotasSecundariaRow" msprop:Generator_RowChangingName="tbNotasSecundariaRowChanging" msprop:Generator_RowEvArgName="tbNotasSecundariaRowChangeEvent" msprop:Generator_RowEvHandlerName="tbNotasSecundariaRowChangeEventHandler" msprop:Generator_TableClassName="tbNotasSecundariaDataTable" msprop:Generator_TableVarName="tabletbNotasSecundaria" msprop:Generator_RowDeletingName="tbNotasSecundariaRowDeleting" msprop:Generator_TablePropName="tbNotasSecundaria">
+        <xs:element name="tbNotasSecundaria" msprop:Generator_UserTableName="tbNotasSecundaria" msprop:Generator_RowEvArgName="tbNotasSecundariaRowChangeEvent" msprop:Generator_TableVarName="tabletbNotasSecundaria" msprop:Generator_TablePropName="tbNotasSecundaria" msprop:Generator_RowDeletingName="tbNotasSecundariaRowDeleting" msprop:Generator_RowChangingName="tbNotasSecundariaRowChanging" msprop:Generator_RowDeletedName="tbNotasSecundariaRowDeleted" msprop:Generator_RowEvHandlerName="tbNotasSecundariaRowChangeEventHandler" msprop:Generator_TableClassName="tbNotasSecundariaDataTable" msprop:Generator_RowChangedName="tbNotasSecundariaRowChanged" msprop:Generator_RowClassName="tbNotasSecundariaRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:int" />
-              <xs:element name="Letra" msprop:Generator_UserColumnName="Letra" msprop:Generator_ColumnPropNameInRow="Letra" msprop:Generator_ColumnVarNameInTable="columnLetra" msprop:Generator_ColumnPropNameInTable="LetraColumn" default="">
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Letra" msprop:Generator_ColumnVarNameInTable="columnLetra" msprop:Generator_ColumnPropNameInRow="Letra" msprop:Generator_ColumnPropNameInTable="LetraColumn" msprop:Generator_UserColumnName="Letra" default="">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Numero" msprop:Generator_UserColumnName="Numero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" type="xs:int" default="0" />
-              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" default="">
+              <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" type="xs:int" default="0" />
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" default="">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8000" />
@@ -415,19 +415,19 @@ SELECT ID, CuentaContable, Grupo, Descripción FROM tbConfiguracionFlujoEfectivo
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbNotasSecundariaDet" msprop:Generator_UserTableName="tbNotasSecundariaDet" msprop:Generator_RowDeletedName="tbNotasSecundariaDetRowDeleted" msprop:Generator_RowChangedName="tbNotasSecundariaDetRowChanged" msprop:Generator_RowClassName="tbNotasSecundariaDetRow" msprop:Generator_RowChangingName="tbNotasSecundariaDetRowChanging" msprop:Generator_RowEvArgName="tbNotasSecundariaDetRowChangeEvent" msprop:Generator_RowEvHandlerName="tbNotasSecundariaDetRowChangeEventHandler" msprop:Generator_TableClassName="tbNotasSecundariaDetDataTable" msprop:Generator_TableVarName="tabletbNotasSecundariaDet" msprop:Generator_RowDeletingName="tbNotasSecundariaDetRowDeleting" msprop:Generator_TablePropName="tbNotasSecundariaDet">
+        <xs:element name="tbNotasSecundariaDet" msprop:Generator_UserTableName="tbNotasSecundariaDet" msprop:Generator_RowEvArgName="tbNotasSecundariaDetRowChangeEvent" msprop:Generator_TableVarName="tabletbNotasSecundariaDet" msprop:Generator_TablePropName="tbNotasSecundariaDet" msprop:Generator_RowDeletingName="tbNotasSecundariaDetRowDeleting" msprop:Generator_RowChangingName="tbNotasSecundariaDetRowChanging" msprop:Generator_RowDeletedName="tbNotasSecundariaDetRowDeleted" msprop:Generator_RowEvHandlerName="tbNotasSecundariaDetRowChangeEventHandler" msprop:Generator_TableClassName="tbNotasSecundariaDetDataTable" msprop:Generator_RowChangedName="tbNotasSecundariaDetRowChanged" msprop:Generator_RowClassName="tbNotasSecundariaDetRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:long" />
-              <xs:element name="ID_NotaSecundaria" msprop:Generator_UserColumnName="ID_NotaSecundaria" msprop:Generator_ColumnPropNameInRow="ID_NotaSecundaria" msprop:Generator_ColumnVarNameInTable="columnID_NotaSecundaria" msprop:Generator_ColumnPropNameInTable="ID_NotaSecundariaColumn" type="xs:long" default="0" />
-              <xs:element name="CuentaContable" msprop:Generator_UserColumnName="CuentaContable" msprop:Generator_ColumnPropNameInRow="CuentaContable" msprop:Generator_ColumnVarNameInTable="columnCuentaContable" msprop:Generator_ColumnPropNameInTable="CuentaContableColumn">
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="ID_NotaSecundaria" msprop:Generator_ColumnVarNameInTable="columnID_NotaSecundaria" msprop:Generator_ColumnPropNameInRow="ID_NotaSecundaria" msprop:Generator_ColumnPropNameInTable="ID_NotaSecundariaColumn" msprop:Generator_UserColumnName="ID_NotaSecundaria" type="xs:long" default="0" />
+              <xs:element name="CuentaContable" msprop:Generator_ColumnVarNameInTable="columnCuentaContable" msprop:Generator_ColumnPropNameInRow="CuentaContable" msprop:Generator_ColumnPropNameInTable="CuentaContableColumn" msprop:Generator_UserColumnName="CuentaContable">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" default="">
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion" default="">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -437,91 +437,91 @@ SELECT ID, CuentaContable, Grupo, Descripción FROM tbConfiguracionFlujoEfectivo
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CuentaContable" msprop:Generator_UserTableName="CuentaContable" msprop:Generator_RowDeletedName="CuentaContableRowDeleted" msprop:Generator_RowChangedName="CuentaContableRowChanged" msprop:Generator_RowClassName="CuentaContableRow" msprop:Generator_RowChangingName="CuentaContableRowChanging" msprop:Generator_RowEvArgName="CuentaContableRowChangeEvent" msprop:Generator_RowEvHandlerName="CuentaContableRowChangeEventHandler" msprop:Generator_TableClassName="CuentaContableDataTable" msprop:Generator_TableVarName="tableCuentaContable" msprop:Generator_RowDeletingName="CuentaContableRowDeleting" msprop:Generator_TablePropName="CuentaContable">
+        <xs:element name="CuentaContable" msprop:Generator_UserTableName="CuentaContable" msprop:Generator_RowEvArgName="CuentaContableRowChangeEvent" msprop:Generator_TableVarName="tableCuentaContable" msprop:Generator_TablePropName="CuentaContable" msprop:Generator_RowDeletingName="CuentaContableRowDeleting" msprop:Generator_RowChangingName="CuentaContableRowChanging" msprop:Generator_RowDeletedName="CuentaContableRowDeleted" msprop:Generator_RowEvHandlerName="CuentaContableRowChangeEventHandler" msprop:Generator_TableClassName="CuentaContableDataTable" msprop:Generator_RowChangedName="CuentaContableRowChanged" msprop:Generator_RowClassName="CuentaContableRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CuentaContable" msprop:Generator_UserColumnName="CuentaContable" msprop:Generator_ColumnVarNameInTable="columnCuentaContable" msprop:Generator_ColumnPropNameInRow="CuentaContable" msprop:Generator_ColumnPropNameInTable="CuentaContableColumn">
+              <xs:element name="CuentaContable" msprop:Generator_ColumnVarNameInTable="columnCuentaContable" msprop:Generator_ColumnPropNameInRow="CuentaContable" msprop:Generator_ColumnPropNameInTable="CuentaContableColumn" msprop:Generator_UserColumnName="CuentaContable">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn">
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Nivel" msprop:Generator_UserColumnName="Nivel" msprop:Generator_ColumnVarNameInTable="columnNivel" msprop:Generator_ColumnPropNameInRow="Nivel" msprop:Generator_ColumnPropNameInTable="NivelColumn" type="xs:short" />
-              <xs:element name="Tipo" msprop:Generator_UserColumnName="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn">
+              <xs:element name="Nivel" msprop:Generator_ColumnVarNameInTable="columnNivel" msprop:Generator_ColumnPropNameInRow="Nivel" msprop:Generator_ColumnPropNameInTable="NivelColumn" msprop:Generator_UserColumnName="Nivel" type="xs:short" />
+              <xs:element name="Tipo" msprop:Generator_ColumnVarNameInTable="columnTipo" msprop:Generator_ColumnPropNameInRow="Tipo" msprop:Generator_ColumnPropNameInTable="TipoColumn" msprop:Generator_UserColumnName="Tipo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PARENTID" msprop:Generator_UserColumnName="PARENTID" msprop:Generator_ColumnVarNameInTable="columnPARENTID" msprop:Generator_ColumnPropNameInRow="PARENTID" msprop:Generator_ColumnPropNameInTable="PARENTIDColumn" type="xs:int" />
-              <xs:element name="CuentaMadre" msprop:Generator_UserColumnName="CuentaMadre" msprop:Generator_ColumnVarNameInTable="columnCuentaMadre" msprop:Generator_ColumnPropNameInRow="CuentaMadre" msprop:Generator_ColumnPropNameInTable="CuentaMadreColumn">
+              <xs:element name="PARENTID" msprop:Generator_ColumnVarNameInTable="columnPARENTID" msprop:Generator_ColumnPropNameInRow="PARENTID" msprop:Generator_ColumnPropNameInTable="PARENTIDColumn" msprop:Generator_UserColumnName="PARENTID" type="xs:int" />
+              <xs:element name="CuentaMadre" msprop:Generator_ColumnVarNameInTable="columnCuentaMadre" msprop:Generator_ColumnPropNameInRow="CuentaMadre" msprop:Generator_ColumnPropNameInTable="CuentaMadreColumn" msprop:Generator_UserColumnName="CuentaMadre">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DescCuentaMadre" msprop:Generator_UserColumnName="DescCuentaMadre" msprop:Generator_ColumnVarNameInTable="columnDescCuentaMadre" msprop:Generator_ColumnPropNameInRow="DescCuentaMadre" msprop:Generator_ColumnPropNameInTable="DescCuentaMadreColumn">
+              <xs:element name="DescCuentaMadre" msprop:Generator_ColumnVarNameInTable="columnDescCuentaMadre" msprop:Generator_ColumnPropNameInRow="DescCuentaMadre" msprop:Generator_ColumnPropNameInTable="DescCuentaMadreColumn" msprop:Generator_UserColumnName="DescCuentaMadre">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Movimiento" msprop:Generator_UserColumnName="Movimiento" msprop:Generator_ColumnVarNameInTable="columnMovimiento" msprop:Generator_ColumnPropNameInRow="Movimiento" msprop:Generator_ColumnPropNameInTable="MovimientoColumn" type="xs:boolean" />
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:int" />
-              <xs:element name="Evaluacion" msprop:Generator_UserColumnName="Evaluacion" msprop:Generator_ColumnVarNameInTable="columnEvaluacion" msprop:Generator_ColumnPropNameInRow="Evaluacion" msprop:Generator_ColumnPropNameInTable="EvaluacionColumn" type="xs:boolean" />
-              <xs:element name="CodTipoCompra" msprop:Generator_UserColumnName="CodTipoCompra" msprop:Generator_ColumnVarNameInTable="columnCodTipoCompra" msprop:Generator_ColumnPropNameInRow="CodTipoCompra" msprop:Generator_ColumnPropNameInTable="CodTipoCompraColumn" type="xs:int" />
-              <xs:element name="DescTipoCompra" msprop:Generator_UserColumnName="DescTipoCompra" msprop:Generator_ColumnVarNameInTable="columnDescTipoCompra" msprop:Generator_ColumnPropNameInRow="DescTipoCompra" msprop:Generator_ColumnPropNameInTable="DescTipoCompraColumn">
+              <xs:element name="Movimiento" msprop:Generator_ColumnVarNameInTable="columnMovimiento" msprop:Generator_ColumnPropNameInRow="Movimiento" msprop:Generator_ColumnPropNameInTable="MovimientoColumn" msprop:Generator_UserColumnName="Movimiento" type="xs:boolean" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
+              <xs:element name="Evaluacion" msprop:Generator_ColumnVarNameInTable="columnEvaluacion" msprop:Generator_ColumnPropNameInRow="Evaluacion" msprop:Generator_ColumnPropNameInTable="EvaluacionColumn" msprop:Generator_UserColumnName="Evaluacion" type="xs:boolean" />
+              <xs:element name="CodTipoCompra" msprop:Generator_ColumnVarNameInTable="columnCodTipoCompra" msprop:Generator_ColumnPropNameInRow="CodTipoCompra" msprop:Generator_ColumnPropNameInTable="CodTipoCompraColumn" msprop:Generator_UserColumnName="CodTipoCompra" type="xs:int" />
+              <xs:element name="DescTipoCompra" msprop:Generator_ColumnVarNameInTable="columnDescTipoCompra" msprop:Generator_ColumnPropNameInRow="DescTipoCompra" msprop:Generator_ColumnPropNameInTable="DescTipoCompraColumn" msprop:Generator_UserColumnName="DescTipoCompra">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="75" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CuentaContable_Presupuesto" msprop:Generator_UserColumnName="CuentaContable_Presupuesto" msprop:Generator_ColumnVarNameInTable="columnCuentaContable_Presupuesto" msprop:Generator_ColumnPropNameInRow="CuentaContable_Presupuesto" msprop:Generator_ColumnPropNameInTable="CuentaContable_PresupuestoColumn">
+              <xs:element name="CuentaContable_Presupuesto" msprop:Generator_ColumnVarNameInTable="columnCuentaContable_Presupuesto" msprop:Generator_ColumnPropNameInRow="CuentaContable_Presupuesto" msprop:Generator_ColumnPropNameInTable="CuentaContable_PresupuestoColumn" msprop:Generator_UserColumnName="CuentaContable_Presupuesto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PermisoCheque" msprop:Generator_UserColumnName="PermisoCheque" msprop:Generator_ColumnVarNameInTable="columnPermisoCheque" msprop:Generator_ColumnPropNameInRow="PermisoCheque" msprop:Generator_ColumnPropNameInTable="PermisoChequeColumn" type="xs:boolean" />
-              <xs:element name="PermisoBancos" msprop:Generator_UserColumnName="PermisoBancos" msprop:Generator_ColumnVarNameInTable="columnPermisoBancos" msprop:Generator_ColumnPropNameInRow="PermisoBancos" msprop:Generator_ColumnPropNameInTable="PermisoBancosColumn" type="xs:boolean" />
-              <xs:element name="PermisoCont" msprop:Generator_UserColumnName="PermisoCont" msprop:Generator_ColumnVarNameInTable="columnPermisoCont" msprop:Generator_ColumnPropNameInRow="PermisoCont" msprop:Generator_ColumnPropNameInTable="PermisoContColumn" type="xs:boolean" />
-              <xs:element name="PermisoCxP" msprop:Generator_UserColumnName="PermisoCxP" msprop:Generator_ColumnVarNameInTable="columnPermisoCxP" msprop:Generator_ColumnPropNameInRow="PermisoCxP" msprop:Generator_ColumnPropNameInTable="PermisoCxPColumn" type="xs:boolean" />
-              <xs:element name="PermisoCxC" msprop:Generator_UserColumnName="PermisoCxC" msprop:Generator_ColumnVarNameInTable="columnPermisoCxC" msprop:Generator_ColumnPropNameInRow="PermisoCxC" msprop:Generator_ColumnPropNameInTable="PermisoCxCColumn" type="xs:boolean" />
-              <xs:element name="PermisoAcF" msprop:Generator_UserColumnName="PermisoAcF" msprop:Generator_ColumnVarNameInTable="columnPermisoAcF" msprop:Generator_ColumnPropNameInRow="PermisoAcF" msprop:Generator_ColumnPropNameInTable="PermisoAcFColumn" type="xs:boolean" />
-              <xs:element name="PermisoInv" msprop:Generator_UserColumnName="PermisoInv" msprop:Generator_ColumnVarNameInTable="columnPermisoInv" msprop:Generator_ColumnPropNameInRow="PermisoInv" msprop:Generator_ColumnPropNameInTable="PermisoInvColumn" type="xs:boolean" />
-              <xs:element name="PermisoGAS" msprop:Generator_UserColumnName="PermisoGAS" msprop:Generator_ColumnVarNameInTable="columnPermisoGAS" msprop:Generator_ColumnPropNameInRow="PermisoGAS" msprop:Generator_ColumnPropNameInTable="PermisoGASColumn" type="xs:boolean" />
-              <xs:element name="PermisoPla" msprop:Generator_UserColumnName="PermisoPla" msprop:Generator_ColumnVarNameInTable="columnPermisoPla" msprop:Generator_ColumnPropNameInRow="PermisoPla" msprop:Generator_ColumnPropNameInTable="PermisoPlaColumn" type="xs:boolean" />
-              <xs:element name="PermisoFac" msprop:Generator_UserColumnName="PermisoFac" msprop:Generator_ColumnVarNameInTable="columnPermisoFac" msprop:Generator_ColumnPropNameInRow="PermisoFac" msprop:Generator_ColumnPropNameInTable="PermisoFacColumn" type="xs:boolean" />
-              <xs:element name="PermisoConf" msprop:Generator_UserColumnName="PermisoConf" msprop:Generator_ColumnVarNameInTable="columnPermisoConf" msprop:Generator_ColumnPropNameInRow="PermisoConf" msprop:Generator_ColumnPropNameInTable="PermisoConfColumn" type="xs:boolean" />
-              <xs:element name="Moneda" msprop:Generator_UserColumnName="Moneda" msprop:Generator_ColumnVarNameInTable="columnMoneda" msprop:Generator_ColumnPropNameInRow="Moneda" msprop:Generator_ColumnPropNameInTable="MonedaColumn">
+              <xs:element name="PermisoCheque" msprop:Generator_ColumnVarNameInTable="columnPermisoCheque" msprop:Generator_ColumnPropNameInRow="PermisoCheque" msprop:Generator_ColumnPropNameInTable="PermisoChequeColumn" msprop:Generator_UserColumnName="PermisoCheque" type="xs:boolean" />
+              <xs:element name="PermisoBancos" msprop:Generator_ColumnVarNameInTable="columnPermisoBancos" msprop:Generator_ColumnPropNameInRow="PermisoBancos" msprop:Generator_ColumnPropNameInTable="PermisoBancosColumn" msprop:Generator_UserColumnName="PermisoBancos" type="xs:boolean" />
+              <xs:element name="PermisoCont" msprop:Generator_ColumnVarNameInTable="columnPermisoCont" msprop:Generator_ColumnPropNameInRow="PermisoCont" msprop:Generator_ColumnPropNameInTable="PermisoContColumn" msprop:Generator_UserColumnName="PermisoCont" type="xs:boolean" />
+              <xs:element name="PermisoCxP" msprop:Generator_ColumnVarNameInTable="columnPermisoCxP" msprop:Generator_ColumnPropNameInRow="PermisoCxP" msprop:Generator_ColumnPropNameInTable="PermisoCxPColumn" msprop:Generator_UserColumnName="PermisoCxP" type="xs:boolean" />
+              <xs:element name="PermisoCxC" msprop:Generator_ColumnVarNameInTable="columnPermisoCxC" msprop:Generator_ColumnPropNameInRow="PermisoCxC" msprop:Generator_ColumnPropNameInTable="PermisoCxCColumn" msprop:Generator_UserColumnName="PermisoCxC" type="xs:boolean" />
+              <xs:element name="PermisoAcF" msprop:Generator_ColumnVarNameInTable="columnPermisoAcF" msprop:Generator_ColumnPropNameInRow="PermisoAcF" msprop:Generator_ColumnPropNameInTable="PermisoAcFColumn" msprop:Generator_UserColumnName="PermisoAcF" type="xs:boolean" />
+              <xs:element name="PermisoInv" msprop:Generator_ColumnVarNameInTable="columnPermisoInv" msprop:Generator_ColumnPropNameInRow="PermisoInv" msprop:Generator_ColumnPropNameInTable="PermisoInvColumn" msprop:Generator_UserColumnName="PermisoInv" type="xs:boolean" />
+              <xs:element name="PermisoGAS" msprop:Generator_ColumnVarNameInTable="columnPermisoGAS" msprop:Generator_ColumnPropNameInRow="PermisoGAS" msprop:Generator_ColumnPropNameInTable="PermisoGASColumn" msprop:Generator_UserColumnName="PermisoGAS" type="xs:boolean" />
+              <xs:element name="PermisoPla" msprop:Generator_ColumnVarNameInTable="columnPermisoPla" msprop:Generator_ColumnPropNameInRow="PermisoPla" msprop:Generator_ColumnPropNameInTable="PermisoPlaColumn" msprop:Generator_UserColumnName="PermisoPla" type="xs:boolean" />
+              <xs:element name="PermisoFac" msprop:Generator_ColumnVarNameInTable="columnPermisoFac" msprop:Generator_ColumnPropNameInRow="PermisoFac" msprop:Generator_ColumnPropNameInTable="PermisoFacColumn" msprop:Generator_UserColumnName="PermisoFac" type="xs:boolean" />
+              <xs:element name="PermisoConf" msprop:Generator_ColumnVarNameInTable="columnPermisoConf" msprop:Generator_ColumnPropNameInRow="PermisoConf" msprop:Generator_ColumnPropNameInTable="PermisoConfColumn" msprop:Generator_UserColumnName="PermisoConf" type="xs:boolean" />
+              <xs:element name="Moneda" msprop:Generator_ColumnVarNameInTable="columnMoneda" msprop:Generator_ColumnPropNameInRow="Moneda" msprop:Generator_ColumnPropNameInTable="MonedaColumn" msprop:Generator_UserColumnName="Moneda">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="TipoConversion" msprop:Generator_UserColumnName="TipoConversion" msprop:Generator_ColumnVarNameInTable="columnTipoConversion" msprop:Generator_ColumnPropNameInRow="TipoConversion" msprop:Generator_ColumnPropNameInTable="TipoConversionColumn">
+              <xs:element name="TipoConversion" msprop:Generator_ColumnVarNameInTable="columnTipoConversion" msprop:Generator_ColumnPropNameInRow="TipoConversion" msprop:Generator_ColumnPropNameInTable="TipoConversionColumn" msprop:Generator_UserColumnName="TipoConversion">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Inactivo" msprop:Generator_UserColumnName="Inactivo" msprop:Generator_ColumnVarNameInTable="columnInactivo" msprop:Generator_ColumnPropNameInRow="Inactivo" msprop:Generator_ColumnPropNameInTable="InactivoColumn" type="xs:boolean" />
-              <xs:element name="Notas" msprop:Generator_UserColumnName="Notas" msprop:Generator_ColumnVarNameInTable="columnNotas" msprop:Generator_ColumnPropNameInRow="Notas" msprop:Generator_ColumnPropNameInTable="NotasColumn">
+              <xs:element name="Inactivo" msprop:Generator_ColumnVarNameInTable="columnInactivo" msprop:Generator_ColumnPropNameInRow="Inactivo" msprop:Generator_ColumnPropNameInTable="InactivoColumn" msprop:Generator_UserColumnName="Inactivo" type="xs:boolean" />
+              <xs:element name="Notas" msprop:Generator_ColumnVarNameInTable="columnNotas" msprop:Generator_ColumnPropNameInRow="Notas" msprop:Generator_ColumnPropNameInTable="NotasColumn" msprop:Generator_UserColumnName="Notas">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8000" />
@@ -531,19 +531,19 @@ SELECT ID, CuentaContable, Grupo, Descripción FROM tbConfiguracionFlujoEfectivo
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbNotasRaiz" msprop:Generator_UserTableName="tbNotasRaiz" msprop:Generator_RowDeletedName="tbNotasRaizRowDeleted" msprop:Generator_RowChangedName="tbNotasRaizRowChanged" msprop:Generator_RowClassName="tbNotasRaizRow" msprop:Generator_RowChangingName="tbNotasRaizRowChanging" msprop:Generator_RowEvArgName="tbNotasRaizRowChangeEvent" msprop:Generator_RowEvHandlerName="tbNotasRaizRowChangeEventHandler" msprop:Generator_TableClassName="tbNotasRaizDataTable" msprop:Generator_TableVarName="tabletbNotasRaiz" msprop:Generator_RowDeletingName="tbNotasRaizRowDeleting" msprop:Generator_TablePropName="tbNotasRaiz">
+        <xs:element name="tbNotasRaiz" msprop:Generator_UserTableName="tbNotasRaiz" msprop:Generator_RowEvArgName="tbNotasRaizRowChangeEvent" msprop:Generator_TableVarName="tabletbNotasRaiz" msprop:Generator_TablePropName="tbNotasRaiz" msprop:Generator_RowDeletingName="tbNotasRaizRowDeleting" msprop:Generator_RowChangingName="tbNotasRaizRowChanging" msprop:Generator_RowDeletedName="tbNotasRaizRowDeleted" msprop:Generator_RowEvHandlerName="tbNotasRaizRowChangeEventHandler" msprop:Generator_TableClassName="tbNotasRaizDataTable" msprop:Generator_RowChangedName="tbNotasRaizRowChanged" msprop:Generator_RowClassName="tbNotasRaizRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="Id" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInTable="IdColumn" type="xs:long" />
-              <xs:element name="Numero" msprop:Generator_UserColumnName="Numero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" type="xs:int" />
-              <xs:element name="Titulo" msprop:Generator_UserColumnName="Titulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" default="">
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:long" />
+              <xs:element name="Numero" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" type="xs:int" />
+              <xs:element name="Titulo" msprop:Generator_ColumnVarNameInTable="columnTitulo" msprop:Generator_ColumnPropNameInRow="Titulo" msprop:Generator_ColumnPropNameInTable="TituloColumn" msprop:Generator_UserColumnName="Titulo" default="">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Descripcion" msprop:Generator_UserColumnName="Descripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn">
+              <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8000" />
@@ -553,25 +553,25 @@ SELECT ID, CuentaContable, Grupo, Descripción FROM tbConfiguracionFlujoEfectivo
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbConfiguracionFlujoEfectivo" msprop:Generator_UserTableName="tbConfiguracionFlujoEfectivo" msprop:Generator_RowDeletedName="tbConfiguracionFlujoEfectivoRowDeleted" msprop:Generator_TableClassName="tbConfiguracionFlujoEfectivoDataTable" msprop:Generator_RowChangedName="tbConfiguracionFlujoEfectivoRowChanged" msprop:Generator_RowClassName="tbConfiguracionFlujoEfectivoRow" msprop:Generator_RowChangingName="tbConfiguracionFlujoEfectivoRowChanging" msprop:Generator_RowEvArgName="tbConfiguracionFlujoEfectivoRowChangeEvent" msprop:Generator_RowEvHandlerName="tbConfiguracionFlujoEfectivoRowChangeEventHandler" msprop:Generator_TablePropName="tbConfiguracionFlujoEfectivo" msprop:Generator_TableVarName="tabletbConfiguracionFlujoEfectivo" msprop:Generator_RowDeletingName="tbConfiguracionFlujoEfectivoRowDeleting">
+        <xs:element name="tbConfiguracionFlujoEfectivo" msprop:Generator_TableClassName="tbConfiguracionFlujoEfectivoDataTable" msprop:Generator_RowEvArgName="tbConfiguracionFlujoEfectivoRowChangeEvent" msprop:Generator_TableVarName="tabletbConfiguracionFlujoEfectivo" msprop:Generator_TablePropName="tbConfiguracionFlujoEfectivo" msprop:Generator_RowDeletingName="tbConfiguracionFlujoEfectivoRowDeleting" msprop:Generator_RowChangingName="tbConfiguracionFlujoEfectivoRowChanging" msprop:Generator_RowEvHandlerName="tbConfiguracionFlujoEfectivoRowChangeEventHandler" msprop:Generator_RowDeletedName="tbConfiguracionFlujoEfectivoRowDeleted" msprop:Generator_RowChangedName="tbConfiguracionFlujoEfectivoRowChanged" msprop:Generator_UserTableName="tbConfiguracionFlujoEfectivo" msprop:Generator_RowClassName="tbConfiguracionFlujoEfectivoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:long" />
-              <xs:element name="CuentaContable" msprop:Generator_UserColumnName="CuentaContable" msprop:Generator_ColumnPropNameInRow="CuentaContable" msprop:Generator_ColumnVarNameInTable="columnCuentaContable" msprop:Generator_ColumnPropNameInTable="CuentaContableColumn">
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:long" />
+              <xs:element name="CuentaContable" msprop:Generator_ColumnVarNameInTable="columnCuentaContable" msprop:Generator_ColumnPropNameInRow="CuentaContable" msprop:Generator_ColumnPropNameInTable="CuentaContableColumn" msprop:Generator_UserColumnName="CuentaContable">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Grupo" msprop:Generator_UserColumnName="Grupo" msprop:Generator_ColumnPropNameInRow="Grupo" msprop:Generator_ColumnVarNameInTable="columnGrupo" msprop:Generator_ColumnPropNameInTable="GrupoColumn">
+              <xs:element name="Grupo" msprop:Generator_ColumnVarNameInTable="columnGrupo" msprop:Generator_ColumnPropNameInRow="Grupo" msprop:Generator_ColumnPropNameInTable="GrupoColumn" msprop:Generator_UserColumnName="Grupo">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Descripción" msprop:Generator_UserColumnName="Descripción" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnVarNameInTable="columnDescripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn">
+              <xs:element name="Descripción" msprop:Generator_ColumnVarNameInTable="columnDescripción" msprop:Generator_ColumnPropNameInRow="Descripción" msprop:Generator_ColumnPropNameInTable="DescripciónColumn" msprop:Generator_UserColumnName="Descripción">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />

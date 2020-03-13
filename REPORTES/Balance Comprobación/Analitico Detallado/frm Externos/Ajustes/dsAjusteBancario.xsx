@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Este archivo lo genera de forma automática el diseñador de esquemas XML. Contiene información de diseño para componentes de la superficie de diseño.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="39580" viewPortTop="-746" zoom="100">
+    <cuentascontable_XmlElement left="18095" top="254" width="5292" height="2963" selected="0" zOrder="16" index="0" expanded="1" />
+    <AjusteBancario_Detalle_XmlElement left="11482" top="6286" width="5292" height="2963" selected="0" zOrder="11" index="1" expanded="1" />
+    <Usuarios_XmlElement left="8808" top="439" width="5292" height="2963" selected="0" zOrder="17" index="2" expanded="1" />
+    <Moneda_XmlElement left="24021" top="1000" width="5292" height="2963" selected="0" zOrder="18" index="3" expanded="1" />
+    <Cuentas_bancarias_XmlElement left="1161" top="285" width="5292" height="2963" selected="0" zOrder="19" index="4" expanded="1" />
+    <AjusteBancario_XmlElement left="635" top="5609" width="5292" height="6773" selected="0" zOrder="10" index="5" expanded="1" />
+    <AsientosContables_XmlElement left="29947" top="1000" width="5292" height="2963" selected="0" zOrder="1" index="6" expanded="1" />
+    <DetallesAsientosContable_XmlElement left="41799" top="1000" width="5292" height="2963" selected="0" zOrder="2" index="7" expanded="1" />
+    <CentroCosto_Movimientos_XmlElement left="47725" top="1000" width="5292" height="2963" selected="0" zOrder="4" index="8" expanded="1" />
+    <CentroCostoDetalle_XmlElement left="53155" top="1005" width="6297" height="3387" selected="0" zOrder="20" index="9" expanded="1" />
+    <CentroCosto_XmlElement left="59577" top="1000" width="5292" height="2963" selected="0" zOrder="22" index="10" expanded="1" />
+    <AsientosContablesDetallesAsientosContable_XmlKeyref left="38268" top="2230" width="503" height="503" selected="0" zOrder="6" />
+    <AjusteBancarioAjusteBancario_Detalle_XmlKeyref left="6945" top="7812" width="503" height="503" selected="0" zOrder="12" />
+</XSDDesignerLayout>

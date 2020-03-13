@@ -75,9 +75,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.Contabilidad.Nuevos.My.MySettings
+        Friend ReadOnly Property Settings() As Global.LcConta.Nuevos.My.MySettings
             Get
-                Return Global.Contabilidad.Nuevos.My.MySettings.Default
+                Return Global.LcConta.Nuevos.My.MySettings.Default
             End Get
         End Property
     End Module

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Este archivo lo genera de forma automática el diseñador de esquemas XML. Contiene información de diseño para componentes de la superficie de diseño.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="31925" viewPortTop="-655" zoom="100">
+    <Cuentas_bancariasDestino_XmlElement left="-1296" top="345" width="13070" height="2963" selected="0" zOrder="1" index="0" expanded="1" />
+    <Cuentas_bancariasOrigen_XmlElement left="13017" top="582" width="9525" height="4233" selected="0" zOrder="2" index="1" expanded="1" />
+    <Bancos_XmlElement left="29102" top="1000" width="5292" height="2963" selected="0" zOrder="12" index="2" expanded="1" />
+    <Usuarios_XmlElement left="23176" top="1000" width="5292" height="2963" selected="0" zOrder="13" index="3" expanded="1" />
+    <Monedas_XmlElement left="40954" top="1000" width="5292" height="2963" selected="0" zOrder="14" index="4" expanded="1" />
+    <AsientosContables_XmlElement left="46880" top="1000" width="5292" height="2963" selected="0" zOrder="6" index="5" expanded="1" />
+    <DetallesAsientosContable_XmlElement left="46932" top="4810" width="5292" height="2963" selected="0" zOrder="7" index="6" expanded="1" />
+    <Cuentas_bancarias_XmlElement left="34818" top="1005" width="5715" height="2964" selected="0" zOrder="15" index="7" expanded="1" />
+    <TransferenciasBancarias_XmlElement left="-1614" top="4154" width="13123" height="10160" selected="0" zOrder="4" index="8" expanded="1" />
+    <AsientosContablesDetallesAsientosContable_XmlKeyref left="46129" top="4745" width="503" height="503" selected="0" zOrder="8" />
+</XSDDesignerLayout>

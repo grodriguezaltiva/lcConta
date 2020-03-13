@@ -946,7 +946,7 @@ Public Class MainForm
     Private Sub ToolBar1_ButtonClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ToolBarButtonClickEventArgs) Handles ToolBar1.ButtonClick
         Select Case ToolBar1.Buttons.IndexOf(e.Button) + 1
             Case 1 : CargarForm(New Cuentas_Contables(Usuario))
-            Case 2 : CargarForm(New FrmAsientos(Usuario, "Main", "0"))
+            Case 2 : CargarForm(New FrmAsientos(Usuario))
             Case 3 : CargarForm(New fmrMayorizacionAsiento(Usuario))
             Case 4
                 If MsgBox("Desea Balance de Comprobación en Colón y Dolar", MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then
@@ -1022,7 +1022,7 @@ Public Class MainForm
     End Sub
 
     Private Sub MenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItemAsientos.Click
-        CargarForm(New FrmAsientos(Usuario, "Main", "0"))
+        CargarForm(New FrmAsientos(Usuario))
     End Sub
 
     Private Sub MenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuItemMayorizacionAsiento.Click
@@ -1532,6 +1532,6 @@ Public Class MainForm
     End Sub
 
     Private Sub MenuItem12_Click_1(sender As Object, e As EventArgs) Handles MenuItemEstadosFinancieros.Click
-        Contabilidad.Nuevos.Reporte.Abrir(Me)
+        LcConta.Nuevos.Reporte.Abrir(Me)
     End Sub
 End Class

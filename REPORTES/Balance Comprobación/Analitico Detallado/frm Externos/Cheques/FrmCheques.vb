@@ -2048,7 +2048,7 @@ Public Class FrmCheques
         Dim filas As Integer
         Dim Fx As New cFunciones
         Try
-            SqlConnection1.ConnectionString = Configuracion.Claves.Conexion("Bancos")
+            SqlConnection1.ConnectionString = GetSetting("Seesoft", "Bancos", "Conexion")
             SqlConnection3.ConnectionString = Configuracion.Claves.Conexion("Contabilidad")
             Binding()
             InhabilitarChekes()
@@ -2412,9 +2412,9 @@ Public Class FrmCheques
             CalcEdit1.Focus()
         ElseIf e.KeyCode = Keys.F1 Then
             Dim cf As New cFunciones
-            Dim cod As String = cf.BuscarDatos("SELECT CodigoProv AS Identificación, Nombre AS Proveedor FROM Proveedores", "Nombre", "Busqueda de Proveedor...",Configuracion.Claves.Conexion("Proveeduria"))
+            Dim cod As String = cf.BuscarDatos("SELECT CodigoProv AS Identificación, Nombre AS Proveedor FROM Proveedores", "Nombre", "Busqueda de Proveedor...", Configuracion.Claves.Conexion("Proveeduria"))
             Dim dt As New DataTable
-            cf.Llenar_Tabla_Generico("SELECT CodigoProv, Nombre, Observaciones FROM Proveedores WHERE CodigoProv = " & cod, dt,Configuracion.Claves.Conexion("Proveeduria"))
+            cf.Llenar_Tabla_Generico("SELECT CodigoProv, Nombre, Observaciones FROM Proveedores WHERE CodigoProv = " & cod, dt, Configuracion.Claves.Conexion("Proveeduria"))
             If dt.Rows.Count > 0 Then
                 Me.TxtPagese.Text = dt.Rows(0).Item("Observaciones")
                 Me.TxtObservaciones.Text = dt.Rows(0).Item("Nombre")
@@ -2485,16 +2485,16 @@ Public Class FrmCheques
                 Exit Function
             End If
             'VALIDA ASIENTO SI TIENE
-            If Not Me.BindingContext(Me.DataSetCheque1, "Cheques").Current("Asiento").Equals("0") Then
-                Dim dt As New DataTable
-                cFunciones.Llenar_Tabla_Generico("Select Mayorizado From AsientosContables WHERE NumAsiento = '" & Me.BindingContext(Me.DataSetCheque1, "Cheques").Current("Asiento") & "'", dt, Configuracion.Claves.Conexion("Contabilidad"))
-                If dt.Rows.Count > 0 Then
-                    If dt.Rows(0).Item(0) Then
-                        MsgBox("El asiento # " & Me.BindingContext(Me.DataSetCheque1, "Cheques").Current("Asiento") & " que corresponde a este ajuste ya esta mayorizado, NO se puede anular", MsgBoxStyle.OKOnly)
-                        Exit Function
-                    End If
-                End If
-            End If
+            'If Not Me.BindingContext(Me.DataSetCheque1, "Cheques").Current("Asiento").Equals("0") Then
+            '    Dim dt As New DataTable
+            '    cFunciones.Llenar_Tabla_Generico("Select Mayorizado From AsientosContables WHERE NumAsiento = '" & Me.BindingContext(Me.DataSetCheque1, "Cheques").Current("Asiento") & "'", dt, Configuracion.Claves.Conexion("Contabilidad"))
+            '    If dt.Rows.Count > 0 Then
+            '        If dt.Rows(0).Item(0) Then
+            '            MsgBox("El asiento # " & Me.BindingContext(Me.DataSetCheque1, "Cheques").Current("Asiento") & " que corresponde a este ajuste ya esta mayorizado, NO se puede anular", MsgBoxStyle.OKOnly)
+            '            Exit Function
+            '        End If
+            '    End If
+            'End If
             '---------------------------------------
             BindingContext(DataSetCheque1, "Cheques").Current("Anulado") = True
             BindingContext(DataSetCheque1, "Cheques").EndCurrentEdit()
@@ -2506,11 +2506,12 @@ Public Class FrmCheques
             If Not Me.BindingContext(Me.DataSetCheque1, "Cheques").Current("Asiento").Equals("0") Then
                 Dim cx As New Conexion
                 cx.Conectar("Contabilidad")
-                cx.SlqExecute(cx.sQlconexion, "UPDATE AsientosContables Set Anulado = 1 WHERE NumAsiento = '" & BindingContext(DataSetCheque1, "Cheques").Current("Asiento") & "'")
+                cx.SlqExecute(cx.sQlconexion, "UPDATE AsientosContables Set Mayorizado = 0, Anulado = 1 WHERE NumAsiento = '" & BindingContext(DataSetCheque1, "Cheques").Current("Asiento") & "'")
                 cx.DesConectar(cx.sQlconexion)
             End If
             '---------------------------------------
-
+            BanderaGeneral.ACTUALIZO_ASIENTO = True
+            BanderaGeneral.ACTUALIZO_ASIENTO2 = True
             Return True
 
         Catch ex As Exception
@@ -2657,7 +2658,7 @@ Public Class FrmCheques
         Dim cnn As SqlConnection = Nothing
         ' Dentro de un Try/Catch por si se produce un error
         Try
-            Dim sConn As String = Configuracion.Claves.Conexion("Bancos")
+            Dim sConn As String = GetSetting("Seesoft", "Bancos", "Conexion")
             cnn = New SqlConnection(sConn)
             cnn.Open()
             Dim cmd As SqlCommand = New SqlCommand
@@ -2686,7 +2687,7 @@ Public Class FrmCheques
     Private Sub CargarDetalle2(ByVal Id As String, ByVal _numAsiento As String)
         Dim dts As New DataTable
         ' Dentro de un Try/Catch por si se produce un error
-        Dim sel As String = "select -1 as Id_ChequeDet, 0 as Id_Cheque, DescripcionAsiento as Descripcion_Mov, Cuenta as Cuenta_Contable, Monto, NombreCuenta as Nombre_Cuenta, Debe, Haber, 0 as Principal, CASE Haber when 0 then 0 else monto end as MHaber, CASE Debe when 0 then 0 else monto end as MDebe  from  dbo.DetallesAsientosContable where NumAsiento = '" & _numAsiento & "'"
+        Dim sel As String = "select top 3 -1 as Id_ChequeDet, 0 as Id_Cheque, DescripcionAsiento as Descripcion_Mov, Cuenta as Cuenta_Contable, Monto, NombreCuenta as Nombre_Cuenta, Debe, Haber, 0 as Principal, CASE Haber when 0 then 0 else monto end as MHaber, CASE Debe when 0 then 0 else monto end as MDebe  from  dbo.DetallesAsientosContable where NumAsiento = '" & _numAsiento & "'"
         cFunciones.Llenar_Tabla_Generico(sel, dts, Configuracion.Claves.Conexion("Contabilidad"))
 
         For Each X As DataRow In dts.Rows
@@ -2711,7 +2712,7 @@ Public Class FrmCheques
         Dim cnn As SqlConnection = Nothing
         ' Dentro de un Try/Catch por si se produce un error
         Try
-            Dim sConn As String = Configuracion.Claves.Conexion("Bancos")
+            Dim sConn As String = GetSetting("Seesoft", "Bancos", "Conexion")
             cnn = New SqlConnection(sConn)
             cnn.Open()
             Dim cmd As SqlCommand = New SqlCommand
@@ -2766,7 +2767,7 @@ Public Class FrmCheques
                 ToolBarRegistrar.Enabled = True
                 NumeroCheques()
                 GridControl1.Enabled = True
-                ComboBox1.Text = Configuracion.Claves.Configuracion("UltCuenta")
+                ComboBox1.Text = GetSetting("SeeSOFT", "Bancos", "UltCuenta")
                 ComboBox1.Focus()
                 diferencia.Text = Format(0, "#,#0.00")
 
@@ -2846,17 +2847,6 @@ Public Class FrmCheques
 
 #End Region
 
-#Region "Validar_Eliminar_DetalleCheque"
-    Private Sub spValidarEliminarDetalleCheque(ByVal _Bandera As Integer)
-        Dim Cx As New Conexion
-        Dim Sql As String
-        Sql = "Update Cheques_Detalle set Bandera = " & _Bandera & " where Id_Cheque = (SELECT Id_Cheque FROM [Bancos].[dbo].[Cheques] where [Num_Cheque] = '" & Me.TxtNumCheque.Text & "') "
-        Cx.Conectar("Bancos")
-        Cx.SlqExecute(Cx.sQlconexion, Sql)
-        Cx.DesConectar(cx.sQlconexion)
-    End Sub
-#End Region
-
 #Region "Guardar"
     Function GuardarCabios() As Boolean
         If SqlConnection1.State <> SqlConnection1.State.Open Then SqlConnection1.Open()
@@ -2864,7 +2854,7 @@ Public Class FrmCheques
         Dim CodigoMoneda As Integer
         If ToolBar1.Buttons(0).Text = "Cancelar" Then
             Dim dt As New DataTable
-            cFunciones.Llenar_Tabla_Generico("Select * From Cheques Where Num_Cheque = " & Me.TxtNumCheque.Text & " AND Id_CuentaBancaria = " & Me.ComboBox1.SelectedValue, dt, Configuracion.Claves.Conexion("Bancos"))
+            cFunciones.Llenar_Tabla_Generico("Select * From Cheques Where Num_Cheque = " & Me.TxtNumCheque.Text & " AND Id_CuentaBancaria = " & Me.ComboBox1.SelectedValue, dt, GetSetting("SeeSoft", "Bancos", "Conexion"))
             If dt.Rows.Count > 0 Then MsgBox("Ese cheque ya existe", MsgBoxStyle.OKOnly) : Exit Function
         End If
 
@@ -2873,7 +2863,6 @@ Public Class FrmCheques
         DataSetCheque1.Cheques(0).CodigoMoneda = CodigoMoneda
 
         Try
-            spValidarEliminarDetalleCheque(1) ' Valida que se pueda eliminar un registro de Cheque_Detalle
             DaCheque.InsertCommand.Transaction = Trans
             DaCheque.UpdateCommand.Transaction = Trans
             DaCheque.DeleteCommand.Transaction = Trans
@@ -2885,13 +2874,7 @@ Public Class FrmCheques
             DaCheque.Update(DataSetCheque1.Cheques)
             DaChequeDetalle.Update(DataSetCheque1.Cheques_Detalle)
             Trans.Commit()
-            spValidarEliminarDetalleCheque(0) ' Valida que no se pueda eliminar un registro de Cheque_Detalle
             'If Conta = 1 Or Conta = 2 Then
-            Dim Fx As New cFunciones
-            If Fx.ValidarPeriodo(Convert.ToDateTime(DtFecha.Value)) = False Then
-                MsgBox("La fecha no corresponde al período fiscal o el período esta cerrado! No se puede guardar", MsgBoxStyle.Information)
-                Exit Function
-            End If
             GuardaAsiento()
             If TransAsiento() = False Then
                 Trans.Rollback()
@@ -3183,14 +3166,12 @@ Public Class FrmCheques
 
     Function comparaCuentas() As Boolean
         Dim dt_Cuentas As New DataTable
-        cFunciones.Llenar_Tabla_Generico("SELECT     CuentaContable   FROM Cuentas_bancarias WHERE  Id_CuentaBancaria = " & Me.ComboBox1.SelectedValue, dt_Cuentas, Configuracion.Claves.Conexion("Bancos"))
-
+        cFunciones.Llenar_Tabla_Generico("SELECT     CuentaContable   FROM Cuentas_bancarias WHERE  Id_CuentaBancaria = " & Me.ComboBox1.SelectedValue, dt_Cuentas, GetSetting("SeeSoft", "Bancos", "Conexion"))
         If dt_Cuentas.Rows.Count > 0 Then
             If BindingContext(DataSetCheque1, "Cheques.ChequesCheques_Detalle").Current("Cuenta_Contable") = dt_Cuentas.Rows(0).Item("CuentaContable") Then
                 Return True
             Else
                 Return False
-
             End If
         End If
     End Function
@@ -3231,7 +3212,6 @@ Public Class FrmCheques
 
 #Region "Imprimir"
     Function Imprimir()
-
         DataSetCheque1.Configuraciones.Clear()
         AdapterConfiguraciones.Fill(DataSetCheque1.Configuraciones)
         If Not DataSetCheque1.Configuraciones(0).FormatoCheck Then 'PARA LOS QUE NO USAN PAPEL PRE IMPRESO
@@ -3240,7 +3220,7 @@ Public Class FrmCheques
                 Dim visor As New frmVisorReportes
                 Dim servidor As String = SqlConnection1.DataSource
                 Apertura_Cajas.SetParameterValue(0, BindingContext(DataSetCheque1, "Cheques").Current("Id_Cheque"))
-                CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
+                CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, GetSetting("SeeSOFT", "Bancos", "Conexion"))
                 visor.rptViewer.Visible = True
                 Apertura_Cajas = Nothing
                 visor.MdiParent = ParentForm
@@ -3262,7 +3242,7 @@ Public Class FrmCheques
                     Dim visor As New frmVisorReportes
 
                     Apertura_Cajas.SetParameterValue(0, BindingContext(DataSetCheque1, "Cheques").Current("Id_Cheque"))
-                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
+                    CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
 
                     Apertura_Cajas.PrintToPrinter(1, False, 0, 0)
                     Exit Function
@@ -3275,8 +3255,8 @@ Public Class FrmCheques
 
                         Apertura_Cajas.SetParameterValue(0, BindingContext(DataSetCheque1, "Cheques").Current("Id_Cheque"))
 
-                        CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
-                        CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
+                        CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
+                        CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
 
                         visor.rptViewer.Visible = True
                         Apertura_Cajas = Nothing
@@ -3290,7 +3270,7 @@ Public Class FrmCheques
                         Dim visor As New frmVisorReportes
                         Dim servidor As String = SqlConnection1.DataSource
                         Apertura_Cajas.SetParameterValue(0, BindingContext(DataSetCheque1, "Cheques").Current("Id_Cheque"))
-                        CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
+                        CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
                         visor.rptViewer.Visible = True
                         Apertura_Cajas = Nothing
                         visor.MdiParent = ParentForm
@@ -3303,12 +3283,12 @@ Public Class FrmCheques
 
                     If MsgBox("SI: PREIMPRESION || NO: COMPROBANTE", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         Dim pre As String = Me.SubCargarPrinter
-                        Dim print As String = Configuracion.Claves.Configuracion("ImpresoraCheque")
+                        Dim print As String = GetSetting("SeeSoft", "Hotel", "ImpresoraCheque")
                         Me.Establecer_Impresora(print)
                         Dim rtp As New ReporteChequesEstructura_ECOLE
                         Dim v As New frmVisorReportes
                         rtp.SetParameterValue(0, BindingContext(DataSetCheque1, "Cheques").Current("Id_Cheque"))
-                        CrystalReportsConexion2.LoadReportViewer2(v.rptViewer, rtp, False, Configuracion.Claves.Conexion("Bancos"))
+                        CrystalReportsConexion2.LoadReportBancos(v.rptViewer, rtp, False, GetSetting("SeeSOFT", "Bancos", "Conexion"))
                         rtp.PrintOptions.PrinterName = print
                         rtp.PrintToPrinter(1, False, 0, 0)
                         Me.Establecer_Impresora(pre)
@@ -3319,7 +3299,7 @@ Public Class FrmCheques
                     Dim visor As New frmVisorReportes
                     Dim servidor As String = SqlConnection1.DataSource
                     Apertura_Cajas.SetParameterValue(0, BindingContext(DataSetCheque1, "Cheques").Current("Id_Cheque"))
-                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
+                    CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, SqlConnection1.ConnectionString)
                     visor.rptViewer.Visible = True
                     Apertura_Cajas = Nothing
                     visor.MdiParent = ParentForm
@@ -3482,7 +3462,7 @@ errSub:
         Dim conectar As SqlConnection = Nothing
         DataSetCheque1.cuentascontable.Clear()
         Try
-            Dim strin As String = Configuracion.Claves.Conexion("Bancos")
+            Dim strin As String = GetSetting("Seesoft", "Bancos", "Conexion")
             conectar = New SqlConnection(strin)
             conectar.Open()
             Dim comando As SqlCommand = New SqlCommand

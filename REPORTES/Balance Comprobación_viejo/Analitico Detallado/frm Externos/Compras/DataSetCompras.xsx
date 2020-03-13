@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Este archivo lo genera de forma automática el diseñador de esquemas XML. Contiene información de diseño para componentes de la superficie de diseño.-->
+<XSDDesignerLayout layoutVersion="2" viewPortLeft="317" viewPortTop="569" zoom="100">
+    <Proveedores_XmlElement left="27984" top="1000" width="6138" height="2963" selected="0" zOrder="1" index="0" expanded="1" />
+    <ordencompra_XmlElement left="25072" top="-8014" width="5292" height="2963" selected="0" zOrder="27" index="1" expanded="1" />
+    <detalle_ordencompra_XmlElement left="26473" top="-4715" width="5292" height="2963" selected="0" zOrder="28" index="2" expanded="1" />
+    <Monedas_XmlElement left="22058" top="1000" width="5292" height="5503" selected="0" zOrder="2" index="3" expanded="1" />
+    <Moneda_XmlElement left="16132" top="1000" width="5292" height="3810" selected="0" zOrder="4" index="4" expanded="1" />
+    <Usuarios_XmlElement left="34756" top="1000" width="5292" height="2805" selected="0" zOrder="10" index="5" expanded="1" />
+    <Bodega_XmlElement left="40682" top="1000" width="5292" height="2805" selected="0" zOrder="33" index="6" expanded="1" />
+    <articulos_comprados_XmlElement left="1317" top="1000" width="8255" height="11007" selected="0" zOrder="6" index="7" expanded="1" />
+    <compras_XmlElement left="10213" top="1005" width="5292" height="11854" selected="0" zOrder="8" index="8" expanded="1" />
+    <ordencompradetalle_ordencompra_XmlKeyref left="24321" top="-4269" width="503" height="503" selected="0" zOrder="29" />
+    <Monedacompras_XmlKeyref left="15564" top="13120" width="503" height="503" selected="0" zOrder="15" />
+    <Usuarioscompras_XmlKeyref left="24876" top="7285" width="503" height="503" selected="0" zOrder="11" />
+    <comprasarticulos_comprados_XmlKeyref left="9638" top="12789" width="503" height="503" selected="0" zOrder="23" />
+    <Proveedorescompras_XmlKeyref left="21490" top="7285" width="503" height="503" selected="0" zOrder="19" />
+</XSDDesignerLayout>

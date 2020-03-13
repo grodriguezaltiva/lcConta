@@ -215,15 +215,15 @@ Public Class frmAnaliticoxCuenta
     Private Sub CalculaSaldos()
         Dim dts As New DataTable
 
-        cFunciones.Llenar_Tabla_Generico("select max(SaldoAnterior) as SaldoAnterior from dbo.TemporalAnaliticoDetallado", dts, Configuracion.Claves.Conexion("Contabilidad"))
-        If dts.Rows.Count > 0 Then
+		cFunciones.Llenar_Tabla_Generico("select isnull(max(SaldoAnterior),0) as SaldoAnterior from dbo.TemporalAnaliticoDetallado", dts, Configuracion.Claves.Conexion("Contabilidad"))
+		If dts.Rows.Count > 0 Then
             Me.SaldoAnterior = dts.Rows(0).Item("SaldoAnterior")
         Else
             Me.SaldoAnterior = 0
         End If
 
-        cFunciones.Llenar_Tabla_Generico("select sum(Debitos) as Debitos, sum(Creditos) as Creditos from dbo.TemporalAnaliticoDetallado", dts, Configuracion.Claves.Conexion("Contabilidad"))
-        Dim debitos, creditos As Decimal
+		cFunciones.Llenar_Tabla_Generico("select isnull(sum(Debitos),0) as Debitos, isnull(sum(Creditos),0) as Creditos from dbo.TemporalAnaliticoDetallado", dts, Configuracion.Claves.Conexion("Contabilidad"))
+		Dim debitos, creditos As Decimal
         If dts.Rows.Count > 0 Then
             debitos = dts.Rows(0).Item("Debitos")
             creditos = dts.Rows(0).Item("Creditos")

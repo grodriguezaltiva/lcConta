@@ -1,0 +1,2982 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00E3414D-7EE2-4AA5-A1BF-08EBA30DC27D}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>SeeSoftContabilidad.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>lcConta</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace>Contabilidad</RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>lcConta.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>lcConta.xml</DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Configuracion, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Configuracion.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.VSDesigner, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Business Objects\Common\2.8\managed\CrystalDecisions.VSDesigner.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data">
+      <Name>DevExpress.Data</Name>
+      <HintPath>..\..\..\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.Data.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.Utils">
+      <Name>DevExpress.Utils</Name>
+      <HintPath>..\..\..\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.Utils.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars">
+      <Name>DevExpress.XtraBars</Name>
+      <HintPath>C:\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.XtraBars.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.Design">
+      <Name>DevExpress.XtraBars.Design</Name>
+      <HintPath>C:\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.XtraBars.Design.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors">
+      <Name>DevExpress.XtraEditors</Name>
+      <HintPath>..\..\..\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.XtraEditors.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.Design">
+      <Name>DevExpress.XtraEditors.Design</Name>
+      <HintPath>C:\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.XtraEditors.Design.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid">
+      <Name>devexpress.xtragrid</Name>
+      <HintPath>..\..\..\archivos de programa\archivos comunes\devexpress\.net\devexpress.xtragrid.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.Design">
+      <Name>DevExpress.XtraGrid.Design</Name>
+      <HintPath>C:\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.XtraGrid.Design.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraGridMenus">
+      <Name>DevExpress.XtraGridMenus</Name>
+      <HintPath>C:\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.XtraGridMenus.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar">
+      <Name>DevExpress.XtraNavBar</Name>
+      <HintPath>C:\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.XtraNavBar.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting">
+      <Name>DevExpress.XtraPrinting</Name>
+      <HintPath>C:\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.XtraPrinting.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.Design">
+      <Name>DevExpress.XtraPrinting.Design</Name>
+      <HintPath>C:\Archivos de programa\Archivos comunes\DevExpress\.NET\DevExpress.XtraPrinting.Design.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList">
+      <Name>devexpress.xtratreelist</Name>
+      <HintPath>..\..\Utilidades\Librerias Terceros\DevExpress.XtraTreeList.dll</HintPath>
+      <AssemblyFolderKey>hklm\devexpress.net</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel">
+      <Name>Microsoft.Office.Interop.Excel</Name>
+      <HintPath>bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop">
+      <Name>Microsoft.Vbe.Interop</Name>
+      <HintPath>bin\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility">
+      <Name>Microsoft.VisualBasic.Compatibility</Name>
+    </Reference>
+    <Reference Include="stdole">
+      <Name>stdole</Name>
+      <HintPath>C:\Archivos de programa\Microsoft.NET\Primary Interop Assemblies\stdole.dll</HintPath>
+      <AssemblyFolderKey>hklm\primary interop assemblies</AssemblyFolderKey>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <Name>System.DirectoryServices</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Name>System.EnterpriseServices</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <Name>System.Runtime.Serialization.Formatters.Soap</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="Utilidades DB, Version=1.0.4854.27387, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Utilidades DB.dll</HintPath>
+    </Reference>
+    <Reference Include="Utilidades, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Utilidades.dll</HintPath>
+    </Reference>
+    <Reference Include="ValidText, Version=1.0.1612.15006, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ValidText.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Operaciones\AsientoConta\Asientos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Asientos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\AsientosTB.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AsientosTB.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\Bajar Asientos\frmAsientosIndividuales.resx">
+      <DependentUpon>frmAsientosIndividuales.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\Bajar Asientos\rptPreviaAsiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPreviaAsiento.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\Bajar Asientos\rptPreviaAsientoGlobal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPreviaAsientoGlobal.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\Bajar Asientos\rptPreviaAsientoResumen.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPreviaAsientoResumen.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\FrmAsientos.resx">
+      <DependentUpon>FrmAsientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\frmCentroCostoBus.resx">
+      <DependentUpon>frmCentroCostoBus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\FrmFindAsientos.resx">
+      <DependentUpon>FrmFindAsientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\Listado de Asientos\FormListadoAsiento.resx">
+      <DependentUpon>FormListadoAsiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\Listado de Asientos\ListadoAsientos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoAsientos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\Listado de Asientos\ListadoAsientosAgrupo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoAsientosAgrupo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\Navegador Asientos\frmNavegadorAsientos.resx">
+      <DependentUpon>frmNavegadorAsientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\SubRptCentroCostos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SubRptCentroCostos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\AsientoConta\SubRptCentroCostosDC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SubRptCentroCostosDC.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\Detalle_Analitico_modificado2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Detalle_Analitico_modificado21.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Ajustes\frmAjusteCuenta.resx">
+      <DependentUpon>frmAjusteCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Ajustes\ReporteAjusteBancario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteAjusteBancario.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\FormCargarDeposito.resx">
+      <DependentUpon>FormCargarDeposito.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\FrmCheques.resx">
+      <DependentUpon>FrmCheques.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteCheque.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteCheque1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteChequesEstructura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteChequesEstructura1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteChequesEstructura_Dolar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteChequesEstructura_Dolar.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteChequesEstructura_ECOLE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteChequesEstructura_ECOLE1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteChequesEstructura_TBL.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteChequesEstructura_TBL1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\frmGasto.resx">
+      <DependentUpon>frmGasto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\Reporte_Compra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reporte_Compra1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\rptCompras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCompras1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\rptGasto2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGasto2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\CrystalReportDepPag.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportDepPag.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\Cuentas11.resx">
+      <DependentUpon>Cuentas11.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\FormRepDepositosPago.resx">
+      <DependentUpon>FormRepDepositosPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\FrmBuscador1.resx">
+      <DependentUpon>FrmBuscador1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\frmDepositos.resx">
+      <DependentUpon>frmDepositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\frmReporteDepositos.resx">
+      <DependentUpon>frmReporteDepositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\frmRetencionesTarjeta.resx">
+      <DependentUpon>frmRetencionesTarjeta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\ReporteDepositoBancario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteDepositoBancario.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\ReporteDepositosR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteDepositosR.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\rptDepositosTarjetas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDepositosTarjetas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\rptSubTransacionBancariaAcredita.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSubTransacionBancariaAcredita.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias\ReporteTransferencias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteTransferencias2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias\Tranferencias.resx">
+      <DependentUpon>Tranferencias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico Detallado\frmAnaliticoDetallado.resx">
+      <DependentUpon>frmAnaliticoDetallado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico x Cuenta\frmAnaliticoxCuenta.resx">
+      <DependentUpon>frmAnaliticoxCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Analitico.resx">
+      <DependentUpon>Analitico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\AnaliticoGeneral.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AnaliticoGeneral.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\BalanceComprobacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceComprobacion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\BalanceComprobacion1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceComprobacion1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\bkrptAnaliticoDetalladoModificado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>bkrptAnaliticoDetalladoModificado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\DBKrptAnaliticoDetalladoModificado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DBKrptAnaliticoDetalladoModificado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\EstadosR-Renovado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadosR-Renovado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\frmBalanceComprobacion.resx">
+      <DependentUpon>frmBalanceComprobacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\Nivel.resx">
+      <DependentUpon>Nivel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\rptAnaliticoDetallado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAnaliticoDetallado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Comprobación\rptAnaliticoDetalladoModificado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAnaliticoDetalladoModificado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance General\BalanceGeneral2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceGeneral2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance General\frmBalance.resx">
+      <DependentUpon>frmBalance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Cobro Tarjeta\frmAciondePersonal.resx">
+      <DependentUpon>frmAciondePersonal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Cobro Tarjeta\frmCobroTarjeta.resx">
+      <DependentUpon>frmCobroTarjeta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXC\frmAjusteCuentaCobrarGeneracionAutomatica.resx">
+      <DependentUpon>frmAjusteCuentaCobrarGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXP\frmAjusteCuentaPagarGeneracionAutomatica.resx">
+      <DependentUpon>frmAjusteCuentaPagarGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\LCpymes\frmAjusteInventarioGeneracionAutomatica.resx">
+      <DependentUpon>frmAjusteInventarioGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXC\frmHotelAjusteCuentaCobrarGeneracionAutomatica.resx">
+      <DependentUpon>frmHotelAjusteCuentaCobrarGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXP\frmHotelAjusteCuentaPagarGeneracionAutomatica.resx">
+      <DependentUpon>frmHotelAjusteCuentaPagarGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXC\rptHotelDetalleAjusteCxCAj.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleAjusteCxCAj.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXP\rptHotelDetalleAjusteCxP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleAjusteCxP.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\LCpymes\frmRequisicionesGeneracionAutomatica.resx">
+      <DependentUpon>frmRequisicionesGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptDetalleRequisicionLcPymes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDetalleRequisicionLcPymes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Caja\Form\frmCaja.resx">
+      <DependentUpon>frmCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Caja\Form\frmCajas.resx">
+      <DependentUpon>frmCajas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Caja\Reporte\rptCaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCaja.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreMensual\frmDetallesCierrePeriodo.resx">
+      <DependentUpon>frmDetallesCierrePeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Analisis de Gastos Comparativo\frmGastosComparativo.resx">
+      <DependentUpon>frmGastosComparativo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Analisis de Gastos Comparativo\rptAnalisisGastoPeriodo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAnalisisGastoPeriodo1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Analisis de Gastos Comparativo\rptAnalisisGastoxAnnyo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAnalisisGastoxAnnyo1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\AnaliticoGeneral1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AnaliticoGeneral1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\CrystalReportCuentasXPagar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportCuentasXPagar.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\CrystalReportTransferencias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportTransferencias.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\FormChequeoAsientosBancos.resx">
+      <DependentUpon>FormChequeoAsientosBancos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\frmAjusteBancarioGeneracionAutomatica.resx">
+      <DependentUpon>frmAjusteBancarioGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\frmChequeGeneracionAutomatica.resx">
+      <DependentUpon>frmChequeGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\frmDepositoGeneracionAutomatica.resx">
+      <DependentUpon>frmDepositoGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\frmHotelAjusteBancarioGeneracionAutomatica.resx">
+      <DependentUpon>frmHotelAjusteBancarioGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\frmHotelChequeGeneracionAutomatica.resx">
+      <DependentUpon>frmHotelChequeGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\frmHotelDepositoGeneracionAutomatica.resx">
+      <DependentUpon>frmHotelDepositoGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\frmHotelTransferenciaGeneracionAutomatica.resx">
+      <DependentUpon>frmHotelTransferenciaGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleAjusteBancarioCredito.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleAjusteBancarioCredito.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleAjusteBancarioCredito_Generado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleAjusteBancarioCredito_Generado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleAjusteBancarioDebito.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleAjusteBancarioDebito.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleAjusteBancarioDebito_Generado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleAjusteBancarioDebito_Generado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleCheque.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleCheque.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleCheque_Generado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleCheque_Generado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleDeposito.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleDeposito.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleDeposito_Generado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptHotelDetalleDeposito_Generado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\LCpymes\frmAsientoCompraGeneracionAutomatica.resx">
+      <DependentUpon>frmAsientoCompraGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\LCpymes\frmDevolucionCompraGeneracionAutomatica.resx">
+      <DependentUpon>frmDevolucionCompraGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXP\frmHotelGasto.resx">
+      <DependentUpon>frmHotelGasto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\frmProveeduriaDevolucionGeneracionAutomatica.resx">
+      <DependentUpon>frmProveeduriaDevolucionGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\frmProveeduriaGeneracionAutomatica.resx">
+      <DependentUpon>frmProveeduriaGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXP\rptGasto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptGasto.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaDetalleCompra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProveeduriaDetalleCompra.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaDetalleCompraInventario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProveeduriaDetalleCompraInventario.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaDevolucionDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProveeduriaDevolucionDetalle.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaDevolucionDetalleGravado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProveeduriaDevolucionDetalleGravado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Valuación\Valuacion.resx">
+      <DependentUpon>Valuacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Planilla\frmHotelPlanillaGeneracionAutomatica.resx">
+      <DependentUpon>frmHotelPlanillaGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Planilla\rptPlanillaAutomaico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPlanillaAutomaico.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Asiento Prepago%28No Deposito%29\CrystalReportPrepago.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPrepago.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Asiento Prepago%28No Deposito%29\frmAsientoPrepago%28No deposito%29.resx">
+      <DependentUpon>frmAsientoPrepago%28No deposito%29.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Costo de Venta\frmHotelCostoVentaAutomatica.resx">
+      <DependentUpon>frmHotelCostoVentaAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Costo de Venta\rptAsientoCostoDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAsientoCostoDetalle.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos LCPymes\Bajar Asientos LCPymes\Personalizados\CasaPlastico\frmAsientosIndividualesCasaPlastico.resx">
+      <DependentUpon>frmAsientosIndividualesCasaPlastico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos LCPymes\Bajar Asientos LCPymes\Personalizados\Felipe\frmAsientosIndividualesFelipe.resx">
+      <DependentUpon>frmAsientosIndividualesFelipe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos LCPymes\Bajar Asientos LCPymes\Personalizados\TMS\frmAsientosIndividualesTMS.resx">
+      <DependentUpon>frmAsientosIndividualesTMS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Centro de Costo\frmBalanceCentroCosto.resx">
+      <DependentUpon>frmBalanceCentroCosto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Centro de Costo\FrmCentroCosto.resx">
+      <DependentUpon>FrmCentroCosto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Centro de Costo\Reporte_CentroCosto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reporte_CentroCosto.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Balance Centro de Costo\rptCentroCostoDetallado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCentroCostoDetallado.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreAnual\FrmCierreAnual.resx">
+      <DependentUpon>FrmCierreAnual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\CierreDiario.resx">
+      <DependentUpon>CierreDiario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\CierreDiario2.resx">
+      <DependentUpon>CierreDiario2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\FormCajas.resx">
+      <DependentUpon>FormCajas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\FormFechaDepositos.resx">
+      <DependentUpon>FormFechaDepositos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\FormOpcionesPago.resx">
+      <DependentUpon>FormOpcionesPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\FormVistaAsiento.resx">
+      <DependentUpon>FormVistaAsiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\FormVistaComisiones.resx">
+      <DependentUpon>FormVistaComisiones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\ReporteCierreDiario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteCierreDiario.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\RptCierreDiario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptCierreDiario1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreDiario\_crp_AsientosContablesCierre.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>_crp_AsientosContablesCierre1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\CompativoCuenta\frmComparativoCuenta.resx">
+      <DependentUpon>frmComparativoCuenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\CompativoCuenta\rptComparaCuentaXMes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptComparaCuentaXMes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Cortesia\frmHotelCortesiaAutomatica.resx">
+      <DependentUpon>frmHotelCortesiaAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Cortesia\rptAsientoCortesia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAsientoCortesia.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Cortesia\rptAsientoCortesiaBAR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAsientoCortesiaBAR.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Cortesia\rptAsientoCortesiaBarSeco.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAsientoCortesiaBarSeco.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Cuenta Contable\Cuenta Presupuestaria\Cuentas_Contables_P.resx">
+      <DependentUpon>Cuentas_Contables_P.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Cuenta Contable\Cuenta Presupuestaria\FrmBuscar.resx">
+      <DependentUpon>FrmBuscar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Cuenta Contable\Cuentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Cuentas1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Cuenta Contable\Cuentas_Contables.resx">
+      <DependentUpon>Cuentas_Contables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Cuenta Contable\FrmSettingCuentaContable.resx">
+      <DependentUpon>FrmSettingCuentaContable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Cuenta Contable\FrmSettingHotelCuentaContable.resx">
+      <DependentUpon>FrmSettingHotelCuentaContable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Cuentas Contables Familias\Configura_Cuentas_2.resx">
+      <DependentUpon>Configura_Cuentas_2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Distribucion Ingresos\FrmDistribucionIngresos.resx">
+      <DependentUpon>FrmDistribucionIngresos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Distribucion Ingresos\Reporte_DistribucionIngresos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reporte_DistribucionIngresos1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estado de Resultados\EstadoResultados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoResultados1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estado de Resultados\frmEstadoR.resx">
+      <DependentUpon>frmEstadoR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Configuracion NICS\frmConfigurarFlujoEfectivo.resx">
+      <DependentUpon>frmConfigurarFlujoEfectivo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados NICS\FormNuevosEstadosFinacieros.resx">
+      <DependentUpon>FormNuevosEstadosFinacieros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Configuracion NICS\frmConfigurarNotas.resx">
+      <DependentUpon>frmConfigurarNotas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\CierreMensual\frmGeneraDatosCierre.resx">
+      <DependentUpon>frmGeneraDatosCierre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados NICS\frmReporteEstadosFinancieros.resx">
+      <DependentUpon>frmReporteEstadosFinancieros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados NICS\frmWaitDialog.resx">
+      <DependentUpon>frmWaitDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados NICS\nNuevos\frmBalanceSituancionNuevo.resx">
+      <DependentUpon>frmBalanceSituancionNuevo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados NICS\nNuevos\frmCargando.resx">
+      <DependentUpon>frmCargando.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados NICS\nNuevos\frmEstadosResultados1.resx">
+      <DependentUpon>frmEstadosResultados1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados NICS\nNuevos\frmEstadosResultados2.resx">
+      <DependentUpon>frmEstadosResultados2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion1p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceSituacion1p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion2p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceSituacion2p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion3p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceSituacion3p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion4p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceSituacion4p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion5p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceSituacion5p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacionBanco.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceSituacionBanco.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacionDolarYColon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceSituacionDolarYColon.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacionDolarYColon1P.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BalanceSituacionDolarYColon1P.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad1p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoResultad1p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad2p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoResultad2p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad3p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoResultad3p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad4p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoResultad4p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad5p.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadoResultad5p.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos Periodos\Comparativo Balance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Comparativo Balance.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos Periodos\ComparativoMesAMes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ComparativoMesAMes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\Comparativos Periodos\ResultadosPeriodo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResultadosPeriodo.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\FormConfEstadoResultadoBanco.resx">
+      <DependentUpon>FormConfEstadoResultadoBanco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Estados para Bancos\frmBalanceSituacion.resx">
+      <DependentUpon>frmBalanceSituacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Formato Cuentas Contables\Formato_Cuentas_Contables.resx">
+      <DependentUpon>Formato_Cuentas_Contables.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTILIDADES\FormVisorReportesCrystal.resx">
+      <DependentUpon>FormVisorReportesCrystal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTILIDADES\FrmPlantilla.resx">
+      <DependentUpon>FrmPlantilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTILIDADES\frmVisorReportes.resx">
+      <DependentUpon>frmVisorReportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\AsientosIngresos.resx">
+      <DependentUpon>AsientosIngresos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\CrystalReportFormaPago.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportFormaPago.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\CrystalReport_CheckOUTS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_CheckOUTS.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\FormCuentaNoDefinida.resx">
+      <DependentUpon>FormCuentaNoDefinida.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\ReporteCheckOuts.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteCheckOuts.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\Ventas_Detalladas_General_PuntoVenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Ventas_Detalladas_General_PuntoVenta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Mayorizacion\Encabezado_Reportes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Encabezado_Reportes1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Mayorizacion\fmrBuscarMayorizacionAsiento.resx">
+      <DependentUpon>fmrBuscarMayorizacionAsiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Mayorizacion\fmrMayorizacionAsiento.resx">
+      <DependentUpon>fmrMayorizacionAsiento.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Mayorizacion\rptMayorizacionAsiento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMayorizacionAsiento.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\Mayorizacion\rptMayorizacionAsiento1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptMayorizacionAsiento11.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTILIDADES\Modulos\FrmBuscador.resx">
+      <DependentUpon>FrmBuscador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTILIDADES\Modulos\FrmBuscador5C.resx">
+      <DependentUpon>FrmBuscador5C.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTILIDADES\Modulos\frmBuscar.resx">
+      <DependentUpon>frmBuscar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTILIDADES\Modulos\FrmBusqueda.resx">
+      <DependentUpon>FrmBusqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Periodo\FormBusPeriodo.resx">
+      <DependentUpon>FormBusPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Periodo\FrmPeriodo.resx">
+      <DependentUpon>FrmPeriodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Periodo\Periodo Fiscal.resx">
+      <DependentUpon>Periodo Fiscal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Periodo\Periodo.resx">
+      <DependentUpon>Periodo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTILIDADES\Plantilla.resx">
+      <DependentUpon>Plantilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\FrmAprobarPresupuesto.resx">
+      <DependentUpon>FrmAprobarPresupuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\FrmEstadoResultadovsPresupuesto.resx">
+      <DependentUpon>FrmEstadoResultadovsPresupuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\FrmModificarPresupuesto.resx">
+      <DependentUpon>FrmModificarPresupuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\FrmPreMantenimientoPresupuesto.resx">
+      <DependentUpon>FrmPreMantenimientoPresupuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\frmPresupuesto.resx">
+      <DependentUpon>frmPresupuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\FrmReporte.resx">
+      <DependentUpon>FrmReporte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\FrmSql.resx">
+      <DependentUpon>FrmSql.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\RptAutorizacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptAutorizacion3.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\RptEstadoResultadovsPresupuesto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptEstadoResultadovsPresupuesto3.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\Presupuesto\RptSubreporteAutorizacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptSubreporteAutorizacion3.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\frmProveeduriaAjusteInventario.resx">
+      <DependentUpon>frmProveeduriaAjusteInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\LCpymes\frmRequisicionesLcpymes.resx">
+      <DependentUpon>frmRequisicionesLcpymes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\frmTrasladoGeneracionAutomatica.resx">
+      <DependentUpon>frmTrasladoGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaAjusteInventarioDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProveeduriaAjusteInventarioDetalle.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaRequisicionesDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProveeduriaRequisicionesDetalle.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaTrasladoDetalle.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptProveeduriaTrasladoDetalle.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXP\Recibo Dinero\CrystalReportRecibodDinero.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportRecibodDinero.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXP\Recibo Dinero\frmHotelReciboDineroGeneracionAutomatica.resx">
+      <DependentUpon>frmHotelReciboDineroGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXP\Recibo Dinero\frmReciboDineroGeneracionAutomatica.resx">
+      <DependentUpon>frmReciboDineroGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\CXP\Recibo Dinero\Reportes.resx">
+      <DependentUpon>Reportes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\TiposDocumentos\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\TiposDocumentos\FrmTiposDocumentos.resx">
+      <DependentUpon>FrmTiposDocumentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\TiposDocumentos\FrmVista.resx">
+      <DependentUpon>FrmVista.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\TiposDocumentos\RpTiposDocumentos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RpTiposDocumentos.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Config\TiposDocumentos\RptTipos.resx">
+      <DependentUpon>RptTipos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos LCPymes\Ventas LCPymes\frmAsientoVentaGeneracionAutomatica.resx">
+      <DependentUpon>frmAsientoVentaGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GENERAR ASIENTOS\Ingresos LCPymes\Ventas LCPymes\frmDevolucionVentaGeneracionAutomatica.resx">
+      <DependentUpon>frmDevolucionVentaGeneracionAutomatica.vb</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Operaciones\AsientoConta\Asientos.vb">
+      <DependentUpon>Asientos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\AsientosTB.vb">
+      <DependentUpon>AsientosTB.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\Bajar Asientos\frmAsientosIndividuales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\Bajar Asientos\rptPreviaAsiento.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPreviaAsiento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\Bajar Asientos\rptPreviaAsientoGlobal.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPreviaAsientoGlobal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\Bajar Asientos\rptPreviaAsientoResumen.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPreviaAsientoResumen.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\DataSetAsientos.Designer.vb">
+      <DependentUpon>DataSetAsientos.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\DsAsientos1.Designer.vb">
+      <DependentUpon>DsAsientos.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\FrmAsientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\frmCentroCostoBus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\FrmFindAsientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\Listado de Asientos\FormListadoAsiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\Listado de Asientos\ListadoAsientos.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoAsientos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\Listado de Asientos\ListadoAsientosAgrupo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoAsientosAgrupo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\Navegador Asientos\dtsNavegadorAsientos.Designer.vb" />
+    <Compile Include="Operaciones\AsientoConta\Navegador Asientos\frmNavegadorAsientos.Designer.vb">
+      <DependentUpon>frmNavegadorAsientos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\Navegador Asientos\frmNavegadorAsientos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\SubRptCentroCostos.vb">
+      <DependentUpon>SubRptCentroCostos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\AsientoConta\SubRptCentroCostosDC.vb">
+      <DependentUpon>SubRptCentroCostosDC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\AdAnalitico1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdAnalitico.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\BanderaGeneral.vb" />
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\Detalle_Analitico_modificado21.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Detalle_Analitico_modificado2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\dtsAnaliticoDetallado1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsAnaliticoDetallado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Ajustes\dsAjusteBancario.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAjusteBancario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Ajustes\frmAjusteCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Ajustes\ReporteAjusteBancario.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteAjusteBancario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSetCheque1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCheque.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\FormCargarDeposito.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\FrmCheques.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteCheque1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteCheque.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteChequesEstructura1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteChequesEstructura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteChequesEstructura_Dolar.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteChequesEstructura_Dolar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteChequesEstructura_ECOLE1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteChequesEstructura_ECOLE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\ReporteChequesEstructura_TBL1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteChequesEstructura_TBL.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DataSetCompras.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DatasetGasto1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetGasto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\frmGasto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\Reporte_Compra1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reporte_Compra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\rptCompras1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCompras.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\rptGasto2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptGasto2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\CrystalReportDepPag.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportDepPag.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\Cuentas11.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\dsCuentas1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCuentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\dsDepositos1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDepositos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\DsReporteD1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsReporteD.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\FormRepDepositosPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\FrmBuscador1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\frmDepositos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\frmReporteDepositos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\frmRetencionesTarjeta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\ReporteDepositoBancario.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteDepositoBancario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\ReporteDepositosR.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteDepositosR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\rptDepositosTarjetas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDepositosTarjetas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\rptSubTransacionBancariaAcredita.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSubTransacionBancariaAcredita.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias\DataSetTransferencia2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTransferencia.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias\ReporteTransferencias2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteTransferencias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias\Tranferencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico Detallado\frmAnaliticoDetallado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico x Cuenta\frmAnaliticoxCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Analitico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\AnaliticoGeneral.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnaliticoGeneral.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\BalanceComprobacion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BalanceComprobacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\BalanceComprobacion1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BalanceComprobacion1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\bkrptAnaliticoDetalladoModificado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bkrptAnaliticoDetalladoModificado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\DBKrptAnaliticoDetalladoModificado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBKrptAnaliticoDetalladoModificado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\DsBalances1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsBalances.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\EstadosR-Renovado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadosR-Renovado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\frmBalanceComprobacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\Nivel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\rptAnaliticoDetallado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAnaliticoDetallado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Comprobación\rptAnaliticoDetalladoModificado.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAnaliticoDetalladoModificado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance General\BalanceGeneral2.vb">
+      <DependentUpon>BalanceGeneral2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Balance General\DsGeneral.Designer.vb">
+      <DependentUpon>DsGeneral.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Balance General\frmBalance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\Cuenta Presupuestaria\DataSetCuentasContables_P.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCuentasContables_P.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\Cuenta Presupuestaria\DataSetCuentasContables_P.vb">
+      <DependentUpon>DataSetCuentasContables_P.xsd</DependentUpon>
+      <SubType>code</SubType>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\dtsSetting.vb">
+      <DependentUpon>dtsSetting.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Cobro Tarjeta\frmAciondePersonal.Designer.vb">
+      <DependentUpon>frmAciondePersonal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Cobro Tarjeta\frmAciondePersonal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Cobro Tarjeta\frmCobroTarjeta.Designer.vb">
+      <DependentUpon>frmCobroTarjeta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Cobro Tarjeta\frmCobroTarjeta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\Caja\Caja.vb" />
+    <Compile Include="Operaciones\Caja\clsCaja.vb" />
+    <Compile Include="Operaciones\Caja\clsCheque.vb" />
+    <Compile Include="Operaciones\Caja\dtsCaja.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsCaja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\Caja\Form\frmCaja.Designer.vb">
+      <DependentUpon>frmCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\Caja\Form\frmCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\Caja\Form\frmCajas.Designer.vb">
+      <DependentUpon>frmCajas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\Caja\Form\frmCajas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\Caja\Reporte\rptCaja.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Analisis de Gastos Comparativo\frmGastosComparativo.Designer.vb">
+      <DependentUpon>frmGastosComparativo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Analisis de Gastos Comparativo\frmGastosComparativo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Analisis de Gastos Comparativo\rptAnalisisGastoPeriodo1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAnalisisGastoPeriodo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Analisis de Gastos Comparativo\rptAnalisisGastoxAnnyo1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAnalisisGastoxAnnyo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\dtsReportesNuevos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsReportesNuevos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXC\frmAjusteCuentaCobrarGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\frmAjusteCuentaPagarGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\LCpymes\frmAjusteInventarioGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXC\frmHotelAjusteCuentaCobrarGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\frmHotelAjusteCuentaPagarGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXC\rptHotelDetalleAjusteCxCAj.vb">
+      <DependentUpon>rptHotelDetalleAjusteCxCAj.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\rptHotelDetalleAjusteCxP.vb">
+      <DependentUpon>rptHotelDetalleAjusteCxP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\LCpymes\frmRequisicionesGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptDetalleRequisicionLcPymes.vb">
+      <DependentUpon>rptDetalleRequisicionLcPymes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\CierreMensual\frmDetallesCierrePeriodo.Designer.vb">
+      <DependentUpon>frmDetallesCierrePeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\CierreMensual\frmDetallesCierrePeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\AnaliticoGeneral1.vb">
+      <DependentUpon>AnaliticoGeneral1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\CrystalReportCuentasXPagar.vb">
+      <DependentUpon>CrystalReportCuentasXPagar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\CrystalReportTransferencias.vb">
+      <DependentUpon>CrystalReportTransferencias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\FormChequeoAsientosBancos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\frmAjusteBancarioGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\frmChequeGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\frmDepositoGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\frmHotelAjusteBancarioGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\frmHotelChequeGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\frmHotelDepositoGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\frmHotelTransferenciaGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleAjusteBancarioCredito.vb">
+      <DependentUpon>rptHotelDetalleAjusteBancarioCredito.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleAjusteBancarioCredito_Generado.vb">
+      <DependentUpon>rptHotelDetalleAjusteBancarioCredito_Generado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleAjusteBancarioDebito.vb">
+      <DependentUpon>rptHotelDetalleAjusteBancarioDebito.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleAjusteBancarioDebito_Generado.vb">
+      <DependentUpon>rptHotelDetalleAjusteBancarioDebito_Generado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleCheque.vb">
+      <DependentUpon>rptHotelDetalleCheque.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleCheque_Generado.vb">
+      <DependentUpon>rptHotelDetalleCheque_Generado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleDeposito.vb">
+      <DependentUpon>rptHotelDetalleDeposito.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Bancos\rptHotelDetalleDeposito_Generado.vb">
+      <DependentUpon>rptHotelDetalleDeposito_Generado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\DsAsientoCompras.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsAsientoCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\DsAsientoDevolucion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsAsientoDevolucion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\LCpymes\frmAsientoCompraGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\LCpymes\frmDevolucionCompraGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\frmHotelGasto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\frmProveeduriaDevolucionGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\frmProveeduriaGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\rptGasto.vb">
+      <DependentUpon>rptGasto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaDetalleCompra.vb">
+      <DependentUpon>rptProveeduriaDetalleCompra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaDetalleCompraInventario.vb">
+      <DependentUpon>rptProveeduriaDetalleCompraInventario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaDevolucionDetalle.vb">
+      <DependentUpon>rptProveeduriaDevolucionDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaDevolucionDetalleGravado.vb">
+      <DependentUpon>rptProveeduriaDevolucionDetalleGravado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Valuación\DsValuacion.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsValuacion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Valuación\Valuacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Planilla\frmHotelPlanillaGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Planilla\rptPlanillaAutomaico.vb">
+      <DependentUpon>rptPlanillaAutomaico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Asiento Prepago%28No Deposito%29\CrystalReportPrepago.vb">
+      <DependentUpon>CrystalReportPrepago.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Asiento Prepago%28No Deposito%29\DS_Prepago2.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Prepago2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Asiento Prepago%28No Deposito%29\frmAsientoPrepago%28No deposito%29.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Costo de Venta\frmHotelCostoVentaAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Costo de Venta\rptAsientoCostoDetalle.vb">
+      <DependentUpon>rptAsientoCostoDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos LCPymes\Bajar Asientos LCPymes\Personalizados\CasaPlastico\frmAsientosIndividualesCasaPlastico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos LCPymes\Bajar Asientos LCPymes\Personalizados\Felipe\frmAsientosIndividualesFelipe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos LCPymes\Bajar Asientos LCPymes\Personalizados\TMS\frmAsientosIndividualesTMS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Centro de Costo\DsBalaceCentro.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsBalaceCentro.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Centro de Costo\DsCentroCosto.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsCentroCosto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Balance Centro de Costo\frmBalanceCentroCosto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Centro de Costo\FrmCentroCosto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Balance Centro de Costo\Reporte_CentroCosto.vb">
+      <DependentUpon>Reporte_CentroCosto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Balance Centro de Costo\rptCentroCostoDetallado.vb">
+      <DependentUpon>rptCentroCostoDetallado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\CierreAnual\DsCierreAnual.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsCierreAnual.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\CierreAnual\FrmCierreAnual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\CierreDiario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\CierreDiario2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\DataSetCierreDiario.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCierreDiario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\dsCierreDiario.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCierreDiario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\FormCajas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\FormFechaDepositos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\FormOpcionesPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\FormVistaAsiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\FormVistaComisiones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\ReporteCierreDiario.vb">
+      <DependentUpon>ReporteCierreDiario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\RptCierreDiario1.vb">
+      <DependentUpon>RptCierreDiario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\CierreDiario\_crp_AsientosContablesCierre1.vb">
+      <DependentUpon>_crp_AsientosContablesCierre.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\CompativoCuenta\frmComparativoCuenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\CompativoCuenta\rptComparaCuentaXMes.vb">
+      <DependentUpon>rptComparaCuentaXMes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Config\Periodo\DsPeriodoFiscal1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsPeriodoFiscal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Cortesia\frmHotelCortesiaAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Cortesia\rptAsientoCortesia.vb">
+      <DependentUpon>rptAsientoCortesia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Cortesia\rptAsientoCortesiaBAR.vb">
+      <DependentUpon>rptAsientoCortesiaBAR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Cortesia\rptAsientoCortesiaBarSeco.vb">
+      <DependentUpon>rptAsientoCortesiaBarSeco.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\dtsReportesNuevos.vb">
+      <DependentUpon>dtsReportesNuevos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\frmBalanceSituancionNuevo.Designer.vb">
+      <DependentUpon>frmBalanceSituancionNuevo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\frmBalanceSituancionNuevo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\frmCargando.Designer.vb">
+      <DependentUpon>frmCargando.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\frmCargando.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\frmEstadosResultados1.Designer.vb">
+      <DependentUpon>frmEstadosResultados1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\frmEstadosResultados1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\frmEstadosResultados2.Designer.vb">
+      <DependentUpon>frmEstadosResultados2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\nNuevos\frmEstadosResultados2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\clasesRes.vb" />
+    <Compile Include="UTILIDADES\CrystalReports.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\Cuenta Presupuestaria\Conexion.vb" />
+    <Compile Include="Config\Cuenta Contable\Cuenta Presupuestaria\Cuentas_Contables_P.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\Cuenta Presupuestaria\FrmBuscar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\Cuentas1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cuentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\Cuentas_Contables.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\DataSetCuentasContables1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCuentasContables.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\dtsSetting.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsSetting.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\FrmSettingCuentaContable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Cuenta Contable\FrmSettingHotelCuentaContable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Cuentas Contables Familias\Configura_Cuentas_2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Cuentas Contables Familias\DatasetConfiguraCuentas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetConfiguraCuentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Distribucion Ingresos\DsDistribucionIngresos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsDistribucionIngresos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Distribucion Ingresos\FrmDistribucionIngresos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Distribucion Ingresos\Reporte_DistribucionIngresos1.vb">
+      <DependentUpon>Reporte_DistribucionIngresos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estado de Resultados\DataSetMoneda.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMoneda.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estado de Resultados\EstadoResultados1.vb">
+      <DependentUpon>EstadoResultados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estado de Resultados\frmEstadoR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\cls_Conexiones.vb" />
+    <Compile Include="UTILIDADES\cls_Datos.vb" />
+    <Compile Include="Config\Configuracion NICS\frmConfigurarFlujoEfectivo.Designer.vb">
+      <DependentUpon>frmConfigurarFlujoEfectivo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Configuracion NICS\frmConfigurarFlujoEfectivo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\dstNICs.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dstNICs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Configuracion NICS\dtsGeneraNotas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsGeneraNotas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\FormNuevosEstadosFinacieros.Designer.vb">
+      <DependentUpon>FormNuevosEstadosFinacieros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\FormNuevosEstadosFinacieros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Configuracion NICS\frmConfigurarNotas.Designer.vb">
+      <DependentUpon>frmConfigurarNotas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Configuracion NICS\frmConfigurarNotas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\CierreMensual\frmGeneraDatosCierre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\frmReporteEstadosFinancieros.Designer.vb">
+      <DependentUpon>frmReporteEstadosFinancieros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\frmReporteEstadosFinancieros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\frmWaitDialog.Designer.vb">
+      <DependentUpon>frmWaitDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\Estados NICS\frmWaitDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\Modulos\clsNum2Text.vb" />
+    <Compile Include="UTILIDADES\mod_GOBALES.vb" />
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion1p.vb">
+      <DependentUpon>BalanceSituacion1p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion2p.vb">
+      <DependentUpon>BalanceSituacion2p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion3p.vb">
+      <DependentUpon>BalanceSituacion3p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion4p.vb">
+      <DependentUpon>BalanceSituacion4p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacion5p.vb">
+      <DependentUpon>BalanceSituacion5p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacionBanco.vb">
+      <DependentUpon>BalanceSituacionBanco.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacionDolarYColon.vb">
+      <DependentUpon>BalanceSituacionDolarYColon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\BalanceSituacionDolarYColon1P.vb">
+      <DependentUpon>BalanceSituacionDolarYColon1P.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad1p.vb">
+      <DependentUpon>EstadoResultad1p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad2p.vb">
+      <DependentUpon>EstadoResultad2p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad3p.vb">
+      <DependentUpon>EstadoResultad3p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad4p.vb">
+      <DependentUpon>EstadoResultad4p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos de Saldos\EstadoResultad5p.vb">
+      <DependentUpon>EstadoResultad5p.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos Periodos\Comparativo Balance.vb">
+      <DependentUpon>Comparativo Balance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos Periodos\ComparativoMesAMes.vb">
+      <DependentUpon>ComparativoMesAMes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\Comparativos Periodos\ResultadosPeriodo.vb">
+      <DependentUpon>ResultadosPeriodo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\dtBalanceSituacion.Designer.vb">
+      <DependentUpon>dtBalanceSituacion.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\FormConfEstadoResultadoBanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Estados para Bancos\frmBalanceSituacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Formato Cuentas Contables\DataSetFormatoCuenta.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFormatoCuenta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Formato Cuentas Contables\Formato_Cuentas_Contables.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\FormVisorReportesCrystal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\FrmPlantilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\frmVisorReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\AsientosIngresos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\CrystalReportFormaPago.vb">
+      <DependentUpon>CrystalReportFormaPago.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\CrystalReport_CheckOUTS.vb">
+      <DependentUpon>CrystalReport_CheckOUTS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\dsIngresos.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsIngresos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\FormCuentaNoDefinida.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\ReporteCheckOuts.vb">
+      <DependentUpon>ReporteCheckOuts.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\Ventas_Detalladas_General_PuntoVenta.vb">
+      <DependentUpon>Ventas_Detalladas_General_PuntoVenta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\Mayorizacion\DatasetMayorizacionAsiento.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetMayorizacionAsiento.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\Mayorizacion\Encabezado_Reportes1.vb">
+      <DependentUpon>Encabezado_Reportes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\Mayorizacion\fmrBuscarMayorizacionAsiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\Mayorizacion\fmrMayorizacionAsiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\Mayorizacion\rptMayorizacionAsiento.vb">
+      <DependentUpon>rptMayorizacionAsiento.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Operaciones\Mayorizacion\rptMayorizacionAsiento11.vb">
+      <DependentUpon>rptMayorizacionAsiento1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="UTILIDADES\Modulos\cFunciones.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\Modulos\Conexion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\Modulos\FrmBuscador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\Modulos\FrmBuscador5C.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\Modulos\frmBuscar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\Modulos\FrmBusqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Periodo\DsPeriodo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsPeriodo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Periodo\FormBusPeriodo.Designer.vb">
+      <DependentUpon>FormBusPeriodo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Periodo\FormBusPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Periodo\FrmPeriodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Periodo\Periodo Fiscal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Periodo\Periodo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\Plantilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Presupuesto\dtsPresupuesto.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsPresupuesto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\Presupuesto\FrmAprobarPresupuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Presupuesto\FrmEstadoResultadovsPresupuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Presupuesto\FrmModificarPresupuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Presupuesto\FrmPreMantenimientoPresupuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Presupuesto\frmPresupuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Presupuesto\FrmReporte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Presupuesto\FrmSql.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\Presupuesto\RptAutorizacion3.vb">
+      <DependentUpon>RptAutorizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Config\Presupuesto\RptEstadoResultadovsPresupuesto3.vb">
+      <DependentUpon>RptEstadoResultadovsPresupuesto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Config\Presupuesto\RptSubreporteAutorizacion3.vb">
+      <DependentUpon>RptSubreporteAutorizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="UTILIDADES\PrincipalContabilidad.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\frmProveeduriaAjusteInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\LCpymes\frmRequisicionesLcpymes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\frmTrasladoGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaAjusteInventarioDetalle.vb">
+      <DependentUpon>rptProveeduriaAjusteInventarioDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaRequisicionesDetalle.vb">
+      <DependentUpon>rptProveeduriaRequisicionesDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Inventario\Proveeduria\rptProveeduriaTrasladoDetalle.vb">
+      <DependentUpon>rptProveeduriaTrasladoDetalle.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\Recibo Dinero\CrystalReportRecibodDinero.vb">
+      <DependentUpon>CrystalReportRecibodDinero.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\Recibo Dinero\DsAsientoReciboCxC.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsAsientoReciboCxC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\Recibo Dinero\frmHotelReciboDineroGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\Recibo Dinero\frmReciboDineroGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\CXP\Recibo Dinero\Reportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\TiposDocumentos\CrystalReport1.vb">
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Config\TiposDocumentos\DataSetTiposDoc.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTiposDoc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\TiposDocumentos\DataSetTiposVista.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetTiposVista.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Config\TiposDocumentos\FrmTiposDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\TiposDocumentos\FrmVista.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config\TiposDocumentos\RpTiposDocumentos.vb">
+      <DependentUpon>RpTiposDocumentos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Config\TiposDocumentos\RptTipos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTILIDADES\Modulos\Utilidades.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos LCPymes\Ventas LCPymes\DatasetAsientoVenta.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DatasetAsientoVenta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos LCPymes\Ventas LCPymes\frmAsientoVentaGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GENERAR ASIENTOS\Ingresos LCPymes\Ventas LCPymes\frmDevolucionVentaGeneracionAutomatica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Content Include="REPORTES\Balance General\DsGeneral.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsGeneral.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Word.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Word.xml" />
+    <Content Include="bin\Microsoft.Vbe.Interop.dll" />
+    <Content Include="GENERAR ASIENTOS\Inventario\DsAsientoCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsAsientoCompras.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="GENERAR ASIENTOS\Inventario\DsAsientoDevolucion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsAsientoDevolucion.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="GENERAR ASIENTOS\Valuación\DsValuacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsValuacion.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="GENERAR ASIENTOS\Ingresos Hotel\Asiento Prepago%28No Deposito%29\DS_Prepago2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Prepago2.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="REPORTES\Balance Centro de Costo\DsBalaceCentro.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsBalaceCentro.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="Config\Centro de Costo\DsCentroCosto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsCentroCosto.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="Operaciones\CierreAnual\DsCierreAnual.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsCierreAnual.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="Operaciones\CierreDiario\DataSetCierreDiario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCierreDiario.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="Operaciones\CierreDiario\dsCierreDiario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCierreDiario.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="Config\Cuentas Contables Familias\DatasetConfiguraCuentas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetConfiguraCuentas.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="REPORTES\Distribucion Ingresos\DsDistribucionIngresos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsDistribucionIngresos.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="REPORTES\Estado de Resultados\DataSetMoneda.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMoneda.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="REPORTES\Estados para Bancos\dtBalanceSituacion.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtBalanceSituacion.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\Formato Cuentas Contables\DataSetFormatoCuenta.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFormatoCuenta.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\dsIngresos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsIngresos.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="Operaciones\Mayorizacion\DatasetMayorizacionAsiento.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetMayorizacionAsiento.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="Config\Presupuesto\dtsPresupuesto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsPresupuesto.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="GENERAR ASIENTOS\CXP\Recibo Dinero\DsAsientoReciboCxC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsAsientoReciboCxC.Designer.vb</LastGenOutput>
+    </Content>
+    <None Include="Operaciones\AsientoConta\DataSetAsientos.xsc">
+      <DependentUpon>DataSetAsientos.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\AsientoConta\DataSetAsientos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAsientos.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Operaciones\AsientoConta\DataSetAsientos.xss">
+      <DependentUpon>DataSetAsientos.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\AsientoConta\DataSetAsientos.xsx">
+      <DependentUpon>DataSetAsientos.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\AsientoConta\DsAsientos.xsc">
+      <DependentUpon>DsAsientos.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\AsientoConta\DsAsientos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsAsientos1.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Operaciones\AsientoConta\DsAsientos.xss">
+      <DependentUpon>DsAsientos.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\AsientoConta\DsAsientos.xsx">
+      <DependentUpon>DsAsientos.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\AsientoConta\Navegador Asientos\dtsNavegadorAsientos.xsc">
+      <DependentUpon>dtsNavegadorAsientos.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\AsientoConta\Navegador Asientos\dtsNavegadorAsientos.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Operaciones\AsientoConta\Navegador Asientos\dtsNavegadorAsientos.xss">
+      <DependentUpon>dtsNavegadorAsientos.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\AdAnalitico.xsc">
+      <DependentUpon>AdAnalitico.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\AdAnalitico.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AdAnalitico1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\AdAnalitico.xss">
+      <DependentUpon>AdAnalitico.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\AdAnalitico.xsx">
+      <DependentUpon>AdAnalitico.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\dtsAnaliticoDetallado.xsc">
+      <DependentUpon>dtsAnaliticoDetallado.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\dtsAnaliticoDetallado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsAnaliticoDetallado1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\dtsAnaliticoDetallado.xss">
+      <DependentUpon>dtsAnaliticoDetallado.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\dtsAnaliticoDetallado.xsx">
+      <DependentUpon>dtsAnaliticoDetallado.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Ajustes\dsAjusteBancario.xsc">
+      <DependentUpon>dsAjusteBancario.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Ajustes\dsAjusteBancario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAjusteBancario.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Ajustes\dsAjusteBancario.xss">
+      <DependentUpon>dsAjusteBancario.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Ajustes\dsAjusteBancario.xsx">
+      <DependentUpon>dsAjusteBancario.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSet1.xsx">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSetCheque.xsc">
+      <DependentUpon>DataSetCheque.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSetCheque.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCheque1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSetCheque.xss">
+      <DependentUpon>DataSetCheque.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\DataSetCheque.xsx">
+      <DependentUpon>DataSetCheque.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Cheques\vssver2.scc" />
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DataSetCompras.xsc">
+      <DependentUpon>DataSetCompras.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DataSetCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCompras.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DataSetCompras.xss">
+      <DependentUpon>DataSetCompras.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DataSetCompras.xsx">
+      <DependentUpon>DataSetCompras.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DatasetGasto.xsc">
+      <DependentUpon>DatasetGasto.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DatasetGasto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetGasto1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DatasetGasto.xss">
+      <DependentUpon>DatasetGasto.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\DatasetGasto.xsx">
+      <DependentUpon>DatasetGasto.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Compras\vssver2.scc" />
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\dsCuentas.xsc">
+      <DependentUpon>dsCuentas.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\dsCuentas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCuentas1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\dsCuentas.xss">
+      <DependentUpon>dsCuentas.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\dsDepositos.xsc">
+      <DependentUpon>dsDepositos.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\dsDepositos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDepositos1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\dsDepositos.xss">
+      <DependentUpon>dsDepositos.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\DsReporteD.xsc">
+      <DependentUpon>DsReporteD.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\DsReporteD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsReporteD1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Deposito\DsReporteD.xss">
+      <DependentUpon>DsReporteD.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias.rar" />
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias\DataSetTransferencia.xsc">
+      <DependentUpon>DataSetTransferencia.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias\DataSetTransferencia.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTransferencia2.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias\DataSetTransferencia.xss">
+      <DependentUpon>DataSetTransferencia.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\Analitico Detallado\frm Externos\Tranferencias\DataSetTransferencia.xsx">
+      <DependentUpon>DataSetTransferencia.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\DsBalances.xsc">
+      <DependentUpon>DsBalances.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\DsBalances.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsBalances1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\DsBalances.xss">
+      <DependentUpon>DsBalances.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Comprobación\DsBalances.xsx">
+      <DependentUpon>DsBalances.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance General\DsGeneral.xsc">
+      <DependentUpon>DsGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance General\DsGeneral.xsx">
+      <DependentUpon>DsGeneral.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance General\vssver.scc" />
+    <None Include="Config\Cuenta Contable\Cuenta Presupuestaria\DataSetCuentasContables_P.xsc">
+      <DependentUpon>DataSetCuentasContables_P.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Cuenta Contable\Cuenta Presupuestaria\DataSetCuentasContables_P.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCuentasContables_P.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Config\Cuenta Contable\Cuenta Presupuestaria\DataSetCuentasContables_P.xss">
+      <DependentUpon>DataSetCuentasContables_P.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Cuenta Contable\Cuenta Presupuestaria\DataSetCuentasContables_P.xsx">
+      <DependentUpon>DataSetCuentasContables_P.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\dsIngresos.xss">
+      <DependentUpon>dsIngresos.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Inventario\DsAsientoDevolucion.xss">
+      <DependentUpon>DsAsientoDevolucion.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\Caja\dtsCaja.xsc">
+      <DependentUpon>dtsCaja.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\Caja\dtsCaja.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsCaja.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Operaciones\Caja\dtsCaja.xss">
+      <DependentUpon>dtsCaja.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\CierreDiario\DataSetCierreDiario.xss">
+      <DependentUpon>DataSetCierreDiario.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\CierreDiario\dsCierreDiario.xss">
+      <DependentUpon>dsCierreDiario.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\loading-large.gif" />
+    <None Include="Resources\loading_onepage.gif" />
+    <Content Include="SeeSoftContabilidad.ico" />
+    <Content Include="Config\TiposDocumentos\DataSetTiposDoc.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTiposDoc.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="Config\TiposDocumentos\DataSetTiposVista.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTiposVista.Designer.vb</LastGenOutput>
+    </Content>
+    <Content Include="GENERAR ASIENTOS\Ingresos LCPymes\Ventas LCPymes\DatasetAsientoVenta.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DatasetAsientoVenta.Designer.vb</LastGenOutput>
+    </Content>
+    <None Include="app.config" />
+    <None Include="REPORTES\Estados NICS\nNuevos\dtsReportesNuevos.xsc">
+      <DependentUpon>dtsReportesNuevos.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Estados NICS\nNuevos\dtsReportesNuevos.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsReportesNuevos.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Estados NICS\nNuevos\dtsReportesNuevos.xss">
+      <DependentUpon>dtsReportesNuevos.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Inventario\DsAsientoCompras.xsc">
+      <DependentUpon>DsAsientoCompras.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Inventario\DsAsientoCompras.xsx">
+      <DependentUpon>DsAsientoCompras.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Inventario\DsAsientoDevolucion.xsc">
+      <DependentUpon>DsAsientoDevolucion.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Inventario\DsAsientoDevolucion.xsx">
+      <DependentUpon>DsAsientoDevolucion.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Valuación\DsValuacion.xsc">
+      <DependentUpon>DsValuacion.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Valuación\DsValuacion.xsx">
+      <DependentUpon>DsValuacion.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Ingresos Hotel\Asiento Prepago%28No Deposito%29\DS_Prepago2.xsc">
+      <DependentUpon>DS_Prepago2.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Centro de Costo\DsBalaceCentro.xsc">
+      <DependentUpon>DsBalaceCentro.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Balance Centro de Costo\DsBalaceCentro.xsx">
+      <DependentUpon>DsBalaceCentro.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Centro de Costo\DsCentroCosto.xsc">
+      <DependentUpon>DsCentroCosto.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\CierreAnual\DsCierreAnual.xsc">
+      <DependentUpon>DsCierreAnual.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\CierreAnual\DsCierreAnual.xss">
+      <DependentUpon>DsCierreAnual.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\CierreAnual\DsCierreAnual.xsx">
+      <DependentUpon>DsCierreAnual.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\CierreDiario\DataSetCierreDiario.xsc">
+      <DependentUpon>DataSetCierreDiario.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\CierreDiario\DataSetCierreDiario.xsx">
+      <DependentUpon>DataSetCierreDiario.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\CierreDiario\dsCierreDiario.xsc">
+      <DependentUpon>dsCierreDiario.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\CierreDiario\dsCierreDiario.xsx">
+      <DependentUpon>dsCierreDiario.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Cuenta Contable\DataSetCuentasContables.xsc">
+      <DependentUpon>DataSetCuentasContables.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Cuenta Contable\DataSetCuentasContables.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCuentasContables1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Config\Cuenta Contable\DataSetCuentasContables.xss">
+      <DependentUpon>DataSetCuentasContables.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Cuenta Contable\DataSetCuentasContables.xsx">
+      <DependentUpon>DataSetCuentasContables.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Cuenta Contable\dtsSetting.xsc">
+      <DependentUpon>dtsSetting.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Cuenta Contable\dtsSetting.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsSetting.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Config\Cuenta Contable\dtsSetting.xss">
+      <DependentUpon>dtsSetting.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Cuentas Contables Familias\DatasetConfiguraCuentas.xsc">
+      <DependentUpon>DatasetConfiguraCuentas.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Cuentas Contables Familias\DatasetConfiguraCuentas.xsx">
+      <DependentUpon>DatasetConfiguraCuentas.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Distribucion Ingresos\DsDistribucionIngresos.xsc">
+      <DependentUpon>DsDistribucionIngresos.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Distribucion Ingresos\DsDistribucionIngresos.xsx">
+      <DependentUpon>DsDistribucionIngresos.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Estado de Resultados\DataSetMoneda.xsc">
+      <DependentUpon>DataSetMoneda.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Estado de Resultados\DataSetMoneda.xsx">
+      <DependentUpon>DataSetMoneda.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Estados NICS\dstNICs.xsc">
+      <DependentUpon>dstNICs.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Estados NICS\dstNICs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dstNICs.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="REPORTES\Estados NICS\dstNICs.xss">
+      <DependentUpon>dstNICs.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Configuracion NICS\dtsGeneraNotas.xsc">
+      <DependentUpon>dtsGeneraNotas.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Configuracion NICS\dtsGeneraNotas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsGeneraNotas.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Config\Configuracion NICS\dtsGeneraNotas.xss">
+      <DependentUpon>dtsGeneraNotas.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Estados NICS\Plantilla.docx" />
+    <None Include="REPORTES\Estados para Bancos\dtBalanceSituacion.xsc">
+      <DependentUpon>dtBalanceSituacion.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Estados para Bancos\dtBalanceSituacion.xss">
+      <DependentUpon>dtBalanceSituacion.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTES\Estados para Bancos\dtBalanceSituacion.xsx">
+      <DependentUpon>dtBalanceSituacion.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Formato Cuentas Contables\DataSetFormatoCuenta.xsc">
+      <DependentUpon>DataSetFormatoCuenta.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Formato Cuentas Contables\DataSetFormatoCuenta.xsx">
+      <DependentUpon>DataSetFormatoCuenta.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\dsIngresos.xsc">
+      <DependentUpon>dsIngresos.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Ingresos Hotel\Ventas Hoteleria\dsIngresos.xsx">
+      <DependentUpon>dsIngresos.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\Mayorizacion\DatasetMayorizacionAsiento.xsc">
+      <DependentUpon>DatasetMayorizacionAsiento.xsd</DependentUpon>
+    </None>
+    <None Include="Operaciones\Mayorizacion\DatasetMayorizacionAsiento.xsx">
+      <DependentUpon>DatasetMayorizacionAsiento.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Config\Periodo\DsPeriodo.xsc">
+      <DependentUpon>DsPeriodo.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Periodo\DsPeriodo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsPeriodo.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Config\Periodo\DsPeriodo.xss">
+      <DependentUpon>DsPeriodo.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Periodo\DsPeriodo.xsx">
+      <DependentUpon>DsPeriodo.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Periodo\DsPeriodoFiscal.xsc">
+      <DependentUpon>DsPeriodoFiscal.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Periodo\DsPeriodoFiscal.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsPeriodoFiscal1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Config\Periodo\DsPeriodoFiscal.xss">
+      <DependentUpon>DsPeriodoFiscal.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Periodo\DsPeriodoFiscal.xsx">
+      <DependentUpon>DsPeriodoFiscal.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Presupuesto\dtsPresupuesto.xsc">
+      <DependentUpon>dtsPresupuesto.xsd</DependentUpon>
+    </None>
+    <None Include="Config\Presupuesto\dtsPresupuesto.xsx">
+      <DependentUpon>dtsPresupuesto.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\CXP\Recibo Dinero\DsAsientoReciboCxC.xsc">
+      <DependentUpon>DsAsientoReciboCxC.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\CXP\Recibo Dinero\DsAsientoReciboCxC.xsx">
+      <DependentUpon>DsAsientoReciboCxC.xsd</DependentUpon>
+    </None>
+    <None Include="Config\TiposDocumentos\DataSetTiposDoc.xsc">
+      <DependentUpon>DataSetTiposDoc.xsd</DependentUpon>
+    </None>
+    <None Include="Config\TiposDocumentos\DataSetTiposDoc.xsx">
+      <DependentUpon>DataSetTiposDoc.xsd</DependentUpon>
+    </None>
+    <None Include="Config\TiposDocumentos\DataSetTiposVista.xsc">
+      <DependentUpon>DataSetTiposVista.xsd</DependentUpon>
+    </None>
+    <None Include="Config\TiposDocumentos\DataSetTiposVista.xsx">
+      <DependentUpon>DataSetTiposVista.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Ingresos LCPymes\Ventas LCPymes\DatasetAsientoVenta.xsc">
+      <DependentUpon>DatasetAsientoVenta.xsd</DependentUpon>
+    </None>
+    <None Include="GENERAR ASIENTOS\Ingresos LCPymes\Ventas LCPymes\DatasetAsientoVenta.xsx">
+      <DependentUpon>DatasetAsientoVenta.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <Private>True</Private>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Contabilidad.Nuevos\LcConta.Nuevos.vbproj">
+      <Project>{453bf98f-ac3b-4add-a703-9822c95e16e3}</Project>
+      <Name>LcConta.Nuevos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="REPORTES\Balance Comprobación\Clases\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

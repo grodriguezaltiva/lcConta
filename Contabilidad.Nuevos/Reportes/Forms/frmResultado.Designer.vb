@@ -38,7 +38,7 @@ Partial Class frmResultado
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cbMoneda = New System.Windows.Forms.ComboBox()
         Me.MonedaBS = New System.Windows.Forms.BindingSource(Me.components)
-        Me.dts = New Contabilidad.Nuevos.dtsResultado()
+        Me.dts = New LcConta.Nuevos.dtsResultado()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.rbBalance = New System.Windows.Forms.RadioButton()
         Me.rbEstadoResultado = New System.Windows.Forms.RadioButton()

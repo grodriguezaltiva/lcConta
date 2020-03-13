@@ -1,0 +1,221 @@
+<?xml version="1.0" standalone="yes" ?>
+<xs:schema id="dsAjusteBancario" targetNamespace="http://www.tempuri.org/dsAjusteBancario.xsd"
+	xmlns:mstns="http://www.tempuri.org/dsAjusteBancario.xsd" xmlns="http://www.tempuri.org/dsAjusteBancario.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="dsAjusteBancario" msdata:IsDataSet="true" msdata:Locale="es-MX">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="cuentascontable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="Descripcion" type="xs:string" />
+							<xs:element name="Nivel" type="xs:short" />
+							<xs:element name="Tipo" type="xs:short" />
+							<xs:element name="N1" type="xs:string" />
+							<xs:element name="N2" type="xs:string" />
+							<xs:element name="N3" type="xs:string" />
+							<xs:element name="N4" type="xs:string" />
+							<xs:element name="N5" type="xs:string" />
+							<xs:element name="N6" type="xs:string" />
+							<xs:element name="N7" type="xs:string" />
+							<xs:element name="N8" type="xs:string" />
+							<xs:element name="CuentaMadre" type="xs:string" />
+							<xs:element name="Movimiento" type="xs:boolean" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AjusteBancario_Detalle">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id_AjusteDet" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="Id_Ajuste" type="xs:long" />
+							<xs:element name="Descripcion_Mov" type="xs:string" />
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="NombreCuenta" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Usuarios">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Nombre" type="xs:string" />
+							<xs:element name="Clave_Entrada" type="xs:string" />
+							<xs:element name="Clave_Interna" type="xs:string" />
+							<xs:element name="Cedula" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Moneda">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CodMoneda" type="xs:int" />
+							<xs:element name="MonedaNombre" type="xs:string" />
+							<xs:element name="ValorCompra" type="xs:double" />
+							<xs:element name="ValorVenta" type="xs:double" />
+							<xs:element name="Simbolo" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Cuentas_bancarias">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Cuenta" type="xs:string" />
+							<xs:element name="Codigo_banco" type="xs:long" />
+							<xs:element name="NombreCuenta" type="xs:string" />
+							<xs:element name="Id_CuentaBancaria" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Descripcion" type="xs:string" />
+							<xs:element name="Saldo" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+							<xs:element name="MonedaNombre" type="xs:string" />
+							<xs:element name="Cod_Moneda" type="xs:int" />
+							<xs:element name="Expr1" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="NombreCuentaContable" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AjusteBancario">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id_Ajuste" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="Num_Ajuste" type="xs:long" />
+							<xs:element name="Numero_Docum" type="xs:long" />
+							<xs:element name="Fecha" type="xs:dateTime" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="Concepto" type="xs:string" />
+							<xs:element name="Anula" type="xs:boolean" />
+							<xs:element name="Conciliacion" type="xs:boolean" />
+							<xs:element name="Contabilizado" type="xs:boolean" />
+							<xs:element name="Asiento" type="xs:string" />
+							<xs:element name="Id_CuentaBancaria" type="xs:int" minOccurs="0" />
+							<xs:element name="Credito" type="xs:boolean" />
+							<xs:element name="Debito" type="xs:boolean" />
+							<xs:element name="Num_Conciliacion" type="xs:long" />
+							<xs:element name="Ced_Usuario" type="xs:string" />
+							<xs:element name="CodigoMoneda" type="xs:int" />
+							<xs:element name="TipoCambio" type="xs:double" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="AsientosContables">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NumAsiento" type="xs:string" />
+							<xs:element name="Fecha" type="xs:dateTime" />
+							<xs:element name="IdNumDoc" type="xs:long" />
+							<xs:element name="NumDoc" type="xs:string" />
+							<xs:element name="Beneficiario" type="xs:string" />
+							<xs:element name="TipoDoc" type="xs:int" />
+							<xs:element name="Accion" type="xs:string" />
+							<xs:element name="Anulado" type="xs:boolean" />
+							<xs:element name="FechaEntrada" type="xs:dateTime" />
+							<xs:element name="Mayorizado" type="xs:boolean" />
+							<xs:element name="Periodo" type="xs:string" />
+							<xs:element name="NumMayorizado" type="xs:decimal" />
+							<xs:element name="Modulo" type="xs:string" />
+							<xs:element name="Observaciones" type="xs:string" />
+							<xs:element name="NombreUsuario" type="xs:string" />
+							<xs:element name="TotalDebe" type="xs:double" />
+							<xs:element name="TotalHaber" type="xs:double" />
+							<xs:element name="CodMoneda" type="xs:int" />
+							<xs:element name="TipoCambio" type="xs:double" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DetallesAsientosContable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID_Detalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="NumAsiento" type="xs:string" />
+							<xs:element name="Cuenta" type="xs:string" />
+							<xs:element name="NombreCuenta" type="xs:string" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="Debe" type="xs:boolean" />
+							<xs:element name="Haber" type="xs:boolean" />
+							<xs:element name="DescripcionAsiento" type="xs:string" />
+							<xs:element name="Tipocambio" type="xs:double" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CentroCosto_Movimientos">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:long" />
+							<xs:element name="IdAsiento" type="xs:string" />
+							<xs:element name="Documento" type="xs:string" />
+							<xs:element name="Fecha" type="xs:dateTime" />
+							<xs:element name="IdCentroCosto" type="xs:int" />
+							<xs:element name="Monto" type="xs:double" />
+							<xs:element name="Debe" type="xs:boolean" />
+							<xs:element name="Haber" type="xs:boolean" />
+							<xs:element name="Descripcion" type="xs:string" minOccurs="0" />
+							<xs:element name="CuentaContable" type="xs:string" />
+							<xs:element name="NombreCuentaContable" type="xs:string" />
+							<xs:element name="Tipo" type="xs:int" />
+							<xs:element name="IdDetalle" type="xs:long" />
+							<xs:element name="IdDetalleAux" type="xs:long" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CentroCostoDetalle">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="CentroCosto" type="xs:string" minOccurs="0" />
+							<xs:element name="Monto" type="xs:double" minOccurs="0" />
+							<xs:element name="Descripcion" type="xs:string" minOccurs="0" />
+							<xs:element name="Id" type="xs:int" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CentroCosto">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" type="xs:int" />
+							<xs:element name="Codigo" type="xs:string" />
+							<xs:element name="Nombre" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+		<xs:unique name="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:cuentascontable" />
+			<xs:field xpath="mstns:CuentaContable" />
+		</xs:unique>
+		<xs:unique name="Usuarios_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Usuarios" />
+			<xs:field xpath="mstns:Cedula" />
+		</xs:unique>
+		<xs:unique name="Moneda_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:Moneda" />
+			<xs:field xpath="mstns:CodMoneda" />
+		</xs:unique>
+		<xs:unique name="AjusteBancario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:AjusteBancario" />
+			<xs:field xpath="mstns:Id_Ajuste" />
+		</xs:unique>
+		<xs:unique name="AsientosContables_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:AsientosContables" />
+			<xs:field xpath="mstns:NumAsiento" />
+		</xs:unique>
+		<xs:unique name="DetallesAsientosContable_Constraint1" msdata:ConstraintName="Constraint1"
+			msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:DetallesAsientosContable" />
+			<xs:field xpath="mstns:ID_Detalle" />
+		</xs:unique>
+		<xs:unique name="CentroCosto_Movimientos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+			<xs:selector xpath=".//mstns:CentroCosto_Movimientos" />
+			<xs:field xpath="mstns:Id" />
+		</xs:unique>
+		<xs:keyref name="AsientosContablesDetallesAsientosContable" refer="AsientosContables_Constraint1">
+			<xs:selector xpath=".//mstns:DetallesAsientosContable" />
+			<xs:field xpath="mstns:NumAsiento" />
+		</xs:keyref>
+		<xs:keyref name="AjusteBancarioAjusteBancario_Detalle" refer="AjusteBancario_Constraint1">
+			<xs:selector xpath=".//mstns:AjusteBancario_Detalle" />
+			<xs:field xpath="mstns:Id_Ajuste" />
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

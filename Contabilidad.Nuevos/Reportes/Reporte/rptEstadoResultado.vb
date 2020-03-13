@@ -45,7 +45,7 @@ Public Class rptEstadoResultado
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "Contabilidad.Nuevos.rptEstadoResultado.rpt"
+            Return "LcConta.Nuevos.rptEstadoResultado.rpt"
         End Get
         Set
             'Do nothing

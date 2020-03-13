@@ -180,7 +180,7 @@ Public Class FormCargarDeposito
 
     Private Sub FormCargarDeposito_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim dt As New DataTable
-        cFunciones.Llenar_Tabla_Generico("Select * FROM Cheques WHERE Id_Cheque = " & Me.id_che, dt, Configuracion.Claves.Conexion("Bancos"))
+        cFunciones.Llenar_Tabla_Generico("Select * FROM Cheques WHERE Id_Cheque = " & Me.id_che, dt, GetSetting("SeeSoft", "Bancos", "Conexion"))
         Me.TextBoxCuentaBanc.Text = dt.Rows(0).Item("Cuenta_Destino")
         Me.TextBoxMonto.Text = dt.Rows(0).Item("Monto")
         If dt.Rows(0).Item("CodigoMoneda") = 2 Then
