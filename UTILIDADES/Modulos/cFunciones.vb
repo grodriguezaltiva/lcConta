@@ -939,8 +939,8 @@ Public Class cFunciones
             Dim TotalHaberEncabezadoColon As Double = 0
             Dim TotalDebeDetalleColon As Double = 0
             Dim TotalHaberDetalleColon As Double = 0
-            Dim TipoCambioEncabezado As Double = Asiento.Rows(0).Item("TipoCambio")
-            Dim TipoCambioDetalle As Double = AsientoDetalle.Rows(0).Item("TipoCambio")
+            Dim TipoCambioEncabezado As Double = Math.Round(Asiento.Rows(0).Item("TipoCambio"), 2)
+            Dim TipoCambioDetalle As Double = Math.Round(AsientoDetalle.Rows(0).Item("TipoCambio"), 2)
 
             If TipoCambioDetalle = TipoCambioEncabezado Then
 
@@ -963,24 +963,29 @@ Public Class cFunciones
                     If Moneda = 1 Then
 
                         If AsientoDetalle.Rows(i).Item("Debe") = True Then
-                            TotalDebeDetalleColon += Math.Round(AsientoDetalle.Rows(i).Item("Monto"), 2)
-                            TotalDebeDetalleDolar += Math.Round(AsientoDetalle.Rows(i).Item("Monto") / TipoCambioEncabezado, 2)
+                            TotalDebeDetalleColon = Math.Round(TotalDebeDetalleColon, 2) + Math.Round(AsientoDetalle.Rows(i).Item("Monto"), 2)
+                            TotalDebeDetalleDolar = Math.Round(TotalDebeDetalleDolar, 2) + Math.Round(AsientoDetalle.Rows(i).Item("Monto") / TipoCambioEncabezado, 2)
                         ElseIf AsientoDetalle.Rows(i).Item("Haber") Then
-                            TotalHaberDetalleColon += Math.Round(AsientoDetalle.Rows(i).Item("Monto"))
-                            TotalHaberDetalleDolar += Math.Round(AsientoDetalle.Rows(i).Item("Monto") / TipoCambioEncabezado, 2)
+                            TotalHaberDetalleColon = Math.Round(TotalHaberDetalleColon, 2) + Math.Round(AsientoDetalle.Rows(i).Item("Monto"), 2)
+                            TotalHaberDetalleDolar = Math.Round(TotalHaberDetalleDolar, 2) + Math.Round(AsientoDetalle.Rows(i).Item("Monto") / TipoCambioEncabezado, 2)
                         End If
                     Else
 
                         If AsientoDetalle.Rows(i).Item("Debe") = True Then
-                            TotalDebeDetalleColon += Math.Round(AsientoDetalle.Rows(i).Item("Monto") * TipoCambioEncabezado, 2)
-                            TotalDebeDetalleDolar += Math.Round(AsientoDetalle.Rows(i).Item("Monto"), 2)
+                            TotalDebeDetalleColon = Math.Round(TotalDebeDetalleColon, 2) + Math.Round(AsientoDetalle.Rows(i).Item("Monto") * TipoCambioEncabezado, 2)
+                            TotalDebeDetalleDolar = Math.Round(TotalDebeDetalleDolar, 2) + Math.Round(AsientoDetalle.Rows(i).Item("Monto"), 2)
                         ElseIf AsientoDetalle.Rows(i).Item("Haber") Then
-                            TotalHaberDetalleColon += Math.Round(AsientoDetalle.Rows(i).Item("Monto") * TipoCambioEncabezado, 2)
-                            TotalHaberDetalleDolar += Math.Round(AsientoDetalle.Rows(i).Item("Monto"), 2)
+                            TotalHaberDetalleColon = Math.Round(TotalHaberDetalleColon, 2) + Math.Round(AsientoDetalle.Rows(i).Item("Monto") * TipoCambioEncabezado, 2)
+                            TotalHaberDetalleDolar = Math.Round(TotalHaberDetalleDolar, 2) + Math.Round(AsientoDetalle.Rows(i).Item("Monto"), 2)
                         End If
                     End If
 
                 Next
+
+                TotalDebeDetalleColon = Math.Round(TotalDebeDetalleColon, 2)
+                TotalDebeDetalleDolar = Math.Round(TotalDebeDetalleDolar, 2)
+                TotalHaberDetalleColon = Math.Round(TotalHaberDetalleColon, 2)
+                TotalHaberDetalleDolar = Math.Round(TotalHaberDetalleDolar, 2)
 
                 If TotalDebeDetalleDolar = TotalDebeEncabezadoDolar And TotalHaberDetalleDolar = TotalHaberEncabezadoDolar And TotalDebeDetalleDolar = TotalHaberDetalleDolar And TotalDebeDetalleColon = TotalDebeEncabezadoColon And TotalHaberDetalleColon = TotalHaberEncabezadoColon And TotalDebeDetalleColon = TotalHaberDetalleColon Then
                     Return True

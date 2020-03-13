@@ -453,7 +453,7 @@ Public Class PeriodoFiscal
             Dim vista As DataView
             Dim cConexion As New Conexion
 
-            valor = cConexion.SlqExecuteScalar(cConexion.Conectar("Contabilidad"), "SELECT Id FROM PeriodoFical WHERE Estado = 1 ORDER BY Id DESC")
+            valor = cConexion.SlqExecuteScalar(cConexion.Conectar("Contabilidad"), "SELECT Id FROM PeriodoFiscal WHERE Estado = 1 ORDER BY Id DESC")
             cConexion.DesConectar(cConexion.sQlconexion)
 
             If valor = "" Or valor = "0" Then
