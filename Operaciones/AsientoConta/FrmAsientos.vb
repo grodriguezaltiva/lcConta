@@ -1770,31 +1770,31 @@ Public Class FrmAsientos
 			txtTipoCambio.Text = Funcion.TipoCambio(DPTrans.Value, True)
 			obtiene_formato()
 			BLOQUEAR()
-			clave = GetSetting("SeeSoft", "Seguridad", "Clave")
-			If clave.Equals("") Then
-				SaveSetting("seesoft", "seguridad", "clave", "1")
-			End If
+            clave = Configuracion.Claves.Configuracion("Clave")
+            If clave.Equals("") Then
+                SaveSetting("seesoft", "seguridad", "clave", "1")
+            End If
 
-			If NumAsiento <> "" Then
-				NombreUsuario = usua.Nombre
-				TextBox1.Text = usua.Nombre
-				TxtUsuario.Enabled = False
-				TextBox1.Enabled = False
-				ToolBar1.Buttons(0).Enabled = True
-				ToolBar1.Buttons(1).Enabled = True
+            If NumAsiento <> "" Then
+                NombreUsuario = usua.Nombre
+                TextBox1.Text = usua.Nombre
+                TxtUsuario.Enabled = False
+                TextBox1.Enabled = False
+                ToolBar1.Buttons(0).Enabled = True
+                ToolBar1.Buttons(1).Enabled = True
 
-				Buscar(NumAsiento)
+                Buscar(NumAsiento)
 
-			Else
-				If GetSetting("SeeSoft", "Seguridad", "Clave") = "0" Then
-					NombreUsuario = usua.Nombre
-					TextBox1.Text = usua.Nombre
-					TxtUsuario.Enabled = False
-					TextBox1.Enabled = False
-					ToolBar1.Buttons(0).Enabled = True
-					ToolBar1.Buttons(1).Enabled = True
-				Else
-					TxtUsuario.Focus()
+            Else
+                If Configuracion.Claves.Configuracion("Clave") = "0" Then
+                    NombreUsuario = usua.Nombre
+                    TextBox1.Text = usua.Nombre
+                    TxtUsuario.Enabled = False
+                    TextBox1.Enabled = False
+                    ToolBar1.Buttons(0).Enabled = True
+                    ToolBar1.Buttons(1).Enabled = True
+                Else
+                    TxtUsuario.Focus()
 				End If
 			End If
 
@@ -2426,8 +2426,8 @@ Public Class FrmAsientos
 				TipoCambio = CDbl(txtTipoCambio.Text)
 			End If
 
-			sql.CommandText = "EXEC [dbo].[SpVentasXFechas2] " & CBMoneda.SelectedValue & ",N'" & DPTrans.Value.Date & "', N'" & DPTrans.Value.Date & "', " & GetSetting("SeeSoft", "SeePos", "Sucursal") & "," & TipoCambio
-			cFunciones.Llenar_Tabla_Generico(sql, dt, GetSetting("SeeSoft", "SeePos", "Conexion"))
+            sql.CommandText = "EXEC [dbo].[SpVentasXFechas2] " & CBMoneda.SelectedValue & ",N'" & DPTrans.Value.Date & "', N'" & DPTrans.Value.Date & "', " & Configuracion.Claves.Conexion("SeePos") & "," & TipoCambio
+            cFunciones.Llenar_Tabla_Generico(sql, dt, Configuracion.Claves.Conexion("SEEPOS"))
 
 			For i As Integer = 0 To dt.Rows.Count - 1
 				SubTotalExcento += CDbl(dt.Rows(i).Item("SubTotalExcento"))
@@ -2442,7 +2442,7 @@ Public Class FrmAsientos
 			Dim cDIngGra As String = ""
 
 			dt.Clear()
-			cFunciones.Llenar_Tabla_Generico("SELECT   CuentaGra, DescripcionGra  FROM Familia", dt, GetSetting("SeeSoft", "SeePOS", "Conexion"))
+			cFunciones.Llenar_Tabla_Generico("SELECT   CuentaGra, DescripcionGra  FROM Familia", dt, Configuracion.Claves.Conexion("SEEPOS"))
 
 			If dt.Rows.Count > 0 Then
 				cIngGra = dt.Rows(0).Item("CuentaGra")
@@ -2453,7 +2453,7 @@ Public Class FrmAsientos
 			Dim cDIngExe As String = ""
 
 			dt.Clear()
-			cFunciones.Llenar_Tabla_Generico("SELECT   CuentaExe, DescripcionExe  FROM Familia", dt, GetSetting("SeeSoft", "SeePOS", "Conexion"))
+			cFunciones.Llenar_Tabla_Generico("SELECT   CuentaExe, DescripcionExe  FROM Familia", dt, Configuracion.Claves.Conexion("SEEPOS"))
 
 			If dt.Rows.Count > 0 Then
 				cIngExe = dt.Rows(0).Item("CuentaExe")
@@ -2848,63 +2848,63 @@ Public Class FrmAsientos
 
 				Case 1
 					rptHotelCheque.RecordSelectionFormula = "not {Cheques.Anulado} and {Cheques.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento()
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptHotelCheque, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptHotelCheque, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 
-				Case 2
-					rptHotelDeposito.RecordSelectionFormula = "{Deposito.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and not {Deposito.Anulado}"
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptHotelDeposito, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                Case 2
+                    rptHotelDeposito.RecordSelectionFormula = "{Deposito.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and not {Deposito.Anulado}"
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptHotelDeposito, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 
-				Case 3
-					rptHotelAjusteBancarioCredito.RecordSelectionFormula = "{AjusteBancario.Asiento} =  " & DataSetAsientos1.AsientosContables(0).NumAsiento() & "  and {AjusteBancario.Debito} = false and {AjusteBancario.Credito} = true and not {AjusteBancario.Anula} "
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptHotelAjusteBancarioCredito, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                Case 3
+                    rptHotelAjusteBancarioCredito.RecordSelectionFormula = "{AjusteBancario.Asiento} =  " & DataSetAsientos1.AsientosContables(0).NumAsiento() & "  and {AjusteBancario.Debito} = false and {AjusteBancario.Credito} = true and not {AjusteBancario.Anula} "
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptHotelAjusteBancarioCredito, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 
-				Case 4
-					rptHotelAjusteBancarioDebito.RecordSelectionFormula = "{AjusteBancario.Asiento} =  " & DataSetAsientos1.AsientosContables(0).NumAsiento() & "  and {AjusteBancario.Debito} = true and {AjusteBancario.Credito} = false and not {AjusteBancario.Anula} "
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptHotelAjusteBancarioDebito, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                Case 4
+                    rptHotelAjusteBancarioDebito.RecordSelectionFormula = "{AjusteBancario.Asiento} =  " & DataSetAsientos1.AsientosContables(0).NumAsiento() & "  and {AjusteBancario.Debito} = true and {AjusteBancario.Credito} = false and not {AjusteBancario.Anula} "
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptHotelAjusteBancarioDebito, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 
-				Case 5
-					'Compras
-					rptCompras.RecordSelectionFormula = " {Compras.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and {compras.Contabilizado} "
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptCompras, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                Case 5
+                    'Compras
+                    rptCompras.RecordSelectionFormula = " {Compras.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and {compras.Contabilizado} "
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptCompras, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 
-				Case 6
-					'Compras(Inventario
-					rptComprasInventario.RecordSelectionFormula = " {compras.ContaInve} and  {compras.AsientoInve} = " & DataSetAsientos1.AsientosContables(0).NumAsiento()
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptComprasInventario, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                Case 6
+                    'Compras(Inventario
+                    rptComprasInventario.RecordSelectionFormula = " {compras.ContaInve} and  {compras.AsientoInve} = " & DataSetAsientos1.AsientosContables(0).NumAsiento()
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptComprasInventario, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 
-				Case 7
-					'Devolucion compra
-					rptDevolucionCompra.RecordSelectionFormula = "{devoluciones_Compras.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and {devoluciones_Compras.Contabilizado}  "
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptDevolucionCompra, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                Case 7
+                    'Devolucion compra
+                    rptDevolucionCompra.RecordSelectionFormula = "{devoluciones_Compras.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and {devoluciones_Compras.Contabilizado}  "
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptDevolucionCompra, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 
-				Case 8
-					'devolucion compra gravada
-					rptDevolucionCompraGravada.RecordSelectionFormula = "{devoluciones_Compras.AsientoInventario} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and  {devoluciones_Compras.ContaInventario}  "
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptDevolucionCompraGravada, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                Case 8
+                    'devolucion compra gravada
+                    rptDevolucionCompraGravada.RecordSelectionFormula = "{devoluciones_Compras.AsientoInventario} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and  {devoluciones_Compras.ContaInventario}  "
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptDevolucionCompraGravada, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 
-				Case 9
-					'requisiciones
-					rptRequisiciones.RecordSelectionFormula = "{VistaRequisiciones.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and {VistaRequisiciones.Contabilizado} "
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptRequisiciones, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                Case 9
+                    'requisiciones
+                    rptRequisiciones.RecordSelectionFormula = "{VistaRequisiciones.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento() & " and {VistaRequisiciones.Contabilizado} "
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptRequisiciones, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 
-				Case 10
-					'traslado
-					rptTraslado.RecordSelectionFormula = "{VistaTraslado.Contabilizado} and {VistaTraslado.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento()
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptTraslado, False, GetSetting("SeeSoft", "Bancos", "CONEXION"))
-					visor.Show()
+                Case 10
+                    'traslado
+                    rptTraslado.RecordSelectionFormula = "{VistaTraslado.Contabilizado} and {VistaTraslado.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento()
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptTraslado, False, Configuracion.Claves.Conexion("Bancos"))
+                    visor.Show()
 				Case 19
 					rptNotasCtasxCobrar.RecordSelectionFormula = "{ajustesccobrar.Asiento} = " & DataSetAsientos1.AsientosContables(0).NumAsiento()
-					CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptNotasCtasxCobrar, False, GetSetting("hotel", "hotel", "CONEXION"))
-					visor.Show()
+                    CrystalReportsConexion2.LoadReportViewer2(visor.rptViewer, rptNotasCtasxCobrar, False, Configuracion.Claves.Conexion("Hotel"))
+                    visor.Show()
 
 				Case Else
 
@@ -2923,11 +2923,11 @@ Public Class FrmAsientos
 		Dim modulo As String = "Contabilidad"
 		Dim pTipo As String = Me.DataSetAsientos1.AsientosContables(0).Modulo
 		pTipo = pTipo.TrimEnd(" ").TrimStart(" ")
-		If Not GetSetting("SeeSoft", "Contabilidad", "Tipo").Equals("LCPYMES") Then
-			Exit Sub
-		End If
+        If Not Configuracion.Claves.Configuracion("TipoContabilidad", "LCPYMES").Equals("LCPYMES") Then
+            Exit Sub
+        End If
 
-		Dim nAs As String = Me.DataSetAsientos1.AsientosContables(0).NumAsiento
+        Dim nAs As String = Me.DataSetAsientos1.AsientosContables(0).NumAsiento
 		Select Case pTipo
 			Case "PLANILLA"
 				MsgBox("El asiento de planilla, debe generarse desde el modulo")

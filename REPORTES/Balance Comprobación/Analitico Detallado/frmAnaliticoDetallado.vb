@@ -568,13 +568,13 @@ Public Class frmAnaliticoDetallado
         Dim dts As New DataTable
         Select Case _Modulo
             Case "Depositos"
-                cFunciones.Llenar_Tabla_Generico("select top 1  NumeroDocumento from dbo.Deposito where asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1  NumeroDocumento from dbo.Deposito where asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
             Case "Ajustes Bancarios"
-                cFunciones.Llenar_Tabla_Generico("select top 1  Num_Ajuste from dbo.AjusteBancario where asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1  Num_Ajuste from dbo.AjusteBancario where asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
             Case "AJUSTE CRE"
-                cFunciones.Llenar_Tabla_Generico("select top 1  Num_Ajuste from dbo.AjusteBancario where asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1  Num_Ajuste from dbo.AjusteBancario where asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
             Case "AJUSTE DEB"
-                cFunciones.Llenar_Tabla_Generico("select top 1  Num_Ajuste from dbo.AjusteBancario where asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1  Num_Ajuste from dbo.AjusteBancario where asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
         End Select
         If dts.Rows.Count > 0 Then
             Return dts.Rows(0).Item(0)
@@ -590,19 +590,19 @@ Public Class frmAnaliticoDetallado
             Case "FACTURA GASTOS"
                 cFunciones.Llenar_Tabla_Generico("select top 1 id_compra from dbo.Compras where asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Proveeduria"))
             Case "Cheques/Transferencias"
-                cFunciones.Llenar_Tabla_Generico("select top 1 id_cheque from  dbo.Cheques where asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1 id_cheque from  dbo.Cheques where asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
             Case "CHEQUES"
-                cFunciones.Llenar_Tabla_Generico("select top 1 id_cheque from  dbo.Cheques where asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1 id_cheque from  dbo.Cheques where asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
             Case "Depositos"
-                cFunciones.Llenar_Tabla_Generico("select top 1  Id_Deposito from dbo.Deposito where asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1  Id_Deposito from dbo.Deposito where asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
             Case "Ajustes Bancarios"
-                cFunciones.Llenar_Tabla_Generico("select top 1 Id_Ajuste FROM AjusteBancario WHERE Asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1 Id_Ajuste FROM AjusteBancario WHERE Asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
             Case "AJUSTE CRE"
-                cFunciones.Llenar_Tabla_Generico("select top 1 Id_Ajuste FROM AjusteBancario WHERE Asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1 Id_Ajuste FROM AjusteBancario WHERE Asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
             Case "AJUSTE DEB"
-                cFunciones.Llenar_Tabla_Generico("select top 1 Id_Ajuste FROM AjusteBancario WHERE Asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1 Id_Ajuste FROM AjusteBancario WHERE Asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
             Case "Transferencias Bancarias"
-                cFunciones.Llenar_Tabla_Generico("select top 1 Id_Transferencia from dbo.TransferenciasBancarias where Num_Asiento = '" & Me.lblAsiento.Text & "'", dts, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+                cFunciones.Llenar_Tabla_Generico("select top 1 Id_Transferencia from dbo.TransferenciasBancarias where Num_Asiento = '" & Me.lblAsiento.Text & "'", dts, Configuracion.Claves.Conexion("Bancos"))
         End Select
 
         If dts.Rows.Count > 0 Then
@@ -724,7 +724,7 @@ Public Class frmAnaliticoDetallado
 
     Private Function Cuenta_Bancaria_Deposito(ByVal _id As String) As String
         Dim dts As New DataTable
-        cFunciones.Llenar_Tabla_Generico("SELECT dbo.Cuentas_bancarias.Cuenta FROM dbo.Cuentas_bancarias INNER JOIN dbo.Deposito ON dbo.Cuentas_bancarias.Id_CuentaBancaria = dbo.Deposito.Id_CuentaBancaria  where dbo.Deposito.Id_Deposito = " & _id, dts, GetSetting("SeeSOFt", "bancos", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico("SELECT dbo.Cuentas_bancarias.Cuenta FROM dbo.Cuentas_bancarias INNER JOIN dbo.Deposito ON dbo.Cuentas_bancarias.Id_CuentaBancaria = dbo.Deposito.Id_CuentaBancaria  where dbo.Deposito.Id_Deposito = " & _id, dts, Configuracion.Claves.Conexion("Bancos"))
         If dts.Rows.Count > 0 Then
             Return dts.Rows(0).Item(0)
         Else
@@ -734,7 +734,7 @@ Public Class frmAnaliticoDetallado
 
     Private Function Cuenta_Bancaria_Ajuste(ByVal _id As String) As String
         Dim dts As New DataTable
-        cFunciones.Llenar_Tabla_Generico("SELECT dbo.Cuentas_bancarias.Cuenta FROM dbo.Cuentas_bancarias INNER JOIN dbo.AjusteBancario ON dbo.Cuentas_bancarias.Id_CuentaBancaria = dbo.AjusteBancario.Id_CuentaBancaria  where dbo.AjusteBancario.Id_Ajuste = " & _id, dts, GetSetting("SeeSOFt", "bancos", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico("SELECT dbo.Cuentas_bancarias.Cuenta FROM dbo.Cuentas_bancarias INNER JOIN dbo.AjusteBancario ON dbo.Cuentas_bancarias.Id_CuentaBancaria = dbo.AjusteBancario.Id_CuentaBancaria  where dbo.AjusteBancario.Id_Ajuste = " & _id, dts, Configuracion.Claves.Conexion("Bancos"))
         If dts.Rows.Count > 0 Then
             Return dts.Rows(0).Item(0)
         Else

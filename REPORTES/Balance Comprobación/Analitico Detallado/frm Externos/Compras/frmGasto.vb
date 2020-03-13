@@ -1804,7 +1804,7 @@ Public Class frmGasto
         End If
 
         Dim dt As New DataTable
-        cFunciones.Llenar_Tabla_Generico("Select Contabilidad From configuraciones ", dt, GetSetting("SeeSoft", "Hotel", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico("Select Contabilidad From configuraciones ", dt, Configuracion.Claves.Conexion("Hotel"))
         Conta = dt.Rows(0).Item("Contabilidad")
 
         'If ValidarModificarElimar() = False Then

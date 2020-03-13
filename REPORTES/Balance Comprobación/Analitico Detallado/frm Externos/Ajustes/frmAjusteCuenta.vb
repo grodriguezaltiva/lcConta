@@ -1582,7 +1582,7 @@ Public Class frmAjusteCuenta
 #Region "Load"
     Private Sub FrmCheques_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Try
-            SqlConnection1.ConnectionString = GetSetting("Seesoft", "Bancos", "Conexion")
+            SqlConnection1.ConnectionString = Configuracion.Claves.Conexion("Bancos")
             SqlConnection3.ConnectionString = Configuracion.Claves.Conexion("Contabilidad")
             InhabilitarChekes()
             TxtCodUsuario.Focus()
@@ -1893,7 +1893,7 @@ Public Class frmAjusteCuenta
         Dim cnn As SqlConnection = Nothing
         ' Dentro de un Try/Catch por si se produce un error
         Try
-            Dim sConn As String = GetSetting("Seesoft", "Bancos", "Conexion")
+            Dim sConn As String = Configuracion.Claves.Conexion("Bancos")
             cnn = New SqlConnection(sConn)
             cnn.Open()
             Dim cmd As SqlCommand = New SqlCommand
@@ -1923,7 +1923,7 @@ Public Class frmAjusteCuenta
         Dim cnn As SqlConnection = Nothing
         ' Dentro de un Try/Catch por si se produce un error
         Try
-            Dim sConn As String = GetSetting("Seesoft", "Bancos", "Conexion")
+            Dim sConn As String = Configuracion.Claves.Conexion("Bancos")
             cnn = New SqlConnection(sConn)
             cnn.Open()
             Dim cmd As SqlCommand = New SqlCommand
@@ -1971,7 +1971,7 @@ Public Class frmAjusteCuenta
                 Me.ToolBarCerrar.Enabled = True
                 Me.dgDeposito.Enabled = True
                 txtTipoCambio.Text = Fx.TipoCambio(DateTimePicker1.Value, True)
-                cboCuenta.Text = GetSetting("SeeSOFT", "Bancos", "UltCuenta")
+                cboCuenta.Text = Configuracion.Claves.Configuracion("UltCuenta")
                 Me.cboCuenta.Focus()
 
             Catch eEndEdit As System.Data.NoNullAllowedException
@@ -2226,7 +2226,7 @@ Public Class frmAjusteCuenta
         Dim servidor As String = Me.SqlConnection1.DataSource
         Apertura_Cajas.SetDatabaseLogon("sa", "", Me.SqlConnection1.DataSource, Me.SqlConnection1.Database)
         Apertura_Cajas.SetParameterValue(0, Me.BindingContext(Me.DsAjusteBancario, "AjusteBancario").Current("Id_Ajuste"))
-        CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, , GetSetting("SeeSOFT", "Bancos", "Conexion"))
+        CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, , Configuracion.Claves.Conexion("Bancos"))
         visor.rptViewer.Visible = True
         Apertura_Cajas = Nothing
         visor.ShowDialog()
@@ -2395,7 +2395,7 @@ Public Class frmAjusteCuenta
             'Label19.Text = cFunciones.Descripcion
 
             Dim busca As New fmrBuscarMayorizacionAsiento
-            busca.NuevaConexion = GetSetting("SeeSoft", "Bancos", "CONEXION")
+            busca.NuevaConexion = Configuracion.Claves.Conexion("Bancos")
             busca.sqlstring = " select CuentaContable as [Cuenta contable],Nombre, [Cuenta madre] from [vs_CuentaConta_Bancos] CC "
             busca.campo = "descripcion"
             busca.sqlStringAdicional = " ORDER BY CuentaContable  "
@@ -2435,7 +2435,7 @@ Public Class frmAjusteCuenta
         Dim conectar As SqlConnection = Nothing
         Me.DsAjusteBancario.cuentascontable.Clear()
         Try
-            Dim strin As String = GetSetting("Seesoft", "Bancos", "Conexion")
+            Dim strin As String = Configuracion.Claves.Conexion("Bancos")
             conectar = New SqlConnection(strin)
             conectar.Open()
             Dim comando As SqlCommand = New SqlCommand

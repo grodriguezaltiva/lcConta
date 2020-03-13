@@ -758,7 +758,7 @@ Public Class frmAsientosIndividuales
                  " FROM         OpcionesDePago AS op INNER JOIN abonoccobrar AS a ON op.Documento = a.Num_Recibo WHERE (op.Fecha >= @F1) AND (op.TipoDocumento = 'ABO') AND (op.Fecha <= @F2) AND (a.Contabilizado = 0) AND (a.Anula = 0 )"
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion)
 
         If dt.Rows.Count = 0 Then
             MsgBox("No existen " & Me.cboTipos.Text & " pendientes para este rango de fechas", MsgBoxStyle.OkOnly)
@@ -796,7 +796,7 @@ Public Class frmAsientosIndividuales
         Dim cTar As String = ""
         Dim cDTar As String = ""
 
-        cFunciones.Llenar_Tabla_Generico("SELECT     CuentaCXC, NombreCXC FROM         TipoTarjeta", stt, GetSetting("SeeSoft", "SEEPOS", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico("SELECT     CuentaCXC, NombreCXC FROM         TipoTarjeta", stt, Configuracion.Claves.Conexion("SEEPOS"))
         If stt.Rows.Count > 0 Then
             cTar = stt.Rows(0).Item("CuentaCXC")
             cDTar = stt.Rows(0).Item("NombreCXC")
@@ -858,7 +858,7 @@ Public Class frmAsientosIndividuales
 
     '    cmd.Parameters.Add("@F1", _pF1.Date)
     '    cmd.Parameters.Add("@F2", _pF2.Date)
-    '    cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT","SEEpos", conexion))
+    '    cFunciones.Llenar_Tabla_Generico(cmd, dt,Configuracion.Claves.Conexion(conexion))
 
     '    If dt.Rows.Count = 0 Then
     '        MsgBox("No existen " & Me.cboTipos.Text & " pendientes para este rango de fechas", MsgBoxStyle.OKOnly)
@@ -913,7 +913,7 @@ Public Class frmAsientosIndividuales
 
     '            If dt.Rows(ic).Item("TipoDoc") = "AMD" Then
     '                Dim dtAMD As New DataTable
-    '                cFunciones.Llenar_Tabla_Generico(sql, dtAMD, GetSetting("SeeSoft","SEEpos", "Conexion"))
+    '                cFunciones.Llenar_Tabla_Generico(sql, dtAMD, Configuracion.Claves.Conexion("SEEPOS"))
     '                If dtAMD.Rows(0).Item("CD") = 1 Then
     '                    GuardaAsientoDetalle(dt.Rows(ic).Item("Monto"), True, False, dt.Rows(ic).Item("CC"), dt.Rows(ic).Item("DCC"), tc)
     '                Else
@@ -973,7 +973,7 @@ Public Class frmAsientosIndividuales
         BindingContext(Me.dsAs, "AsientosContables").Current("Dif") = tDebe - tHaber
         BindingContext(Me.dsAs, "AsientosContables").EndCurrentEdit()
     End Sub
-  
+
     Private Function NumeroAsiento(ByVal _pF As Date, ByVal pos As Integer, ByVal PreFijo As String) As String
         Try
             Dim Fx As New cFunciones
@@ -985,7 +985,7 @@ Public Class frmAsientosIndividuales
         Return ""
     End Function
     Private Function nummayorizado() As Integer
-        If GetSetting("SeeSoft", "Contabilidad", "NoMayorizacion").Equals("") Then
+        If Configuracion.Claves.Configuracion("NoMayorizacion").Equals("") Then
             Return 0
 
         End If
@@ -1009,7 +1009,7 @@ Public Class frmAsientosIndividuales
         cmd.CommandText = "SELECT Id_Cheque AS Id, Num_Cheque AS Documento,Tipo, Cheques.Fecha, Portador, Monto, Conciliado, Anulado, Observaciones, Ced_Usuario, Contabilizado, Asiento,  Num_Conciliacion, MontoLetras, CodigoMoneda, TipoCambio,Id_PlanDePago, Id_abonocpagar, Cuentas_bancarias.NombreCuentaContable, Cuentas_bancarias.CuentaContable FROM Cheques INNER JOIN Cuentas_bancarias ON Cheques.Id_CuentaBancaria = Cuentas_bancarias.Id_CuentaBancaria WHERE (dbo.DateOnly(Cheques.Fecha) >= @F1 AND dbo.DateOnly(Cheques.Fecha) <= @F2) AND Num_Cheque > 0 AND Anulado = 0 AND Contabilizado = 0 AND Id_abonocpagar = 0 "
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "Bancos", Me.conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(Me.conexion))
 
 
         If dt.Rows.Count = 0 Then
@@ -1056,30 +1056,30 @@ Public Class frmAsientosIndividuales
 
             End With
             Dim CUENTAbANCO As String = dt.Rows(ic).Item("CuentaContable")
-            Dim str As String = "SELECT     p.CuentaContable, p.DescripcionCuentaContable, ch.Id_Cheque " & _
-             " FROM         abonocpagar AS a INNER JOIN " & _
-             "                      Bancos.dbo.Cheques AS ch ON a.Documento = ch.Num_Cheque INNER JOIN " & _
-             "                      Bancos.dbo.Cuentas_bancarias AS ct ON ch.Id_CuentaBancaria = ct.Id_CuentaBancaria AND a.CuentaBancaria = ct.Cuenta INNER JOIN " & _
+            Dim str As String = "SELECT     p.CuentaContable, p.DescripcionCuentaContable, ch.Id_Cheque " &
+             " FROM         abonocpagar AS a INNER JOIN " &
+             "                      Bancos.dbo.Cheques AS ch ON a.Documento = ch.Num_Cheque INNER JOIN " &
+             "                      Bancos.dbo.Cuentas_bancarias AS ct ON ch.Id_CuentaBancaria = ct.Id_CuentaBancaria AND a.CuentaBancaria = ct.Cuenta INNER JOIN " &
              "                      Proveedores AS p ON a.Cod_Proveedor = p.CodigoProv where ch.Id_Cheque = " & dt.Rows(ic).Item("ID")
             Dim cuentaBuena As New DataTable
-            cFunciones.Llenar_Tabla_Generico(str, cuentaBuena, GetSetting("SEESOFT", "SeePOS", conexion))
+            cFunciones.Llenar_Tabla_Generico(str, cuentaBuena, Configuracion.Claves.Conexion(conexion))
 
             'DETALLE DEL CHEQUE
             Dim _dt As New DataTable
             cmd.CommandText = "SELECT Cheques.Fecha, Cheques_Detalle.Descripcion_Mov, Cheques_Detalle.Cuenta_Contable, Cheques_Detalle.Monto,Cheques_Detalle.Nombre_Cuenta, Cheques_Detalle.Debe, Cheques_Detalle.Haber, Cheques_Detalle.Principal, Cheques_Detalle.Id_ChequeDet FROM Cheques INNER JOIN Cuentas_bancarias ON Cheques.Id_CuentaBancaria = Cuentas_bancarias.Id_CuentaBancaria INNER JOIN Cheques_Detalle ON Cheques.Id_Cheque = Cheques_Detalle.Id_Cheque WHERE   Cheques_Detalle.Id_Cheque  = " & dt.Rows(ic).Item("ID") & " AND  (Cheques_Detalle.Principal = 0) "
 
-            cFunciones.Llenar_Tabla_Generico(cmd, _dt, GetSetting("SEESOFT", "Bancos", conexion))
+            cFunciones.Llenar_Tabla_Generico(cmd, _dt, Configuracion.Claves.Conexion(conexion))
             For id As Integer = 0 To _dt.Rows.Count - 1
                 'LINEAS DETALLE
                 If CUENTAbANCO <> _dt.Rows(id).Item("Cuenta_Contable") And dt.Rows(ic).Item("CuentaContable") <> _dt.Rows(id).Item("Cuenta_Contable") And cuentaBuena.Rows.Count > 0 Then
 
-					'If dt.Rows(ic).Item("CodigoMoneda") = 1 Then
-					GuardaAsientoDetalle(_dt.Rows(id).Item("Monto"), _dt.Rows(id).Item("Debe"), _dt.Rows(id).Item("Haber"), _dt.Rows(id).Item("Cuenta_Contable"), _dt.Rows(id).Item("Nombre_Cuenta"), tc)
-					'Else
-					'    GuardaAsientoDetalle(_dt.Rows(id).Item("Monto"), _dt.Rows(id).Item("Debe"), _dt.Rows(id).Item("Haber"), cuentaBuena.Rows(0).Item("CuentaContableDolar"), cuentaBuena.Rows(0).Item("DescripcionCuentaContableDolar"), tc)
-					'End If
+                    'If dt.Rows(ic).Item("CodigoMoneda") = 1 Then
+                    GuardaAsientoDetalle(_dt.Rows(id).Item("Monto"), _dt.Rows(id).Item("Debe"), _dt.Rows(id).Item("Haber"), _dt.Rows(id).Item("Cuenta_Contable"), _dt.Rows(id).Item("Nombre_Cuenta"), tc)
+                    'Else
+                    '    GuardaAsientoDetalle(_dt.Rows(id).Item("Monto"), _dt.Rows(id).Item("Debe"), _dt.Rows(id).Item("Haber"), cuentaBuena.Rows(0).Item("CuentaContableDolar"), cuentaBuena.Rows(0).Item("DescripcionCuentaContableDolar"), tc)
+                    'End If
 
-				ElseIf CUENTAbANCO <> _dt.Rows(id).Item("Cuenta_Contable") And dt.Rows(ic).Item("CuentaContable") <> _dt.Rows(id).Item("Cuenta_Contable") And (CStr(dt.Rows(ic).Item("CuentaContable")).IndexOf("2-01-01-") <> 6 Or cuentaBuena.Rows.Count = 0) Then
+                ElseIf CUENTAbANCO <> _dt.Rows(id).Item("Cuenta_Contable") And dt.Rows(ic).Item("CuentaContable") <> _dt.Rows(id).Item("Cuenta_Contable") And (CStr(dt.Rows(ic).Item("CuentaContable")).IndexOf("2-01-01-") <> 6 Or cuentaBuena.Rows.Count = 0) Then
 
                     GuardaAsientoDetalle(_dt.Rows(id).Item("Monto"), _dt.Rows(id).Item("Debe"), _dt.Rows(id).Item("Haber"), _dt.Rows(id).Item("Cuenta_Contable"), _dt.Rows(id).Item("Nombre_Cuenta"), tc)
 
@@ -1101,7 +1101,7 @@ Public Class frmAsientosIndividuales
         cmd.CommandText = "SELECT dbo.Deposito.Id_Deposito AS ID, dbo.Deposito.NumeroDocumento AS Documento, dbo.Deposito.Id_CuentaBancaria, dbo.Deposito.Fecha,dbo.Deposito.Monto, dbo.Deposito.Concepto, dbo.Deposito.Anulado, dbo.Deposito.Conciliado, dbo.Deposito.Contabilizado, dbo.Deposito.Ced_Usuario, dbo.Deposito.Asiento, dbo.Deposito.Num_Conciliacion, dbo.Deposito.CodigoMoneda, dbo.Deposito.TipoCambio, dbo.Cuentas_bancarias.CuentaContable, dbo.Cuentas_bancarias.NombreCuentaContable  FROM  dbo.Deposito INNER JOIN dbo.Cuentas_bancarias ON dbo.Deposito.Id_CuentaBancaria = dbo.Cuentas_bancarias.Id_CuentaBancaria WHERE     (dbo.DateOnly(dbo.Deposito.Fecha) >= @F1) AND (dbo.DateOnly(dbo.Deposito.Fecha) <= @F2) AND (dbo.Deposito.NumeroDocumento > 0) AND  (dbo.Deposito.Anulado = 0) AND (dbo.Deposito.Contabilizado = 0)"
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "Bancos", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
 
 
         If dt.Rows.Count = 0 Then
@@ -1152,20 +1152,20 @@ Public Class frmAsientosIndividuales
                 Dim _dt As New DataTable
                 '*********DEPOSITOS DE BANCOS ***********
                 cmd.CommandText = "SELECT     dbo.Deposito_Detalle.CuentaContable, dbo.Deposito_Detalle.DescripcionMov, dbo.Deposito_Detalle.Monto, dbo.Deposito_Detalle.NombreCuenta, dbo.Deposito_Detalle.TipoCambio, dbo.Deposito_Detalle.MontoOtro FROM dbo.Deposito INNER JOIN dbo.Cuentas_bancarias ON dbo.Deposito.Id_CuentaBancaria = dbo.Cuentas_bancarias.Id_CuentaBancaria INNER JOIN dbo.Deposito_Detalle ON dbo.Deposito.Id_Deposito = dbo.Deposito_Detalle.Id_Deposito WHERE     (dbo.Deposito.NumeroDocumento > 0) AND (dbo.Deposito.Anulado = 0) AND (dbo.Deposito.Contabilizado = 0) AND (dbo.Deposito.Id_Deposito = " & dt.Rows(ic).Item("ID") & ")"
-                cFunciones.Llenar_Tabla_Generico(cmd, _dt, GetSetting("SEESOFT", "Bancos", conexion))
+                cFunciones.Llenar_Tabla_Generico(cmd, _dt, Configuracion.Claves.Conexion(conexion))
                 If _dt.Rows.Count = 0 Then
 
                     '****************  NO TIENE DETALLE DEL ASIENTO EN EL DEPOSITO
                     Dim stt As New DataTable
                     If dt.Rows(ic).Item("CodigoMoneda") = 1 Then
-                        cFunciones.Llenar_Tabla_Generico("SELECT    CuentaContable.CuentaContable, CuentaContable.Descripcion " & _
-                            " FROM  SettingCuentaContable INNER JOIN " & _
+                        cFunciones.Llenar_Tabla_Generico("SELECT    CuentaContable.CuentaContable, CuentaContable.Descripcion " &
+                            " FROM  SettingCuentaContable INNER JOIN " &
                           " CuentaContable ON SettingCuentaContable.IdCuentaCobrar = CuentaContable.id", stt, Configuracion.Claves.Conexion("Contabilidad"))
                         If stt.Rows.Count > 0 Then
                             If montoCXC = 0 Then
-                                GuardaAsientoDetalle(dt.Rows(ic).Item("Monto"), _
-                                         False, _
-                                            True, _
+                                GuardaAsientoDetalle(dt.Rows(ic).Item("Monto"),
+                                         False,
+                                            True,
                                             stt.Rows(0).Item("CuentaContable"), stt.Rows(0).Item("Descripcion"), tc)
                             Else
                                 GuardaAsientoDetalle(montoCXC, False, True, stt.Rows(0).Item("CuentaContable"), stt.Rows(0).Item("Descripcion"), tc)
@@ -1175,8 +1175,8 @@ Public Class frmAsientosIndividuales
 
                         End If
                     Else
-                        cFunciones.Llenar_Tabla_Generico("SELECT    CuentaContable.CuentaContable, CuentaContable.Descripcion " & _
-                                                    " FROM  SettingCuentaContable INNER JOIN " & _
+                        cFunciones.Llenar_Tabla_Generico("SELECT    CuentaContable.CuentaContable, CuentaContable.Descripcion " &
+                                                    " FROM  SettingCuentaContable INNER JOIN " &
                                                   " CuentaContable ON SettingCuentaContable.IdCuentaPorCobrarD  = CuentaContable.id", stt, Configuracion.Claves.Conexion("Contabilidad"))
                         If stt.Rows.Count > 0 Then
                             If montoCXC = 0 Then
@@ -1220,12 +1220,12 @@ Public Class frmAsientosIndividuales
     Sub sp_GenerarAsientoAJUSTEBANC(ByVal _pF1 As Date, ByVal _pF2 As Date)
         Dim dt As New DataTable
         Dim cmd As New SqlClient.SqlCommand
-        cmd.CommandText = "SELECT     AjusteBancario.Id_Ajuste AS ID, AjusteBancario.Num_Ajuste as Documento, AjusteBancario.Numero_Docum, AjusteBancario.Fecha, AjusteBancario.Monto, AjusteBancario.Concepto, AjusteBancario.Anula, AjusteBancario.Conciliacion, AjusteBancario.Contabilizado, AjusteBancario.Asiento, AjusteBancario.Id_CuentaBancaria, AjusteBancario.Num_Conciliacion, AjusteBancario.Debito, AjusteBancario.Credito, AjusteBancario.Ced_Usuario, AjusteBancario.CodigoMoneda, AjusteBancario.TipoCambio, Cuentas_bancarias.CuentaContable, Cuentas_bancarias.NombreCuentaContable FROM AjusteBancario INNER JOIN Cuentas_bancarias ON AjusteBancario.Id_CuentaBancaria = Cuentas_bancarias.Id_CuentaBancaria" & _
+        cmd.CommandText = "SELECT     AjusteBancario.Id_Ajuste AS ID, AjusteBancario.Num_Ajuste as Documento, AjusteBancario.Numero_Docum, AjusteBancario.Fecha, AjusteBancario.Monto, AjusteBancario.Concepto, AjusteBancario.Anula, AjusteBancario.Conciliacion, AjusteBancario.Contabilizado, AjusteBancario.Asiento, AjusteBancario.Id_CuentaBancaria, AjusteBancario.Num_Conciliacion, AjusteBancario.Debito, AjusteBancario.Credito, AjusteBancario.Ced_Usuario, AjusteBancario.CodigoMoneda, AjusteBancario.TipoCambio, Cuentas_bancarias.CuentaContable, Cuentas_bancarias.NombreCuentaContable FROM AjusteBancario INNER JOIN Cuentas_bancarias ON AjusteBancario.Id_CuentaBancaria = Cuentas_bancarias.Id_CuentaBancaria" &
                         " WHERE (dbo.DateOnly(AjusteBancario.Fecha) >= @F1 AND dbo.DateOnly(AjusteBancario.Fecha) <= @F2) AND Anula = 0 AND Contabilizado = 0 "
 
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "Bancos", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
 
 
         If dt.Rows.Count = 0 Then
@@ -1285,10 +1285,10 @@ Public Class frmAsientosIndividuales
 
                 Dim _dt As New DataTable
 
-                cmd.CommandText = "Select AjusteBancario_Detalle.CuentaContable, AjusteBancario_Detalle.NombreCuenta, AjusteBancario_Detalle.Monto, AjusteBancario_Detalle.Descripcion_Mov, AjusteBancario_Detalle.Id_AjusteDet FROM AjusteBancario INNER JOIN Cuentas_bancarias ON AjusteBancario.Id_CuentaBancaria = Cuentas_bancarias.Id_CuentaBancaria INNER JOIN AjusteBancario_Detalle ON AjusteBancario.Id_Ajuste = AjusteBancario_Detalle.Id_Ajuste " & _
+                cmd.CommandText = "Select AjusteBancario_Detalle.CuentaContable, AjusteBancario_Detalle.NombreCuenta, AjusteBancario_Detalle.Monto, AjusteBancario_Detalle.Descripcion_Mov, AjusteBancario_Detalle.Id_AjusteDet FROM AjusteBancario INNER JOIN Cuentas_bancarias ON AjusteBancario.Id_CuentaBancaria = Cuentas_bancarias.Id_CuentaBancaria INNER JOIN AjusteBancario_Detalle ON AjusteBancario.Id_Ajuste = AjusteBancario_Detalle.Id_Ajuste " &
                                       " WHERE AjusteBancario.Id_Ajuste = " & dt.Rows(ic).Item("ID") & " AND Anula = 0 AND Contabilizado = 0 "
 
-                cFunciones.Llenar_Tabla_Generico(cmd, _dt, GetSetting("SEESOFT", "Bancos", conexion))
+                cFunciones.Llenar_Tabla_Generico(cmd, _dt, Configuracion.Claves.Conexion(conexion))
 
                 For id As Integer = 0 To _dt.Rows.Count - 1
 
@@ -1313,12 +1313,12 @@ Public Class frmAsientosIndividuales
     Sub sp_GenerarAsientoTRANSFERENCIASBANC(ByVal _pF1 As Date, ByVal _pF2 As Date)
         Dim dt As New DataTable
         Dim cmd As New SqlClient.SqlCommand
-        cmd.CommandText = "SELECT TB.Id_Transferencia AS ID,  TB.Num_Transferencia, TB.Fecha, TB.Descripción, TB.Moneda_Origen, TB.Monto_Origen, TB.Monto_Destino, TB.Moneda_Destino, TB.TipoCambio, CBOri.CuentaContable AS CCOrigen, CBOri.NombreCuentaContable AS NCOrigen, CBDes.CuentaContable AS CCDestino, CBDes.NombreCuentaContable AS NCDestino, TB.Anula, TB.Contabilizado, TB.Num_Transferencia2 FROM TransferenciasBancarias AS TB INNER JOIN Cuentas_bancarias AS CBOri ON TB.Id_Cuenta_Origen = CBOri.Id_CuentaBancaria INNER JOIN Cuentas_bancarias AS CBDes ON TB.Id_Cuenta_Destino = CBDes.Id_CuentaBancaria " & _
+        cmd.CommandText = "SELECT TB.Id_Transferencia AS ID,  TB.Num_Transferencia, TB.Fecha, TB.Descripción, TB.Moneda_Origen, TB.Monto_Origen, TB.Monto_Destino, TB.Moneda_Destino, TB.TipoCambio, CBOri.CuentaContable AS CCOrigen, CBOri.NombreCuentaContable AS NCOrigen, CBDes.CuentaContable AS CCDestino, CBDes.NombreCuentaContable AS NCDestino, TB.Anula, TB.Contabilizado, TB.Num_Transferencia2 FROM TransferenciasBancarias AS TB INNER JOIN Cuentas_bancarias AS CBOri ON TB.Id_Cuenta_Origen = CBOri.Id_CuentaBancaria INNER JOIN Cuentas_bancarias AS CBDes ON TB.Id_Cuenta_Destino = CBDes.Id_CuentaBancaria " &
                         " WHERE (dbo.DateOnly(TB.Fecha) >= @F1 AND dbo.DateOnly(TB.Fecha) <= @F2) AND Anula = 0 AND Contabilizado = 0 "
 
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "Bancos", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
 
 
         If dt.Rows.Count = 0 Then
@@ -1378,12 +1378,12 @@ Public Class frmAsientosIndividuales
     Sub sp_GenerarAsientoFACTURASGASTOS(ByVal _pF1 As Date, ByVal _pF2 As Date)
         Dim dt As New DataTable
         Dim cmd As New SqlClient.SqlCommand
-		cmd.CommandText = "SELECT     c.Id_Compra AS ID, c.Factura, c.CodigoProv, c.SubTotalGravado, c.SubTotalExento, c.Descuento, c.Impuesto, c.TotalFactura, c.Fecha, c.Vence, c.FechaIngreso, c.MotivoGasto, c.Compra, c.Contabilizado, c.ContaInve, c.TipoCompra, c.CedulaUsuario, c.Cod_MonedaCompra, c.FacturaCancelado,  c.Gasto, c.TipoCambio, p.CuentaContable, p.DescripcionCuentaContable, p.Nombre, c.MontoGasto, c.ImpuestoAplicable  FROM         compras AS c INNER JOIN    Proveedores AS p ON c.CodigoProv = p.CodigoProv" &
-				" WHERE (c.Gasto = 1) AND (c.TotalFactura > 0) AND (dbo.DateOnly(c.Fecha) >= @F1 AND dbo.DateOnly(c.Fecha) <= @F2) AND  c.Contabilizado = 0 "
+        cmd.CommandText = "SELECT     c.Id_Compra AS ID, c.Factura, c.CodigoProv, c.SubTotalGravado, c.SubTotalExento, c.Descuento, c.Impuesto, c.TotalFactura, c.Fecha, c.Vence, c.FechaIngreso, c.MotivoGasto, c.Compra, c.Contabilizado, c.ContaInve, c.TipoCompra, c.CedulaUsuario, c.Cod_MonedaCompra, c.FacturaCancelado,  c.Gasto, c.TipoCambio, p.CuentaContable, p.DescripcionCuentaContable, p.Nombre, c.MontoGasto, c.ImpuestoAplicable  FROM         compras AS c INNER JOIN    Proveedores AS p ON c.CodigoProv = p.CodigoProv" &
+                " WHERE (c.Gasto = 1) AND (c.TotalFactura > 0) AND (dbo.DateOnly(c.Fecha) >= @F1 AND dbo.DateOnly(c.Fecha) <= @F2) AND  c.Contabilizado = 0 "
 
-		cmd.Parameters.AddWithValue("@F1", _pF1.Date)
+        cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
 
 
         If dt.Rows.Count = 0 Then
@@ -1436,40 +1436,40 @@ Public Class frmAsientosIndividuales
 
                 GuardaAsientoDetalle(dt.Rows(ic).Item("TotalFactura"), False, True, dt.Rows(ic).Item("CuentaContable"), dt.Rows(ic).Item("DescripcionCuentaContable"), tc)
 
-				'Else 'DOLARES 
+                'Else 'DOLARES 
 
-				'GuardaAsientoDetalle(dt.Rows(ic).Item("TotalFactura"), False, True, dt.Rows(ic).Item("CuentaContableDolar"), dt.Rows(ic).Item("DescripcionCuentaContableDolar"), tc)
+                'GuardaAsientoDetalle(dt.Rows(ic).Item("TotalFactura"), False, True, dt.Rows(ic).Item("CuentaContableDolar"), dt.Rows(ic).Item("DescripcionCuentaContableDolar"), tc)
 
-				'End If
-
-
-				'LINEA CUENTA IMPUESTO
-				If stt.Rows.Count > 0 And dt.Rows(ic).Item("ImpuestoAplicable") > 0 Then
-					GuardaAsientoDetalle(Math.Round(dt.Rows(ic).Item("ImpuestoAplicable"), 2), True, False, stt.Rows(0).Item("CuentaContable"), stt.Rows(0).Item("Descripcion"), tc)
-				End If
+                'End If
 
 
-				Dim _dt As New DataTable
-				cmd.CommandText = "SELECT     a.Descripcion, a.Base, a.Monto_Flete, a.OtrosCargos, a.Costo, a.Cantidad, a.Gravado, a.Exento, a.Descuento_P, a.Descuento, a.Impuesto_P, a.Impuesto, a.Total, a.Devoluciones, a.CuentaContable,a.MontoGasto, a.ImpuestoAplicable, ccm.Descripcion AS DesCC FROM  compras AS c INNER JOIN  Proveedores AS p ON c.CodigoProv = p.CodigoProv INNER JOIN  Articulos_Gastos AS a ON c.Id_Compra = a.IdCompra INNER JOIN  CuentasContableMovimimiento AS ccm ON a.CuentaContable = ccm.CuentaContable COLLATE Modern_Spanish_CI_AS WHERE    (c.Id_Compra = " & dt.Rows(ic).Item("ID") & ") AND  (c.Gasto = 1) AND (c.TotalFactura > 0) AND (c.Contabilizado = 0)"
-				cFunciones.Llenar_Tabla_Generico(cmd, _dt, GetSetting("SeeSoft", "SeePOS", conexion))
+                'LINEA CUENTA IMPUESTO
+                If stt.Rows.Count > 0 And dt.Rows(ic).Item("ImpuestoAplicable") > 0 Then
+                    GuardaAsientoDetalle(Math.Round(dt.Rows(ic).Item("ImpuestoAplicable"), 2), True, False, stt.Rows(0).Item("CuentaContable"), stt.Rows(0).Item("Descripcion"), tc)
+                End If
+
+
+                Dim _dt As New DataTable
+                cmd.CommandText = "SELECT     a.Descripcion, a.Base, a.Monto_Flete, a.OtrosCargos, a.Costo, a.Cantidad, a.Gravado, a.Exento, a.Descuento_P, a.Descuento, a.Impuesto_P, a.Impuesto, a.Total, a.Devoluciones, a.CuentaContable,a.MontoGasto, a.ImpuestoAplicable, ccm.Descripcion AS DesCC FROM  compras AS c INNER JOIN  Proveedores AS p ON c.CodigoProv = p.CodigoProv INNER JOIN  Articulos_Gastos AS a ON c.Id_Compra = a.IdCompra INNER JOIN  CuentasContableMovimimiento AS ccm ON a.CuentaContable = ccm.CuentaContable COLLATE Modern_Spanish_CI_AS WHERE    (c.Id_Compra = " & dt.Rows(ic).Item("ID") & ") AND  (c.Gasto = 1) AND (c.TotalFactura > 0) AND (c.Contabilizado = 0)"
+                cFunciones.Llenar_Tabla_Generico(cmd, _dt, Configuracion.Claves.Conexion(conexion))
                 If _dt.Rows.Count = 0 Then
                     MsgBox("Linea no valida en Factura # " & dt.Rows(ic).Item("Factura"), MsgBoxStyle.OkOnly)
                     Exit Sub
                 End If
-				For id As Integer = 0 To _dt.Rows.Count - 1
+                For id As Integer = 0 To _dt.Rows.Count - 1
 
-					GuardaAsientoDetalle(Math.Round(_dt.Rows(id).Item("MontoGasto"), 2), True, False, _dt.Rows(id).Item("CuentaContable"), _dt.Rows(id).Item("DesCC"), tc)
-					'If _dt.Rows(id).Item("Gravado") + _dt.Rows(id).Item("Exento") = 0 Then
-					'	GuardaAsientoDetalle(_dt.Rows(id).Item("Total"), True, False, _dt.Rows(id).Item("CuentaContable"), _dt.Rows(id).Item("DesCC"), tc)
-					'Else
-					'	GuardaAsientoDetalle(_dt.Rows(id).Item("Gravado") + _dt.Rows(id).Item("Exento"), True, False, _dt.Rows(id).Item("CuentaContable"), _dt.Rows(id).Item("DesCC"), tc)
-					'End If
+                    GuardaAsientoDetalle(Math.Round(_dt.Rows(id).Item("MontoGasto"), 2), True, False, _dt.Rows(id).Item("CuentaContable"), _dt.Rows(id).Item("DesCC"), tc)
+                    'If _dt.Rows(id).Item("Gravado") + _dt.Rows(id).Item("Exento") = 0 Then
+                    '	GuardaAsientoDetalle(_dt.Rows(id).Item("Total"), True, False, _dt.Rows(id).Item("CuentaContable"), _dt.Rows(id).Item("DesCC"), tc)
+                    'Else
+                    '	GuardaAsientoDetalle(_dt.Rows(id).Item("Gravado") + _dt.Rows(id).Item("Exento"), True, False, _dt.Rows(id).Item("CuentaContable"), _dt.Rows(id).Item("DesCC"), tc)
+                    'End If
 
-				Next
+                Next
 
 
 
-			End With
+            End With
             Me.sp_totalesAsiento(BindingContext(Me.dsAs, "AsientosContables").Current("NumAsiento"))
         Next
 
@@ -1478,12 +1478,12 @@ Public Class frmAsientosIndividuales
     Sub sp_GenerarAsientoFACTURASVentasFelipe(ByVal _pF1 As Date, ByVal _pF2 As Date)
         Dim dt As New DataTable
         Dim cmd As New SqlClient.SqlCommand
-        cmd.CommandText = "SELECT     Fecha, SUM(Total) AS Total, SUM(SubTotal) AS ST, SUM(SubTotalGravada) AS SG, SUM(SubTotalExento) AS SE, SUM(Descuento) AS DES, SUM(Imp_Venta) AS IMP FROM         dbo.fVentasAsiento AS v GROUP BY Fecha " & _
+        cmd.CommandText = "SELECT     Fecha, SUM(Total) AS Total, SUM(SubTotal) AS ST, SUM(SubTotalGravada) AS SG, SUM(SubTotalExento) AS SE, SUM(Descuento) AS DES, SUM(Imp_Venta) AS IMP FROM         dbo.fVentasAsiento AS v GROUP BY Fecha " &
                         " HAVING      (Fecha <= @F2) AND (Fecha >= @F1)  ORDER BY Fecha "
 
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
 
         If dt.Rows.Count = 0 Then
             MsgBox("No existen " & Me.cboTipos.Text & " pendientes para este rango de fechas", MsgBoxStyle.OkOnly)
@@ -1496,23 +1496,23 @@ Public Class frmAsientosIndividuales
 
         'DETALLE DE VENTAS
         Dim _dt As New DataTable
-        Dim cn As String = "SELECT  SUM(MontoPago) AS MontoPago, Fecha, Tipo, FormaPago" & _
-         " FROM dbo.fVentasAsientoFP " & _
-        " GROUP BY Fecha, Tipo, FormaPago" & _
+        Dim cn As String = "SELECT  SUM(MontoPago) AS MontoPago, Fecha, Tipo, FormaPago" &
+         " FROM dbo.fVentasAsientoFP " &
+        " GROUP BY Fecha, Tipo, FormaPago" &
         " HAVING      (Fecha >= @F1) AND (Fecha <= @F2) ORDER BY Fecha"
 
         Dim cmd1 As New SqlClient.SqlCommand
         cmd1.CommandText = cn
         cmd1.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd1.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd1, _dt, GetSetting("SeeSoft", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd1, _dt, Configuracion.Claves.Conexion(conexion))
         Dim pos As Integer = 0
 
         'Buscar Información de Impuesto de Ventas
         Dim cIngGra As String = ""
         Dim cDIngGra As String = ""
 
-        cFunciones.Llenar_Tabla_Generico("SELECT   CuentaGra, DescripcionGra  FROM Familia", stt, GetSetting("SeeSoft", "SeePOS", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico("SELECT   CuentaGra, DescripcionGra  FROM Familia", stt, Configuracion.Claves.Conexion("SEEPOS"))
 
         If stt.Rows.Count > 0 Then
             cIngGra = stt.Rows(0).Item("CuentaGra")
@@ -1522,7 +1522,7 @@ Public Class frmAsientosIndividuales
         Dim cIngExe As String = ""
         Dim cDIngExe As String = ""
 
-        cFunciones.Llenar_Tabla_Generico("SELECT   CuentaExe, DescripcionExe  FROM Familia", stt, GetSetting("SeeSoft", "SeePOS", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico("SELECT   CuentaExe, DescripcionExe  FROM Familia", stt, Configuracion.Claves.Conexion("SEEPOS"))
 
         If stt.Rows.Count > 0 Then
             cIngExe = stt.Rows(0).Item("CuentaExe")
@@ -1589,7 +1589,7 @@ Public Class frmAsientosIndividuales
         Dim cTar As String = ""
         Dim cDTar As String = ""
 
-        cFunciones.Llenar_Tabla_Generico("SELECT CuentaCXC, NombreCXC FROM TipoTarjeta", stt, GetSetting("SeeSoft", "SEEPOS", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico("SELECT CuentaCXC, NombreCXC FROM TipoTarjeta", stt, Configuracion.Claves.Conexion("SEEPOS"))
         If stt.Rows.Count > 0 Then
             cTar = stt.Rows(0).Item("CuentaCXC")
             cDTar = stt.Rows(0).Item("NombreCXC")
@@ -1675,7 +1675,7 @@ Public Class frmAsientosIndividuales
             sp_totalesAsiento(BindingContext(dsAs, "AsientosContables").Current("NumAsiento"))
             GuardaAsientoDetalle(BindingContext(dsAs, "AsientosContables").Current("Dif") * -1, True, False, cEfe, cDEfe, tc)
             sp_totalesAsiento(BindingContext(dsAs, "AsientosContables").Current("NumAsiento"))
-         
+
             ProgressBar1.Value = ProgressBar1.Value + 1
         Next
 
@@ -1684,12 +1684,12 @@ Public Class frmAsientosIndividuales
     Sub sp_GenerarAsientoCostoVentaFelipe(ByVal _pF1 As Date, ByVal _pF2 As Date)
         Dim dt As New DataTable
         Dim cmd As New SqlClient.SqlCommand
-        cmd.CommandText = "SELECT     Fecha, SUM(Total) AS Total, CuentaCosto, DescripcionCosto FROM         dbo.vVentasfCostoFiltrado AS v  GROUP BY CuentaCosto, DescripcionCosto, Fecha" & _
+        cmd.CommandText = "SELECT     Fecha, SUM(Total) AS Total, CuentaCosto, DescripcionCosto FROM         dbo.vVentasfCostoFiltrado AS v  GROUP BY CuentaCosto, DescripcionCosto, Fecha" &
                         " HAVING      (Fecha <= @F2) AND (Fecha >= @F1)  ORDER BY Fecha "
 
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
         Dim f As Date = _pF1.Date
 
         If dt.Rows.Count = 0 Then
@@ -1779,12 +1779,12 @@ Public Class frmAsientosIndividuales
     Sub sp_GenerarAsientoFACTURASINVENTARIO(ByVal _pF1 As Date, ByVal _pF2 As Date)
         Dim dt As New DataTable
         Dim cmd As New SqlClient.SqlCommand
-        cmd.CommandText = "SELECT     c.Id_Compra AS ID, c.Factura, c.CodigoProv, c.SubTotalGravado, c.SubTotalExento, c.Descuento, c.Impuesto, c.TotalFactura, c.Fecha, c.Vence, c.FechaIngreso, c.MotivoGasto, c.Compra, c.Contabilizado, c.ContaInve, c.TipoCompra, c.CedulaUsuario, c.Cod_MonedaCompra, c.FacturaCancelado,  c.Gasto, c.TipoCambio, p.CuentaContable, p.DescripcionCuentaContable, p.Nombre FROM         compras AS c INNER JOIN    Proveedores AS p ON c.CodigoProv = p.CodigoProv" & _
+        cmd.CommandText = "SELECT     c.Id_Compra AS ID, c.Factura, c.CodigoProv, c.SubTotalGravado, c.SubTotalExento, c.Descuento, c.Impuesto, c.TotalFactura, c.Fecha, c.Vence, c.FechaIngreso, c.MotivoGasto, c.Compra, c.Contabilizado, c.ContaInve, c.TipoCompra, c.CedulaUsuario, c.Cod_MonedaCompra, c.FacturaCancelado,  c.Gasto, c.TipoCambio, p.CuentaContable, p.DescripcionCuentaContable, p.Nombre FROM         compras AS c INNER JOIN    Proveedores AS p ON c.CodigoProv = p.CodigoProv" &
                 " WHERE (c.Gasto = 0) AND (c.TotalFactura > 0) AND (dbo.DateOnly(c.Fecha) >= @F1 AND dbo.DateOnly(c.Fecha) <= @F2) AND  c.Contabilizado = 0 "
 
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
 
 
         If dt.Rows.Count = 0 Then
@@ -1853,7 +1853,7 @@ Public Class frmAsientosIndividuales
                 Dim _dt As New DataTable
                 'cmd.CommandText = "SELECT     b.Nombre, b.CuentaContable, b.DescripcionCuentaContable, a.Gravado, a.Exento, a.Descripcion FROM compras AS c INNER JOIN Proveedores AS p ON c.CodigoProv = p.CodigoProv INNER JOIN articulos_comprados AS a ON c.Id_Compra = a.IdCompra INNER JOIN    Bodega AS b ON a.bodega_id = b.IdBodega WHERE (c.Id_Compra = " & dt.Rows(ic).Item("ID") & ") AND (c.Gasto = 0) AND (c.TotalFactura > 0) AND (c.Contabilizado = 0)"
                 cmd.CommandText = "SELECT '1-01-07-00-00' AS CuentaContable, 'INVENTARIOS' AS DescripcionCuentaContable, a.Gravado, a.Exento, a.Descripcion FROM compras AS c INNER JOIN  Proveedores AS p ON c.CodigoProv = p.CodigoProv INNER JOIN  articulos_comprados AS a ON c.Id_Compra = a.IdCompra WHERE (c.Id_Compra = " & dt.Rows(ic).Item("ID") & ") AND (c.Gasto = 0) AND (c.TotalFactura > 0) AND (c.Contabilizado = 0)"
-                cFunciones.Llenar_Tabla_Generico(cmd, _dt, GetSetting("SeeSoft", "SeePOS", conexion))
+                cFunciones.Llenar_Tabla_Generico(cmd, _dt, Configuracion.Claves.Conexion(conexion))
 
                 Dim cComprasGravadas As String
                 Dim dComprasGravadas As String
@@ -1908,14 +1908,14 @@ Public Class frmAsientosIndividuales
     Sub sp_GenerarAsientoAJUSTECXP(ByVal _pF1 As Date, ByVal _pF2 As Date)
         Dim dt As New DataTable
         Dim cmd As New SqlClient.SqlCommand
-		'cmd.CommandText = "SELECT    a.ID_Ajuste AS ID, a.AjusteNo AS Documento, a.Tipo, a.Cod_Proveedor, a.Nombre_Proveedor, a.Fecha, a.Saldo_Prev, a.Monto, a.Saldo_Act, a.Observaciones, a.Anula, a.Cod_Usuario, a.Cod_Moneda, a.AsientoCre, a.AsientoDeb, a.ContaCre, a.ContaDeb, a.DocProveedor, p.Nombre, p.CuentaContable, p.DescripcionCuentaContable, p.CuentaContableDolar, p.DescripcionCuentaContableDolar FROM Ajustescpagar AS a INNER JOIN Proveedores AS p ON a.Cod_Proveedor = p.CodigoProv " & _
-		'" WHERE     (a.Anula = 0) AND (a.ContaCre = 0) AND (a.ContaDeb = 0) AND (dbo.DateOnly(a.Fecha) >= @F1 AND dbo.DateOnly(a.Fecha) <= @F2)"
-		cmd.CommandText = "SELECT a.ID_Ajuste AS ID, a.AjusteNo AS Documento, a.Tipo, a.Cod_Proveedor, a.Nombre_Proveedor, a.Fecha, a.Saldo_Prev, a.Monto, a.Saldo_Act,  a.Observaciones, a.Cod_Usuario, a.Cod_Moneda, p.Nombre, p.CuentaContable as CuentaContableProveedor, p.DescripcionCuentaContable as DescripcionCuentaContableProveedor, 
+        'cmd.CommandText = "SELECT    a.ID_Ajuste AS ID, a.AjusteNo AS Documento, a.Tipo, a.Cod_Proveedor, a.Nombre_Proveedor, a.Fecha, a.Saldo_Prev, a.Monto, a.Saldo_Act, a.Observaciones, a.Anula, a.Cod_Usuario, a.Cod_Moneda, a.AsientoCre, a.AsientoDeb, a.ContaCre, a.ContaDeb, a.DocProveedor, p.Nombre, p.CuentaContable, p.DescripcionCuentaContable, p.CuentaContableDolar, p.DescripcionCuentaContableDolar FROM Ajustescpagar AS a INNER JOIN Proveedores AS p ON a.Cod_Proveedor = p.CodigoProv " & _
+        '" WHERE     (a.Anula = 0) AND (a.ContaCre = 0) AND (a.ContaDeb = 0) AND (dbo.DateOnly(a.Fecha) >= @F1 AND dbo.DateOnly(a.Fecha) <= @F2)"
+        cmd.CommandText = "SELECT a.ID_Ajuste AS ID, a.AjusteNo AS Documento, a.Tipo, a.Cod_Proveedor, a.Nombre_Proveedor, a.Fecha, a.Saldo_Prev, a.Monto, a.Saldo_Act,  a.Observaciones, a.Cod_Usuario, a.Cod_Moneda, p.Nombre, p.CuentaContable as CuentaContableProveedor, p.DescripcionCuentaContable as DescripcionCuentaContableProveedor, 
                           a.CuentaContable , a.DescripcionCuentaContable , ((a.SubTotalExcento + a.SubTotalGravado) - a.Descuento)  AS SubTotal,a.MontoImpuesto,a.Total,
                           a.TipoCambio  FROM Ajustescpagar AS a INNER JOIN  Proveedores AS p ON a.Cod_Proveedor = p.CodigoProv  WHERE (dbo.DateOnly(a.Fecha) >= @F1) AND (dbo.DateOnly(a.Fecha) <= @F2)  AND (a.Contabilizado = 0) AND (a.Anula = 0) "
-		cmd.Parameters.AddWithValue("@F1", _pF1.Date)
+        cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
 
 
         If dt.Rows.Count = 0 Then
@@ -1926,19 +1926,19 @@ Public Class frmAsientosIndividuales
         Dim fx As New cFunciones
 
         Dim periodo As String = fx.BuscaPeriodo(_pF1)
-		Dim tc As Double = 0
+        Dim tc As Double = 0
 
-		Dim dtConf As New DataTable
-		Dim cuentaIv As String = ""
-		Dim cuentaIvNom As String = ""
+        Dim dtConf As New DataTable
+        Dim cuentaIv As String = ""
+        Dim cuentaIvNom As String = ""
 
-		cFunciones.Llenar_Tabla_Generico("SELECT CuentaContable.CuentaContable, CuentaContable.Descripcion FROM SettingCuentaContable INNER JOIN  CuentaContable ON SettingCuentaContable.IdImpuestoVenta = CuentaContable.id", dtConf, Configuracion.Claves.Conexion("Contabilidad"))
-		If dtConf.Rows.Count > 0 Then
-			cuentaIv = dtConf.Rows(0).Item("CuentaContable")
-			cuentaIvNom = dtConf.Rows(0).Item("Descripcion")
-		End If
+        cFunciones.Llenar_Tabla_Generico("SELECT CuentaContable.CuentaContable, CuentaContable.Descripcion FROM SettingCuentaContable INNER JOIN  CuentaContable ON SettingCuentaContable.IdImpuestoVenta = CuentaContable.id", dtConf, Configuracion.Claves.Conexion("Contabilidad"))
+        If dtConf.Rows.Count > 0 Then
+            cuentaIv = dtConf.Rows(0).Item("CuentaContable")
+            cuentaIvNom = dtConf.Rows(0).Item("Descripcion")
+        End If
 
-		For ic As Integer = 0 To dt.Rows.Count - 1
+        For ic As Integer = 0 To dt.Rows.Count - 1
             Dim modulo As String = "AJUSTE CXP " & dt.Rows(ic).Item("Tipo")
 
             With Me.BindingContext(Me.dsAs, "AsientosContables")
@@ -1961,60 +1961,60 @@ Public Class frmAsientosIndividuales
                 .Current("TotalDebe") = 0
                 .Current("TotalHaber") = 0
                 .Current("CodMoneda") = dt.Rows(ic).Item("Cod_Moneda")
-				tc = dt.Rows(ic).Item("TipoCambio")
-				.Current("TipoCambio") = tc
+                tc = dt.Rows(ic).Item("TipoCambio")
+                .Current("TipoCambio") = tc
                 .EndCurrentEdit()
 
 
 
                 'LINEA CUENTA DEL PROVEEDOR PASIVO
                 If dt.Rows(ic).Item("Cod_Moneda") = 1 Then 'COLONES
-					If dt.Rows(ic).Item("Tipo").ToString().Contains("CRE") Then
-						GuardaAsientoDetalle(dt.Rows(ic).Item("Total"), True, False, dt.Rows(ic).Item("CuentaContableProveedor"), dt.Rows(ic).Item("DescripcionCuentaContableProveedor"), tc)
+                    If dt.Rows(ic).Item("Tipo").ToString().Contains("CRE") Then
+                        GuardaAsientoDetalle(dt.Rows(ic).Item("Total"), True, False, dt.Rows(ic).Item("CuentaContableProveedor"), dt.Rows(ic).Item("DescripcionCuentaContableProveedor"), tc)
 
-						If CDbl(dt.Rows(ic).Item("MontoImpuesto")) > 0 Then
-							GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("MontoImpuesto")), False, True, cuentaIv, cuentaIvNom, tc)
+                        If CDbl(dt.Rows(ic).Item("MontoImpuesto")) > 0 Then
+                            GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("MontoImpuesto")), False, True, cuentaIv, cuentaIvNom, tc)
 
-						End If
+                        End If
 
-					Else
-						GuardaAsientoDetalle(dt.Rows(ic).Item("Total"), False, True, dt.Rows(ic).Item("CuentaContableProveedor"), dt.Rows(ic).Item("DescripcionCuentaContableProveedor"), tc)
+                    Else
+                        GuardaAsientoDetalle(dt.Rows(ic).Item("Total"), False, True, dt.Rows(ic).Item("CuentaContableProveedor"), dt.Rows(ic).Item("DescripcionCuentaContableProveedor"), tc)
 
-						If CDbl(dt.Rows(ic).Item("MontoImpuesto")) > 0 Then
-							GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("MontoImpuesto")), True, False, cuentaIv, cuentaIvNom, tc)
+                        If CDbl(dt.Rows(ic).Item("MontoImpuesto")) > 0 Then
+                            GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("MontoImpuesto")), True, False, cuentaIv, cuentaIvNom, tc)
 
-						End If
-					End If
+                        End If
+                    End If
 
 
                 Else 'DOLARES 
-					If dt.Rows(ic).Item("Tipo").ToString().Contains("CRE") Then
-						GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("Total")) * CDbl(dt.Rows(ic).Item("TipoCambio")), False, True, dt.Rows(ic).Item("CuentaContableProveedor"), dt.Rows(ic).Item("DescripcionCuentaContableProveedor"), tc)
+                    If dt.Rows(ic).Item("Tipo").ToString().Contains("CRE") Then
+                        GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("Total")) * CDbl(dt.Rows(ic).Item("TipoCambio")), False, True, dt.Rows(ic).Item("CuentaContableProveedor"), dt.Rows(ic).Item("DescripcionCuentaContableProveedor"), tc)
 
-						If CDbl(dt.Rows(ic).Item("MontoImpuesto")) > 0 Then
-							GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("MontoImpuesto")) * CDbl(dt.Rows(ic).Item("TipoCambio")), False, True, cuentaIv, cuentaIvNom, tc)
+                        If CDbl(dt.Rows(ic).Item("MontoImpuesto")) > 0 Then
+                            GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("MontoImpuesto")) * CDbl(dt.Rows(ic).Item("TipoCambio")), False, True, cuentaIv, cuentaIvNom, tc)
 
-						End If
-					Else
-						GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("Total")) * CDbl(dt.Rows(ic).Item("TipoCambio")), True, False, dt.Rows(ic).Item("CuentaContableProveedor"), dt.Rows(ic).Item("DescripcionCuentaContableProveedor"), tc)
+                        End If
+                    Else
+                        GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("Total")) * CDbl(dt.Rows(ic).Item("TipoCambio")), True, False, dt.Rows(ic).Item("CuentaContableProveedor"), dt.Rows(ic).Item("DescripcionCuentaContableProveedor"), tc)
 
-						If CDbl(dt.Rows(ic).Item("MontoImpuesto")) > 0 Then
-							GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("MontoImpuesto")) * CDbl(dt.Rows(ic).Item("TipoCambio")), True, False, cuentaIv, cuentaIvNom, tc)
+                        If CDbl(dt.Rows(ic).Item("MontoImpuesto")) > 0 Then
+                            GuardaAsientoDetalle(CDbl(dt.Rows(ic).Item("MontoImpuesto")) * CDbl(dt.Rows(ic).Item("TipoCambio")), True, False, cuentaIv, cuentaIvNom, tc)
 
-						End If
-					End If
-
-
-				End If
+                        End If
+                    End If
 
 
-				If dt.Rows(ic).Item("Tipo").ToString().Contains("CRE") Then
-					GuardaAsientoDetalle(dt.Rows(ic).Item("SubTotal"), False, True, dt.Rows(ic).Item("CuentaContable"), dt.Rows(ic).Item("DescripcionCuentaContable"), tc)
-				Else
-					GuardaAsientoDetalle(dt.Rows(ic).Item("SubTotal"), True, False, dt.Rows(ic).Item("CuentaContable"), dt.Rows(ic).Item("DescripcionCuentaContable"), tc)
-				End If
+                End If
 
-					Me.sp_totalesAsiento(.Current("NumAsiento"))
+
+                If dt.Rows(ic).Item("Tipo").ToString().Contains("CRE") Then
+                    GuardaAsientoDetalle(dt.Rows(ic).Item("SubTotal"), False, True, dt.Rows(ic).Item("CuentaContable"), dt.Rows(ic).Item("DescripcionCuentaContable"), tc)
+                Else
+                    GuardaAsientoDetalle(dt.Rows(ic).Item("SubTotal"), True, False, dt.Rows(ic).Item("CuentaContable"), dt.Rows(ic).Item("DescripcionCuentaContable"), tc)
+                End If
+
+                Me.sp_totalesAsiento(.Current("NumAsiento"))
             End With
 
         Next
@@ -2028,7 +2028,7 @@ Public Class frmAsientosIndividuales
         cmd.CommandText = "SELECT [ID_Ajuste]  ,[AjusteNo]  ,[Tipo]  ,[Cod_Cliente]  ,[Nombre_Cliente]  ,[Fecha]  ,[Saldo_Prev]  ,[Monto]  ,[Saldo_Act]  ,[Observaciones]  ,[Anula]  ,[Cod_Usuario]  ,[Contabilizado]  ,[Cod_Moneda]  ,[Asiento]  FROM [SEEPOS].[dbo].[ajustesccobrar] Where anula = 0 and Contabilizado = 0 and dbo.DateOnly(FECHA) >= @F1 AND dbo.DateOnly(FECHA) <= @F2"
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
 
         If dt.Rows.Count = 0 Then
             MsgBox("No existen " & Me.cboTipos.Text & " pendientes para este rango de fechas", MsgBoxStyle.OkOnly)
@@ -2096,14 +2096,14 @@ Public Class frmAsientosIndividuales
                 End If
 
                 Dim _dt As New DataTable
-                cmd.CommandText = "SELECT dj.Id_DetalleAjustecCobrar, dj.Id_AjustecCobrar, dj.Factura, dj.Tipo, dj.Monto, dj.Saldo_Ant, dj.Ajuste, dj.Ajuste_SuMoneda, dj.Saldo_Ajustado, dj.Observaciones,  dj.TipoNota, dj.CuentaContable, dj.IdCuentaC FROM dbo.detalle_ajustesccobrar AS dj " & _
+                cmd.CommandText = "SELECT dj.Id_DetalleAjustecCobrar, dj.Id_AjustecCobrar, dj.Factura, dj.Tipo, dj.Monto, dj.Saldo_Ant, dj.Ajuste, dj.Ajuste_SuMoneda, dj.Saldo_Ajustado, dj.Observaciones,  dj.TipoNota, dj.CuentaContable, dj.IdCuentaC FROM dbo.detalle_ajustesccobrar AS dj " &
                 "WHERE   (dj.Id_AjustecCobrar = " & dt.Rows(ic).Item("ID_Ajuste") & ") "
-                cFunciones.Llenar_Tabla_Generico(cmd, _dt, GetSetting("SeeSoft", "SEEpos", conexion))
+                cFunciones.Llenar_Tabla_Generico(cmd, _dt, Configuracion.Claves.Conexion(conexion))
                 If _dt.Rows.Count = 0 Then
                     MsgBox("Registro Incompleto " & dt.Rows(ic).Item("AjusteNo"), MsgBoxStyle.OkOnly)
                     Exit For
                 End If
-               
+
                 For id As Integer = 0 To _dt.Rows.Count - 1
                     Dim nombreCuenta As New DataTable
                     cFunciones.Llenar_Tabla_Generico("Select * From CuentaContable Where CuentaContable = '" & _dt.Rows(id).Item("CuentaContable") & "'", nombreCuenta, Configuracion.Claves.Conexion("Contabilidad"))
@@ -2127,11 +2127,11 @@ Public Class frmAsientosIndividuales
     Sub sp_GenerarAsientoDEVCOMPRAS(ByVal _pF1 As Date, ByVal _pF2 As Date)
         Dim dt As New DataTable
         Dim cmd As New SqlClient.SqlCommand
-		cmd.CommandText = "SELECT d.Devolucion, p.CuentaContable AS CC, p.DescripcionCuentaContable AS DCC, p.Nombre, d.Monto, d.Fecha, d.Impuesto, d.Descuento, d.SubTotalExcento,  d.SubTotalGravado, d.Cod_Moneda,  d.Contabilizado, d.Asiento FROM dbo.devoluciones_Compras AS d INNER JOIN  dbo.Proveedores AS p ON d.CodigoProv = p.CodigoProv WHERE (d.Anulado = 0) AND (d.Contabilizado = 0) AND (dbo.DateOnly(d.Fecha) >= @F1) AND (dbo.DateOnly(d.Fecha) <= @F2)"
+        cmd.CommandText = "SELECT d.Devolucion, p.CuentaContable AS CC, p.DescripcionCuentaContable AS DCC, p.Nombre, d.Monto, d.Fecha, d.Impuesto, d.Descuento, d.SubTotalExcento,  d.SubTotalGravado, d.Cod_Moneda,  d.Contabilizado, d.Asiento FROM dbo.devoluciones_Compras AS d INNER JOIN  dbo.Proveedores AS p ON d.CodigoProv = p.CodigoProv WHERE (d.Anulado = 0) AND (d.Contabilizado = 0) AND (dbo.DateOnly(d.Fecha) >= @F1) AND (dbo.DateOnly(d.Fecha) <= @F2)"
 
-		cmd.Parameters.AddWithValue("@F1", _pF1.Date)
+        cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
         Dim cuentaInv As String = ""
         Dim cuentaInvNom As String = ""
 
@@ -2190,8 +2190,8 @@ Public Class frmAsientosIndividuales
                 .Current("Periodo") = periodo
                 .Current("NumMayorizado") = mayo
                 .Current("Modulo") = modulo
-				.Current("Observaciones") = modulo & ". Proveedor:  " & dt.Rows(ic).Item("Nombre")
-				.Current("NombreUsuario") = Usuario.Nombre
+                .Current("Observaciones") = modulo & ". Proveedor:  " & dt.Rows(ic).Item("Nombre")
+                .Current("NombreUsuario") = Usuario.Nombre
                 .Current("TotalDebe") = 0
                 .Current("TotalHaber") = 0
                 .Current("CodMoneda") = dt.Rows(ic).Item("Cod_Moneda")
@@ -2233,7 +2233,7 @@ Public Class frmAsientosIndividuales
                 'Dim _dt As New DataTable
                 'cmd.CommandText = "SELECT a.ID_Ajuste, a.AjusteNo, d.CuentaContable, d.DescripcionCuentaContable, d.Ajuste FROM  Ajustescpagar AS a INNER JOIN      Proveedores AS p ON a.Cod_Proveedor = p.CodigoProv INNER JOIN  Detalle_AjustescPagar AS d ON a.ID_Ajuste = d.Id_AjustecPagar " & _
                 '"WHERE   (a.ID_Ajuste = " & dt.Rows(ic).Item("ID") & ") AND  (a.Anula = 0) AND (a.ContaCre = 0) AND (a.ContaDeb = 0)"
-                'cFunciones.Llenar_Tabla_Generico(cmd, _dt, GetSetting("SeeSoft", "SeePOS", conexion))
+                'cFunciones.Llenar_Tabla_Generico(cmd, _dt, Configuracion.Claves.Conexion(conexion))
                 'For id As Integer = 0 To _dt.Rows.Count - 1
                 '    If dt.Rows(ic).Item("Tipo") = "CRE" Then
                 '        GuardaAsientoDetalle(_dt.Rows(id).Item("Ajuste"), False, True, _dt.Rows(id).Item("CuentaContable"), _dt.Rows(id).Item("DescripcionCuentaContable"), tc)
@@ -2253,7 +2253,7 @@ Public Class frmAsientosIndividuales
 
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
         'Dim cuentaInv As String = ""
         'Dim cuentaInvNom As String = ""
 
@@ -2322,7 +2322,7 @@ Public Class frmAsientosIndividuales
                         GuardaAsientoDetalle(dt.Rows(ic).Item("Imp"), True, False, dtProv.Rows(0).Item("CuentaContable"), dtProv.Rows(0).Item("DescripcionCuentaContable"), tc)
                         GuardaAsientoDetalle(dt.Rows(ic).Item("Imp"), False, True, cIv, cDIv, tc)
                     End If
-                  
+
                 End If
 
 
@@ -2353,7 +2353,7 @@ Public Class frmAsientosIndividuales
                 cmd.CommandText = "SELECT Cuenta_Contable, Nombre_Cuenta, TotalEntrada + TotalSalida AS Monto, Salida, observacion, iventa as Gravado FROM AjusteInventario_Detalle inner join inventario on inventario.codigo = AjusteInventario_Detalle.cod_Articulo  WHERE (Cons_Ajuste = " & dt.Rows(ic).Item("Consecutivo") & ")"
                 '"SELECT a.ID_Ajuste, a.AjusteNo, d.CuentaContable, d.DescripcionCuentaContable, d.Ajuste FROM  Ajustescpagar AS a INNER JOIN      Proveedores AS p ON a.Cod_Proveedor = p.CodigoProv INNER JOIN  Detalle_AjustescPagar AS d ON a.ID_Ajuste = d.Id_AjustecPagar " & _
                 '"WHERE   (a.ID_Ajuste = " & dt.Rows(ic).Item("Concecutivo") & ") AND  (a.Anula = 0) AND (a.ContaCre = 0) AND (a.ContaDeb = 0)"
-                cFunciones.Llenar_Tabla_Generico(cmd, _dt, GetSetting("SeeSoft", "SeePOS", conexion))
+                cFunciones.Llenar_Tabla_Generico(cmd, _dt, Configuracion.Claves.Conexion(conexion))
                 If _dt.Rows.Count > 0 Then
                     .Current("Observaciones") &= ". " & _dt.Rows(0).Item("observacion")
                     .EndCurrentEdit()
@@ -2391,7 +2391,7 @@ Public Class frmAsientosIndividuales
 
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, GetSetting("SEESOFT", "SeePOS", conexion))
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
         Dim cuentaInv As String = ""
         Dim cuentaInvNom As String = ""
 
@@ -2405,7 +2405,7 @@ Public Class frmAsientosIndividuales
         Dim cuentaIvNom As String = ""
 
         Dim dtConf As New DataTable
-       
+
 
         'Buscar Información de Impuesto de Ventas
         Dim cIv As String = ""
@@ -2461,8 +2461,8 @@ Public Class frmAsientosIndividuales
                 cmd.CommandText = "SELECT cantidad * PrecioBase AS Total, CuentaContable, DescripcionCuentaContable, Id_Requisicion FROM RequisicionesDetalles Where Id_Requisicion = " & dt.Rows(ic).Item("Id_Requisicion") & " GROUP BY cantidad, PrecioBase, CuentaContable, DescripcionCuentaContable, Id_Requisicion)"
                 '"SELECT a.ID_Ajuste, a.AjusteNo, d.CuentaContable, d.DescripcionCuentaContable, d.Ajuste FROM  Ajustescpagar AS a INNER JOIN      Proveedores AS p ON a.Cod_Proveedor = p.CodigoProv INNER JOIN  Detalle_AjustescPagar AS d ON a.ID_Ajuste = d.Id_AjustecPagar " & _
                 '"WHERE   (a.ID_Ajuste = " & dt.Rows(ic).Item("Concecutivo") & ") AND  (a.Anula = 0) AND (a.ContaCre = 0) AND (a.ContaDeb = 0)"
-                cFunciones.Llenar_Tabla_Generico(cmd, _dt, GetSetting("SeeSoft", "SeePOS", conexion))
-               
+                cFunciones.Llenar_Tabla_Generico(cmd, _dt, Configuracion.Claves.Conexion(conexion))
+
                 For id As Integer = 0 To _dt.Rows.Count - 1
 
                     GuardaAsientoDetalle(_dt.Rows(id).Item("Total"), True, False, _dt.Rows(id).Item("CuentaContable"), _dt.Rows(id).Item("DescripcionCuentaContable"), tc)

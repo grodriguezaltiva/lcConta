@@ -1126,7 +1126,7 @@ Public Class frmBalanceComprobacion
             Me.dtFinal.Enabled = False
             Me.dtInicial.Enabled = False
             Check_Cierre.Enabled = False
-            If GetSetting("Seesoft", "Contabilidad", "ExpandirTodas").Equals("1") Then
+            If Configuracion.Claves.Configuracion("ExpandirTodas").Equals("1") Then
                 TreeList2.FullExpand()
 
             End If

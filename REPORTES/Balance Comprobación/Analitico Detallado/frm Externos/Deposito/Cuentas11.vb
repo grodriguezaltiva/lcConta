@@ -167,7 +167,7 @@ Public Class Cuentas11
         Dim cnn As SqlConnection = Nothing
         ' Dentro de un Try/Catch por si se produce un error
         Try
-            Dim sConn As String = GetSetting("Seesoft", "Bancos", "Conexion")
+            Dim sConn As String = Configuracion.Claves.Conexion("Bancos")
             cnn = New SqlConnection(sConn)
             cnn.Open()
             Dim sel As String

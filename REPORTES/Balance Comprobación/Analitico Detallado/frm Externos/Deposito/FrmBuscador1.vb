@@ -404,7 +404,7 @@ Public Class FrmBuscador1
 
     Private Sub FrmBuscador1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim DataSet As New DataSet
-        Me.SqlConnection.ConnectionString = IIf(NuevaConexion = "", GetSetting("SeeSOFT", "SeePos", "Conexion"), NuevaConexion)
+        Me.SqlConnection.ConnectionString = IIf(NuevaConexion = "", Configuracion.Claves.Conexion("SEEPOS"), NuevaConexion)
         '-------------------------------------------------
         If SQLString = "" Then
             MsgBox("No se ha especificado la Sentencia  SQL base para la Busqueda" & vbCrLf & "Error de Programación....", MsgBoxStyle.Critical, "Alerta..")

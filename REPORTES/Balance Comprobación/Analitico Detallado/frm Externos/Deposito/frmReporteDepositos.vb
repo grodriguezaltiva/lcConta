@@ -233,7 +233,7 @@ Public Class frmReporteDepositos
     Private Sub frmReporteDepositos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Top = 0
         Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) \ 2
-        SqlConnection1.ConnectionString = GetSetting("Seesoft", "Bancos", "Conexion")
+        SqlConnection1.ConnectionString = Configuracion.Claves.Conexion("Bancos")
         Me.SqlDataAdapter1.Fill(Me.DsReporteD1.Cuentas_bancarias)
         ComboBox2.Focus()
     End Sub

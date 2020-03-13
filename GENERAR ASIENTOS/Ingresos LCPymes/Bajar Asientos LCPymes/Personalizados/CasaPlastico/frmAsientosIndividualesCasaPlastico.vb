@@ -911,7 +911,7 @@ Public Class frmAsientosIndividualesCasaPlastico
 
     '            If dt.Rows(ic).Item("TipoDoc") = "AMD" Then
     '                Dim dtAMD As New DataTable
-    '                cFunciones.Llenar_Tabla_Generico(sql, dtAMD, GetSetting("SeeSoft","SEEpos", "Conexion"))
+    '                cFunciones.Llenar_Tabla_Generico(sql, dtAMD, Configuracion.Claves.Conexion("SeePOS"))
     '                If dtAMD.Rows(0).Item("CD") = 1 Then
     '                    GuardaAsientoDetalle(dt.Rows(ic).Item("Monto"), True, False, dt.Rows(ic).Item("CC"), dt.Rows(ic).Item("DCC"), tc)
     '                Else

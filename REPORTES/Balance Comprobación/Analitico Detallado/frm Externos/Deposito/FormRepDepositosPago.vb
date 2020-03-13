@@ -346,7 +346,7 @@ Public Class FormRepDepositosPago
                       " PagadoConTRA ON Bancos.dbo.Deposito.NumeroDocumento = PagadoConTRA.Documento AND " & _
                       " Bancos.dbo.Deposito.Id_CuentaBancaria = PagadoConTRA.Id_CuentaBancaria"
 
-        cFunciones.Llenar_Tabla_Generico(sql & " " & where, Me.DsReporteD1.PagoDep, GetSetting("SeeSoft", "Hotel", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico(sql & " " & where, Me.DsReporteD1.PagoDep, Configuracion.Claves.Conexion("Hotel"))
 
 
     End Sub
@@ -354,10 +354,10 @@ Public Class FormRepDepositosPago
     Private Sub FormRepDepositosPago_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim sql As String = "Select * From Bancos"
 
-        cFunciones.Llenar_Tabla_Generico(sql, Me.DsReporteD1.Bancos, GetSetting("SeeSoft", "Bancos", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico(sql, Me.DsReporteD1.Bancos, Configuracion.Claves.Conexion("Bancos"))
         sql = "Select * From Cliente"
 
-        cFunciones.Llenar_Tabla_Generico(sql, Me.DsReporteD1.Cliente, GetSetting("SeeSoft", "Hotel", "Conexion"))
+        cFunciones.Llenar_Tabla_Generico(sql, Me.DsReporteD1.Cliente, Configuracion.Claves.Conexion("Hotel"))
 
     End Sub
 

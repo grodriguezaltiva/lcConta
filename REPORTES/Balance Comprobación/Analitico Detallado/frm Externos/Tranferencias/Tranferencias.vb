@@ -1129,7 +1129,7 @@ Public Class FrmTranferencias
         Dim filas1, filas2 As Integer
         Dim fx As New cFunciones
         Try
-            SqlConnection1.ConnectionString = GetSetting("Seesoft", "Bancos", "Conexion")
+            SqlConnection1.ConnectionString = Configuracion.Claves.Conexion("Bancos")
             SqlConnection2.ConnectionString = Configuracion.Claves.Conexion("Contabilidad")
             DaOrigen.Fill(DataSetTransferencia1.Cuentas_bancariasOrigen)
             filas1 = DataSetTransferencia1.Cuentas_bancariasOrigen.Rows.Count()
@@ -1407,7 +1407,7 @@ Public Class FrmTranferencias
         Dim cnn As SqlConnection = Nothing
         ' Dentro de un Try/Catch por si se produce un error
         Try
-            Dim sConn As String = GetSetting("Seesoft", "Bancos", "Conexion")
+            Dim sConn As String = Configuracion.Claves.Conexion("Bancos")
             cnn = New SqlConnection(sConn)
             cnn.Open()
             Dim cmd As SqlCommand = New SqlCommand
@@ -1438,7 +1438,7 @@ Public Class FrmTranferencias
         Dim servidor As String = Me.SqlConnection1.DataSource
         Apertura_Cajas.SetDatabaseLogon("sa", "", Me.SqlConnection1.DataSource, Me.SqlConnection1.Database)
         Apertura_Cajas.SetParameterValue(0, Me.BindingContext(Me.DataSetTransferencia1, "TransferenciasBancarias").Current("Num_Transferencia"))
-        CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+        CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, Configuracion.Claves.Conexion("Bancos"))
         visor.rptViewer.Visible = True
         Apertura_Cajas = Nothing
         visor.MdiParent = Me.ParentForm

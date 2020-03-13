@@ -1593,7 +1593,7 @@ Public Class frmDepositos
         Try
             Dim filas As Integer
             Dim fx As New cFunciones
-            SqlConnection1.ConnectionString = GetSetting("Seesoft", "Bancos", "Conexion")
+            SqlConnection1.ConnectionString = Configuracion.Claves.Conexion("Bancos")
             SqlConnection2.ConnectionString = Configuracion.Claves.Conexion("Contabilidad")
             Try
                 Binding()
@@ -1807,7 +1807,7 @@ Public Class frmDepositos
         Apertura_Cajas.SetDatabaseLogon("sa", "", Me.SqlConnection1.DataSource, Me.SqlConnection1.Database)
         NumeroDeposito = Me.BindingContext(Me.DsDepositos, "Deposito").Current("Id_Deposito")
         Apertura_Cajas.SetParameterValue(0, NumeroDeposito)
-        CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, GetSetting("SeeSOFT", "Bancos", "Conexion"))
+        CrystalReportsConexion2.LoadReportBancos(visor.rptViewer, Apertura_Cajas, False, Configuracion.Claves.Conexion("Bancos"))
         visor.rptViewer.Visible = True
         Apertura_Cajas = Nothing
         visor.ShowDialog()
@@ -1992,7 +1992,7 @@ Public Class frmDepositos
         Dim cnn As SqlConnection = Nothing
         ' Dentro de un Try/Catch por si se produce un error
         Try
-            Dim sConn As String = GetSetting("Seesoft", "Bancos", "Conexion")
+            Dim sConn As String = Configuracion.Claves.Conexion("Bancos")
             cnn = New SqlConnection(sConn)
             cnn.Open()
             Dim cmd As SqlCommand = New SqlCommand
@@ -2022,7 +2022,7 @@ Public Class frmDepositos
         Dim cnn As SqlConnection = Nothing
         '  Dentro de unTry/Catch por si se produce un error
         Try
-            Dim sConn As String = GetSetting("Seesoft", "Bancos", "Conexion")
+            Dim sConn As String = Configuracion.Claves.Conexion("Bancos")
             cnn = New SqlConnection(sConn)
             cnn.Open()
             Dim cmd As SqlCommand = New SqlCommand
@@ -2072,7 +2072,7 @@ Public Class frmDepositos
                 Me.ToolBarImprimir.Enabled = False
                 Me.ToolBarEliminar.Enabled = False
                 Me.ToolBarRegistrar.Enabled = True
-                cboBancos.Text = GetSetting("SeeSOFT", "Bancos", "UltCuenta")
+                cboBancos.Text = Configuracion.Claves.Configuracion("UltCuenta")
                 Me.cboBancos.Focus()
 
             Catch eEndEdit As System.Data.NoNullAllowedException
@@ -2501,7 +2501,7 @@ Public Class frmDepositos
             'Label10.Text = cFunciones.Descripcion
 
             Dim busca As New fmrBuscarMayorizacionAsiento
-            busca.NuevaConexion = GetSetting("SeeSoft", "Bancos", "CONEXION")
+            busca.NuevaConexion = Configuracion.Claves.Conexion("Bancos")
             busca.sqlstring = " select CC.cuentacontable as [Cuenta contable],Nombre, [Cuenta madre] from [vs_CuentaConta_Bancos] CC " & _
     " where Movimiento=1 " '"select CuentaContable AS [Codigo cuenta],descripcion as Descripcion from Contabilidad.dbo.CuentaContable where  Movimiento = 1  "
             busca.campo = "descripcion"
@@ -2547,7 +2547,7 @@ Public Class frmDepositos
         Dim conectar As SqlConnection = Nothing
         Me.DsDepositos.cuentascontable.Clear()
         Try
-            Dim strin As String = GetSetting("Seesoft", "Bancos", "Conexion")
+            Dim strin As String = Configuracion.Claves.Conexion("Bancos")
             conectar = New SqlConnection(strin)
             conectar.Open()
             Dim comando As SqlCommand = New SqlCommand
