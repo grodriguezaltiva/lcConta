@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class rptEstadoResultado
+Public Class rptBalanceSituacion
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class rptEstadoResultado
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "rptEstadoResultado.rpt"
+            Return "rptBalanceSituacion.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class rptEstadoResultado
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "LcConta.Nuevos.rptEstadoResultado.rpt"
+            Return "LcConta.Nuevos.rptBalanceSituacion.rpt"
         End Get
         Set
             'Do nothing
@@ -163,10 +163,18 @@ Public Class rptEstadoResultado
             Return Me.DataDefinition.ParameterFields(6)
         End Get
     End Property
+    
+    <Browsable(false),  _
+     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
+    Public ReadOnly Property Parameter_Imprime() As CrystalDecisions.[Shared].IParameterField
+        Get
+            Return Me.DataDefinition.ParameterFields(7)
+        End Get
+    End Property
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedrptEstadoResultado
+Public Class CachedrptBalanceSituacion
     Inherits Component
     Implements ICachedReport
     
@@ -208,7 +216,7 @@ Public Class CachedrptEstadoResultado
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As rptEstadoResultado = New rptEstadoResultado()
+        Dim rpt As rptBalanceSituacion = New rptBalanceSituacion()
         rpt.Site = Me.Site
         Return rpt
     End Function

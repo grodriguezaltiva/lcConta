@@ -28,7 +28,7 @@ Partial Class frmTestReportevb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(649, 399)
+        Me.ClientSize = New System.Drawing.Size(825, 569)
         Me.IsMdiContainer = True
         Me.Name = "frmTestReportevb"
         Me.Text = "frmTestReportevb"

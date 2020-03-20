@@ -20,9 +20,9 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("dtsResultado"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("dtsEstadosFinancieros"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class dtsResultado
+Partial Public Class dtsEstadosFinancieros
     Inherits Global.System.Data.DataSet
     
     Private tableMoneda As MonedaDataTable
@@ -158,7 +158,7 @@ Partial Public Class dtsResultado
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As dtsResultado = CType(MyBase.Clone,dtsResultado)
+        Dim cln As dtsEstadosFinancieros = CType(MyBase.Clone,dtsEstadosFinancieros)
         cln.InitVars
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -247,7 +247,7 @@ Partial Public Class dtsResultado
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Sub InitClass()
-        Me.DataSetName = "dtsResultado"
+        Me.DataSetName = "dtsEstadosFinancieros"
         Me.Prefix = ""
         Me.Namespace = "http://tempuri.org/dtsBalance.xsd"
         Me.EnforceConstraints = true
@@ -289,7 +289,7 @@ Partial Public Class dtsResultado
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As dtsResultado = New dtsResultado()
+        Dim ds As dtsEstadosFinancieros = New dtsEstadosFinancieros()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -617,7 +617,7 @@ Partial Public Class dtsResultado
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As dtsResultado = New dtsResultado()
+            Dim ds As dtsEstadosFinancieros = New dtsEstadosFinancieros()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1002,7 +1002,7 @@ Partial Public Class dtsResultado
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As dtsResultado = New dtsResultado()
+            Dim ds As dtsEstadosFinancieros = New dtsEstadosFinancieros()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1082,6 +1082,12 @@ Partial Public Class dtsResultado
         
         Private columnFoto As Global.System.Data.DataColumn
         
+        Private columnSitioWeb As Global.System.Data.DataColumn
+        
+        Private columnTelefono2 As Global.System.Data.DataColumn
+        
+        Private columnNombreJuridico As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -1158,6 +1164,30 @@ Partial Public Class dtsResultado
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property SitioWebColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSitioWeb
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Telefono2Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnTelefono2
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property NombreJuridicoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombreJuridico
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1194,9 +1224,9 @@ Partial Public Class dtsResultado
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overloads Function AddconfiguracionRow(ByVal Empresa As String, ByVal Juridica As String, ByVal Telefono As String, ByVal Email As String, ByVal Foto() As Byte) As configuracionRow
+        Public Overloads Function AddconfiguracionRow(ByVal Empresa As String, ByVal Juridica As String, ByVal Telefono As String, ByVal Email As String, ByVal Foto() As Byte, ByVal SitioWeb As String, ByVal Telefono2 As String, ByVal NombreJuridico As String) As configuracionRow
             Dim rowconfiguracionRow As configuracionRow = CType(Me.NewRow,configuracionRow)
-            Dim columnValuesArray() As Object = New Object() {Empresa, Juridica, Telefono, Email, Foto}
+            Dim columnValuesArray() As Object = New Object() {Empresa, Juridica, Telefono, Email, Foto, SitioWeb, Telefono2, NombreJuridico}
             rowconfiguracionRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowconfiguracionRow)
             Return rowconfiguracionRow
@@ -1224,6 +1254,9 @@ Partial Public Class dtsResultado
             Me.columnTelefono = MyBase.Columns("Telefono")
             Me.columnEmail = MyBase.Columns("Email")
             Me.columnFoto = MyBase.Columns("Foto")
+            Me.columnSitioWeb = MyBase.Columns("SitioWeb")
+            Me.columnTelefono2 = MyBase.Columns("Telefono2")
+            Me.columnNombreJuridico = MyBase.Columns("NombreJuridico")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1239,6 +1272,12 @@ Partial Public Class dtsResultado
             MyBase.Columns.Add(Me.columnEmail)
             Me.columnFoto = New Global.System.Data.DataColumn("Foto", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFoto)
+            Me.columnSitioWeb = New Global.System.Data.DataColumn("SitioWeb", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSitioWeb)
+            Me.columnTelefono2 = New Global.System.Data.DataColumn("Telefono2", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTelefono2)
+            Me.columnNombreJuridico = New Global.System.Data.DataColumn("NombreJuridico", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombreJuridico)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1306,7 +1345,7 @@ Partial Public Class dtsResultado
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As dtsResultado = New dtsResultado()
+            Dim ds As dtsEstadosFinancieros = New dtsEstadosFinancieros()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -1855,6 +1894,51 @@ Partial Public Class dtsResultado
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property SitioWeb() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableconfiguracion.SitioWebColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'SitioWeb' de la tabla 'configuracion' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableconfiguracion.SitioWebColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Telefono2() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableconfiguracion.Telefono2Column),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Telefono2' de la tabla 'configuracion' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableconfiguracion.Telefono2Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property NombreJuridico() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableconfiguracion.NombreJuridicoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NombreJuridico' de la tabla 'configuracion' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableconfiguracion.NombreJuridicoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function IsEmpresaNull() As Boolean
             Return Me.IsNull(Me.tableconfiguracion.EmpresaColumn)
         End Function
@@ -1911,6 +1995,42 @@ Partial Public Class dtsResultado
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetFotoNull()
             Me(Me.tableconfiguracion.FotoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsSitioWebNull() As Boolean
+            Return Me.IsNull(Me.tableconfiguracion.SitioWebColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetSitioWebNull()
+            Me(Me.tableconfiguracion.SitioWebColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsTelefono2Null() As Boolean
+            Return Me.IsNull(Me.tableconfiguracion.Telefono2Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetTelefono2Null()
+            Me(Me.tableconfiguracion.Telefono2Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsNombreJuridicoNull() As Boolean
+            Return Me.IsNull(Me.tableconfiguracion.NombreJuridicoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetNombreJuridicoNull()
+            Me(Me.tableconfiguracion.NombreJuridicoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2023,7 +2143,7 @@ Partial Public Class dtsResultado
     End Class
 End Class
 
-Namespace dtsResultadoTableAdapters
+Namespace dtsEstadosFinancierosTableAdapters
     
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -2183,7 +2303,7 @@ Namespace dtsResultadoTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As dtsResultado.MonedaDataTable) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As dtsEstadosFinancieros.MonedaDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -2196,9 +2316,9 @@ Namespace dtsResultadoTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData() As dtsResultado.MonedaDataTable
+        Public Overloads Overridable Function GetData() As dtsEstadosFinancieros.MonedaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As dtsResultado.MonedaDataTable = New dtsResultado.MonedaDataTable()
+            Dim dataTable As dtsEstadosFinancieros.MonedaDataTable = New dtsEstadosFinancieros.MonedaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -2273,7 +2393,7 @@ Namespace dtsResultadoTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateUpdatedRows(ByVal dataSet As dtsResultado, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As dtsEstadosFinancieros, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -2283,7 +2403,7 @@ Namespace dtsResultadoTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateInsertedRows(ByVal dataSet As dtsResultado, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As dtsEstadosFinancieros, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -2293,7 +2413,7 @@ Namespace dtsResultadoTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Private Function UpdateDeletedRows(ByVal dataSet As dtsResultado, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As dtsEstadosFinancieros, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -2329,7 +2449,7 @@ Namespace dtsResultadoTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
-        Public Overridable Function UpdateAll(ByVal dataSet As dtsResultado) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As dtsEstadosFinancieros) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

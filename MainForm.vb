@@ -1532,6 +1532,6 @@ Public Class MainForm
     End Sub
 
     Private Sub MenuItem12_Click_1(sender As Object, e As EventArgs) Handles MenuItemEstadosFinancieros.Click
-        LcConta.Nuevos.Reporte.Abrir(Me)
+        LcConta.Nuevos.EstadosFinancieros.Abrir(Me, Usuario.Nombre)
     End Sub
 End Class

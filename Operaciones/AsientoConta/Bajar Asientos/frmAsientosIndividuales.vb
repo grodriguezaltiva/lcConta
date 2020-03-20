@@ -758,7 +758,7 @@ Public Class frmAsientosIndividuales
                  " FROM         OpcionesDePago AS op INNER JOIN abonoccobrar AS a ON op.Documento = a.Num_Recibo WHERE (op.Fecha >= @F1) AND (op.TipoDocumento = 'ABO') AND (op.Fecha <= @F2) AND (a.Contabilizado = 0) AND (a.Anula = 0 )"
         cmd.Parameters.AddWithValue("@F1", _pF1.Date)
         cmd.Parameters.AddWithValue("@F2", _pF2.Date)
-        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion)
+        cFunciones.Llenar_Tabla_Generico(cmd, dt, Configuracion.Claves.Conexion(conexion))
 
         If dt.Rows.Count = 0 Then
             MsgBox("No existen " & Me.cboTipos.Text & " pendientes para este rango de fechas", MsgBoxStyle.OkOnly)
