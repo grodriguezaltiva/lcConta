@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dtsCalculos" targetNamespace="http://tempuri.org/dtsCalculos.xsd" xmlns:mstns="http://tempuri.org/dtsCalculos.xsd" xmlns="http://tempuri.org/dtsCalculos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ContabilidadConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ContabilidadConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.LcConta.Nuevos.My.MySettings.GlobalReference.Default.ContabilidadConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dtsCalculos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dtsCalculos" msprop:Generator_UserDSName="dtsCalculos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ParametroRentaHacienda" msprop:Generator_TableClassName="ParametroRentaHaciendaDataTable" msprop:Generator_TableVarName="tableParametroRentaHacienda" msprop:Generator_TablePropName="ParametroRentaHacienda" msprop:Generator_RowDeletingName="ParametroRentaHaciendaRowDeleting" msprop:Generator_RowChangingName="ParametroRentaHaciendaRowChanging" msprop:Generator_RowEvHandlerName="ParametroRentaHaciendaRowChangeEventHandler" msprop:Generator_RowDeletedName="ParametroRentaHaciendaRowDeleted" msprop:Generator_UserTableName="ParametroRentaHacienda" msprop:Generator_RowChangedName="ParametroRentaHaciendaRowChanged" msprop:Generator_RowEvArgName="ParametroRentaHaciendaRowChangeEvent" msprop:Generator_RowClassName="ParametroRentaHaciendaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdParametroRentaHacienda" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdParametroRentaHacienda" msprop:Generator_ColumnPropNameInRow="IdParametroRentaHacienda" msprop:Generator_ColumnPropNameInTable="IdParametroRentaHaciendaColumn" msprop:Generator_UserColumnName="IdParametroRentaHacienda" type="xs:int" />
+              <xs:element name="Porcentaje" msprop:Generator_ColumnVarNameInTable="columnPorcentaje" msprop:Generator_ColumnPropNameInRow="Porcentaje" msprop:Generator_ColumnPropNameInTable="PorcentajeColumn" msprop:Generator_UserColumnName="Porcentaje" type="xs:double" />
+              <xs:element name="ComparacionDesde" msprop:Generator_ColumnVarNameInTable="columnComparacionDesde" msprop:Generator_ColumnPropNameInRow="ComparacionDesde" msprop:Generator_ColumnPropNameInTable="ComparacionDesdeColumn" msprop:Generator_UserColumnName="ComparacionDesde">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalarioDesde" msprop:Generator_ColumnVarNameInTable="columnSalarioDesde" msprop:Generator_ColumnPropNameInRow="SalarioDesde" msprop:Generator_ColumnPropNameInTable="SalarioDesdeColumn" msprop:Generator_UserColumnName="SalarioDesde" type="xs:double" />
+              <xs:element name="ComparacionHasta" msprop:Generator_ColumnVarNameInTable="columnComparacionHasta" msprop:Generator_ColumnPropNameInRow="ComparacionHasta" msprop:Generator_ColumnPropNameInTable="ComparacionHastaColumn" msprop:Generator_UserColumnName="ComparacionHasta">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalarioHasta" msprop:Generator_ColumnVarNameInTable="columnSalarioHasta" msprop:Generator_ColumnPropNameInRow="SalarioHasta" msprop:Generator_ColumnPropNameInTable="SalarioHastaColumn" msprop:Generator_UserColumnName="SalarioHasta" type="xs:double" />
+              <xs:element name="SinLimiteHasta" msprop:Generator_ColumnVarNameInTable="columnSinLimiteHasta" msprop:Generator_ColumnPropNameInRow="SinLimiteHasta" msprop:Generator_ColumnPropNameInTable="SinLimiteHastaColumn" msprop:Generator_UserColumnName="SinLimiteHasta" type="xs:boolean" />
+              <xs:element name="SobreRentaBruta" msprop:Generator_ColumnVarNameInTable="columnSobreRentaBruta" msprop:Generator_ColumnPropNameInRow="SobreRentaBruta" msprop:Generator_ColumnPropNameInTable="SobreRentaBrutaColumn" msprop:Generator_UserColumnName="SobreRentaBruta" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ParametroRentaHacienda" />
+      <xs:field xpath="mstns:IdParametroRentaHacienda" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -7,7 +7,7 @@ Public Class EstadosFinancieros
 
         Dim cmd As New SqlClient.SqlCommand
         dts = New dtsEstadosFinancieros
-        cmd.CommandText = "Select Empresa, Cedula AS Juridica, Tel_01 As Telefono, Email, Logo As Foto  From configuraciones"
+        cmd.CommandText = "Select Empresa, Cedula AS Juridica, Tel_01 As Telefono, Tel_01 As Telefono2, Email, Logo As Foto , Dirrecion_Web AS SitioWeb, PersonaJuridica AS NombreJuridico  From configuraciones"
         bdAcceso.Cargar(cmd, dts.configuracion)
         Dim fecha As DateTime
         Dim fp2 As DateTime
@@ -115,11 +115,6 @@ Public Class EstadosFinancieros
         rpt.SetParameterValue("Imprime", usuario)
         Return rpt
     End Function
-
-    Private Shared Sub Cargar(cmd As SqlClient.SqlCommand, dt As DataTable)
-
-    End Sub
-
     Private Shared Sub Calculos(ByRef dts As dtsEstadosFinancieros)
         Dim Ingresos1 As Double = 0
         Dim Gastos1 As Double = 0
@@ -186,12 +181,12 @@ Public Class EstadosFinancieros
         Dim UtilidadCompleta1 As Double = IngresosCompletos1 - CostosCompletos1
         Dim UtilidadCompleta2 As Double = IngresosCompletos2 - CostosCompletos2
         Dim UtilidadCompleta3 As Double = IngresosCompletos3 - CostosCompletos3
-        addItemTotal(dts, "6zzz", "UTILIDAD BRUTA COMPLETA", UtilidadCompleta1, UtilidadCompleta2, UtilidadCompleta3)
+        addItemTotal(dts, "5zzz", "UTILIDAD BRUTA COMPLETA", UtilidadCompleta1, UtilidadCompleta2, UtilidadCompleta3)
 
         Dim UtilidadBruta1 As Double = Ingresos1 - Costos1
         Dim UtilidadBruta2 As Double = Ingresos2 - Costos2
         Dim UtilidadBruta3 As Double = Ingresos3 - Costos3
-        addItemTotal(dts, "6zzz", "UTILIDAD BRUTA RENTA", UtilidadBruta1, UtilidadBruta2, UtilidadBruta3)
+        addItemTotal(dts, "5zzz", "UTILIDAD BRUTA RENTA", UtilidadBruta1, UtilidadBruta2, UtilidadBruta3)
 
         Dim UtilidadCompletaNeta1 As Double = IngresosCompletos1 - CostosCompletos1 - GastosCompletos1
         Dim UtilidadCompletaNeta2 As Double = IngresosCompletos2 - CostosCompletos2 - GastosCompletos2
@@ -203,10 +198,10 @@ Public Class EstadosFinancieros
         Dim Utilidad3 As Double = Ingresos3 - Costos3 - Gastos3
         addItemTotal(dts, "6zzz", "UTILIDAD NETA ANTES RENTA", Utilidad1, Utilidad2, Utilidad3)
 
-        Dim Renta1 As Double = Utilidad1 * 0.09
-        Dim Renta2 As Double = Utilidad2 * 0.09
-        Dim Renta3 As Double = Utilidad3 * 0.09
-        addItemTotal(dts, "6zzz", "RENTA", Renta1, Renta2, Renta3)
+        Dim Renta1 As Double = Utilidad1 * auxCalculos.PorcentajeRenta(IngresosCompletos1, Utilidad1)
+        Dim Renta2 As Double = Utilidad2 * auxCalculos.PorcentajeRenta(IngresosCompletos2, Utilidad2)
+        Dim Renta3 As Double = Utilidad3 * auxCalculos.PorcentajeRenta(IngresosCompletos3, Utilidad3)
+        addItemTotal(dts, "6zzz", "RENTA " & auxCalculos.PorcentajeRenta(IngresosCompletos1, Utilidad1) & "%", Renta1, Renta2, Renta3)
         addItemTotal(dts, "6zzz", "UTILIDAD NETA DESPUÉS RENTA", Utilidad1 - Renta1, Utilidad2 - Renta2, Utilidad3 - Renta3)
     End Sub
     Private Shared Sub addItemTotal(ByRef dts As dtsEstadosFinancieros, CuentaContable As String, Descripcion As String, Saldo1 As Double, Saldo2 As Double, Saldo3 As Double)
@@ -316,4 +311,5 @@ Public Class EstadosFinancieros
         frm.WindowState = Windows.Forms.FormWindowState.Normal
         frm.Show()
     End Sub
+
 End Class

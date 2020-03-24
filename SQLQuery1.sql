@@ -1,0 +1,1 @@
+﻿Select Empresa, Cedula AS Juridica, Tel_01 As Telefono, Tel_01 As Telefono2, Email, Logo As Foto , Dirrecion_Web AS SitioWeb, PersonaJuridica AS NombreJuridico  From configuraciones

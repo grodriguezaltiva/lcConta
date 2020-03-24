@@ -37,6 +37,7 @@ Partial Class frmResultado
         Me.MonedaBS = New System.Windows.Forms.BindingSource(Me.components)
         Me.dts = New LcConta.Nuevos.dtsEstadosFinancieros()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.rbEstadoResultadoMensual = New System.Windows.Forms.RadioButton()
         Me.rbBalance = New System.Windows.Forms.RadioButton()
         Me.rbEstadoResultado = New System.Windows.Forms.RadioButton()
         Me.ResultadoBS = New System.Windows.Forms.BindingSource(Me.components)
@@ -59,7 +60,7 @@ Partial Class frmResultado
         'rbAnual
         '
         Me.rbAnual.AutoSize = True
-        Me.rbAnual.Location = New System.Drawing.Point(77, 17)
+        Me.rbAnual.Location = New System.Drawing.Point(6, 41)
         Me.rbAnual.Name = "rbAnual"
         Me.rbAnual.Size = New System.Drawing.Size(52, 17)
         Me.rbAnual.TabIndex = 0
@@ -86,17 +87,17 @@ Partial Class frmResultado
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.crv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.crv.Cursor = System.Windows.Forms.Cursors.Default
-        Me.crv.Location = New System.Drawing.Point(12, 68)
+        Me.crv.Location = New System.Drawing.Point(12, 76)
         Me.crv.Name = "crv"
         Me.crv.ShowParameterPanelButton = False
-        Me.crv.Size = New System.Drawing.Size(818, 385)
+        Me.crv.Size = New System.Drawing.Size(818, 377)
         Me.crv.TabIndex = 2
         Me.crv.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
         'lbMes
         '
         Me.lbMes.AutoSize = True
-        Me.lbMes.Location = New System.Drawing.Point(401, 4)
+        Me.lbMes.Location = New System.Drawing.Point(342, 8)
         Me.lbMes.Name = "lbMes"
         Me.lbMes.Size = New System.Drawing.Size(30, 13)
         Me.lbMes.TabIndex = 5
@@ -107,7 +108,7 @@ Partial Class frmResultado
         Me.cbMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbMes.FormattingEnabled = True
         Me.cbMes.Items.AddRange(New Object() {"ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SETIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"})
-        Me.cbMes.Location = New System.Drawing.Point(456, 4)
+        Me.cbMes.Location = New System.Drawing.Point(397, 8)
         Me.cbMes.Name = "cbMes"
         Me.cbMes.Size = New System.Drawing.Size(121, 21)
         Me.cbMes.TabIndex = 6
@@ -115,7 +116,7 @@ Partial Class frmResultado
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(583, 7)
+        Me.Label2.Location = New System.Drawing.Point(524, 11)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(30, 13)
         Me.Label2.TabIndex = 7
@@ -123,13 +124,13 @@ Partial Class frmResultado
         '
         'nuAño
         '
-        Me.nuAño.Location = New System.Drawing.Point(631, 5)
+        Me.nuAño.Location = New System.Drawing.Point(572, 9)
         Me.nuAño.Maximum = New Decimal(New Integer() {2100, 0, 0, 0})
         Me.nuAño.Minimum = New Decimal(New Integer() {2000, 0, 0, 0})
         Me.nuAño.Name = "nuAño"
+        Me.nuAño.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.nuAño.Size = New System.Drawing.Size(48, 21)
         Me.nuAño.TabIndex = 9
-        Me.nuAño.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.nuAño.Value = New Decimal(New Integer() {2000, 0, 0, 0})
         '
         'btMostrar
@@ -150,9 +151,9 @@ Partial Class frmResultado
         '
         Me.GroupBox1.Controls.Add(Me.rbMensual)
         Me.GroupBox1.Controls.Add(Me.rbAnual)
-        Me.GroupBox1.Location = New System.Drawing.Point(246, 5)
+        Me.GroupBox1.Location = New System.Drawing.Point(246, 0)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(140, 41)
+        Me.GroupBox1.Size = New System.Drawing.Size(90, 64)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Comparación"
@@ -163,7 +164,7 @@ Partial Class frmResultado
         Me.cbMoneda.DisplayMember = "MonedaNombre"
         Me.cbMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbMoneda.FormattingEnabled = True
-        Me.cbMoneda.Location = New System.Drawing.Point(456, 31)
+        Me.cbMoneda.Location = New System.Drawing.Point(397, 35)
         Me.cbMoneda.Name = "cbMoneda"
         Me.cbMoneda.Size = New System.Drawing.Size(121, 21)
         Me.cbMoneda.TabIndex = 14
@@ -181,20 +182,31 @@ Partial Class frmResultado
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.rbEstadoResultadoMensual)
         Me.GroupBox2.Controls.Add(Me.rbBalance)
         Me.GroupBox2.Controls.Add(Me.rbEstadoResultado)
-        Me.GroupBox2.Location = New System.Drawing.Point(7, 4)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(235, 41)
+        Me.GroupBox2.Size = New System.Drawing.Size(235, 64)
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Reporte"
+        '
+        'rbEstadoResultadoMensual
+        '
+        Me.rbEstadoResultadoMensual.AutoSize = True
+        Me.rbEstadoResultadoMensual.Location = New System.Drawing.Point(6, 41)
+        Me.rbEstadoResultadoMensual.Name = "rbEstadoResultadoMensual"
+        Me.rbEstadoResultadoMensual.Size = New System.Drawing.Size(160, 17)
+        Me.rbEstadoResultadoMensual.TabIndex = 2
+        Me.rbEstadoResultadoMensual.Text = "Estado Resultado Extendido"
+        Me.rbEstadoResultadoMensual.UseVisualStyleBackColor = True
         '
         'rbBalance
         '
         Me.rbBalance.AutoSize = True
         Me.rbBalance.Checked = True
-        Me.rbBalance.Location = New System.Drawing.Point(6, 17)
+        Me.rbBalance.Location = New System.Drawing.Point(6, 16)
         Me.rbBalance.Name = "rbBalance"
         Me.rbBalance.Size = New System.Drawing.Size(108, 17)
         Me.rbBalance.TabIndex = 1
@@ -220,7 +232,7 @@ Partial Class frmResultado
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(583, 29)
+        Me.Label3.Location = New System.Drawing.Point(524, 33)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 15
@@ -228,10 +240,11 @@ Partial Class frmResultado
         '
         'nuNivel
         '
-        Me.nuNivel.Location = New System.Drawing.Point(631, 29)
+        Me.nuNivel.Location = New System.Drawing.Point(572, 33)
         Me.nuNivel.Maximum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.nuNivel.Minimum = New Decimal(New Integer() {3, 0, 0, 0})
         Me.nuNivel.Name = "nuNivel"
+        Me.nuNivel.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.nuNivel.Size = New System.Drawing.Size(48, 21)
         Me.nuNivel.TabIndex = 14
         Me.nuNivel.Value = New Decimal(New Integer() {3, 0, 0, 0})
@@ -254,13 +267,13 @@ Partial Class frmResultado
         Me.pnParametros.Controls.Add(Me.Label2)
         Me.pnParametros.Location = New System.Drawing.Point(12, 3)
         Me.pnParametros.Name = "pnParametros"
-        Me.pnParametros.Size = New System.Drawing.Size(818, 59)
+        Me.pnParametros.Size = New System.Drawing.Size(818, 67)
         Me.pnParametros.TabIndex = 16
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(401, 34)
+        Me.Label1.Location = New System.Drawing.Point(342, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 16
@@ -275,7 +288,7 @@ Partial Class frmResultado
         Me.lbCargando.Name = "lbCargando"
         Me.lbCargando.Size = New System.Drawing.Size(682, 79)
         Me.lbCargando.TabIndex = 17
-        Me.lbCargando.Text = "CARGANDO..."
+        Me.lbCargando.Text = "Consultando Bade de Datos..."
         Me.lbCargando.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lbCargando.Visible = False
         '
@@ -331,4 +344,5 @@ Partial Class frmResultado
     Friend WithEvents pnParametros As Windows.Forms.Panel
     Friend WithEvents Label1 As Windows.Forms.Label
     Friend WithEvents lbCargando As Windows.Forms.Label
+    Friend WithEvents rbEstadoResultadoMensual As Windows.Forms.RadioButton
 End Class
