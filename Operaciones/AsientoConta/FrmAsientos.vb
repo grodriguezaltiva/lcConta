@@ -3482,7 +3482,7 @@ Public Class FrmAsientos
 
 			Nuev = False
 
-			If Me.ToolBar1.Buttons(2).Text = "Actualizar" Then
+            If Me.ToolBar1.Buttons(2).Text = "Actualizar" Then
 				'DIEGO
 				'If BindingContext(DataSetAsientos1, "AsientosContables").Current("Accion") = "AUT" Then
 				'    MsgBox("No se puede modificar el asiento contable!" & vbCrLf & "Porque fue creado automaticamente por el sistema", MsgBoxStyle.Information, "Sistema SeeSoft")
@@ -3494,14 +3494,16 @@ Public Class FrmAsientos
 				ActualizaDatos()
 				Llenar()
 				AdapDetalles.Update(DataSetAsientos1, "DetallesAsientosContable")
-				For i As Integer = 0 To Me.DataSetAsientos1.DetallesAsientosContable.Count - 1
-					For j As Integer = 0 To Me.DataSetAsientos1.CentroCosto_Movimientos.Count - 1
-						If Me.DataSetAsientos1.CentroCosto_Movimientos(j).IdDetalle = Me.DataSetAsientos1.DetallesAsientosContable(i).IdTemp Then
-							Me.DataSetAsientos1.CentroCosto_Movimientos(j).IdDetalle = Me.DataSetAsientos1.DetallesAsientosContable(i).ID_Detalle
-						End If
-					Next
-				Next
-				Me.DataSetAsientos1.CentroCosto_Movimientos.EndInit()
+                For i As Integer = 0 To Me.DataSetAsientos1.DetallesAsientosContable.Count - 1
+
+                    For j As Integer = 0 To Me.DataSetAsientos1.CentroCosto_Movimientos.Count - 1
+                        If Me.DataSetAsientos1.CentroCosto_Movimientos(j).IdDetalle = Me.DataSetAsientos1.DetallesAsientosContable(i).IdTemp Then
+                            Me.DataSetAsientos1.CentroCosto_Movimientos(j).IdDetalle = Me.DataSetAsientos1.DetallesAsientosContable(i).ID_Detalle
+                        End If
+
+                    Next
+                Next
+                Me.DataSetAsientos1.CentroCosto_Movimientos.EndInit()
 				For x As Integer = 0 To Me.DataSetAsientos1.CentroCosto_Movimientos.Count - 1
 					If Not Me.DataSetAsientos1.CentroCosto_Movimientos(x).RowState = DataRowState.Deleted Then
 						Me.BindingContext(Me.DataSetAsientos1, "CentroCosto_MovimientosUP").AddNew()
@@ -3633,41 +3635,56 @@ Public Class FrmAsientos
 	Private Sub Llenar()
 		Dim i, n As Integer
 
-		For i = 0 To TablaAsiento.Rows.Count - 1
+        For i = 0 To TablaAsiento.Rows.Count - 1
 
-			Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").AddNew()
-			Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("NumAsiento") = LblConsecutivo.Text
-			Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Cuenta") = TablaAsiento.Rows(i).Item("Cuenta")
-			Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("NombreCuenta") = TablaAsiento.Rows(i).Item("NombreCuenta")
-			If Me.CBMoneda.SelectedValue = 1 Then
-				If TablaAsiento.Rows(i).Item("Debe") > 0 Then
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Monto") = TablaAsiento.Rows(i).Item("Debe")
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Debe") = True
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Haber") = False
-				Else
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Monto") = TablaAsiento.Rows(i).Item("Haber")
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Debe") = False
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Haber") = True
-				End If
-			Else
-				If TablaAsiento.Rows(i).Item("Debe$") > 0 Then
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Monto") = TablaAsiento.Rows(i).Item("Debe$")
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Debe") = True
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Haber") = False
-				Else
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Monto") = TablaAsiento.Rows(i).Item("Haber$")
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Debe") = False
-					Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Haber") = True
-				End If
-			End If
+            Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").AddNew()
+            Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("NumAsiento") = LblConsecutivo.Text
+            Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Cuenta") = TablaAsiento.Rows(i).Item("Cuenta")
+            Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("NombreCuenta") = TablaAsiento.Rows(i).Item("NombreCuenta")
+            If Me.CBMoneda.SelectedValue = 1 Then
+                If TablaAsiento.Rows(i).Item("Debe") > 0 Then
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Monto") = TablaAsiento.Rows(i).Item("Debe")
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Debe") = True
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Haber") = False
+                Else
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Monto") = TablaAsiento.Rows(i).Item("Haber")
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Debe") = False
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Haber") = True
+                End If
+            Else
+                If TablaAsiento.Rows(i).Item("Debe$") > 0 Then
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Monto") = TablaAsiento.Rows(i).Item("Debe$")
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Debe") = True
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Haber") = False
+                Else
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Monto") = TablaAsiento.Rows(i).Item("Haber$")
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Debe") = False
+                    Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Haber") = True
+                End If
+            End If
 
-			Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("DescripcionAsiento") = TablaAsiento.Rows(i).Item("Descripcion")
-			Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Tipocambio") = TablaAsiento.Rows(i).Item("Tipocambio")
-			Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("IdTemp") = TablaAsiento.Rows(i).Item("ID_Detalle")
-			Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("NoDocumentoDetalle") = TablaAsiento.Rows(i).Item("NoDocumentoDetalle")
-			Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").EndCurrentEdit()
-		Next
-	End Sub
+            Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("DescripcionAsiento") = TablaAsiento.Rows(i).Item("Descripcion")
+            Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("Tipocambio") = TablaAsiento.Rows(i).Item("Tipocambio")
+            Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("IdTemp") = TablaAsiento.Rows(i).Item("ID_Detalle")
+            If Not (TablaAsiento.Rows(i).Item("NoDocumentoDetalle") Is DBNull.Value) Then
+                Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("NoDocumentoDetalle") = TablaAsiento.Rows(i).Item("NoDocumentoDetalle")
+            Else
+                Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").Current("NoDocumentoDetalle") = ""
+
+            End If
+            Me.BindingContext(Me.DataSetAsientos1, "DetallesAsientosContable").EndCurrentEdit()
+        Next
+        For Each line As DataSetAsientos.DetallesAsientosContableRow In DataSetAsientos1.DetallesAsientosContable
+            If Not line.RowState = DataRowState.Deleted Then
+                If Not line.NoDocumentoDetalle Is DBNull.Value Then
+                    line.NoDocumentoDetalle = ""
+
+                End If
+
+            End If
+
+        Next
+    End Sub
 #End Region
 
 #Region "Nuevo"
