@@ -4,3 +4,4 @@ Backup/
 bin/app.publish/
 *.deploy
 *.manifest
+bin/lcConta.application
