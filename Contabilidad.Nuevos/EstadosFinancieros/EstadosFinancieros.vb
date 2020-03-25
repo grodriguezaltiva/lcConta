@@ -198,9 +198,9 @@ Public Class EstadosFinancieros
         Dim Utilidad3 As Double = Ingresos3 - Costos3 - Gastos3
         addItemTotal(dts, "6zzz", "UTILIDAD NETA ANTES RENTA", Utilidad1, Utilidad2, Utilidad3)
 
-        Dim Renta1 As Double = Utilidad1 * auxCalculos.PorcentajeRenta(IngresosCompletos1, Utilidad1)
-        Dim Renta2 As Double = Utilidad2 * auxCalculos.PorcentajeRenta(IngresosCompletos2, Utilidad2)
-        Dim Renta3 As Double = Utilidad3 * auxCalculos.PorcentajeRenta(IngresosCompletos3, Utilidad3)
+        Dim Renta1 As Double = Utilidad1 * auxCalculos.PorcentajeRenta(IngresosCompletos1, Utilidad1) / 100
+        Dim Renta2 As Double = Utilidad2 * auxCalculos.PorcentajeRenta(IngresosCompletos2, Utilidad2) / 100
+        Dim Renta3 As Double = Utilidad3 * auxCalculos.PorcentajeRenta(IngresosCompletos3, Utilidad3) / 100
         addItemTotal(dts, "6zzz", "RENTA " & auxCalculos.PorcentajeRenta(IngresosCompletos1, Utilidad1) & "%", Renta1, Renta2, Renta3)
         addItemTotal(dts, "6zzz", "UTILIDAD NETA DESPUÉS RENTA", Utilidad1 - Renta1, Utilidad2 - Renta2, Utilidad3 - Renta3)
     End Sub
@@ -265,13 +265,13 @@ Public Class EstadosFinancieros
         End If
 
         If cantPeriodos = 3 Then
-            Return "Select CuentaContable, Descripcion, " & saldo & "(CuentaContable.CuentaContable,@fp1) as SaldoAcumulado1, " & saldo & "(CuentaContable,@fp2) As SaldoAcumulado2, " & saldo & "(CuentaContable,@fp3) as SaldoAcumulado3, Nivel, Movimiento As Movimientos, PARENTID, id, Tipo, GastoNoDeducible From CuentaContable WHERE Inactivo = 0"
+            Return "Select CuentaContable, Descripcion, '' AS Notas, " & saldo & "(CuentaContable.CuentaContable,@fp1) as SaldoAcumulado1, " & saldo & "(CuentaContable,@fp2) As SaldoAcumulado2, " & saldo & "(CuentaContable,@fp3) as SaldoAcumulado3, Nivel, Movimiento As Movimientos, PARENTID, id, Tipo, GastoNoDeducible From CuentaContable WHERE Inactivo = 0"
         End If
         If cantPeriodos = 2 Then
-            Return "Select CuentaContable, Descripcion, " & saldo & "(CuentaContable.CuentaContable,@fp1) as SaldoAcumulado1, " & saldo & "(CuentaContable,@fp2) As SaldoAcumulado2, 0 as SaldoAcumulado3, Nivel, Movimiento As Movimientos, PARENTID, id, Tipo, GastoNoDeducible From CuentaContable WHERE Inactivo = 0"
+            Return "Select CuentaContable, Descripcion, '' AS Notas,  " & saldo & "(CuentaContable.CuentaContable,@fp1) as SaldoAcumulado1, " & saldo & "(CuentaContable,@fp2) As SaldoAcumulado2, 0 as SaldoAcumulado3, Nivel, Movimiento As Movimientos, PARENTID, id, Tipo, GastoNoDeducible From CuentaContable WHERE Inactivo = 0"
         End If
         If cantPeriodos = 1 Then
-            Return "Select CuentaContable, Descripcion, " & saldo & "(CuentaContable.CuentaContable,@fp1) as SaldoAcumulado1, 0 As SaldoAcumulado2, 0 as SaldoAcumulado3, Nivel, Movimiento As Movimientos, PARENTID, id, Tipo, GastoNoDeducible From CuentaContable WHERE Inactivo = 0"
+            Return "Select CuentaContable, Descripcion, '' AS Notas,  " & saldo & "(CuentaContable.CuentaContable,@fp1) as SaldoAcumulado1, 0 As SaldoAcumulado2, 0 as SaldoAcumulado3, Nivel, Movimiento As Movimientos, PARENTID, id, Tipo, GastoNoDeducible From CuentaContable WHERE Inactivo = 0"
         End If
     End Function
     Private Shared Function Relleno(text As String) As String

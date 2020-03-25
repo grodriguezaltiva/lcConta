@@ -1,4 +1,5 @@
 Imports System.Data.SqlClient
+Imports System.Globalization
 Imports Utilidades
 
 Public Class MainForm
@@ -7,7 +8,7 @@ Public Class MainForm
 #Region "Variables"
     Dim Contador As Integer
     Dim TITULO As String
-    Friend WithEvents StatusBarPanel6 As System.Windows.Forms.StatusBarPanel
+    Friend WithEvents stVersion As System.Windows.Forms.StatusBarPanel
     Friend WithEvents MenuItem7 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem21 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem22 As System.Windows.Forms.MenuItem
@@ -21,6 +22,12 @@ Public Class MainForm
     Friend WithEvents MenuItem64 As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem65 As MenuItem
     Friend WithEvents MenuItemEstadosFinancieros As MenuItem
+    Friend WithEvents StatusBarPanel1 As StatusBarPanel
+    Friend WithEvents StatusBarPanel4 As StatusBarPanel
+    Friend WithEvents StatusBarPanel2 As StatusBarPanel
+    Friend WithEvents StatusBarPanel3 As StatusBarPanel
+    Friend WithEvents StatusBarPanel5 As StatusBarPanel
+    Friend WithEvents MenuItem12 As MenuItem
     Dim conexionConta As String
 #End Region
 
@@ -88,11 +95,6 @@ Public Class MainForm
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents MenuItem1 As System.Windows.Forms.MenuItem
     Friend WithEvents StatusBar1 As System.Windows.Forms.StatusBar
-    Friend WithEvents StatusBarPanel1 As System.Windows.Forms.StatusBarPanel
-    Friend WithEvents StatusBarPanel4 As System.Windows.Forms.StatusBarPanel
-    Friend WithEvents StatusBarPanel2 As System.Windows.Forms.StatusBarPanel
-    Friend WithEvents StatusBarPanel3 As System.Windows.Forms.StatusBarPanel
-    Friend WithEvents StatusBarPanel5 As System.Windows.Forms.StatusBarPanel
     Friend WithEvents mniSeeposConfiguracionCuenta As System.Windows.Forms.MenuItem
     Friend WithEvents mniHotelGeneracionAutomatica As System.Windows.Forms.MenuItem
     Friend WithEvents MenuItem30 As System.Windows.Forms.MenuItem
@@ -153,10 +155,6 @@ Public Class MainForm
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.MainMenu1 = New System.Windows.Forms.MainMenu(Me.components)
-        Me.MenuItem25 = New System.Windows.Forms.MenuItem()
-        Me.MenuItem9 = New System.Windows.Forms.MenuItem()
-        Me.MenuItemCuentaContable = New System.Windows.Forms.MenuItem()
-        Me.MenuItemCentroCosto = New System.Windows.Forms.MenuItem()
         Me.MenuItem26 = New System.Windows.Forms.MenuItem()
         Me.MenuItem10 = New System.Windows.Forms.MenuItem()
         Me.MenuItem31 = New System.Windows.Forms.MenuItem()
@@ -164,9 +162,13 @@ Public Class MainForm
         Me.mniSeeposConfiguracionCuenta = New System.Windows.Forms.MenuItem()
         Me.mniHotelConfiguracionCuenta = New System.Windows.Forms.MenuItem()
         Me.MenuItemCuentasFamilias = New System.Windows.Forms.MenuItem()
-        Me.MenuItemPeriodoTrabajo = New System.Windows.Forms.MenuItem()
-        Me.MenuItemPeriodoFiscal = New System.Windows.Forms.MenuItem()
+        Me.MenuItem25 = New System.Windows.Forms.MenuItem()
+        Me.MenuItem9 = New System.Windows.Forms.MenuItem()
+        Me.MenuItemCuentaContable = New System.Windows.Forms.MenuItem()
+        Me.MenuItemCentroCosto = New System.Windows.Forms.MenuItem()
         Me.MenuItem27 = New System.Windows.Forms.MenuItem()
+        Me.MenuItemPeriodoFiscal = New System.Windows.Forms.MenuItem()
+        Me.MenuItemPeriodoTrabajo = New System.Windows.Forms.MenuItem()
         Me.MenuItemAsientos = New System.Windows.Forms.MenuItem()
         Me.MenuItem44 = New System.Windows.Forms.MenuItem()
         Me.MenuItem22 = New System.Windows.Forms.MenuItem()
@@ -212,8 +214,14 @@ Public Class MainForm
         Me.mitmBajarAsientosLCPYMES = New System.Windows.Forms.MenuItem()
         Me.MenuItem28 = New System.Windows.Forms.MenuItem()
         Me.MenuItemBalanceComprobacion = New System.Windows.Forms.MenuItem()
-        Me.MenuItem20 = New System.Windows.Forms.MenuItem()
+        Me.MenuItemEstadosFinancieros = New System.Windows.Forms.MenuItem()
         Me.MenuItem34 = New System.Windows.Forms.MenuItem()
+        Me.MenuItem20 = New System.Windows.Forms.MenuItem()
+        Me.MenuItem1 = New System.Windows.Forms.MenuItem()
+        Me.MenuItem60 = New System.Windows.Forms.MenuItem()
+        Me.MenuItemReporteCC = New System.Windows.Forms.MenuItem()
+        Me.MenuItem4 = New System.Windows.Forms.MenuItem()
+        Me.MenuItem6 = New System.Windows.Forms.MenuItem()
         Me.mitmPresupuesto = New System.Windows.Forms.MenuItem()
         Me.MenuItem19 = New System.Windows.Forms.MenuItem()
         Me.MenuItem14 = New System.Windows.Forms.MenuItem()
@@ -221,11 +229,6 @@ Public Class MainForm
         Me.MenuItem16 = New System.Windows.Forms.MenuItem()
         Me.MenuItem17 = New System.Windows.Forms.MenuItem()
         Me.MenuItem18 = New System.Windows.Forms.MenuItem()
-        Me.MenuItem1 = New System.Windows.Forms.MenuItem()
-        Me.MenuItemReporteCC = New System.Windows.Forms.MenuItem()
-        Me.MenuItem4 = New System.Windows.Forms.MenuItem()
-        Me.MenuItem6 = New System.Windows.Forms.MenuItem()
-        Me.MenuItem60 = New System.Windows.Forms.MenuItem()
         Me.MenuItem43 = New System.Windows.Forms.MenuItem()
         Me.MenuItem55 = New System.Windows.Forms.MenuItem()
         Me.MenuItem11 = New System.Windows.Forms.MenuItem()
@@ -244,42 +247,21 @@ Public Class MainForm
         Me.StatusBarPanel2 = New System.Windows.Forms.StatusBarPanel()
         Me.StatusBarPanel3 = New System.Windows.Forms.StatusBarPanel()
         Me.StatusBarPanel5 = New System.Windows.Forms.StatusBarPanel()
-        Me.StatusBarPanel6 = New System.Windows.Forms.StatusBarPanel()
+        Me.stVersion = New System.Windows.Forms.StatusBarPanel()
         Me.PictureBoxFondo = New System.Windows.Forms.PictureBox()
-        Me.MenuItemEstadosFinancieros = New System.Windows.Forms.MenuItem()
+        Me.MenuItem12 = New System.Windows.Forms.MenuItem()
         CType(Me.StatusBarPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StatusBarPanel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StatusBarPanel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.StatusBarPanel5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.StatusBarPanel6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.stVersion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBoxFondo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MainMenu1
         '
         Me.MainMenu1.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem26, Me.MenuItem27, Me.MenuItem28, Me.mitmPresupuesto, Me.MenuItem43})
-        '
-        'MenuItem25
-        '
-        Me.MenuItem25.Index = 6
-        Me.MenuItem25.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem9, Me.MenuItemCuentaContable, Me.MenuItemCentroCosto})
-        Me.MenuItem25.Text = "Cuentas Contables"
-        '
-        'MenuItem9
-        '
-        Me.MenuItem9.Index = 0
-        Me.MenuItem9.Text = "Formato Cuentas"
-        '
-        'MenuItemCuentaContable
-        '
-        Me.MenuItemCuentaContable.Index = 1
-        Me.MenuItemCuentaContable.Text = "Catalogo de Cuentas"
-        '
-        'MenuItemCentroCosto
-        '
-        Me.MenuItemCentroCosto.Index = 2
-        Me.MenuItemCentroCosto.Text = "Centro de Costo"
         '
         'MenuItem26
         '
@@ -319,21 +301,42 @@ Public Class MainForm
         Me.MenuItemCuentasFamilias.Index = 5
         Me.MenuItemCuentasFamilias.Text = "Configuración de Cuentas Familias"
         '
-        'MenuItemPeriodoTrabajo
+        'MenuItem25
         '
-        Me.MenuItemPeriodoTrabajo.Index = 1
-        Me.MenuItemPeriodoTrabajo.Text = "Periodo Trabajo"
+        Me.MenuItem25.Index = 6
+        Me.MenuItem25.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem9, Me.MenuItemCuentaContable, Me.MenuItemCentroCosto})
+        Me.MenuItem25.Text = "Cuentas Contables"
+        '
+        'MenuItem9
+        '
+        Me.MenuItem9.Index = 0
+        Me.MenuItem9.Text = "Formato Cuentas"
+        '
+        'MenuItemCuentaContable
+        '
+        Me.MenuItemCuentaContable.Index = 1
+        Me.MenuItemCuentaContable.Text = "Catalogo de Cuentas"
+        '
+        'MenuItemCentroCosto
+        '
+        Me.MenuItemCentroCosto.Index = 2
+        Me.MenuItemCentroCosto.Text = "Centro de Costo"
+        '
+        'MenuItem27
+        '
+        Me.MenuItem27.Index = 1
+        Me.MenuItem27.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItemPeriodoFiscal, Me.MenuItemPeriodoTrabajo, Me.MenuItemAsientos, Me.MenuItem44, Me.MenuItem22, Me.MenuItemCierreAnual, Me.MenuItemMayorizacionAsiento, Me.MenuItem65, Me.MenuItem21, Me.mniHotelGeneracionAutomatica, Me.MenuItem7, Me.MenuItem38, Me.mitmBajarAsientosLCPYMES, Me.MenuItem12})
+        Me.MenuItem27.Text = "Operaciones"
         '
         'MenuItemPeriodoFiscal
         '
         Me.MenuItemPeriodoFiscal.Index = 0
         Me.MenuItemPeriodoFiscal.Text = "Periodo Fiscal"
         '
-        'MenuItem27
+        'MenuItemPeriodoTrabajo
         '
-        Me.MenuItem27.Index = 1
-        Me.MenuItem27.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItemPeriodoFiscal, Me.MenuItemPeriodoTrabajo, Me.MenuItemAsientos, Me.MenuItem44, Me.MenuItem22, Me.MenuItemCierreAnual, Me.MenuItemMayorizacionAsiento, Me.MenuItem65, Me.MenuItem21, Me.mniHotelGeneracionAutomatica, Me.MenuItem7, Me.MenuItem38, Me.mitmBajarAsientosLCPYMES})
-        Me.MenuItem27.Text = "Operaciones"
+        Me.MenuItemPeriodoTrabajo.Index = 1
+        Me.MenuItemPeriodoTrabajo.Text = "Periodo Trabajo"
         '
         'MenuItemAsientos
         '
@@ -569,15 +572,46 @@ Public Class MainForm
         Me.MenuItemBalanceComprobacion.Index = 0
         Me.MenuItemBalanceComprobacion.Text = "Balance Comprobación"
         '
-        'MenuItem20
+        'MenuItemEstadosFinancieros
         '
-        Me.MenuItem20.Index = 3
-        Me.MenuItem20.Text = "Analitico x Cuenta"
+        Me.MenuItemEstadosFinancieros.Index = 1
+        Me.MenuItemEstadosFinancieros.Text = "Estados Financieros"
         '
         'MenuItem34
         '
         Me.MenuItem34.Index = 2
         Me.MenuItem34.Text = "Analitico General"
+        '
+        'MenuItem20
+        '
+        Me.MenuItem20.Index = 3
+        Me.MenuItem20.Text = "Analitico x Cuenta"
+        '
+        'MenuItem1
+        '
+        Me.MenuItem1.Index = 4
+        Me.MenuItem1.Text = "Comparación de Cuentas"
+        '
+        'MenuItem60
+        '
+        Me.MenuItem60.Index = 5
+        Me.MenuItem60.Text = "Analisis de Gastos"
+        '
+        'MenuItemReporteCC
+        '
+        Me.MenuItemReporteCC.Index = 6
+        Me.MenuItemReporteCC.Text = "Centro de Costos"
+        Me.MenuItemReporteCC.Visible = False
+        '
+        'MenuItem4
+        '
+        Me.MenuItem4.Index = 7
+        Me.MenuItem4.Text = "Contabilidad Bancos"
+        '
+        'MenuItem6
+        '
+        Me.MenuItem6.Index = 8
+        Me.MenuItem6.Text = "Listado de Asientos"
         '
         'mitmPresupuesto
         '
@@ -615,32 +649,6 @@ Public Class MainForm
         '
         Me.MenuItem18.Index = 5
         Me.MenuItem18.Text = "Estado Resultado vrs Presupuestado"
-        '
-        'MenuItem1
-        '
-        Me.MenuItem1.Index = 4
-        Me.MenuItem1.Text = "Comparación de Cuentas"
-        '
-        'MenuItemReporteCC
-        '
-        Me.MenuItemReporteCC.Index = 6
-        Me.MenuItemReporteCC.Text = "Centro de Costos"
-        Me.MenuItemReporteCC.Visible = False
-        '
-        'MenuItem4
-        '
-        Me.MenuItem4.Index = 7
-        Me.MenuItem4.Text = "Contabilidad Bancos"
-        '
-        'MenuItem6
-        '
-        Me.MenuItem6.Index = 8
-        Me.MenuItem6.Text = "Listado de Asientos"
-        '
-        'MenuItem60
-        '
-        Me.MenuItem60.Index = 5
-        Me.MenuItem60.Text = "Analisis de Gastos"
         '
         'MenuItem43
         '
@@ -745,7 +753,7 @@ Public Class MainForm
         Me.StatusBar1.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.StatusBar1.Location = New System.Drawing.Point(0, 284)
         Me.StatusBar1.Name = "StatusBar1"
-        Me.StatusBar1.Panels.AddRange(New System.Windows.Forms.StatusBarPanel() {Me.StatusBarPanel1, Me.StatusBarPanel4, Me.StatusBarPanel2, Me.StatusBarPanel3, Me.StatusBarPanel5, Me.StatusBarPanel6})
+        Me.StatusBar1.Panels.AddRange(New System.Windows.Forms.StatusBarPanel() {Me.StatusBarPanel1, Me.StatusBarPanel4, Me.StatusBarPanel2, Me.StatusBarPanel3, Me.StatusBarPanel5, Me.stVersion})
         Me.StatusBar1.ShowPanels = True
         Me.StatusBar1.Size = New System.Drawing.Size(766, 16)
         Me.StatusBar1.TabIndex = 18
@@ -782,10 +790,10 @@ Public Class MainForm
         Me.StatusBarPanel5.Name = "StatusBarPanel5"
         Me.StatusBarPanel5.Width = 519
         '
-        'StatusBarPanel6
+        'stVersion
         '
-        Me.StatusBarPanel6.Name = "StatusBarPanel6"
-        Me.StatusBarPanel6.Text = "v13.02.2020"
+        Me.stVersion.Name = "stVersion"
+        Me.stVersion.Text = "v13.02.2020"
         '
         'PictureBoxFondo
         '
@@ -798,10 +806,10 @@ Public Class MainForm
         Me.PictureBoxFondo.TabStop = False
         Me.PictureBoxFondo.Visible = False
         '
-        'MenuItemEstadosFinancieros
+        'MenuItem12
         '
-        Me.MenuItemEstadosFinancieros.Index = 1
-        Me.MenuItemEstadosFinancieros.Text = "Estados Financieros"
+        Me.MenuItem12.Index = 13
+        Me.MenuItem12.Text = "Navegador de Asientos"
         '
         'MainForm
         '
@@ -821,7 +829,7 @@ Public Class MainForm
         CType(Me.StatusBarPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StatusBarPanel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.StatusBarPanel5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.StatusBarPanel6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.stVersion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBoxFondo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -831,12 +839,51 @@ Public Class MainForm
 #End Region
 
 #Region "Load"
+
+    Sub spForzarConfiguracionRegionl()
+        Dim oldDecimalSeparator As String =
+            Application.CurrentCulture.NumberFormat.NumberDecimalSeparator
+
+        Dim forceDotCulture As CultureInfo
+        forceDotCulture = Application.CurrentCulture.Clone()
+        forceDotCulture.NumberFormat.NumberDecimalSeparator = "."
+        forceDotCulture.NumberFormat.NumberGroupSeparator = ","
+
+        forceDotCulture.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy"
+        forceDotCulture.DateTimeFormat.AMDesignator = "a.m."
+        forceDotCulture.DateTimeFormat.PMDesignator = "p.m."
+        forceDotCulture.DateTimeFormat.ShortTimePattern = "hh:mm tt"
+        Application.CurrentCulture = forceDotCulture
+
+    End Sub
+
+    Public Shared Function fnVersion() As String
+        Dim ver As String = ""
+        Try
+
+            If (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed) Then
+                Dim ad As System.Deployment.Application.ApplicationDeployment =
+        System.Deployment.Application.ApplicationDeployment.CurrentDeployment
+
+                ver = ad.CurrentVersion.ToString()
+
+            End If
+        Catch ex As Exception
+            ver = ""
+        End Try
+
+        Return ver
+
+    End Function
     Private Sub MainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        spForzarConfiguracionRegionl()
         StatusBarPanel4.Text = Usuario.Nombre
         StatusBarPanel3.Text = Usuario.Cedula
 
         mniHotelConfiguracionCuenta.Visible = True
         mniHotelGeneracionAutomatica.Visible = True
+        stVersion.Text = fnVersion()
+
         Dim segura As String = "0"
         Try
             segura = Configuracion.Claves.Configuracion("seguro")
@@ -1533,5 +1580,12 @@ Public Class MainForm
 
     Private Sub MenuItem12_Click_1(sender As Object, e As EventArgs) Handles MenuItemEstadosFinancieros.Click
         LcConta.Nuevos.EstadosFinancieros.Abrir(Me, Usuario.Nombre)
+    End Sub
+
+    Private Sub MenuItem12_Click_2(sender As Object, e As EventArgs) Handles MenuItem12.Click
+        Dim f As New frmNavegadorAsientos(Usuario)
+        f.MdiParent = Me
+        f.Show()
+
     End Sub
 End Class
