@@ -325,7 +325,7 @@ Public Class MainForm
         'MenuItem27
         '
         Me.MenuItem27.Index = 1
-        Me.MenuItem27.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItemPeriodoFiscal, Me.MenuItemPeriodoTrabajo, Me.MenuItemAsientos, Me.MenuItem44, Me.MenuItem22, Me.MenuItemCierreAnual, Me.MenuItemMayorizacionAsiento, Me.MenuItem65, Me.MenuItem21, Me.mniHotelGeneracionAutomatica, Me.MenuItem7, Me.MenuItem38, Me.mitmBajarAsientosLCPYMES, Me.MenuItem12})
+        Me.MenuItem27.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItemPeriodoFiscal, Me.MenuItemPeriodoTrabajo, Me.MenuItem12, Me.MenuItemAsientos, Me.MenuItem44, Me.MenuItem22, Me.MenuItemCierreAnual, Me.MenuItemMayorizacionAsiento, Me.MenuItem65, Me.MenuItem21, Me.mniHotelGeneracionAutomatica, Me.MenuItem7, Me.MenuItem38, Me.mitmBajarAsientosLCPYMES})
         Me.MenuItem27.Text = "Operaciones"
         '
         'MenuItemPeriodoFiscal
@@ -340,42 +340,42 @@ Public Class MainForm
         '
         'MenuItemAsientos
         '
-        Me.MenuItemAsientos.Index = 2
+        Me.MenuItemAsientos.Index = 3
         Me.MenuItemAsientos.Text = "Asientos"
         '
         'MenuItem44
         '
-        Me.MenuItem44.Index = 3
+        Me.MenuItem44.Index = 4
         Me.MenuItem44.Text = "Cierre Cajas"
         '
         'MenuItem22
         '
-        Me.MenuItem22.Index = 4
+        Me.MenuItem22.Index = 5
         Me.MenuItem22.Text = "Cierre Mensual"
         '
         'MenuItemCierreAnual
         '
-        Me.MenuItemCierreAnual.Index = 5
+        Me.MenuItemCierreAnual.Index = 6
         Me.MenuItemCierreAnual.Text = "Cierre Anual"
         '
         'MenuItemMayorizacionAsiento
         '
-        Me.MenuItemMayorizacionAsiento.Index = 6
+        Me.MenuItemMayorizacionAsiento.Index = 7
         Me.MenuItemMayorizacionAsiento.Text = "Mayorización"
         '
         'MenuItem65
         '
-        Me.MenuItem65.Index = 7
+        Me.MenuItem65.Index = 8
         Me.MenuItem65.Text = "Caja Chica"
         '
         'MenuItem21
         '
-        Me.MenuItem21.Index = 8
+        Me.MenuItem21.Index = 9
         Me.MenuItem21.Text = "-"
         '
         'mniHotelGeneracionAutomatica
         '
-        Me.mniHotelGeneracionAutomatica.Index = 9
+        Me.mniHotelGeneracionAutomatica.Index = 10
         Me.mniHotelGeneracionAutomatica.MenuItems.AddRange(New System.Windows.Forms.MenuItem() {Me.MenuItem5, Me.MenuItem40, Me.MenuItem8, Me.MenuItem41, Me.MenuItem30, Me.MenuItem32, Me.MenuItem33, Me.MenuItem36, Me.MenuItem56, Me.MenuItem57, Me.MenuItem2, Me.MenuItem45, Me.MenuItem59, Me.MenuItem63, Me.MenuItem64})
         Me.mniHotelGeneracionAutomatica.Text = "Generación "
         '
@@ -547,18 +547,18 @@ Public Class MainForm
         '
         'MenuItem7
         '
-        Me.MenuItem7.Index = 10
+        Me.MenuItem7.Index = 11
         Me.MenuItem7.Text = "Asiento de Planilla"
         '
         'MenuItem38
         '
-        Me.MenuItem38.Index = 11
+        Me.MenuItem38.Index = 12
         Me.MenuItem38.Text = "Asiento de Requisiciones"
         Me.MenuItem38.Visible = False
         '
         'mitmBajarAsientosLCPYMES
         '
-        Me.mitmBajarAsientosLCPYMES.Index = 12
+        Me.mitmBajarAsientosLCPYMES.Index = 13
         Me.mitmBajarAsientosLCPYMES.Text = "Bajar Asientos"
         '
         'MenuItem28
@@ -808,7 +808,7 @@ Public Class MainForm
         '
         'MenuItem12
         '
-        Me.MenuItem12.Index = 13
+        Me.MenuItem12.Index = 2
         Me.MenuItem12.Text = "Navegador de Asientos"
         '
         'MainForm

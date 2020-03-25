@@ -3,3 +3,4 @@ Backup/
 .vs/
 bin/app.publish/Application Files/lcConta_1_0_2_3/Microsoft.VisualStudio.OLE.Interop.dll.deploy
 *.deploy
+*.manifest
