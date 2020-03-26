@@ -2773,7 +2773,6 @@ Partial Public Class DataSetAsientos
             Me.columnDebe.AllowDBNull = false
             Me.columnHaber.AllowDBNull = false
             Me.columnDescripcionAsiento.AllowDBNull = false
-            Me.columnNoDocumentoDetalle.AllowDBNull = false
             Me.columnNoDocumentoDetalle.DefaultValue = CType("",String)
             Me.columnNoDocumentoDetalle.MaxLength = 75
         End Sub
@@ -4903,7 +4902,12 @@ Partial Public Class DataSetAsientos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property NoDocumentoDetalle() As String
             Get
-                Return CType(Me(Me.tableDetallesAsientosContable.NoDocumentoDetalleColumn),String)
+                Try 
+                    Return CType(Me(Me.tableDetallesAsientosContable.NoDocumentoDetalleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NoDocumentoDetalle' de la tabla 'DetallesAsientosContable"& _ 
+                            "' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableDetallesAsientosContable.NoDocumentoDetalleColumn) = value
@@ -4967,6 +4971,18 @@ Partial Public Class DataSetAsientos
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetIdTempNull()
             Me(Me.tableDetallesAsientosContable.IdTempColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsNoDocumentoDetalleNull() As Boolean
+            Return Me.IsNull(Me.tableDetallesAsientosContable.NoDocumentoDetalleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetNoDocumentoDetalleNull()
+            Me(Me.tableDetallesAsientosContable.NoDocumentoDetalleColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

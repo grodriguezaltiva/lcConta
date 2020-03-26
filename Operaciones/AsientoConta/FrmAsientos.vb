@@ -2679,7 +2679,12 @@ Public Class FrmAsientos
             dr("Descripcion") = f.Item("DescripcionAsiento")
             dr("NombreCuenta") = f.Item("NombreCuenta")
             dr("Tipocambio") = f.Item("Tipocambio")
-            dr("NoDocumentoDetalle") = f.NoDocumentoDetalle
+            If Not f.IsNoDocumentoDetalleNull Then
+                dr("NoDocumentoDetalle") = f.NoDocumentoDetalle
+            Else
+                dr("NoDocumentoDetalle") = ""
+            End If
+
             If Me.CBMoneda.SelectedValue = 1 Then
                 If CBool(f.Item("Debe")) = True Then
                     dr("Debe") = f.Item("Monto")
@@ -2746,7 +2751,7 @@ Public Class FrmAsientos
             Dim Ruta As String = My.Computer.FileSystem.SpecialDirectories.MyDocuments & "\ConfiguracionesSeesoft\"
             Dim fileExists As Boolean
             fileExists = My.Computer.FileSystem.FileExists(Ruta & "tempAsiento.xml")
-            If fileExists Then
+            If Not fileExists Then
                 MsgBox("No hay datos que cargar", MsgBoxStyle.OkOnly)
                 Exit Sub
             End If
