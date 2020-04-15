@@ -8,6 +8,21 @@ Public Class frmResultado
         MonedaBS.DataMember = dts.Moneda.TableName
     End Sub
     Dim EsBalance As Boolean, EsMensual As Boolean, Moneda As Integer, MonedaNombre As String, CantPeriodos As Integer, Mes As Integer, MesNombre As String, Año As Integer, ExcluirCierre As Boolean, Nivel As Integer
+
+
+
+    Private Sub rbEstadoResultadoMensual_CheckedChanged(sender As Object, e As EventArgs) Handles rbEstadoResultadoMensual.CheckedChanged
+
+    End Sub
+    Private Sub opciones()
+        If rbEstadoResultadoMensual.Checked Then
+
+            lbMes.Visible = Not rbAnual.Checked
+            cbMes.Visible = Not rbAnual.Checked
+
+        End If
+
+    End Sub
     Private Sub btMostrar_Click(sender As Object, e As EventArgs) Handles btMostrar.Click
         mostrar()
     End Sub
@@ -22,7 +37,7 @@ Public Class frmResultado
         bwCargar.RunWorkerAsync()
 
     End Sub
-    Dim rtp As rptBalanceSituacion
+    Dim rtp As CrystalDecisions.CrystalReports.Engine.ReportDocument
     Private Sub frmResultado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nuAño.Value = Now.Year
         cbMes.SelectedIndex = Now.Month - 1
@@ -35,9 +50,9 @@ Public Class frmResultado
     End Sub
     Private Sub cargar()
 
-        rtp = EstadosFinancieros.BalanceSitacion(EsBalance, EsMensual,
+        rtp = EstadosFinancieros.Cargar(rbEstadoResultadoMensual.Checked, EsBalance, EsMensual,
                         Moneda, MonedaNombre, CantPeriodos,
-                        Mes + 1, MesNombre, Año, ExcluirCierre, Nivel)
+                        Mes + 1, MesNombre, Año, Nivel)
 
     End Sub
 

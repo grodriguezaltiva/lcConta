@@ -288,7 +288,7 @@ Partial Class frmResultado
         Me.lbCargando.Name = "lbCargando"
         Me.lbCargando.Size = New System.Drawing.Size(682, 79)
         Me.lbCargando.TabIndex = 17
-        Me.lbCargando.Text = "Consultando Bade de Datos..."
+        Me.lbCargando.Text = "Consultando Base de Datos..."
         Me.lbCargando.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lbCargando.Visible = False
         '

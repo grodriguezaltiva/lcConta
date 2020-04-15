@@ -5,11 +5,11 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{453BF98F-AC3B-4ADD-A703-9822C95E16E3}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>LcConta.Nuevos</RootNamespace>
     <AssemblyName>lcConta.Nuevos</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>Windows</MyType>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -45,8 +45,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>LcConta.Nuevos.frmTestReportevb</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Configuracion, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -108,9 +107,9 @@
     </Compile>
     <Compile Include="EstadosFinancieros\EstadosFinancieros.vb" />
     <Compile Include="EstadosFinancieros\Reporte\rptEstadoResultado.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptEstadoResultado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EstadosFinancieros\Reporte\rptEstadoResultadoMensual.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -170,6 +169,7 @@
     <None Include="Auxiliares\Datos\dtsCalculos.xss">
       <DependentUpon>dtsCalculos.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="EstadosFinancieros\Reporte\rptEstadoResultadoMensual.rpt" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
